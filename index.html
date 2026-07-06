@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>75+ Premium AI Website Prompts &mdash; Ship stunning websites with one prompt</title>
+  <meta name="description" content="A curated library of 75+ production-grade AI website prompts &mdash; hero sections, landing pages, SaaS, portfolios, 3D sites and more. Paste one prompt into your AI coding tool and ship a polished, animated site in minutes.">
+  <link rel="icon" href="assets/cover.png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="75+ Premium AI Website Prompts">
+  <meta property="og:description" content="Paste one prompt into your AI coding tool and ship a polished, animated website in minutes. 75+ battle-tested prompts with motion previews.">
+  <meta property="og:image" content="assets/cover.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="75+ Premium AI Website Prompts">
+  <meta name="twitter:description" content="75+ production-grade AI website prompts with motion previews.">
+  <meta name="twitter:image" content="assets/cover.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+  @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+
+  .mx-page, .mx-page * { margin: 0; padding: 0; box-sizing: border-box; }
+  .mx-page {
+    background: #000;
+    color: #fff;
+    font-family: 'Figtree', 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  .mx-wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- keyframes ---------- */
+  @keyframes mxUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
+  @keyframes mxPulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: .45; transform: scale(.8); } }
+  @keyframes mxMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes mxVfade { 0% { opacity: 1; } 27% { opacity: 1; } 33% { opacity: 0; } 94% { opacity: 0; } 100% { opacity: 1; } }
+  .mx-up { animation: mxUp .9s cubic-bezier(0.16,1,0.3,1) both; }
+  .mx-d1 { animation-delay: .10s; } .mx-d2 { animation-delay: .22s; }
+  .mx-d3 { animation-delay: .36s; } .mx-d4 { animation-delay: .52s; }
+
+  /* ---------- hero with video background ---------- */
+  .mx-herowrap {
+    position: relative; min-height: 100vh; display: flex; flex-direction: column;
+    overflow: hidden; background: #000;
+  }
+  .mx-videos { position: absolute; inset: 0; z-index: 0; background: #000; }
+  .mx-v {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; opacity: 0; animation: mxVfade 24s ease-in-out infinite;
+  }
+  .mx-v1 { animation-delay: 0s; }
+  .mx-v2 { animation-delay: -8s; }
+  .mx-v3 { animation-delay: -16s; }
+  .mx-voverlay {
+    position: absolute; inset: 0; z-index: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.35) 40%, rgba(0,0,0,.78) 100%);
+  }
+  .mx-hero-inner { position: relative; z-index: 2; display: flex; flex-direction: column; flex: 1; width: 100%; }
+
+  /* ---------- top bar ---------- */
+  .mx-top {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 30px 0 0;
+    font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #cfcfcf;
+  }
+  .mx-top b { color: #fff; font-weight: 600; }
+  .mx-num { color: #F598F2; margin-right: 8px; }
+
+  /* ---------- hero content ---------- */
+  .mx-hero { flex: 1; display: flex; flex-direction: column; justify-content: flex-end; padding: 120px 0 72px; }
+  .mx-avail {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #e8e8e8;
+    margin-bottom: 30px;
+  }
+  .mx-avail i {
+    width: 9px; height: 9px; border-radius: 50%; background: #F598F2; display: inline-block;
+    box-shadow: 0 0 12px 2px rgba(245,152,242,.8);
+    animation: mxPulse 1.6s ease-in-out infinite;
+  }
+  .mx-h1 {
+    font-size: clamp(48px, 9vw, 118px);
+    line-height: .92; font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em;
+    text-shadow: 0 4px 40px rgba(0,0,0,.5);
+  }
+  .mx-h1 .mx-dot { color: #F598F2; }
+  .mx-sub {
+    margin-top: 30px; max-width: 640px;
+    font-size: 19px; line-height: 1.6; color: #e2e2e2; font-weight: 300;
+    text-shadow: 0 2px 20px rgba(0,0,0,.6);
+  }
+  .mx-sub strong { color: #fff; font-weight: 600; }
+
+  /* ---------- buy button ---------- */
+  .mx-cta-row { margin-top: 40px; display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+  .mx-buy {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: #F598F2; color: #000 !important;
+    font-size: 17px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+    padding: 20px 40px; border-radius: 999px; text-decoration: none;
+    box-shadow: 0 8px 40px rgba(245,152,242,.25);
+    transition: transform .45s cubic-bezier(0.16,1,0.3,1), box-shadow .45s cubic-bezier(0.16,1,0.3,1);
+  }
+  .mx-buy:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 12px 52px rgba(245,152,242,.45); }
+  .mx-buy .mx-arrow { font-weight: 400; }
+  .mx-price-note { font-size: 14px; color: #d4d4d4; letter-spacing: .04em; }
+  .mx-price-note b { color: #fff; }
+
+  /* ---------- marquee ---------- */
+  .mx-marquee {
+    border-top: 1px solid #1c1c1c; border-bottom: 1px solid #1c1c1c;
+    overflow: hidden; white-space: nowrap; padding: 18px 0; margin: 0;
+  }
+  .mx-marquee-in { display: inline-block; animation: mxMarquee 28s linear infinite; }
+  .mx-marquee span {
+    font-size: 15px; letter-spacing: .22em; text-transform: uppercase; color: #666;
+    margin: 0 28px;
+  }
+  .mx-marquee span em { color: #F598F2; font-style: normal; }
+
+  /* ---------- sections ---------- */
+  .mx-label {
+    font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #888;
+    margin-bottom: 28px;
+  }
+  .mx-label i { color: #F598F2; font-style: normal; margin-right: 10px; }
+  .mx-h2 {
+    font-size: clamp(30px, 4.5vw, 52px); font-weight: 800; text-transform: uppercase;
+    letter-spacing: -0.01em; line-height: 1.05; margin-bottom: 18px;
+  }
+  .mx-h2 .mx-dot { color: #F598F2; }
+  .mx-section { padding: 88px 0 0; }
+
+  /* ---------- gallery ---------- */
+  .mx-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px; margin-top: 44px;
+  }
+  .mx-card {
+    border: 1px solid #1e1e1e; border-radius: 14px; overflow: hidden; background: #0a0a0a;
+    transition: transform .5s cubic-bezier(0.16,1,0.3,1), border-color .5s;
+  }
+  .mx-card:hover { transform: translateY(-6px); border-color: #F598F2; }
+  .mx-card .mx-media { display: block; width: 100%; height: 210px; object-fit: cover; background: #111; }
+  .mx-card-meta {
+    display: flex; justify-content: space-between; align-items: center; padding: 16px 18px;
+  }
+  .mx-card-meta b { font-size: 15px; font-weight: 600; letter-spacing: .02em; }
+  .mx-card-meta span {
+    font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: #F598F2;
+    border: 1px solid #3a2f39; border-radius: 999px; padding: 4px 10px;
+  }
+  .mx-gallery-note { margin-top: 24px; font-size: 14px; color: #777; }
+  .mx-gallery-note em { color: #F598F2; font-style: normal; }
+
+  /* ---------- inside list ---------- */
+  .mx-list { margin-top: 40px; border-top: 1px solid #1c1c1c; }
+  .mx-row {
+    display: flex; gap: 24px; align-items: baseline;
+    padding: 26px 0; border-bottom: 1px solid #1c1c1c;
+  }
+  .mx-row i { font-style: normal; color: #F598F2; font-size: 14px; letter-spacing: .1em; min-width: 40px; }
+  .mx-row b { font-size: 20px; font-weight: 700; min-width: 240px; }
+  .mx-row p { font-size: 15px; color: #999; line-height: 1.55; font-weight: 300; }
+
+  /* ---------- tools ---------- */
+  .mx-tools { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+  .mx-tools span {
+    font-size: 14px; letter-spacing: .04em; color: #ccc;
+    border: 1px solid #262626; border-radius: 999px; padding: 10px 20px;
+  }
+
+  /* ---------- final cta ---------- */
+  .mx-final {
+    position: relative; overflow: hidden; text-align: center;
+    margin: 96px 0 0; padding: 120px 40px 128px; border-radius: 24px;
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.72) 45%, rgba(0,0,0,.9) 100%),
+      url('assets/cover.png') center/cover no-repeat;
+    border: 1px solid #2a2340;
+  }
+  .mx-final .mx-h2 { font-size: clamp(36px, 6vw, 72px); text-shadow: 0 4px 40px rgba(0,0,0,.6); }
+  .mx-final .mx-sub { margin: 24px auto 0; text-shadow: 0 2px 20px rgba(0,0,0,.7); color: #eaeaea; }
+  .mx-final .mx-cta-row { justify-content: center; }
+  .mx-guarantee { margin-top: 22px; font-size: 13px; color: #cfcfcf; letter-spacing: .06em; }
+
+  .mx-footer {
+    border-top: 1px solid #1c1c1c; padding: 26px 0 40px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #555;
+  }
+
+  @media (max-width: 720px) {
+    .mx-hero { padding: 100px 0 52px; }
+    .mx-row { flex-direction: column; gap: 6px; }
+    .mx-row b { min-width: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .mx-v { animation: none; } .mx-v1 { opacity: 1; } .mx-v2, .mx-v3 { opacity: 0; }
+    .mx-up, .mx-avail i, .mx-marquee-in { animation: none; }
+  }
+</style>
+  <style> html,body { margin:0; padding:0; background:#000; } </style>
+</head>
+<body>
+<div class="mx-page">
+
+  <section class="mx-herowrap">
+    <div class="mx-videos" aria-hidden="true">
+      <video class="mx-v mx-v1" autoplay muted loop playsinline src="assets/hero1.mp4"></video>
+      <video class="mx-v mx-v2" autoplay muted loop playsinline src="assets/hero2.mp4"></video>
+      <video class="mx-v mx-v3" autoplay muted loop playsinline src="assets/hero3.mp4"></video>
+    </div>
+    <div class="mx-voverlay"></div>
+
+    <div class="mx-hero-inner">
+      <div class="mx-wrap">
+        <div class="mx-top mx-up">
+          <div><b>75+ Premium AI Website Prompts</b></div>
+          <div><span class="mx-num">01</span>/ Prompt Library</div>
+        </div>
+      </div>
+
+      <div class="mx-wrap mx-hero">
+        <div class="mx-avail mx-up mx-d1"><i></i> Instant digital download</div>
+        <h1 class="mx-h1 mx-up mx-d2">Ship stunning<br>websites with one<br>prompt<span class="mx-dot">.</span></h1>
+        <p class="mx-sub mx-up mx-d3">
+          A curated library of <strong>75+ production-grade AI website prompts</strong> &mdash; hero sections,
+          landing pages, SaaS, portfolios, 3D sites and more. Paste one prompt into your AI coding tool
+          and get a polished, animated site in minutes.
+        </p>
+        <div class="mx-cta-row mx-up mx-d4">
+          <a class="mx-buy" href="https://khalandarth.gumroad.com/l/PROMPTPACK?wanted=true" target="_blank" rel="noopener">
+            Get the pack &mdash; <span>$19.99</span> <span class="mx-arrow">&rarr;</span>
+          </a>
+          <div class="mx-price-note">One-time purchase &middot; <b>Lifetime access</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-marquee">
+    <div class="mx-marquee-in">
+      <span><em>&#9679;</em> Hero Sections</span><span><em>&#9679;</em> Landing Pages</span><span><em>&#9679;</em> SaaS</span><span><em>&#9679;</em> Portfolios</span><span><em>&#9679;</em> Agency</span><span><em>&#9679;</em> 3D Websites</span><span><em>&#9679;</em> AI Products</span><span><em>&#9679;</em> Waitlists</span><span><em>&#9679;</em> Hero Sections</span><span><em>&#9679;</em> Landing Pages</span><span><em>&#9679;</em> SaaS</span><span><em>&#9679;</em> Portfolios</span><span><em>&#9679;</em> Agency</span><span><em>&#9679;</em> 3D Websites</span><span><em>&#9679;</em> AI Products</span><span><em>&#9679;</em> Waitlists</span>
+    </div>
+  </div>
+
+  <div class="mx-wrap">
+
+    <div class="mx-section">
+      <div class="mx-label"><i>02</i>/ Live Previews</div>
+      <h2 class="mx-h2">See what one prompt builds<span class="mx-dot">.</span></h2>
+      <p class="mx-sub" style="text-shadow:none;color:#b5b5b5">Every preview below is the real output of a single prompt from this pack &mdash; no manual coding, no design revisions.</p>
+      <div class="mx-grid">
+        <div class="mx-card">
+          <img class="mx-media" src="https://motionsites.ai/assets/hero-velorah-preview-CJNTtbpd.gif" alt="Velorah preview" loading="lazy">
+          <div class="mx-card-meta"><b>Velorah</b><span>Hero</span></div>
+        </div>
+        <div class="mx-card">
+          <img class="mx-media" src="https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(10).webp" alt="Bold Studio preview" loading="lazy">
+          <div class="mx-card-meta"><b>Bold Studio</b><span>Agency</span></div>
+        </div>
+        <div class="mx-card">
+          <img class="mx-media" src="https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/hero%20sections/animated%20(89).webp" alt="Creative Portfolio preview" loading="lazy">
+          <div class="mx-card-meta"><b>Creative Portfolio</b><span>Portfolio</span></div>
+        </div>
+        <div class="mx-card">
+          <video class="mx-media" autoplay muted loop playsinline aria-label="CozyPaws preview" src="https://pub-86dc5b5484314368ac5436a674b0d919.r2.dev/prompts%20(i've%20added%20them%20to%20the%20motionsites)/petsArea.mp4"></video>
+          <div class="mx-card-meta"><b>CozyPaws</b><span>Landing Page</span></div>
+        </div>
+        <div class="mx-card">
+          <img class="mx-media" src="https://motionsites.ai/assets/hero-aetheris-voyage-preview-BGJn1z4t.gif" alt="Aetheris Voyage preview" loading="lazy">
+          <div class="mx-card-meta"><b>Aetheris Voyage</b><span>Travel</span></div>
+        </div>
+        <div class="mx-card">
+          <img class="mx-media" src="https://motionsites.ai/assets/hero-power-ai-preview-BqpSbx41.gif" alt="Power AI preview" loading="lazy">
+          <div class="mx-card-meta"><b>Power AI</b><span>AI / SaaS</span></div>
+        </div>
+      </div>
+      <p class="mx-gallery-note"><em>&#9679;</em> These are 6 of the prompts inside. Every prompt in the pack ships with its own motion preview so you know exactly what you&rsquo;re building before you paste.</p>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>03</i>/ What&rsquo;s Inside</div>
+      <h2 class="mx-h2">Everything you need<span class="mx-dot">.</span></h2>
+      <div class="mx-list">
+        <div class="mx-row"><i>01</i><b>Battle-tested prompts</b><p>Each prompt is a complete, detailed spec &mdash; layout, typography, color system, animations and interactions &mdash; written to produce a finished site in one shot.</p></div>
+        <div class="mx-row"><i>02</i><b>Motion previews included</b><p>Every prompt comes with a matching video/GIF preview of the exact site it generates, organized side-by-side in the download.</p></div>
+        <div class="mx-row"><i>03</i><b>Organized by category</b><p>Hero sections, landing pages, SaaS, portfolios, agency sites, 3D, travel, waitlists and more &mdash; foldered and indexed so you find the right starting point fast.</p></div>
+        <div class="mx-row"><i>04</i><b>Clean Markdown format</b><p>One file per prompt. Copy, paste, ship. No lock-in, no accounts, no subscriptions.</p></div>
+      </div>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>04</i>/ Works With</div>
+      <h2 class="mx-h2">Your favorite AI tools<span class="mx-dot">.</span></h2>
+      <div class="mx-tools">
+        <span>Claude Code</span><span>Cursor</span><span>v0</span><span>Lovable</span><span>Bolt.new</span><span>Windsurf</span><span>ChatGPT</span><span>GitHub Copilot</span>
+      </div>
+    </div>
+
+    <div class="mx-final">
+      <div class="mx-avail" style="justify-content:center"><i></i> Available now</div>
+      <h2 class="mx-h2">Stop staring at a<br>blank canvas<span class="mx-dot">.</span></h2>
+      <p class="mx-sub">Your next website is one paste away. Download the pack and ship something beautiful today.</p>
+      <div class="mx-cta-row">
+        <a class="mx-buy" href="https://khalandarth.gumroad.com/l/PROMPTPACK?wanted=true" target="_blank" rel="noopener">
+          Buy now &mdash; <span>$19.99</span> <span class="mx-arrow">&rarr;</span>
+        </a>
+      </div>
+      <div class="mx-guarantee">Instant delivery &middot; Yours forever &middot; Use in unlimited projects</div>
+    </div>
+
+  </div>
+
+  <div class="mx-wrap mx-footer">
+    <div>75+ Premium AI Website Prompts</div>
+    <div>Made for builders</div>
+  </div>
+</div>
+</body>
+</html>

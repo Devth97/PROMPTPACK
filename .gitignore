@@ -1,0 +1,10 @@
+# dependencies / tooling
+node_modules/
+.vercel/
+.DS_Store
+Thumbs.db
+*.log
+
+# never commit large source media or the packaged product
+/src*.mp4
+*.zip
