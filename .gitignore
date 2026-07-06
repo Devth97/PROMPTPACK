@@ -8,3 +8,5 @@ Thumbs.db
 # never commit large source media or the packaged product
 /src*.mp4
 *.zip
+
+.vercel

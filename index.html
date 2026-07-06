@@ -190,6 +190,20 @@
     font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: #555;
   }
 
+  /* ---------- value / anti-slop ---------- */
+  .mx-statement { font-size: clamp(21px, 2.5vw, 29px); line-height: 1.45; font-weight: 300; color: #cfcfcf; max-width: 880px; margin-top: 20px; }
+  .mx-statement strong { color: #fff; font-weight: 600; }
+  .mx-statement .mx-hl { color: #F598F2; font-weight: 600; }
+  .mx-nolist { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+  .mx-nolist span { font-size: 14px; color: #d0d0d0; border: 1px solid #262626; border-radius: 999px; padding: 10px 18px; }
+  .mx-nolist span em { color: #F598F2; font-style: normal; margin-right: 9px; font-weight: 700; }
+
+  /* ---------- "what you can create" checklist ---------- */
+  .mx-create-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0 40px; margin-top: 44px; }
+  .mx-check { display: flex; align-items: center; gap: 14px; font-size: 16px; color: #dcdcdc; padding: 15px 0; border-bottom: 1px solid #161616; }
+  .mx-check i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: rgba(245,152,242,.14); color: #F598F2; font-style: normal; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+  .mx-subhead { font-size: 13px; letter-spacing: .2em; text-transform: uppercase; color: #888; margin: 52px 0 20px; }
+
   @media (max-width: 720px) {
     .mx-hero { padding: 100px 0 52px; }
     .mx-row { flex-direction: column; gap: 6px; }
@@ -225,9 +239,9 @@
         <div class="mx-avail mx-up mx-d1"><i></i> Instant digital download</div>
         <h1 class="mx-h1 mx-up mx-d2">Ship stunning<br>websites with one<br>prompt<span class="mx-dot">.</span></h1>
         <p class="mx-sub mx-up mx-d3">
-          A curated library of <strong>75+ production-grade AI website prompts</strong> &mdash; hero sections,
-          landing pages, SaaS, portfolios, 3D sites and more. Paste one prompt into your AI coding tool
-          and get a polished, animated site in minutes.
+          75+ ready-to-use prompts for <strong>Claude Code, Cursor, v0, Lovable, Bolt.new &amp; more</strong> &mdash;
+          built to generate modern, creative, 3D-style, production-ready websites. Media references are already
+          cloud-based, so you just <strong>copy, paste, and generate</strong>.
         </p>
         <div class="mx-cta-row mx-up mx-d4">
           <a class="mx-buy" href="https://khalandarth.gumroad.com/l/PROMPTPACK?wanted=true" target="_blank" rel="noopener">
@@ -248,7 +262,19 @@
   <div class="mx-wrap">
 
     <div class="mx-section">
-      <div class="mx-label"><i>02</i>/ Live Previews</div>
+      <div class="mx-label"><i>02</i>/ Why It Exists</div>
+      <h2 class="mx-h2">The end of generic AI slop<span class="mx-dot">.</span></h2>
+      <p class="mx-statement">Most AI website prompts spit out the same blank, blue-purple, cookie-cutter pages. This pack is built to generate sites that look <strong>modern, premium, creative and portfolio-worthy</strong> &mdash; strong typography, cinematic sections, and high-end visual storytelling that feels <strong>client-ready</strong>.</p>
+      <div class="mx-nolist">
+        <span><em>&#10007;</em> No blank page</span>
+        <span><em>&#10007;</em> No weak generic prompts</span>
+        <span><em>&#10007;</em> No media files to source</span>
+        <span><em>&#9679;</em> Just copy &rarr; paste &rarr; generate</span>
+      </div>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>03</i>/ Live Previews</div>
       <h2 class="mx-h2">See what one prompt builds<span class="mx-dot">.</span></h2>
       <p class="mx-sub" style="text-shadow:none;color:#b5b5b5">Every preview below is the real output of a single prompt from this pack &mdash; no manual coding, no design revisions.</p>
       <div class="mx-grid">
@@ -281,7 +307,28 @@
     </div>
 
     <div class="mx-section">
-      <div class="mx-label"><i>03</i>/ What&rsquo;s Inside</div>
+      <div class="mx-label"><i>04</i>/ What You Can Create</div>
+      <h2 class="mx-h2">One pack, every kind of site<span class="mx-dot">.</span></h2>
+      <div class="mx-create-grid">
+        <div class="mx-check"><i>&#10003;</i> SaaS landing pages</div>
+        <div class="mx-check"><i>&#10003;</i> Startup websites</div>
+        <div class="mx-check"><i>&#10003;</i> 3D interactive websites</div>
+        <div class="mx-check"><i>&#10003;</i> Creative agency websites</div>
+        <div class="mx-check"><i>&#10003;</i> Premium portfolio websites</div>
+        <div class="mx-check"><i>&#10003;</i> Luxury brand websites</div>
+        <div class="mx-check"><i>&#10003;</i> E-commerce websites</div>
+        <div class="mx-check"><i>&#10003;</i> Dashboard UI</div>
+        <div class="mx-check"><i>&#10003;</i> Bento grid layouts</div>
+        <div class="mx-check"><i>&#10003;</i> Glassmorphism UI</div>
+        <div class="mx-check"><i>&#10003;</i> Pricing pages</div>
+        <div class="mx-check"><i>&#10003;</i> Authentication pages</div>
+        <div class="mx-check"><i>&#10003;</i> Mobile responsive layouts</div>
+        <div class="mx-check"><i>&#10003;</i> Animation &amp; interaction prompts</div>
+      </div>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>05</i>/ What&rsquo;s Inside</div>
       <h2 class="mx-h2">Everything you need<span class="mx-dot">.</span></h2>
       <div class="mx-list">
         <div class="mx-row"><i>01</i><b>Battle-tested prompts</b><p>Each prompt is a complete, detailed spec &mdash; layout, typography, color system, animations and interactions &mdash; written to produce a finished site in one shot.</p></div>
@@ -289,14 +336,27 @@
         <div class="mx-row"><i>03</i><b>Organized by category</b><p>Hero sections, landing pages, SaaS, portfolios, agency sites, 3D, travel, waitlists and more &mdash; foldered and indexed so you find the right starting point fast.</p></div>
         <div class="mx-row"><i>04</i><b>Clean Markdown format</b><p>One file per prompt. Copy, paste, ship. No lock-in, no accounts, no subscriptions.</p></div>
       </div>
+      <div class="mx-subhead">Every prompt type, included</div>
+      <div class="mx-tools">
+        <span>Website generation</span><span>Hero sections</span><span>3D websites</span><span>SaaS</span><span>Portfolio</span><span>Agency</span><span>Dashboard</span><span>E-commerce</span><span>Animation</span><span>Mobile optimization</span><span>Follow-up refinement</span>
+      </div>
     </div>
 
     <div class="mx-section">
-      <div class="mx-label"><i>04</i>/ Works With</div>
+      <div class="mx-label"><i>06</i>/ Works With</div>
       <h2 class="mx-h2">Your favorite AI tools<span class="mx-dot">.</span></h2>
       <div class="mx-tools">
-        <span>Claude Code</span><span>Cursor</span><span>v0</span><span>Lovable</span><span>Bolt.new</span><span>Windsurf</span><span>ChatGPT</span><span>GitHub Copilot</span>
+        <span>Claude Code</span><span>Cursor</span><span>v0</span><span>Lovable</span><span>Bolt.new</span><span>Windsurf</span><span>ChatGPT</span><span>GitHub Copilot</span><span>&amp; other AI coding tools</span>
       </div>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>07</i>/ Best For</div>
+      <h2 class="mx-h2">Built for people who ship<span class="mx-dot">.</span></h2>
+      <div class="mx-tools">
+        <span>Freelancers</span><span>Developers</span><span>Students</span><span>Agencies</span><span>Startup founders</span><span>UI designers</span><span>AI builders</span>
+      </div>
+      <p class="mx-gallery-note" style="margin-top:22px">Use it for client work, startup ideas, portfolio projects, landing pages and digital products &mdash; better websites in less time.</p>
     </div>
 
     <div class="mx-final">
