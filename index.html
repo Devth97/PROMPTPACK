@@ -297,6 +297,24 @@
   .mx-final .mx-cta-row { justify-content: center; }
   .mx-guarantee { margin-top: 22px; font-size: 13px; color: #cfcfcf; letter-spacing: .06em; }
 
+  /* ---------- testimonial carousel ---------- */
+  .mx-testi { position: relative; margin-top: 44px; max-width: 700px; }
+  .mx-testi-viewport { overflow: hidden; border-radius: 18px; }
+  .mx-testi-track { display: flex; transition: transform .6s cubic-bezier(0.16,1,0.3,1); }
+  .mx-testi-card { flex: 0 0 100%; background: #1c1c22; border: 1px solid #2c2c34; border-radius: 18px; padding: 40px 36px; box-sizing: border-box; }
+  .mx-testi-mark { font-size: 44px; color: #F598F2; line-height: 1; margin-bottom: 10px; font-family: Georgia, 'Times New Roman', serif; }
+  .mx-testi-text { font-size: 19px; color: #eaeaea; font-weight: 300; line-height: 1.55; min-height: 88px; }
+  .mx-testi-meta { display: flex; align-items: center; gap: 14px; margin-top: 26px; }
+  .mx-testi-avatar { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, #F598F2, #8b6bff); display: flex; align-items: center; justify-content: center; font-weight: 700; color: #000; font-size: 14px; flex: none; }
+  .mx-testi-name { font-weight: 600; color: #fff; font-size: 14px; }
+  .mx-testi-role { font-size: 12px; color: #999; letter-spacing: .02em; }
+  .mx-testi-controls { display: flex; align-items: center; gap: 18px; margin-top: 22px; }
+  .mx-testi-arrow { width: 38px; height: 38px; border-radius: 50%; border: 1px solid #2c2c34; background: transparent; color: #fff; cursor: pointer; font-size: 17px; display: flex; align-items: center; justify-content: center; transition: border-color .3s, color .3s; }
+  .mx-testi-arrow:hover { border-color: #F598F2; color: #F598F2; }
+  .mx-testi-dots { display: flex; gap: 8px; }
+  .mx-testi-dot { width: 7px; height: 7px; border-radius: 50%; background: #3a3a44; cursor: pointer; border: none; padding: 0; transition: background .3s, transform .3s; }
+  .mx-testi-dot.active { background: #F598F2; transform: scale(1.35); }
+
   /* ---------- faq ---------- */
   .mx-faq { margin-top: 44px; border-top: 1px solid #2c2c34; }
   .mx-faq-item { padding: 26px 0; border-bottom: 1px solid #2c2c34; }
@@ -501,7 +519,55 @@
     </div>
 
     <div class="mx-section">
-      <div class="mx-label"><i>08</i>/ FAQ</div>
+      <div class="mx-label"><i>08</i>/ Why Builders Choose It</div>
+      <h2 class="mx-h2">Straight from the pack<span class="mx-dot">.</span></h2>
+      <div class="mx-testi">
+        <div class="mx-testi-viewport">
+          <div class="mx-testi-track" id="mxTestiTrack">
+            <div class="mx-testi-card">
+              <div class="mx-testi-mark">&#10003;</div>
+              <p class="mx-testi-text">Every prompt ships with a matching motion preview &mdash; you see the exact site before you paste a single word.</p>
+              <div class="mx-testi-meta">
+                <div class="mx-testi-avatar">&#9733;</div>
+                <div><div class="mx-testi-name">Live Previews</div><div class="mx-testi-role">Every prompt, verified</div></div>
+              </div>
+            </div>
+            <div class="mx-testi-card">
+              <div class="mx-testi-mark">&#10003;</div>
+              <p class="mx-testi-text">75+ prompts spanning hero, SaaS, 3D, portfolio, e-commerce and more &mdash; one pack, every page type you&rsquo;ll need.</p>
+              <div class="mx-testi-meta">
+                <div class="mx-testi-avatar">&#9733;</div>
+                <div><div class="mx-testi-name">75+ Prompts</div><div class="mx-testi-role">Every category covered</div></div>
+              </div>
+            </div>
+            <div class="mx-testi-card">
+              <div class="mx-testi-mark">&#10003;</div>
+              <p class="mx-testi-text">Works with the tools you already have open &mdash; Claude Code, Cursor, v0, Lovable, Bolt.new and more.</p>
+              <div class="mx-testi-meta">
+                <div class="mx-testi-avatar">&#9733;</div>
+                <div><div class="mx-testi-name">Any AI Tool</div><div class="mx-testi-role">No lock-in</div></div>
+              </div>
+            </div>
+            <div class="mx-testi-card">
+              <div class="mx-testi-mark">&#10003;</div>
+              <p class="mx-testi-text">No blank page, no generic blue-purple AI slop &mdash; just copy, paste, and ship something premium.</p>
+              <div class="mx-testi-meta">
+                <div class="mx-testi-avatar">&#9733;</div>
+                <div><div class="mx-testi-name">Copy &rarr; Paste &rarr; Ship</div><div class="mx-testi-role">In minutes, not hours</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mx-testi-controls">
+          <button class="mx-testi-arrow" id="mxTestiPrev" aria-label="Previous">&#8249;</button>
+          <div class="mx-testi-dots" id="mxTestiDots"></div>
+          <button class="mx-testi-arrow" id="mxTestiNext" aria-label="Next">&#8250;</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="mx-section">
+      <div class="mx-label"><i>09</i>/ FAQ</div>
       <h2 class="mx-h2">Questions, answered<span class="mx-dot">.</span></h2>
       <div class="mx-faq">
         <div class="mx-faq-item">
@@ -558,6 +624,50 @@
       fbq('track', 'InitiateCheckout', { value: 8.50, currency: 'USD', content_name: '75+ Premium AI Website Prompts' });
     }
   });
+</script>
+<script>
+  // Testimonial/highlight carousel — auto-advances, with manual arrow + dot control.
+  (function () {
+    var track = document.getElementById('mxTestiTrack');
+    if (!track) return;
+    var cards = track.children;
+    var dotsWrap = document.getElementById('mxTestiDots');
+    var prevBtn = document.getElementById('mxTestiPrev');
+    var nextBtn = document.getElementById('mxTestiNext');
+    var count = cards.length;
+    var i = 0;
+    var AUTO_MS = 4500;
+    var timer;
+
+    for (var d = 0; d < count; d++) {
+      var dot = document.createElement('button');
+      dot.className = 'mx-testi-dot' + (d === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (d + 1));
+      dot.addEventListener('click', function (idx) { return function () { go(idx, true); }; }(d));
+      dotsWrap.appendChild(dot);
+    }
+    var dots = dotsWrap.children;
+
+    function render() {
+      track.style.transform = 'translateX(-' + (i * 100) + '%)';
+      for (var k = 0; k < dots.length; k++) dots[k].classList.toggle('active', k === i);
+    }
+    function go(idx, manual) {
+      i = (idx + count) % count;
+      render();
+      if (manual) restart();
+    }
+    function next() { go(i + 1); }
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(next, AUTO_MS);
+    }
+
+    prevBtn.addEventListener('click', function () { go(i - 1, true); });
+    nextBtn.addEventListener('click', function () { go(i + 1, true); });
+    render();
+    restart();
+  })();
 </script>
 </body>
 </html>
