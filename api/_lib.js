@@ -17,8 +17,11 @@ const siteUrl = () => (env('SITE_URL') || 'https://promptpack.tech').replace(/\/
 
 function missing(names) { return names.filter((n) => !env(n)); }
 
-/** Server-side price (never trust the browser). Defaults match the page: $19. */
-function price() {
+/** Server-side prices (never trust an amount or currency from the browser). */
+function price(plan) {
+  if (plan === 'inr') {
+    return { amount: parseInt(env('PRICE_AMOUNT_INR') || '159900', 10), currency: 'INR' };
+  }
   const amount = parseInt(env('PRICE_AMOUNT') || '1900', 10); // smallest currency unit
   const currency = (env('PRICE_CURRENCY') || 'USD').toUpperCase();
   return { amount, currency };

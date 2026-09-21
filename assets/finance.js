@@ -12,6 +12,19 @@
   var cfg = window.PP_FINANCE_CONFIG;
   if (!cfg) return;
   var P = cfg.PRODUCT;
+  var paymentPlan = new URLSearchParams(location.search).get('pay') === 'inr' ? 'inr' : 'usd';
+  if (paymentPlan === 'inr') {
+    P.value = 1599;
+    P.currency = 'INR';
+    Array.prototype.forEach.call(document.querySelectorAll('[data-finance-price]'), function (el) {
+      el.textContent = '₹1,599';
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-finance-cta]'), function (el) {
+      if (el.textContent.indexOf('$19') !== -1) {
+        el.textContent = el.textContent.replace('$19', '₹1,599');
+      }
+    });
+  }
   var isProd = cfg.PRODUCTION_HOSTS.indexOf(location.hostname) !== -1;
   var debug = /[?&]ppdebug=1/.test(location.search);
 
@@ -137,7 +150,7 @@
     e.preventDefault();
     if (busy) return;
     setBusy(true);
-    postJson('/api/create-order', { attribution: attribution })
+    postJson('/api/create-order', { plan: paymentPlan, attribution: attribution })
       .then(function (r) {
         if (r.status === 503) throw new Error('not_ready');
         if (!r.ok || !r.body.order_id) throw new Error('order');

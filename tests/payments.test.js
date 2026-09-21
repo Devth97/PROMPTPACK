@@ -30,6 +30,13 @@ test('create-order: server-side price, public key only, tagged as our product', 
   assert.match(o.order_id, /^order_/);
 });
 
+test('create-order: INR plan uses the fixed server-side price', async () => {
+  const r = await post('/api/create-order', { plan: 'inr', amount: 1, currency: 'USD' });
+  const o = await r.json();
+  assert.equal(r.status, 200);
+  assert.equal(o.amount, 159900); assert.equal(o.currency, 'INR');
+});
+
 test('create-order ignores a client-supplied price', async () => {
   const o = await (await post('/api/create-order', { amount: 1, currency: 'INR' })).json();
   assert.equal(o.amount, 1900);

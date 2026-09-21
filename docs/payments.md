@@ -27,15 +27,18 @@ If you change the PDF, re-run the script with the **same** key (it reuses `.env.
 | `RAZORPAY_WEBHOOK_SECRET` | the secret you type when creating the webhook |
 | `DOWNLOAD_SIGNING_SECRET` | from `.env.local` |
 | `DOWNLOAD_FILE_KEY` | from `.env.local` (64 hex chars) |
-| `PRICE_AMOUNT` | smallest currency unit, e.g. `1900` = $19.00 / `159900` = ₹1,599 (default `1900`) |
-| `PRICE_CURRENCY` | `USD` or `INR` (default `USD`) |
+| `PRICE_AMOUNT` | international price in cents, `1900` = $19.00 (default `1900`) |
+| `PRICE_CURRENCY` | international checkout currency (default `USD`) |
+| `PRICE_AMOUNT_INR` | India price in paise, `159900` = ₹1,599 (default `159900`) |
 | `RESEND_API_KEY` | optional, for the backup email |
 | `EMAIL_FROM` | optional, e.g. `PromptPack <orders@promptpack.tech>` (domain must be verified in Resend) |
 | `SITE_URL` | optional, default `https://promptpack.tech` |
 | `TOKEN_TTL_DAYS` | optional, default `7` |
 
-Changing the price also means changing the displayed price in `finance/index.html` and `assets/finance-config.js`.
+If either price changes, update its matching display value in `finance/index.html`, `assets/finance.js`, and `assets/finance-config.js` as applicable.
 USD charges need Razorpay international payments enabled.
+
+Use `/finance` for the US$19 checkout and `/finance?pay=inr` for the ₹1,599 INR checkout (UPI appears when it is enabled on the Razorpay account).
 
 ## Razorpay dashboard
 - Webhook URL: `https://promptpack.tech/api/razorpay-webhook`, event **`order.paid`**, secret = `RAZORPAY_WEBHOOK_SECRET`.
