@@ -10,3 +10,9 @@ Thumbs.db
 *.zip
 
 .vercel
+
+# paid product files — never commit to the public static site
+/MONEY AUDIT TOOLKIT/
+*.pdf
+.env
+.env.*

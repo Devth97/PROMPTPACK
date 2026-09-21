@@ -106,6 +106,10 @@
     .find{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:2px 0 14px}
     .find b{font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
     .find .pill.c-keep{background:var(--mint)}.find .pill.c-review{background:var(--yellow)}.find .pill.c-compare{background:var(--blue)}.find .pill.c-neg{background:var(--pink)}
+    .reqs{margin-top:8px;font-size:13px;font-weight:600;color:var(--mute)}
+    .btn.is-busy{opacity:.7;cursor:progress}
+    .pay-msg{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:60;max-width:min(92vw,520px);background:var(--yellow);border:var(--bw) solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:12px 16px;font-weight:700;font-size:14px;transition:opacity .2s,transform .2s}
+    .pay-msg.show{opacity:1;transform:translate(-50%,0)}
     .micro{margin-top:18px;display:flex;gap:6px 18px;flex-wrap:wrap;font-size:14px;font-weight:600}
     .micro span::before{content:"✓ ";font-weight:900;background:var(--mint);border:2px solid var(--ink);padding:0 4px;margin-right:2px}
 
@@ -148,8 +152,10 @@
     .row span.pill.p-compare{background:var(--blue);color:var(--ink)}.row span.pill.p-cancel{background:var(--coral);color:var(--ink)}
     .row span.pill.p-neg{background:var(--pink);color:var(--ink);font-size:10.5px;font-weight:900}
 
-    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;counter-reset:st}
-    .steps li{counter-increment:st;border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:16px 14px;font-size:14.5px;font-weight:600;line-height:1.4;background:var(--paper)}
+    .steps{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;list-style:none;counter-reset:st}
+    .steps li{counter-increment:st;border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:14px 12px;font-size:13.5px;font-weight:500;line-height:1.4;background:var(--paper)}
+    .steps li b{display:block;font-size:15px;font-weight:900;text-transform:uppercase;margin-bottom:3px}
+    .steps li:nth-child(6){background:#E6D9FF}
     .steps li:nth-child(1){background:var(--pink-s)}.steps li:nth-child(2){background:#FFF1A8}.steps li:nth-child(3){background:#CFF7E0}.steps li:nth-child(4){background:#D5E9FF}.steps li:nth-child(5){background:#FFD3CB}
     .steps li::before{content:counter(st);display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--ink);color:#fff;font-weight:900;font-size:15px;margin-bottom:10px}
     .safety{margin-top:22px;font-size:14px;font-weight:600;background:var(--paper);border:var(--bw) solid var(--ink);border-left:12px solid var(--pink);padding:12px 16px;max-width:860px}
@@ -182,7 +188,7 @@
     @media (max-width:960px){
       .hero .wrap{grid-template-columns:1fr;gap:34px}
       .two{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:1fr 1fr 1fr}
       .why{grid-template-columns:1fr 1fr}
       .faq{grid-template-columns:1fr}
       .top-r .btn,.top-r span{display:none}
@@ -202,8 +208,9 @@
       .price b{font-size:38px}
       .card{box-shadow:6px 6px 0 var(--ink)}
       .steps{grid-template-columns:1fr;gap:9px}
-      .steps li{display:flex;gap:12px;align-items:center;padding:9px 12px;font-size:13.5px;box-shadow:3px 3px 0 var(--ink)}
-      .steps li::before{margin:0;flex:none;width:26px;height:26px;font-size:13px}
+      .steps li{display:block;padding:9px 12px;font-size:13px;box-shadow:3px 3px 0 var(--ink)}
+      .steps li b{display:inline;margin:0 6px 0 0}
+      .steps li::before{display:inline-flex;vertical-align:middle;margin:0 10px 0 0;width:26px;height:26px;font-size:13px}
       .safety{margin-top:16px;font-size:13px;padding:10px 12px}
       details p{font-size:14px}
       summary{padding:12px 44px 12px 14px;font-size:15px}
@@ -239,12 +246,13 @@
       <div>
         <div class="sticker up">AI Money Audit Prompt Pack</div>
         <h1 class="up d1">Find what&rsquo;s draining your money <mark>every month.</mark></h1>
-        <p class="sub up d2">One AI workflow to <strong>uncover recurring expenses</strong>, review subscriptions, compare alternatives and prepare negotiation messages.</p>
+        <p class="sub up d2">Connect Gmail (read-only) to Codex or Claude Code. Your AI agent <strong>audits your billing emails</strong> and turns recurring charges into a Keep / Review / Compare / Negotiate action plan.</p>
         <div class="offer up d3"><span>$19 once</span><span>No subscription</span><span>Reuse anytime</span></div>
         <div class="buyrow up d3">
           <a class="btn" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a>
         </div>
-        <p class="steps-line up d3">Copy. Paste. Review. Decide.</p>
+        <p class="steps-line up d3">Connect. Search. Review. Decide.</p>
+        <p class="reqs up d3">Works with Codex or Claude Code + a Gmail connector. Read-only by default.</p>
       </div>
 
       <div class="card up d2">
@@ -252,11 +260,13 @@
         <div class="in">
         <div class="cp">$19 <small>once</small></div>
         <div class="find"><b>Find what to:</b><span class="pill c-keep">Keep</span><span class="pill c-review">Review</span><span class="pill c-compare">Compare</span><span class="pill c-neg">Negotiate</span></div>
-        <h3>What&rsquo;s inside</h3>
+        <h3>What&rsquo;s inside &mdash; 29-page PDF</h3>
         <ul>
-          <li>Master Money Audit Prompt</li><li>Recurring Subscription Finder</li><li>Bill &amp; Fee Review Prompt</li>
-          <li>Competitor Comparison Prompt</li><li>Negotiation Message Generator</li><li>Cancellation Review Workflow</li>
-          <li>Renewal &amp; Due-Date Tracker</li><li>Annual Re-Audit Prompt</li><li>Quick Start Guide</li>
+          <li>Gmail setup for Codex &amp; Claude Code</li><li>Read-only connection test</li><li>Master Gmail Audit prompt</li>
+          <li>Evidence ledger &amp; recurring expense finder</li><li>Subscription review: Keep / Review / Compare / Cancel</li>
+          <li>Overlap, annual-cost &amp; renewal tracker</li><li>Fee review &amp; cancellation check</li>
+          <li>Competitor comparison &amp; negotiation messages</li><li>10-minute quick run &amp; re-audit prompt</li>
+          <li>Security guardrails (email is untrusted)</li>
         </ul>
         <a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit — $19 →</a>
         <p class="fine">One-time payment · Secure checkout · No subscription</p>
@@ -301,15 +311,16 @@
     <!-- 02: how it works -->
     <section class="s">
       <div class="label"><i>02</i>How it works</div>
-      <h2>Five steps. <mark>You stay in charge.</mark></h2>
+      <h2>Six steps. <mark>You stay in charge.</mark></h2>
       <ol class="steps">
-        <li>Provide the financial information you choose.</li>
-        <li>Paste the relevant prompt.</li>
-        <li>AI organizes recurring expenses.</li>
-        <li>Review what to keep, compare or investigate.</li>
-        <li>Use prepared negotiation/cancellation guidance if useful.</li>
+        <li><b>Connect</b>Give Codex or Claude Code read-only Gmail access through a trusted connector.</li>
+        <li><b>Search</b>The agent searches receipts, renewals, invoices and subscription emails.</li>
+        <li><b>Extract</b>It builds a ledger: provider, amount, frequency, renewal and evidence.</li>
+        <li><b>Analyze</b>Spots recurring costs, overlaps, price rises, fees and upcoming renewals.</li>
+        <li><b>Compare</b>Researches alternatives for the items worth a second look.</li>
+        <li><b>Act safely</b>Drafts negotiation or cancellation messages. You decide what to send.</li>
       </ol>
-      <p class="safety"><b>Safety note.</b> The prompts assist with organization, research and drafting. They do not move money, cancel services or make purchases automatically.</p>
+      <p class="safety"><b>Safety note.</b> Gmail access is read-only by default and email is treated as untrusted data, never as instructions. Nothing is sent, cancelled, paid or changed without your explicit approval. This is organisation and research help, not financial advice, and savings are not guaranteed.</p>
     </section>
 
     <!-- 03: why a prompt pack -->
@@ -317,11 +328,11 @@
       <div class="label"><i>03</i>Why a prompt pack</div>
       <h2>Your data. Your AI. <mark>Your control.</mark></h2>
       <ul class="why">
-        <li><b>No budgeting app</b>No new budgeting subscription needed.</li>
-        <li><b>No PromptPack sub</b>One $19 payment. That's it.</li>
-        <li><b>Reusable</b>Run the prompts as often as you like.</li>
-        <li><b>Re-audit anytime</b>After renewals, price rises or life changes.</li>
-        <li><b>You choose</b>You decide what financial info to share.</li>
+        <li><b>Read-only</b>Gmail access is view-only: no sending, deleting or editing.</li>
+        <li><b>Your Gmail, your AI</b>Runs in your own tool. PromptPack never sees your email.</li>
+        <li><b>No subscription</b>One payment. No budgeting app, no monthly fee.</li>
+        <li><b>Reusable</b>Re-audit every 3&ndash;6 months to catch new charges and price rises.</li>
+        <li><b>Nothing automatic</b>You approve every message, cancellation or payment.</li>
       </ul>
     </section>
 
@@ -330,13 +341,15 @@
       <div class="label"><i>04</i>FAQ</div>
       <h2><mark>Questions.</mark></h2>
       <div class="faq">
-        <details><summary>What do I receive?</summary><p>The AI Money Audit Prompt Pack: nine prompts and workflows — master audit, subscription finder, bill and fee review, competitor comparison, negotiation messages, cancellation review, renewal and due-date tracker, annual re-audit, and a quick start guide.</p></details>
-        <details><summary>Does PromptPack access my bank account?</summary><p>No. PromptPack never connects to your bank or accounts. You decide what information, if any, to give your own AI tool.</p></details>
-        <details><summary>Does it automatically cancel subscriptions?</summary><p>No. The prompts help you organize, research and draft. They don't cancel services, move money or make purchases — you take any action yourself.</p></details>
-        <details><summary>Does it guarantee savings?</summary><p>No. Results depend on your situation and the information you provide. The pack helps you look more closely; it promises no amount saved.</p></details>
-        <details><summary>Which AI tools can I use?</summary><p>Any general-purpose AI assistant that accepts pasted text, such as ChatGPT, Claude or Gemini, using your own account.</p></details>
-        <details><summary>Is this financial advice?</summary><p>No. These are prompts for organization, research and drafting — not financial, legal or tax advice. AI output can be wrong, so check anything important yourself.</p></details>
-        <details><summary>How is it delivered?</summary><p>Instantly as a digital delivery after checkout. Nothing is shipped.</p></details>
+        <details><summary>What do I receive?</summary><p>A 29-page PDF: Gmail setup for Codex and Claude Code, connection tests, a master Gmail audit prompt, evidence ledger, subscription review, overlap, annual-cost, renewal, fee and cancellation checks, competitor comparison and negotiation prompts, a 10-minute quick run, a re-audit prompt and security guardrails.</p></details>
+        <details><summary>What do I need to use it?</summary><p>An AI agent that supports connectors &mdash; Codex or Claude Code &mdash; a Gmail account that holds your billing emails, and a Gmail connector (MCP) you trust that supports read-only Google sign-in. The pack walks you through setup.</p></details>
+        <details><summary>Does PromptPack access my Gmail or bank?</summary><p>No. You connect Gmail to your own AI tool through a connector you choose. PromptPack never receives your emails and never connects to your bank or accounts.</p></details>
+        <details><summary>Is it safe to connect Gmail?</summary><p>The pack recommends read-only, least-privilege access and tells the AI to treat every email as untrusted data. Connectors are made by third parties, so review one before you grant access. You can revoke access any time in your Google account. No setup is risk-free.</p></details>
+        <details><summary>Does it cancel or send anything automatically?</summary><p>No. It drafts messages and cancellation steps for you to review. Nothing is sent, cancelled, paid or changed without your explicit approval.</p></details>
+        <details><summary>Does it guarantee savings?</summary><p>No. Results depend on your situation and what your email contains &mdash; Gmail may not show every transaction. The pack helps you look more closely; it promises no amount saved.</p></details>
+        <details><summary>Can I use ChatGPT or Gemini instead?</summary><p>The pack is built around Codex and Claude Code because they support Gmail connectors. Other tools with similar connector support may work, but they are not covered in the guide.</p></details>
+        <details><summary>Is this financial advice?</summary><p>No. It is a set of prompts for organisation, research and drafting &mdash; not financial, legal or tax advice. AI output can be wrong, so check anything important yourself.</p></details>
+        <details><summary>How is it delivered?</summary><p>Instantly after payment: you land on a page with a secure download link, and we may also email you a copy. Nothing is shipped.</p></details>
       </div>
     </section>
 

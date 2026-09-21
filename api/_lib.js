@@ -1,0 +1,115 @@
+'use strict';
+/*
+ * Shared helpers for the PromptPack payment API (Vercel Node functions, no dependencies).
+ * Files starting with "_" are NOT exposed as endpoints by Vercel.
+ * Secrets come ONLY from environment variables — see docs/payments.md.
+ */
+const crypto = require('crypto');
+const fs = require('fs');
+const path = require('path');
+
+const PRODUCT_ID = 'ai-money-audit-prompt-pack';
+const PRODUCT_NAME = 'AI Money Audit Prompt Pack';
+
+const env = (n) => (process.env[n] || '').trim();
+const rzpBase = () => env('RAZORPAY_API_BASE') || 'https://api.razorpay.com'; // override only in tests
+const siteUrl = () => (env('SITE_URL') || 'https://promptpack.tech').replace(/\/$/, '');
+
+function missing(names) { return names.filter((n) => !env(n)); }
+
+/** Server-side price (never trust the browser). Defaults match the page: $19. */
+function price() {
+  const amount = parseInt(env('PRICE_AMOUNT') || '1900', 10); // smallest currency unit
+  const currency = (env('PRICE_CURRENCY') || 'USD').toUpperCase();
+  return { amount, currency };
+}
+
+function send(res, status, obj) {
+  res.statusCode = status;
+  res.setHeader('Content-Type', 'application/json; charset=utf-8');
+  res.setHeader('Cache-Control', 'no-store');
+  res.end(JSON.stringify(obj));
+}
+
+/** Browser POSTs must come from our own site. Non-browser callers (no Origin) are allowed; they still need valid signatures. */
+function sameOrigin(req) {
+  const origin = req.headers.origin;
+  if (!origin) return true;
+  let host;
+  try { host = new URL(origin).host; } catch (e) { return false; }
+  const allowed = new Set([req.headers.host, 'promptpack.tech', 'www.promptpack.tech']);
+  try { allowed.add(new URL(siteUrl()).host); } catch (e) { /* ignore */ }
+  return allowed.has(host);
+}
+
+async function readRaw(req) {
+  if (Buffer.isBuffer(req.body)) return req.body;
+  if (typeof req.body === 'string') return Buffer.from(req.body);
+  const chunks = [];
+  for await (const c of req) chunks.push(Buffer.isBuffer(c) ? c : Buffer.from(c));
+  return Buffer.concat(chunks);
+}
+
+async function readJson(req) {
+  if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) return req.body;
+  try { return JSON.parse((await readRaw(req)).toString('utf8') || '{}'); } catch (e) { return {}; }
+}
+
+/* ---------- Razorpay REST ---------- */
+async function rzp(method, p, body) {
+  const auth = 'Basic ' + Buffer.from(env('RAZORPAY_KEY_ID') + ':' + env('RAZORPAY_KEY_SECRET')).toString('base64');
+  const r = await fetch(rzpBase() + p, {
+    method,
+    headers: { Authorization: auth, 'Content-Type': 'application/json' },
+    body: body ? JSON.stringify(body) : undefined,
+  });
+  let data = {};
+  try { data = await r.json(); } catch (e) { /* non-JSON */ }
+  return { ok: r.ok, status: r.status, data };
+}
+
+/* ---------- crypto ---------- */
+const b64u = (b) => Buffer.from(b).toString('base64url');
+const hmac = (secret, data) => crypto.createHmac('sha256', secret).update(data).digest();
+function safeEqual(a, b) {
+  const A = Buffer.from(String(a)); const B = Buffer.from(String(b));
+  return A.length === B.length && crypto.timingSafeEqual(A, B);
+}
+
+/** Signed, expiring download token: base64url(payload).base64url(hmac). Payload: o=order, p=payment, a=amount, c=currency, exp. */
+function signToken(o, p, a, c) {
+  const days = parseInt(env('TOKEN_TTL_DAYS') || '7', 10);
+  const body = b64u(JSON.stringify({ o, p, a, c, exp: Math.floor(Date.now() / 1000) + days * 86400 }));
+  return body + '.' + b64u(hmac(env('DOWNLOAD_SIGNING_SECRET'), body));
+}
+function readToken(tok) {
+  try {
+    const [body, sig] = String(tok || '').split('.');
+    if (!body || !sig || !env('DOWNLOAD_SIGNING_SECRET')) return null;
+    if (!safeEqual(sig, b64u(hmac(env('DOWNLOAD_SIGNING_SECRET'), body)))) return null;
+    const p = JSON.parse(Buffer.from(body, 'base64url').toString('utf8'));
+    if (!p.exp || Date.now() / 1000 > p.exp) return null;
+    return p;
+  } catch (e) { return null; }
+}
+
+/** The PDF is stored AES-256-GCM encrypted in the repo (private/pack.enc); the key lives only in env. Layout: iv(12) | tag(16) | ciphertext. */
+function decryptPack() {
+  const key = Buffer.from(env('DOWNLOAD_FILE_KEY'), 'hex');
+  if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
+  const candidates = [
+    path.join(process.cwd(), 'private', 'pack.enc'),
+    path.join(__dirname, '..', 'private', 'pack.enc'),
+  ];
+  const file = candidates.find((f) => fs.existsSync(f));
+  if (!file) throw new Error('pack.enc not found');
+  const buf = fs.readFileSync(file);
+  const d = crypto.createDecipheriv('aes-256-gcm', key, buf.subarray(0, 12));
+  d.setAuthTag(buf.subarray(12, 28));
+  return Buffer.concat([d.update(buf.subarray(28)), d.final()]);
+}
+
+module.exports = {
+  PRODUCT_ID, PRODUCT_NAME, env, siteUrl, missing, price, send, sameOrigin, readRaw, readJson,
+  rzp, hmac, safeEqual, signToken, readToken, decryptPack,
+};
