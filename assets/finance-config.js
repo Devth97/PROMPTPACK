@@ -1,16 +1,13 @@
 /*
- * Central config for the /finance landing page.
+ * Public config for the /finance page. NOTHING SECRET goes here — this file is served to every visitor.
+ * Secrets (Razorpay key secret, webhook secret, signing/encryption keys) live only in Vercel env vars:
+ * see docs/payments.md.
  *
- * GUMROAD_FINANCE_PRODUCT_URL — the ONE place the checkout URL lives.
- * (Name kept from the original Gumroad plan; it accepts any https checkout URL, e.g. a Razorpay
- * payment page. Rename once checkout is final.)
- * Every purchase button on /finance reads this value (see finance.js).
- * Paste the real checkout URL here, e.g. "https://<seller>.gumroad.com/l/<permalink>" or a Razorpay link.
- * Leave empty until checkout exists: buttons render disabled and
- * NO tracking event fires for them. Do not commit any secret here — this file is public.
+ * Checkout is Razorpay: the popup + order creation + payment verification are handled by /api/*.
+ * The displayed price is USD 19 by default; the amount actually charged comes from the server env
+ * (PRICE_AMOUNT / PRICE_CURRENCY), so keep the two in sync.
  */
 window.PP_FINANCE_CONFIG = {
-  GUMROAD_FINANCE_PRODUCT_URL: "",
   PIXEL_ID: "2116311975585050",
   PRODUCT: {
     name: "AI Money Audit Prompt Pack",

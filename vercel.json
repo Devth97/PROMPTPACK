@@ -1,0 +1,9 @@
+{
+  "functions": {
+    "api/download.js": { "includeFiles": "private/pack.enc" }
+  },
+  "headers": [
+    { "source": "/api/(.*)", "headers": [{ "key": "Cache-Control", "value": "no-store" }] },
+    { "source": "/finance/thanks", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }, { "key": "Cache-Control", "value": "no-store" }, { "key": "Referrer-Policy", "value": "no-referrer" }] }
+  ]
+}

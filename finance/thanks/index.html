@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <!-- 1) Move the signed download token out of the URL BEFORE any analytics loads, so it is never sent to Meta/Clarity. -->
+  <script>
+  (function () {
+    try {
+      var m = location.hash.match(/[#&]t=([^&]+)/);
+      if (m) { sessionStorage.setItem('pp_tok', m[1]); history.replaceState(null, '', location.pathname + location.search); }
+    } catch (e) {}
+  })();
+  </script>
+  <script src="/assets/finance-config.js"></script>
+  <!-- Meta Pixel (existing PromptPack pixel 2116311975585050). Production hostnames only. -->
+  <script>
+  (function (w, d) {
+    var c = w.PP_FINANCE_CONFIG || {};
+    var prod = (c.PRODUCTION_HOSTS || []).indexOf(location.hostname) !== -1;
+    if (!prod) { w.fbq = w.fbq || function () {}; return; }
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(w, d,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', c.PIXEL_ID);
+    fbq('track', 'PageView');
+  })(window, document);
+  </script>
+  <!-- Microsoft Clarity (same project as homepage) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xidr4f4am8");
+  </script>
+  <title>Your download | PromptPack</title>
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <meta name="theme-color" content="#FFFBF2">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/legal.css">
+  <style>
+    .hero-ok{background:var(--paper);border:var(--bw) solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:26px 28px;margin:20px 0 26px}
+    .hero-ok .dl{display:inline-block;font-size:18px;padding:16px 28px;margin-top:8px}
+    .meta{font-size:13px;font-weight:600;color:var(--mute);margin-top:14px}
+    .ok-badge{display:inline-block;background:var(--mint);border:2px solid var(--ink);font-weight:900;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;margin-bottom:12px}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <a class="brand" href="/">PromptPack</a>
+    <nav><a href="/contact">Support</a></nav>
+  </div></header>
+  <main><div class="wrap">
+    <section id="ok" hidden>
+      <span class="ok-badge">Payment verified</span>
+      <h1>You&rsquo;re in<mark>.</mark></h1>
+      <div class="hero-ok">
+        <p><b>AI Money Audit Prompt Pack</b> &mdash; <span id="paid"></span></p>
+        <a class="btn dl" id="dl" href="#" download>Download the pack (PDF) &rarr;</a>
+        <p class="meta">Save the file somewhere safe. This link expires <span id="exp"></span>. Order reference: <span id="ref"></span></p>
+      </div>
+      <h2>Start here (10 minutes)</h2>
+      <ol>
+        <li>Open the PDF and read <b>Start here</b> and <b>01 / Connect Gmail</b>.</li>
+        <li>Connect Gmail to Codex or Claude Code with a connector you trust &mdash; <b>read-only</b> access is enough.</li>
+        <li>Run the <b>connection test</b> prompt, then the <b>10-minute quick run</b> before the full audit.</li>
+      </ol>
+      <p class="note">Nothing is sent, cancelled or changed automatically &mdash; you approve every action. Need help or a fresh link? <a href="/contact">Contact us</a> with your order reference.</p>
+    </section>
+    <section id="bad" hidden>
+      <h1>Link <mark>expired</mark> or invalid</h1>
+      <p>We couldn&rsquo;t verify this download link. If you have paid, contact us with your payment reference (from your Razorpay receipt) and we will send a new link right away.</p>
+      <p><a class="btn" href="/contact">Contact support</a> &nbsp; <a href="/finance">Back to the pack</a></p>
+    </section>
+  </div></main>
+  <footer><div class="wrap">
+    <div>&copy; 2026 PromptPack. All rights reserved.</div>
+    <nav><a href="/">Home</a><a href="/contact">Contact</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms</a><a href="/refund">Refund Policy</a></nav>
+  </div></footer>
+  <script src="/assets/thanks.js"></script>
+</body>
+</html>
