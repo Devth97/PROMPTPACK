@@ -177,6 +177,11 @@
     font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: #cfcfcf;
   }
   .mx-top b { color: #fff; font-weight: 600; }
+  .mx-nav { display: flex; align-items: center; gap: 22px; flex-wrap: wrap; justify-content: flex-end; }
+  .mx-nav a { color: #cfcfcf; text-decoration: none; transition: color .25s; }
+  .mx-nav a:hover { color: #fff; }
+  .mx-nav a.mx-nav-hi { color: #F598F2; border: 1px solid #F598F2; border-radius: 999px; padding: 6px 14px; }
+  .mx-nav a.mx-nav-hi:hover { background: #F598F2; color: #000; }
   .mx-num { color: #F598F2; margin-right: 8px; }
 
   /* ---------- hero content ---------- */
@@ -343,6 +348,11 @@
 
   @media (max-width: 900px) {
     .mx-top { flex-wrap: wrap; gap: 4px 14px; font-size: 12px; }
+    .mx-nav { gap: 14px; }
+  }
+  @media (max-width: 720px) {
+    .mx-nav a.mx-nav-more { display: none; } /* privacy/terms/refunds stay in the footer on small screens */
+    .mx-nav { gap: 10px; }
   }
   @media (max-width: 720px) {
     .mx-wrap { padding: 0 18px; }
@@ -390,7 +400,13 @@
       <div class="mx-wrap">
         <div class="mx-top mx-up">
           <div><b>75+ Premium AI Website Prompts</b></div>
-          <div><span class="mx-num">01</span>/ Prompt Library</div>
+          <nav class="mx-nav" aria-label="Site">
+            <a class="mx-nav-hi" href="/finance">Money Audit Pack</a>
+            <a href="/contact">Contact</a>
+            <a class="mx-nav-more" href="/privacy">Privacy</a>
+            <a class="mx-nav-more" href="/terms">Terms</a>
+            <a class="mx-nav-more" href="/refund">Refunds</a>
+          </nav>
         </div>
       </div>
 
