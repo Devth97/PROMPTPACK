@@ -2,6 +2,8 @@
 
 Gumroad is a SEPARATE sales channel. promptpack.tech does NOT link to it; the website checks out with Razorpay only (docs/payments.md).
 
+**Live URL:** https://khalandarth.gumroad.com/l/MoneyAuditPromptPack (product id `jshnjk`, published). Discover is left off (30% fee).
+
 Copy/paste for gumroad.com/products/new. Claims here match the PDF and the site; do not add savings guarantees.
 
 ## Step 1 — "What are you creating?"
@@ -15,45 +17,24 @@ Copy/paste for gumroad.com/products/new. Claims here match the PDF and the site;
 - **Button text (CTA):** `Start my money audit` (or leave "I want this!")
 - **Cover:** 1280×720 image (see "Assets" below). **Thumbnail:** 600×600.
 - **Product file:** upload the PDF from `MONEY AUDIT TOOLKIT/AI_Money_Audit_Prompt_Pack_Gmail_First.pdf` (never commit this file to git).
-- **Description:**
+- **Description** (short on purpose — sells the outcome, does not list the prompts or steps):
 
 ```
 FIND WHAT'S DRAINING YOUR MONEY EVERY MONTH.
 
-Connect Gmail (read-only) to Codex or Claude Code. Your AI agent audits your billing emails and turns recurring charges into a clear Keep / Review / Compare / Negotiate action plan.
+Small recurring charges are easy to miss. This pack shows you how to point Codex or Claude Code at your billing emails (read-only) and get a clear Keep / Review / Compare / Negotiate action plan.
 
-WHAT YOU GET — 29-PAGE PDF
-- Gmail setup guide for Codex and Claude Code (read-only access)
-- Connection test prompts
-- Master Gmail Audit prompt
-- Evidence ledger and recurring expense finder
-- Subscription review: KEEP / REVIEW / COMPARE / CONSIDER CANCELLING
-- Overlap detector, annual-cost calculator and renewal tracker
-- Fee review and cancellation verification
-- Competitor comparison and negotiation message generator
-- 10-minute quick run
-- Re-audit prompt (repeat every 3-6 months)
-- Security guardrails: email is treated as untrusted data
+29-page PDF. One-time purchase. No subscription. Reuse it whenever you want.
 
-HOW IT WORKS
-1. Connect: give Codex or Claude Code read-only Gmail access through a trusted connector
-2. Search: the agent searches receipts, renewals, invoices and subscription emails
-3. Extract: it builds a ledger of provider, amount, frequency, renewal and evidence
-4. Analyze: it spots recurring costs, overlaps, price rises, fees and upcoming renewals
-5. Compare: it researches alternatives for items worth a second look
-6. Act safely: it drafts negotiation or cancellation messages. You decide what to send
+YOU'LL NEED
+Codex or Claude Code, a Gmail account, and a Gmail connector you trust.
 
-WHAT YOU NEED
-Codex or Claude Code, a Gmail account that holds your billing emails, and a Gmail connector (MCP) you trust that supports read-only access. The guide walks you through setup.
+Read-only by default. Nothing is sent, cancelled, paid or changed without your approval.
 
-SAFE BY DESIGN
-Read-only by default. Nothing is sent, cancelled, paid or changed without your explicit approval. PromptPack never receives your emails.
-
-One-time purchase. No subscription. Instant download. Reuse it whenever you want.
-
-Not financial, legal or tax advice. Savings are not guaranteed, and Gmail may not contain every transaction.
+Not financial advice. Savings are not guaranteed.
 ```
 
+- **Additional details blocks (short facts only):** Format: PDF, 29 pages · Works with: Codex, Claude Code + a Gmail connector
 - **Tags / category:** finance, budgeting, subscriptions, AI prompts, Claude Code, Codex, Gmail
 - **Refund policy setting:** pick the option that matches what you want to honour on Gumroad. The site's Refund Policy
   (7 days, only for failed/corrupted delivery, duplicate payment or product not as described) is for direct sales;

@@ -18,15 +18,24 @@ module.exports = async (req, res) => {
   ATTR_KEYS.forEach((k) => { if (typeof attr[k] === 'string' && attr[k]) notes[k] = attr[k].slice(0, 100); });
 
   const { amount, currency } = L.price();
+  // Razorpay minimum is 100 paise (1 INR) / 100 cents-equivalents; a bad PRICE_AMOUNT is a server config error.
+  if (!Number.isInteger(amount) || amount < 100) {
+    console.error('create-order: PRICE_AMOUNT must be an integer >= 100 (smallest currency unit)');
+    return L.send(res, 500, { error: 'invalid_price_config' });
+  }
   const r = await L.rzp('POST', '/v1/orders', {
     amount,
     currency,
     receipt: 'pp_' + Date.now().toString(36) + crypto.randomBytes(3).toString('hex'),
     notes,
   });
+  if (r.status === 401) {
+    console.error('create-order: Razorpay rejected the API keys (check RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET)');
+    return L.send(res, 401, { error: 'razorpay_auth_failed' });
+  }
   if (!r.ok || !r.data.id) {
     console.error('create-order failed', r.status, r.data && r.data.error && r.data.error.description);
-    return L.send(res, 502, { error: 'order_failed' });
+    return L.send(res, 500, { error: 'order_failed' });
   }
   // key_id is the PUBLIC Razorpay key; the secret never leaves the server.
   return L.send(res, 200, {

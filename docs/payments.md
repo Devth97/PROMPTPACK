@@ -41,6 +41,12 @@ USD charges need Razorpay international payments enabled.
 - Webhook URL: `https://promptpack.tech/api/razorpay-webhook`, event **`order.paid`**, secret = `RAZORPAY_WEBHOOK_SECRET`.
 - Keys: Account & Settings → Website and app settings → API keys. Test-mode keys first.
 
+## Verify your keys against real Razorpay (test mode creates test orders, no money moves)
+    node scripts/check-razorpay.js               # INR 100 paise
+    node scripts/check-razorpay.js USD 1900      # your real site price
+Reads RAZORPAY_KEY_ID / RAZORPAY_KEY_SECRET from the environment or the git-ignored .env.local; never prints the secret.
+Error handling in create-order: bad PRICE_AMOUNT (<100 or non-integer) → 500, Razorpay auth failure → 401, other Razorpay errors → 500, keys not configured → 503.
+
 ## Tests
     node --test tests/payments.test.js     # API against a mock Razorpay
     node tests/dev-server.js               # site + mock on http://localhost:4180 (uses .env.local for the file key)
