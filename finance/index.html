@@ -110,6 +110,16 @@
     .btn.is-busy{opacity:.7;cursor:progress}
     .pay-msg{position:fixed;left:50%;bottom:22px;transform:translate(-50%,30px);opacity:0;pointer-events:none;z-index:60;max-width:min(92vw,520px);background:var(--yellow);border:var(--bw) solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:12px 16px;font-weight:700;font-size:14px;transition:opacity .2s,transform .2s}
     .pay-msg.show{opacity:1;transform:translate(-50%,0)}
+    .pay-choice{width:min(92vw,560px);padding:28px;background:var(--paper);color:var(--ink);border:var(--bw) solid var(--ink);box-shadow:10px 10px 0 var(--ink)}
+    .pay-choice::backdrop{background:rgba(11,11,15,.72)}
+    .pay-choice h2{font-size:30px;line-height:1;text-transform:uppercase;margin:0 42px 10px 0}
+    .pay-choice>p{font-weight:600;color:var(--mute);margin-bottom:18px}
+    .pay-options{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .pay-option{font:inherit;text-align:left;background:var(--mint);color:var(--ink);border:var(--bw) solid var(--ink);padding:18px;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+    .pay-option.usd{background:var(--pink)}
+    .pay-option strong,.pay-option span{display:block}.pay-option strong{font-size:28px}.pay-option span{font-weight:800;margin-top:4px}
+    .pay-choice-close{position:absolute;right:16px;top:14px;border:0;background:none;font-size:28px;font-weight:900;cursor:pointer}
+    .pay-note{margin:16px 0 0!important;font-size:13px}
     .micro{margin-top:18px;display:flex;gap:6px 18px;flex-wrap:wrap;font-size:14px;font-weight:600}
     .micro span::before{content:"✓ ";font-weight:900;background:var(--mint);border:2px solid var(--ink);padding:0 4px;margin-right:2px}
 
@@ -227,6 +237,7 @@
       .offer{margin-top:16px}
       .buyrow .btn{flex:1 1 100%;font-size:14.5px;letter-spacing:.02em;padding:17px 12px;white-space:nowrap}
       #stickyBar .btn{font-size:14.5px;letter-spacing:.02em;white-space:nowrap}
+      .pay-choice{padding:22px}.pay-options{grid-template-columns:1fr}.pay-option{padding:14px}.pay-option strong{font-size:24px}
       .steps-line{margin-top:14px}
       .card .in{padding:14px 18px 8px}
       .card ul{border-top:0;padding-top:0;margin-bottom:6px}
@@ -237,7 +248,7 @@
 <body>
   <header class="top"><div class="wrap">
     <a class="brand" href="/">PromptPack</a>
-    <div class="top-r"><span>AI Money Audit · <b data-finance-price>$19</b> once</span><a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit →</a></div>
+    <div class="top-r"><span>AI Money Audit · <b>US$19 / ₹1,599</b></span><a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit →</a></div>
   </div></header>
 
   <!-- HERO: headline, price, CTA and full contents all above the fold -->
@@ -247,9 +258,9 @@
         <div class="sticker up">AI Money Audit Prompt Pack</div>
         <h1 class="up d1">Find what&rsquo;s draining your money <mark>every month.</mark></h1>
         <p class="sub up d2">Connect Gmail (read-only) to Codex or Claude Code. Your AI agent <strong>audits your billing emails</strong> and turns recurring charges into a Keep / Review / Compare / Negotiate action plan.</p>
-        <div class="offer up d3"><span><span data-finance-price>$19</span> once</span><span>No subscription</span><span>Reuse anytime</span></div>
+        <div class="offer up d3"><span>US$19 / ₹1,599 once</span><span>No subscription</span><span>Reuse anytime</span></div>
         <div class="buyrow up d3">
-          <a class="btn" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a>
+          <a class="btn" data-finance-cta href="#checkout-unavailable">Choose payment option →</a>
         </div>
         <p class="steps-line up d3">Connect. Search. Review. Decide.</p>
         <p class="reqs up d3">Works with Codex or Claude Code + a Gmail connector. Read-only by default.</p>
@@ -258,7 +269,7 @@
       <div class="card up d2">
         <div class="k">Your money-audit toolkit</div>
         <div class="in">
-        <div class="cp"><span data-finance-price>$19</span> <small>once</small></div>
+        <div class="cp">US$19 <small>or ₹1,599 · once</small></div>
         <div class="find"><b>Find what to:</b><span class="pill c-keep">Keep</span><span class="pill c-review">Review</span><span class="pill c-compare">Compare</span><span class="pill c-neg">Negotiate</span></div>
         <h3>What&rsquo;s inside &mdash; 29-page PDF</h3>
         <ul>
@@ -268,7 +279,7 @@
           <li>Competitor comparison &amp; negotiation messages</li><li>10-minute quick run &amp; re-audit prompt</li>
           <li>Security guardrails (email is untrusted)</li>
         </ul>
-        <a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit — $19 →</a>
+        <a class="btn" data-finance-cta href="#checkout-unavailable">Choose payment option →</a>
         <p class="fine">One-time payment · Secure checkout · No subscription</p>
         </div>
       </div>
@@ -355,8 +366,8 @@
 
     <section class="final">
       <h2>Audit it once. <mark>Reuse it always.</mark></h2>
-      <p>AI Money Audit Prompt Pack — <span data-finance-price>$19</span> once</p>
-      <a class="btn dark" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a>
+      <p>AI Money Audit Prompt Pack — US$19 / ₹1,599 once</p>
+      <a class="btn dark" data-finance-cta href="#checkout-unavailable">Choose payment option →</a>
       <div class="micro"><span>Instant digital delivery</span><span>No subscription</span><span>Use anytime</span></div>
     </section>
   </div>
@@ -366,7 +377,18 @@
     <div><a href="/">PromptPack</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refund">Refunds</a></div>
   </div></footer>
 
-  <div id="stickyBar"><a class="btn" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a></div>
+  <dialog id="paymentChoice" class="pay-choice" aria-labelledby="paymentChoiceTitle">
+    <button class="pay-choice-close" type="button" data-finance-close aria-label="Close payment options">×</button>
+    <h2 id="paymentChoiceTitle">Choose how to pay</h2>
+    <p>Select the currency and payment method that works best for you.</p>
+    <div class="pay-options">
+      <button class="pay-option" type="button" data-finance-plan="inr"><strong>₹1,599</strong><span>UPI or Indian card</span></button>
+      <button class="pay-option usd" type="button" data-finance-plan="usd"><strong>US$19</strong><span>International card</span></button>
+    </div>
+    <p class="pay-note">One-time payment. Razorpay securely processes both options.</p>
+  </dialog>
+
+  <div id="stickyBar"><a class="btn" data-finance-cta href="#checkout-unavailable">Choose payment option →</a></div>
 
   <script src="/assets/finance.js"></script>
 </body>

@@ -38,7 +38,7 @@ If you change the PDF, re-run the script with the **same** key (it reuses `.env.
 If either price changes, update its matching display value in `finance/index.html`, `assets/finance.js`, and `assets/finance-config.js` as applicable.
 USD charges need Razorpay international payments enabled.
 
-Use `/finance` for the US$19 checkout and `/finance?pay=inr` for the ₹1,599 INR checkout (UPI appears when it is enabled on the Razorpay account).
+The `/finance` page lets the buyer choose ₹1,599 (UPI or Indian card) or US$19 (international card) before Razorpay opens. UPI appears when it is enabled on the Razorpay account.
 
 ## Razorpay dashboard
 - Webhook URL: `https://promptpack.tech/api/razorpay-webhook`, event **`order.paid`**, secret = `RAZORPAY_WEBHOOK_SECRET`.
