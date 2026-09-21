@@ -13,11 +13,12 @@ module.exports = async (req, res) => {
   }
 
   const body = await L.readJson(req);
-  const notes = { product: L.PRODUCT_ID };
+  const plan = body && body.plan === 'inr' ? 'inr' : 'usd';
+  const notes = { product: L.PRODUCT_ID, price_plan: plan };
   const attr = (body && body.attribution) || {};
   ATTR_KEYS.forEach((k) => { if (typeof attr[k] === 'string' && attr[k]) notes[k] = attr[k].slice(0, 100); });
 
-  const { amount, currency } = L.price();
+  const { amount, currency } = L.price(plan);
   // Razorpay minimum is 100 paise (1 INR) / 100 cents-equivalents; a bad PRICE_AMOUNT is a server config error.
   if (!Number.isInteger(amount) || amount < 100) {
     console.error('create-order: PRICE_AMOUNT must be an integer >= 100 (smallest currency unit)');

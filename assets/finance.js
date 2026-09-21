@@ -133,11 +133,10 @@
     rz.open();
   }
 
-  function startCheckout(e) {
-    e.preventDefault();
+  function beginCheckout(paymentPlan) {
     if (busy) return;
     setBusy(true);
-    postJson('/api/create-order', { attribution: attribution })
+    postJson('/api/create-order', { plan: paymentPlan, attribution: attribution })
       .then(function (r) {
         if (r.status === 503) throw new Error('not_ready');
         if (!r.ok || !r.body.order_id) throw new Error('order');
@@ -151,9 +150,32 @@
           : 'Could not start checkout. Please check your connection and try again.');
       });
   }
+
+  var paymentChoice = document.getElementById('paymentChoice');
+  function closePaymentChoice() {
+    if (!paymentChoice) return;
+    if (typeof paymentChoice.close === 'function') paymentChoice.close();
+    else paymentChoice.removeAttribute('open');
+  }
+  function startCheckout(e) {
+    e.preventDefault();
+    if (busy) return;
+    if (!paymentChoice || paymentChoice.open) return;
+    if (typeof paymentChoice.showModal === 'function') paymentChoice.showModal();
+    else paymentChoice.setAttribute('open', '');
+  }
   Array.prototype.forEach.call(document.querySelectorAll('[data-finance-cta]'), function (b) {
     b.setAttribute('href', '#checkout');
     b.addEventListener('click', startCheckout);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-finance-plan]'), function (b) {
+    b.addEventListener('click', function () {
+      closePaymentChoice();
+      beginCheckout(b.getAttribute('data-finance-plan'));
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-finance-close]'), function (b) {
+    b.addEventListener('click', closePaymentChoice);
   });
 
   /* ---------- Mobile sticky CTA: show once the hero has scrolled away ---------- */
