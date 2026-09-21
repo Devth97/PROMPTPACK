@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="facebook-domain-verification" content="sm7ad7acdfp04mr1fa1ys46cf0v8f6" />
+  <script src="/assets/finance-config.js"></script>
+  <!-- Meta Pixel (existing PromptPack pixel 2116311975585050). Loaded once; production hostnames only. -->
+  <script>
+  (function (w, d) {
+    var c = w.PP_FINANCE_CONFIG || {};
+    var prod = (c.PRODUCTION_HOSTS || []).indexOf(location.hostname) !== -1;
+    if (!prod) { // dev/preview: never touch production analytics; stub so calls are safe no-ops
+      w.fbq = w.fbq || function () {};
+      return;
+    }
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(w, d,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', c.PIXEL_ID);
+    fbq('track', 'PageView');
+  })(window, document);
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=2116311975585050&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel -->
+  <!-- Microsoft Clarity (same project as homepage) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xidr4f4am8");
+  </script>
+  <!-- End Microsoft Clarity -->
+  <title>AI Money Audit Prompt Pack | PromptPack</title>
+  <meta name="description" content="A reusable AI prompt system for reviewing recurring expenses, subscriptions, bills, alternatives and negotiation opportunities.">
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#FFFBF2">
+  <link rel="canonical" href="https://promptpack.tech/finance">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://promptpack.tech/finance">
+  <meta property="og:title" content="AI Money Audit Prompt Pack | PromptPack">
+  <meta property="og:description" content="A reusable AI prompt system for reviewing recurring expenses, subscriptions, bills, alternatives and negotiation opportunities.">
+  <!-- TODO(asset): add og:image + twitter:image once /assets/finance-og.png (1200x630) exists. Not referenced yet to avoid a broken URL. -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Money Audit Prompt Pack | PromptPack">
+  <meta name="twitter:description" content="A reusable AI prompt system for reviewing recurring expenses, subscriptions, bills, alternatives and negotiation opportunities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#FFFBF2;--paper:#fff;--ink:#0B0B0F;--mute:#4b4b55;--pink:#F598F2;--pink-s:#FFD9FB;--yellow:#FFE14D;--mint:#A8F0C6;--blue:#9DCBFF;--coral:#FF9F8E;--bw:3px;--sh:6px 6px 0 var(--ink)}
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--ink);font-family:'Figtree','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden;background-image:radial-gradient(rgba(11,11,15,.09) 1.2px,transparent 1.2px);background-size:22px 22px}
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+    @keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+    .up{animation:up .7s cubic-bezier(.16,1,.3,1) both}.d1{animation-delay:.08s}.d2{animation-delay:.18s}.d3{animation-delay:.3s}
+    @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+    /* top bar */
+    .top{position:sticky;top:0;z-index:30;background:var(--paper);border-bottom:var(--bw) solid var(--ink)}
+    .top .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:11px;padding-bottom:11px}
+    .brand{font-weight:900;letter-spacing:.06em;text-decoration:none;font-size:16px;text-transform:uppercase;background:var(--yellow);border:var(--bw) solid var(--ink);padding:3px 10px;box-shadow:3px 3px 0 var(--ink)}
+    .top-r{display:flex;align-items:center;gap:16px;font-size:13px;letter-spacing:.08em;text-transform:uppercase;font-weight:700}
+    .top-r b{background:var(--pink);padding:1px 7px;border:2px solid var(--ink)}
+    .top .btn{padding:10px 20px;font-size:13px;box-shadow:3px 3px 0 var(--ink)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--pink);color:var(--ink)!important;font-weight:900;font-size:17px;letter-spacing:.04em;text-transform:uppercase;padding:18px 32px;border:var(--bw) solid var(--ink);border-radius:0;text-decoration:none;cursor:pointer;box-shadow:var(--sh);transition:transform .12s,box-shadow .12s}
+    .btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+    .btn:active{transform:translate(4px,4px);box-shadow:2px 2px 0 var(--ink)}
+    .btn.dark{background:var(--ink);color:#fff!important;box-shadow:6px 6px 0 var(--pink)}
+    .btn.dark:hover{box-shadow:9px 9px 0 var(--pink)}
+    .btn.is-pending{opacity:.8;cursor:not-allowed}
+    .btn.is-pending:hover{transform:none;box-shadow:var(--sh)}
+
+    /* hero */
+    .hero{position:relative;padding:44px 0 50px;overflow:hidden}
+    .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:46px;align-items:center}
+    .sticker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;background:var(--mint);border:var(--bw) solid var(--ink);padding:5px 12px;box-shadow:3px 3px 0 var(--ink);margin-bottom:22px;transform:rotate(-1.5deg)}
+    h1{font-size:clamp(40px,5.9vw,84px);line-height:.95;font-weight:900;text-transform:uppercase;letter-spacing:-.025em}
+    h1 mark,h2 mark{background:var(--pink);color:var(--ink);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+    .sub{margin-top:22px;max-width:560px;font-size:19px;line-height:1.5;color:#22222a;font-weight:500}
+    .sub strong{font-weight:800;background:linear-gradient(transparent 58%,var(--yellow) 58%)}
+    .buyrow{margin-top:24px;display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+    .price{line-height:1;background:var(--yellow);border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:10px 16px 9px;transform:rotate(-2deg)}
+    .price b{font-size:44px;font-weight:900;letter-spacing:-.02em}
+    .price small{display:block;font-size:10.5px;font-weight:800;letter-spacing:.14em;margin-top:4px;text-transform:uppercase}
+    .offer{display:flex;flex-wrap:wrap;gap:8px 10px;margin-top:22px}
+    .offer span{font-size:13px;font-weight:900;letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);border:2px solid var(--ink);padding:5px 11px;box-shadow:3px 3px 0 var(--ink)}
+    .offer span:first-child{background:var(--pink)}
+    .steps-line{margin-top:18px;font-size:16px;font-weight:800;letter-spacing:.02em}
+    .find{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:2px 0 14px}
+    .find b{font-size:13px;font-weight:900;letter-spacing:.06em;text-transform:uppercase;margin-right:2px}
+    .find .pill.c-keep{background:var(--mint)}.find .pill.c-review{background:var(--yellow)}.find .pill.c-compare{background:var(--blue)}.find .pill.c-neg{background:var(--pink)}
+    .micro{margin-top:18px;display:flex;gap:6px 18px;flex-wrap:wrap;font-size:14px;font-weight:600}
+    .micro span::before{content:"✓ ";font-weight:900;background:var(--mint);border:2px solid var(--ink);padding:0 4px;margin-right:2px}
+
+    /* product card */
+    .card{background:var(--paper);border:var(--bw) solid var(--ink);box-shadow:10px 10px 0 var(--ink);padding:0}
+    .card .k{background:var(--pink);border-bottom:var(--bw) solid var(--ink);padding:10px 20px;font-size:12px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .card .in{padding:18px 22px 20px}
+    .card h3{font-size:20px;font-weight:900;letter-spacing:-.01em;text-transform:uppercase}
+    .card .cp{font-size:36px;font-weight:900;margin:0 0 10px;letter-spacing:-.02em}
+    .card .cp small{font-size:14px;font-weight:600;color:var(--mute)}
+    .card ul{list-style:none;border-top:2px dashed var(--ink);padding-top:12px;margin-bottom:16px}
+    .card li{font-size:14.5px;font-weight:600;padding:4px 0 4px 28px;position:relative}
+    .card li::before{content:"✓";position:absolute;left:0;top:5px;width:19px;height:19px;background:var(--mint);border:2px solid var(--ink);font-size:12px;font-weight:900;line-height:15px;text-align:center}
+    .card .btn{width:100%;padding:16px 18px;font-size:16px}
+    .card .fine{font-size:12px;font-weight:600;color:var(--mute);text-align:center;margin-top:12px}
+
+    /* marquee */
+    .marquee{background:var(--ink);border-top:var(--bw) solid var(--ink);border-bottom:var(--bw) solid var(--ink);overflow:hidden;white-space:nowrap;padding:13px 0}
+    .marquee-in{display:inline-block;animation:marquee 30s linear infinite}
+    .marquee span{font-size:15px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;margin:0 26px}
+    .marquee span em{color:var(--pink);font-style:normal;margin-right:6px}
+
+    /* sections */
+    section.s{padding:64px 0 0}
+    .label{display:inline-block;font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;background:var(--paper);border:var(--bw) solid var(--ink);padding:4px 12px;box-shadow:3px 3px 0 var(--ink);margin-bottom:18px}
+    .label i{font-style:normal;background:var(--pink);border:2px solid var(--ink);padding:0 6px;margin-right:9px}
+    h2{font-size:clamp(28px,4vw,48px);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;line-height:1.02;margin-bottom:26px}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:stretch}
+    .panel{background:var(--paper);border:var(--bw) solid var(--ink);box-shadow:var(--sh);padding:20px 22px}
+    .panel.y{background:#FFF6BF}.panel.b{background:#E6F2FF}
+    .tag{display:inline-block;font-size:11px;font-weight:900;letter-spacing:.14em;background:var(--ink);color:#fff;padding:4px 10px;margin-bottom:10px;text-transform:uppercase}
+    .row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:11px 0;border-bottom:2px dashed rgba(11,11,15,.35);font-size:16px;font-weight:700}
+    .row:last-of-type{border-bottom:0}
+    .row span:last-child{font-size:14px;font-weight:600;text-align:right;color:#33333c}
+    .total{display:flex;justify-content:space-between;align-items:center;background:var(--pink);border:var(--bw) solid var(--ink);margin-top:10px;padding:10px 14px;font-weight:900;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+    .total em{font-style:normal;font-size:36px;letter-spacing:-.02em}
+    .note{font-size:12px;font-weight:600;color:var(--mute);margin-top:10px}
+    .pill{font-size:10.5px;font-weight:900;letter-spacing:.1em;padding:5px 10px;white-space:nowrap;text-transform:uppercase;border:2px solid var(--ink)}
+    .row span.pill.p-keep{background:var(--mint);color:var(--ink)}.row span.pill.p-review{background:var(--yellow);color:var(--ink)}
+    .row span.pill.p-compare{background:var(--blue);color:var(--ink)}.row span.pill.p-cancel{background:var(--coral);color:var(--ink)}
+    .row span.pill.p-neg{background:var(--pink);color:var(--ink);font-size:10.5px;font-weight:900}
+
+    .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none;counter-reset:st}
+    .steps li{counter-increment:st;border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink);padding:16px 14px;font-size:14.5px;font-weight:600;line-height:1.4;background:var(--paper)}
+    .steps li:nth-child(1){background:var(--pink-s)}.steps li:nth-child(2){background:#FFF1A8}.steps li:nth-child(3){background:#CFF7E0}.steps li:nth-child(4){background:#D5E9FF}.steps li:nth-child(5){background:#FFD3CB}
+    .steps li::before{content:counter(st);display:flex;align-items:center;justify-content:center;width:30px;height:30px;background:var(--ink);color:#fff;font-weight:900;font-size:15px;margin-bottom:10px}
+    .safety{margin-top:22px;font-size:14px;font-weight:600;background:var(--paper);border:var(--bw) solid var(--ink);border-left:12px solid var(--pink);padding:12px 16px;max-width:860px}
+
+    .why{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;list-style:none}
+    .why li{border:var(--bw) solid var(--ink);background:var(--paper);box-shadow:4px 4px 0 var(--ink);padding:14px;font-size:13.5px;font-weight:500;line-height:1.45}
+    .why li b{display:block;font-size:15px;font-weight:900;margin-bottom:4px;text-transform:uppercase}
+    .why li:nth-child(odd){background:var(--pink-s)}
+
+    .faq{display:grid;grid-template-columns:1fr 1fr;gap:16px 26px;align-items:start}
+    details{background:var(--paper);border:var(--bw) solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+    summary{cursor:pointer;list-style:none;padding:14px 46px 14px 16px;font-weight:800;font-size:16px;position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";position:absolute;right:12px;top:50%;transform:translateY(-50%);width:24px;height:24px;background:var(--yellow);border:2px solid var(--ink);font-size:18px;font-weight:900;line-height:19px;text-align:center}
+    details[open]{background:var(--pink-s)}
+    details[open] summary::after{content:"–"}
+    details p{padding:0 16px 16px;font-size:14.5px;font-weight:500;color:#22222a}
+
+    .final{margin:72px 0 0;padding:52px 28px 56px;text-align:center;background:var(--pink);border:var(--bw) solid var(--ink);box-shadow:12px 12px 0 var(--ink)}
+    .final h2{font-size:clamp(30px,5vw,58px);margin-bottom:10px}
+    .final h2 mark{background:var(--yellow)}
+    .final p{font-weight:700;margin-bottom:26px}
+    .final .micro{justify-content:center}
+    footer{margin-top:56px;border-top:var(--bw) solid var(--ink);background:var(--paper);padding:22px 0 90px;font-size:12.5px;font-weight:600;color:var(--mute)}
+    footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+    footer p{max-width:620px}
+    footer a{text-decoration:none;font-weight:800;color:var(--ink)}
+
+    #stickyBar{display:none}
+    @media (max-width:960px){
+      .hero .wrap{grid-template-columns:1fr;gap:34px}
+      .two{grid-template-columns:1fr}
+      .steps{grid-template-columns:1fr 1fr}
+      .why{grid-template-columns:1fr 1fr}
+      .faq{grid-template-columns:1fr}
+      .top-r .btn,.top-r span{display:none}
+      #stickyBar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--paper);border-top:var(--bw) solid var(--ink);padding:10px 14px calc(10px + env(safe-area-inset-bottom));transform:translateY(110%);transition:transform .25s}
+      #stickyBar.show{transform:none}
+      #stickyBar .btn{width:100%;padding:14px 16px;font-size:15px}
+    }
+    @media (max-width:640px){
+      :root{--sh:4px 4px 0 var(--ink)}
+      .wrap{padding:0 18px}
+      .hero{padding:26px 0 36px}
+      section.s{padding:36px 0 0}
+      .label{margin-bottom:12px}
+      .sub{font-size:17px;margin-top:16px}
+      .buyrow{margin-top:22px;gap:18px}
+      .buyrow .btn{flex:1 1 220px}
+      .price b{font-size:38px}
+      .card{box-shadow:6px 6px 0 var(--ink)}
+      .steps{grid-template-columns:1fr;gap:9px}
+      .steps li{display:flex;gap:12px;align-items:center;padding:9px 12px;font-size:13.5px;box-shadow:3px 3px 0 var(--ink)}
+      .steps li::before{margin:0;flex:none;width:26px;height:26px;font-size:13px}
+      .safety{margin-top:16px;font-size:13px;padding:10px 12px}
+      details p{font-size:14px}
+      summary{padding:12px 44px 12px 14px;font-size:15px}
+      .faq{gap:12px}
+      footer{margin-top:40px}
+      .why{gap:12px}
+      .why li{font-size:13px;padding:12px}
+      .final{padding:36px 18px 40px;margin-top:52px;box-shadow:7px 7px 0 var(--ink)}
+      .row{font-size:15px;padding:9px 0}
+      .panel{padding:16px}
+      h2{margin-bottom:18px}
+      /* card CTA/price duplicate the hero buy row on mobile — drop them to shorten the page */
+      .card .btn,.card .fine,.card .cp,.card h3{display:none}
+      .offer{margin-top:16px}
+      .buyrow .btn{flex:1 1 100%;font-size:14.5px;letter-spacing:.02em;padding:17px 12px;white-space:nowrap}
+      #stickyBar .btn{font-size:14.5px;letter-spacing:.02em;white-space:nowrap}
+      .steps-line{margin-top:14px}
+      .card .in{padding:14px 18px 8px}
+      .card ul{border-top:0;padding-top:0;margin-bottom:6px}
+      .card .k::after{content:" — what's inside"}
+    }
+  </style>
+</head>
+<body>
+  <header class="top"><div class="wrap">
+    <a class="brand" href="/">PromptPack</a>
+    <div class="top-r"><span>AI Money Audit · <b>$19</b> once</span><a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit →</a></div>
+  </div></header>
+
+  <!-- HERO: headline, price, CTA and full contents all above the fold -->
+  <section class="hero" id="hero">
+    <div class="wrap">
+      <div>
+        <div class="sticker up">AI Money Audit Prompt Pack</div>
+        <h1 class="up d1">Find what&rsquo;s draining your money <mark>every month.</mark></h1>
+        <p class="sub up d2">One AI workflow to <strong>uncover recurring expenses</strong>, review subscriptions, compare alternatives and prepare negotiation messages.</p>
+        <div class="offer up d3"><span>$19 once</span><span>No subscription</span><span>Reuse anytime</span></div>
+        <div class="buyrow up d3">
+          <a class="btn" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a>
+        </div>
+        <p class="steps-line up d3">Copy. Paste. Review. Decide.</p>
+      </div>
+
+      <div class="card up d2">
+        <div class="k">Your money-audit toolkit</div>
+        <div class="in">
+        <div class="cp">$19 <small>once</small></div>
+        <div class="find"><b>Find what to:</b><span class="pill c-keep">Keep</span><span class="pill c-review">Review</span><span class="pill c-compare">Compare</span><span class="pill c-neg">Negotiate</span></div>
+        <h3>What&rsquo;s inside</h3>
+        <ul>
+          <li>Master Money Audit Prompt</li><li>Recurring Subscription Finder</li><li>Bill &amp; Fee Review Prompt</li>
+          <li>Competitor Comparison Prompt</li><li>Negotiation Message Generator</li><li>Cancellation Review Workflow</li>
+          <li>Renewal &amp; Due-Date Tracker</li><li>Annual Re-Audit Prompt</li><li>Quick Start Guide</li>
+        </ul>
+        <a class="btn" data-finance-cta href="#checkout-unavailable">Start my audit — $19 →</a>
+        <p class="fine">One-time payment · Secure checkout · No subscription</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true"><div class="marquee-in">
+    <span><em>01</em> Find recurring expenses</span><span><em>02</em> Review subscriptions</span><span><em>03</em> Compare alternatives</span><span><em>04</em> Prepare negotiation messages</span>
+    <span><em>01</em> Find recurring expenses</span><span><em>02</em> Review subscriptions</span><span><em>03</em> Compare alternatives</span><span><em>04</em> Prepare negotiation messages</span>
+  </div></div>
+
+  <div class="wrap">
+    <!-- 01: the leak + example output side by side -->
+    <section class="s">
+      <div class="label"><i>01</i>The money leak</div>
+      <h2>Small charges. <mark>Big annual total.</mark></h2>
+      <div class="two">
+        <div class="panel y">
+          <div class="tag">Illustrative example</div>
+          <div class="row"><span>Streaming</span><span>$19/mo · $228/yr</span></div>
+          <div class="row"><span>Software</span><span>$29/mo · $348/yr</span></div>
+          <div class="row"><span>Gym</span><span>$49/mo · $588/yr</span></div>
+          <div class="row"><span>Phone</span><span>$89/mo · $1,068/yr</span></div>
+          <div class="row"><span>Internet</span><span>$95/mo · $1,140/yr</span></div>
+          <div class="total"><span>Annual total</span><em>$3,372</em></div>
+          <p class="note">Illustrative only — not your actual costs.</p>
+        </div>
+        <div class="panel b">
+          <div class="tag">Example output</div>
+          <div class="row"><span>Cloud Storage — $9.99</span><span class="pill p-keep">Keep</span></div>
+          <div class="row"><span>Streaming — $19.99</span><span class="pill p-review">Review</span></div>
+          <div class="row"><span>Internet — $89</span><span class="pill p-compare">Compare</span></div>
+          <div class="row"><span>Unused Software — $29</span><span class="pill p-cancel">Consider cancelling</span></div>
+          <div class="row"><span>Internet Provider</span><span class="pill p-neg">Negotiation ready</span></div>
+          <p class="note">Example output with made-up figures. Your results depend on what you provide.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02: how it works -->
+    <section class="s">
+      <div class="label"><i>02</i>How it works</div>
+      <h2>Five steps. <mark>You stay in charge.</mark></h2>
+      <ol class="steps">
+        <li>Provide the financial information you choose.</li>
+        <li>Paste the relevant prompt.</li>
+        <li>AI organizes recurring expenses.</li>
+        <li>Review what to keep, compare or investigate.</li>
+        <li>Use prepared negotiation/cancellation guidance if useful.</li>
+      </ol>
+      <p class="safety"><b>Safety note.</b> The prompts assist with organization, research and drafting. They do not move money, cancel services or make purchases automatically.</p>
+    </section>
+
+    <!-- 03: why a prompt pack -->
+    <section class="s">
+      <div class="label"><i>03</i>Why a prompt pack</div>
+      <h2>Your data. Your AI. <mark>Your control.</mark></h2>
+      <ul class="why">
+        <li><b>No budgeting app</b>No new budgeting subscription needed.</li>
+        <li><b>No PromptPack sub</b>One $19 payment. That's it.</li>
+        <li><b>Reusable</b>Run the prompts as often as you like.</li>
+        <li><b>Re-audit anytime</b>After renewals, price rises or life changes.</li>
+        <li><b>You choose</b>You decide what financial info to share.</li>
+      </ul>
+    </section>
+
+    <!-- 04: FAQ -->
+    <section class="s">
+      <div class="label"><i>04</i>FAQ</div>
+      <h2><mark>Questions.</mark></h2>
+      <div class="faq">
+        <details><summary>What do I receive?</summary><p>The AI Money Audit Prompt Pack: nine prompts and workflows — master audit, subscription finder, bill and fee review, competitor comparison, negotiation messages, cancellation review, renewal and due-date tracker, annual re-audit, and a quick start guide.</p></details>
+        <details><summary>Does PromptPack access my bank account?</summary><p>No. PromptPack never connects to your bank or accounts. You decide what information, if any, to give your own AI tool.</p></details>
+        <details><summary>Does it automatically cancel subscriptions?</summary><p>No. The prompts help you organize, research and draft. They don't cancel services, move money or make purchases — you take any action yourself.</p></details>
+        <details><summary>Does it guarantee savings?</summary><p>No. Results depend on your situation and the information you provide. The pack helps you look more closely; it promises no amount saved.</p></details>
+        <details><summary>Which AI tools can I use?</summary><p>Any general-purpose AI assistant that accepts pasted text, such as ChatGPT, Claude or Gemini, using your own account.</p></details>
+        <details><summary>Is this financial advice?</summary><p>No. These are prompts for organization, research and drafting — not financial, legal or tax advice. AI output can be wrong, so check anything important yourself.</p></details>
+        <details><summary>How is it delivered?</summary><p>Instantly as a digital delivery after checkout. Nothing is shipped.</p></details>
+      </div>
+    </section>
+
+    <section class="final">
+      <h2>Audit it once. <mark>Reuse it always.</mark></h2>
+      <p>AI Money Audit Prompt Pack — $19 once</p>
+      <a class="btn dark" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a>
+      <div class="micro"><span>Instant digital delivery</span><span>No subscription</span><span>Use anytime</span></div>
+    </section>
+  </div>
+
+  <footer><div class="wrap">
+    <p>PromptPack provides prompts for organization, research and drafting. Not financial, legal or tax advice. No savings are guaranteed.</p>
+    <div><a href="/">PromptPack</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refund">Refunds</a></div>
+  </div></footer>
+
+  <div id="stickyBar"><a class="btn" data-finance-cta href="#checkout-unavailable">Start my money audit — $19 →</a></div>
+
+  <script src="/assets/finance.js"></script>
+</body>
+</html>
