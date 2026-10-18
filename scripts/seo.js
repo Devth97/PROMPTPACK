@@ -2,7 +2,7 @@
 // Shared structured data and machine-readable summaries (JSON-LD entity graph, FAQ schema, llms.txt).
 const origin = 'https://promptpack.tech';
 // Date of the current catalog content; drives sitemap lastmod, dateModified and visible "Updated" labels.
-const updated = '2026-10-17';
+const updated = '2026-10-18';
 const updatedLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
 const orgId = origin + '/#organization';
 const siteId = origin + '/#website';
@@ -21,13 +21,38 @@ const ref = {publisher: {'@id': orgId}, isPartOf: {'@id': siteId}, inLanguage: '
 const faqPage = (pairs, url) => ({'@type': 'FAQPage', '@id': origin + url + '#faq', mainEntity: pairs.map(([q, a]) => ({'@type': 'Question', name: q, acceptedAnswer: {'@type': 'Answer', text: a}}))});
 const breadcrumbs = items => ({'@type': 'BreadcrumbList', itemListElement: items.map(([name, url], i) => ({'@type': 'ListItem', position: i + 1, name, item: origin + url}))});
 
+const productSearchTerms = {
+  'carousel-studio': ['AI Carousel Prompts & Visual Guide', 'social media carousel design', 'slide storyboard', 'caption and alt text'],
+  'carousel-workflows': ['Content Queue & Approval Templates', 'carousel content workflow', 'publishing queue', 'offline queue validator'],
+  '3d-website-lab': ['3D Landing Page Design Prompts', '3D website brief', 'responsive landing page', 'reduced motion fallback'],
+  'ai-video-direction': ['AI Video Prompts & Shot Planning', 'visual treatment', 'shot continuity', 'AI video pre-production'],
+  'ugc-ad-scripts': ['UGC Ad Scripts & Storyboard Prompts', 'product demo script', 'short video ad planning', 'UGC storyboard'],
+  'short-explainer-studio': ['Explainer Video Script & Storyboard', 'short explainer planning', 'sourced script', 'visual scene prompts'],
+  'motion-with-code': ['Motion Design Prompts & Code Starter', 'editable animation brief', 'HyperFrames title sequence', 'motion graphics starter'],
+  'lyric-visuals': ['Lyric Video Planning & Cue Templates', 'lyric cue sheet', 'music video storyboard', 'lyric visual prompts'],
+  'pixel-brand-kit': ['Pixel Art Branding Prompts & Icons', 'pixel brand assets', 'pixel icon grids', 'limited color palette'],
+  'youtube-production': ['YouTube Video Planning Templates', 'episode outline', 'title and thumbnail brief', 'recording and editor handoff'],
+  'video-prompt-vault': ['AI Video Shot Prompts & B-Roll Briefs', 'video prompt library', 'shot selection', 'B-roll planning']
+};
+
+function productMetadata(p, edition) {
+  const terms = productSearchTerms[p.slug];
+  return {
+    title: `${p.name}: ${terms[0]} | PromptPack`,
+    description: `${terms[0]}. Get a ${edition.pdf_pages}-page PDF guide, ${edition.prompt_count} editable prompts and practical files for your own tools. Try a free sample before buying.`,
+    keywords: [p.name, ...terms, 'editable AI prompts', 'digital download'].join(', ')
+  };
+}
+
+const purchasePrice = p => `₹${p.price_inr.toLocaleString('en-IN')} (UPI, Indian cards, netbanking or wallets) or US$${p.price} (international cards)`;
+
 // Visible FAQ for a preview product page, written from catalog data so schema and page text always match.
 function productFaq(p, edition, refs, liveProducts) {
   return [
     [`What is ${p.name}?`, `${p.name} is a ${edition.pdf_pages}-page illustrated PDF field guide with ${edition.prompt_count} editable prompts, an original worked example, starter files and blank and filled worksheets. ${edition.outcome}`],
     [`Who is ${p.name} for?`, p.audience],
     [`What do I need to use ${p.name}?`, `${p.needs} Tool subscriptions, AI credits and service accounts are not included.`],
-    [`Can I buy ${p.name} now?`, `Yes. The complete ${p.name} download costs US$${p.price} once. Pay through Razorpay and download the ZIP after payment verification. You can try the free sample before buying.`],
+    [`Can I buy ${p.name} now?`, `Yes. The complete ${p.name} download costs ${purchasePrice(p)}, paid once through Razorpay. Download the ZIP after payment verification. You can try the free sample before buying.`],
     ['Which public tools does the workflow reference?', `${refs.map(r => `${r.repository} (${r.license_name || r.license})`).join(', ')}. These tools come from their original authors and are referenced, not bundled. PromptPack is not affiliated with them.`]
   ];
 }
@@ -37,16 +62,16 @@ function llmsFiles({products, editions, sources, liveProducts, posts}) {
   const edition = slug => editions.find(e => e.slug === slug);
   const header = `# PromptPack\n\n> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. ${liveProducts.length+products.length} products have purchase routes, including ${products.length} complete guide editions with free sample prompts.\n\nUpdated: ${updated}. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.\n`;
   const live = `## Available now\n\n${liveProducts.map(l => `- [${l.name}](${origin}${l.href}): ${l.summary} ${l.includes}. ${l.price}, ${l.priceNote}.`).join('\n')}\n`;
-  const previews = `## Complete digital guide editions\n\n${products.map(p => { const e = edition(p.slug); return `- [${p.name}](${origin}/products/${p.slug}/): ${e.subtitle}. ${e.pdf_pages}-page guide, ${e.prompt_count} prompts, starter files. Free sample prompt on the page.`; }).join('\n')}\n`;
+  const previews = `## Complete digital guide editions\n\n${products.map(p => { const e = edition(p.slug); return `- [${p.name}](${origin}/products/${p.slug}/): ${e.subtitle}. ${e.pdf_pages}-page guide, ${e.prompt_count} prompts, starter files. Available for ${purchasePrice(p)}, paid once through Razorpay. Free sample prompt on the page.`; }).join('\n')}\n`;
   const guides = `## Guides\n\n${posts.map(([title, url]) => `- [${title}](${origin}${url})`).join('\n')}\n`;
   const policies = `## Policies and support\n\n- [Contact and about](${origin}/contact): support, billing and refund questions (ornalens@gmail.com)\n- [Terms](${origin}/terms)\n- [Privacy](${origin}/privacy)\n- [Refund policy](${origin}/refund)\n\n## Optional\n\n- [Full catalog text](${origin}/llms-full.txt): every product's contents, requirements, workshop steps and sample prompt in one file\n- [Sitemap](${origin}/sitemap.xml)\n`;
   const index = [header, live, previews, guides, policies].join('\n');
   const full = [header, live, '## Digital guide details\n', ...products.map(p => {
     const e = edition(p.slug);
     const refs = e.sources.map(id => sources.find(s => s.id === id));
-    return `### ${p.name}\n\nURL: ${origin}/products/${p.slug}/\nCategory: ${p.category}\nStatus: available through Razorpay checkout for US$${p.price} once\nFormat: ${e.pdf_pages}-page illustrated PDF guide, ${e.prompt_count} editable prompts, worked example, starter files, worksheets\n\n${e.subtitle}. ${e.outcome}\n\nFor: ${p.audience}\nRequirements: ${p.needs}\nScope: ${e.limits}\n\nWorkshop steps:\n${e.lessons.map((l, i) => `${i + 1}. ${l}`).join('\n')}\n\nFirst session:\n${e.first_run.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n\nPublic tools referenced: ${refs.map(r => `${r.repository} (${r.license_name || r.license}) ${r.url}`).join('; ')}\n\nSample prompt:\n\n${p.sample}\n`;
+    return `### ${p.name}\n\nURL: ${origin}/products/${p.slug}/\nCategory: ${p.category}\nStatus: available through Razorpay checkout for ${purchasePrice(p)}, paid once\nFormat: ${e.pdf_pages}-page illustrated PDF guide, ${e.prompt_count} editable prompts, worked example, starter files, worksheets\n\n${e.subtitle}. ${e.outcome}\n\nFor: ${p.audience}\nRequirements: ${p.needs}\nScope: ${e.limits}\n\nWorkshop steps:\n${e.lessons.map((l, i) => `${i + 1}. ${l}`).join('\n')}\n\nFirst session:\n${e.first_run.map((s, i) => `${i + 1}. ${s}`).join('\n')}\n\nPublic tools referenced: ${refs.map(r => `${r.repository} (${r.license_name || r.license}) ${r.url}`).join('; ')}\n\nSample prompt:\n\n${p.sample}\n`;
   })].join('\n');
   return {index, full};
 }
 
-module.exports = {origin, updated, updatedLabel, organization, website, ref, faqPage, breadcrumbs, productFaq, llmsFiles};
+module.exports = {origin, updated, updatedLabel, organization, website, ref, faqPage, breadcrumbs, productMetadata, productFaq, llmsFiles};

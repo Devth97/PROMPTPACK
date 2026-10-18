@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://promptpack.tech/</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -60,16 +60,16 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
-  <url><loc>https://promptpack.tech/products/website-prompts/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/carousel-studio/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/carousel-workflows/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/3d-website-lab/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/ai-video-direction/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/ugc-ad-scripts/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/short-explainer-studio/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/motion-with-code/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/lyric-visuals/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/pixel-brand-kit/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/youtube-production/</loc><lastmod>2026-10-17</lastmod></url>
-  <url><loc>https://promptpack.tech/products/video-prompt-vault/</loc><lastmod>2026-10-17</lastmod></url>
+  <url><loc>https://promptpack.tech/products/website-prompts/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/carousel-studio/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/carousel-workflows/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/3d-website-lab/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/ai-video-direction/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/ugc-ad-scripts/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/short-explainer-studio/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/motion-with-code/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/lyric-visuals/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/pixel-brand-kit/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/youtube-production/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/video-prompt-vault/</loc><lastmod>2026-10-18</lastmod></url>
 </urlset>

@@ -2,7 +2,7 @@
 
 > PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 13 products have purchase routes, including 11 complete guide editions with free sample prompts.
 
-Updated: 2026-10-17. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
+Updated: 2026-10-18. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
 
 ## Available now
 
@@ -15,7 +15,7 @@ Updated: 2026-10-17. All products are digital downloads used with the buyer's ow
 
 URL: https://promptpack.tech/products/carousel-studio/
 Category: Social content
-Status: available through Razorpay checkout for US$12 once
+Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
 Format: 13-page illustrated PDF guide, 12 editable prompts, worked example, starter files, worksheets
 
 A reference-led system for six-slide carousels with a cover that earns the swipe. Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger. The guide teaches the visual decisions; the staged prompts carry them through research, style lock, storyboard, image prompts and review.
@@ -48,7 +48,7 @@ Create a reusable style block for [APPROVED ANGLE + BRAND + REFERENCES]. Specify
 
 URL: https://promptpack.tech/products/carousel-workflows/
 Category: Automation
-Status: available through Razorpay checkout for US$15 once
+Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A content queue you can inspect before anything publishes. A documented queue with approval states, due times and duplicate checks. The included offline validator prints a publishing plan; it never sends a post or stores credentials.
@@ -81,7 +81,7 @@ Design a content queue for [CHANNEL] using [AUTOMATION TOOL]. Store draft_id, co
 
 URL: https://promptpack.tech/products/3d-website-lab/
 Category: Websites
-Status: available through Razorpay checkout for US$15 once
+Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A lightweight 3D product scene with a readable HTML fallback. An original product landing-page starter with a Three.js geometric object, a pause control and a static fallback. The sample sells no real product and includes no checkout integration.
@@ -114,7 +114,7 @@ Inspect my current app before editing. Build a product landing page for [PRODUCT
 
 URL: https://promptpack.tech/products/ai-video-direction/
 Category: Video
-Status: available through Razorpay checkout for US$12 once
+Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 Build a shot specification you can actually evaluate. A production-ready shot brief, continuity block, take log and a visual shot-board example. The starter creates a local contact sheet for the planned shots; it does not call a video model.
@@ -147,7 +147,7 @@ Turn this brief into a shot specification: [BRIEF]. Use only these product facts
 
 URL: https://promptpack.tech/products/ugc-ad-scripts/
 Category: Video
-Status: available through Razorpay checkout for US$12 once
+Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A truthful product demonstration, planned shot by shot. A concise demonstration script, evidence ledger, presenter brief and editable storyboard. The included example uses a fictional desk notebook and makes no customer-experience claim.
@@ -180,7 +180,7 @@ Write a 20-second product demonstration script for [PRODUCT] and [AUDIENCE]. Ver
 
 URL: https://promptpack.tech/products/short-explainer-studio/
 Category: Video
-Status: available through Razorpay checkout for US$12 once
+Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 One question, a clear answer and a source for every claim. A source-led short explanation with narration notes, a timed storyboard and a caption draft. The original example explains a documented offline content queue, so the mechanism can be checked locally.
@@ -213,7 +213,7 @@ Explain [TOPIC] to [AUDIENCE] in a 30-second script using only [SOURCE EXCERPTS]
 
 URL: https://promptpack.tech/products/motion-with-code/
 Category: Video
-Status: available through Razorpay checkout for US$15 once
+Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A deterministic six-second title sequence from an editable brief. An editable timing brief, a local HyperFrames example and a rendered silent preview. The included composition uses original typography and the PromptPack palette.
@@ -246,7 +246,7 @@ Inspect the animation project and use its existing framework. Create a six-secon
 
 URL: https://promptpack.tech/products/lyric-visuals/
 Category: Video
-Status: available through Razorpay checkout for US$9 once
+Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 Time readable words to an authorized track. A lyric cue sheet, a timing review method and an original silent text-motion example. No commercial song, recorded performance or third-party lyrics are included.
@@ -279,7 +279,7 @@ Plan a 15-second lyric clip using [AUTHORIZED LYRIC EXCERPT] and [TIMECODES]. Ca
 
 URL: https://promptpack.tech/products/pixel-brand-kit/
 Category: Design
-Status: available through Razorpay checkout for US$9 once
+Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A small original asset set with a consistent grid and palette. A 32 x 32 original sprite, three expression variants, enlarged previews and a palette file. The included generator draws pixels directly, so its example is reproducible without an image model.
@@ -312,7 +312,7 @@ Create a pixel art specification for an original [CHARACTER OR OBJECT] for [BRAN
 
 URL: https://promptpack.tech/products/youtube-production/
 Category: Automation
-Status: available through Razorpay checkout for US$15 once
+Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
 Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
 
 A reviewed production queue from research to upload handoff. A production brief, source ledger, shot and edit handoff, and upload-readiness checklist. The starter validates local episode records and prints missing requirements without uploading anything.
@@ -345,7 +345,7 @@ Design a reviewed production workflow for a [LENGTH]-minute YouTube video about 
 
 URL: https://promptpack.tech/products/video-prompt-vault/
 Category: Video
-Status: available through Razorpay checkout for US$12 once
+Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
 Format: 24-page illustrated PDF guide, 30 editable prompts, worked example, starter files, worksheets
 
 Thirty shot briefs, organized for adaptation and review. Thirty original B-roll shot prompts plus an index, continuity worksheet and selection rubric. A local contact-sheet example shows how to plan a small set before generating footage.
