@@ -1,4 +1,12 @@
 /* Product imagery belongs beside the offer, before the long-form details. */
+.product-promo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;gap:36px;padding:30px;margin:22px 0 48px;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);background:var(--paper)}
+.product-promo h2{font-size:clamp(26px,3vw,40px);margin:22px 0 16px}
+.product-promo p{max-width:540px}
+.product-promo .promo-scope{font-size:13px;line-height:1.6;border-left:4px solid var(--pink);padding-left:14px}
+.product-promo figure{margin:0;min-width:0;text-align:center}
+.product-promo video{display:block;width:auto;height:auto;max-width:100%;max-height:460px;margin:auto;border:3px solid var(--ink);background:var(--ink)}
+.product-promo figcaption{font-size:12px;line-height:1.5;margin-top:12px;font-weight:700}
+@media(max-width:700px){.product-promo{grid-template-columns:1fr;gap:20px;padding:22px;margin-right:7px}.product-promo video{max-height:420px}}
 .product-hero{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:42px;align-items:center;padding:46px 0 35px}
 .product-hero h1{font-size:clamp(38px,4.7vw,64px);overflow-wrap:normal}
 .product-hero .intro{font-size:18px;line-height:1.55}

@@ -1,0 +1,72 @@
+{
+  "imported_on": "2026-10-18",
+  "purpose": "Promotional visual references for existing PromptPack products, imported at the site owner's request. These files do not change buyer bundles or add courses.",
+  "assets": [
+    {
+      "id": "website-scroll",
+      "source_video": "https://promptbase.shop/videos/showcase/orchard-scroll.mp4",
+      "source_poster": "https://promptbase.shop/images/showcase/orchard-scroll-poster.jpg",
+      "video_bytes": 4229647,
+      "video_sha256": "d0030e8d353aa168e79c96154381bfa10b7b43c569b0f38bdb8bfb5fe9546155",
+      "poster_sha256": "88ba76b9092fc61a549f0ffd84b55bfcac1534f2626ceda2e8d2c24ca23f8404",
+      "duration": 25.533333,
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 648
+    },
+    {
+      "id": "ugc-product-demo",
+      "source_video": "https://promptbase.shop/videos/showcase/ugc/more-1.mp4",
+      "source_poster": "https://promptbase.shop/images/showcase/ugc/more-1.jpg",
+      "video_bytes": 1136774,
+      "video_sha256": "3c37ec8d09956cef4d8ae6cf3abe0f9ff3505078c86f5c254732b3e8abeca01e",
+      "poster_sha256": "81754da8901fa5fb354238c32d470772152caaa8c092df5cc7da4316cd74d93a",
+      "duration": 10.0,
+      "codec_name": "h264",
+      "width": 540,
+      "height": 960
+    },
+    {
+      "id": "video-parallax",
+      "source_video": "https://promptbase.shop/videos/ugc/gallery-walk.mp4",
+      "source_poster": "https://promptbase.shop/images/ugc/gallery-walk.jpg",
+      "video_bytes": 904593,
+      "video_sha256": "a095a248ffdc8c36bcf85650ee7f37d0bb597cbfd0f636416046c1a39e1c7e29",
+      "poster_sha256": "20513821b5bf7ba1e110e789ef0bb50b2829712a00d6d327f2caaedafd8d86d0",
+      "duration": 8.0,
+      "codec_name": "h264",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "video-scale",
+      "source_video": "https://promptbase.shop/videos/ugc/blue-hall.mp4",
+      "source_poster": "https://promptbase.shop/images/ugc/blue-hall.jpg",
+      "video_bytes": 1495697,
+      "video_sha256": "77529bf86221a6bf0af07e3e998216cc7c096fded32db84e33c58219482898aa",
+      "poster_sha256": "696b6ea414b8bb367db668e644f4058561d2642166a64f96e355c288309a68db",
+      "duration": 8.0,
+      "codec_name": "h264",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "id": "lyric-scrapbook",
+      "source_video": "https://promptbase.shop/videos/showcase/lyric/scrapbook-edit.mp4",
+      "source_poster": "https://promptbase.shop/videos/showcase/lyric/scrapbook-edit.webp",
+      "video_bytes": 4888224,
+      "video_sha256": "5f3faf83465d00ece0ea01d882d09622785a28245fbe7bc65b69569b3aea4e5c",
+      "poster_sha256": "61ab6e97348dbb404750d08ba2d66f0e01763b54b13bc10ec905c3845a6014cd",
+      "duration": 15.0,
+      "codec_name": "h264",
+      "width": 1280,
+      "height": 922
+    }
+  ],
+  "excluded": [
+    {
+      "id": "carousel-launch",
+      "reason": "Trailer advertises a different 20-chapter course and the old storefront; preserved locally."
+    }
+  ]
+}
