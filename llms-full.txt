@@ -82,132 +82,132 @@ Design a content queue for [CHANNEL] using [AUTOMATION TOOL]. Store draft_id, co
 URL: https://promptpack.tech/products/3d-website-lab/
 Category: Websites
 Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-A lightweight 3D product scene with a readable HTML fallback. An original product landing-page starter with a Three.js geometric object, a pause control and a static fallback. The sample sells no real product and includes no checkout integration.
+Design a purposeful 3D landing-page concept with readable HTML and useful fallbacks. Prepare a 3D landing-page brief, visual system and six interface-state concepts with a clear next action. Keep the useful explanation outside the canvas, and specify responsive, reduced-motion and unavailable-module behavior before implementation.
 
-For: Freelancers and founders building a product landing page with a coding assistant.
-Requirements: An AI coding tool and a browser. Supply your own licensed models, images or video when the brief needs them.
-Scope: The starter is a front-end demonstration. It needs a network connection for the pinned Three.js dependency unless you vendor it with its license. It does not supply a domain, payment processing, a custom model or a performance certification.
+For: Designers, small studios and founders briefing a 3D-enhanced landing page.
+Requirements: Your own page content, a developer or coding tool, browser, permitted assets and hosting if publishing.
+Scope: Six interface mockups and a production brief, not a deployed website or a downloadable 3D model. The new sculptural object is raster concept art. The retained starter is a separate simpler Three.js example that loads a pinned network dependency. Supply your own hosting, model assets, development tools and real-device testing. No payment code, performance certification or accessibility guarantee is included.
 
 Workshop steps:
-1. Design the page before the scene
-2. Understand the small scene
-3. Treat motion as optional
-4. Make resizing predictable
-5. Use the fallback as a real design
-6. Prepare the handoff
+1. Give the 3D scene a page job
+2. Study the composition and lock the system
+3. Storyboard the visitor journey
+4. Choose an implementation route honestly
+5. Review usability and actual performance
+6. Deliver a buildable visual specification
 
 First session:
-1. From starter/, run: python -m http.server 8011 --bind 127.0.0.1
-2. Open http://127.0.0.1:8011/ in a browser.
-3. The starter loads a pinned Three.js module from jsDelivr; allow that request to see WebGL.
-4. Use Pause motion, then block the module or disable WebGL to inspect the CSS fallback.
+1. Write the visitor job and exact page copy before choosing any 3D effect.
+2. Lock an original object/style system and review the six interface-state concepts.
+3. Use staged prompts to choose static, CSS or real-time production and specify the state matrix.
+4. Prototype readable content and fallback first, then review the actual build for usability, motion preference and measured performance.
 
 Public tools referenced: mrdoob/three.js (MIT) https://github.com/mrdoob/three.js; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright
 
 Sample prompt:
 
-Inspect my current app before editing. Build a product landing page for [PRODUCT] aimed at [AUDIENCE]. Use [EXISTING STACK]. Start with a readable HTML hero and [PRIMARY CTA]. Add one optional 3D object from [LICENSED ASSET] only after the main content loads. Provide a static poster when WebGL fails, reduced motion is enabled or the device cannot sustain the scene. Keep text and navigation outside the canvas. Return the implementation plan, asset requirements and checks for keyboard access, small screens and loading performance.
+For [VISITOR], [TRUTHFUL OFFER], [PAGE CONTENT] and [NEXT ACTION], define a 3D landing-page job. Separate the attention role of the scene from the semantic explanation. Give a useful static fallback, six state requirements and a one-session prototype scope. Do not invent product facts, conversion results, ratings or a working deployment.
 
 ### AI Video Direction Kit
 
 URL: https://promptpack.tech/products/ai-video-direction/
 Category: Video
 Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-Build a shot specification you can actually evaluate. A production-ready shot brief, continuity block, take log and a visual shot-board example. The starter creates a local contact sheet for the planned shots; it does not call a video model.
+Build a visual treatment, continuity contract and six testable shot briefs. Create a six-shot visual treatment with a continuity contract, tool-specific motion prompts and a take-selection log. Direct an original amber-lantern concept through changes in framing without mistaking attractive stills for working video.
 
-For: Creators planning generated product clips and short brand films.
-Requirements: A text AI assistant plus your chosen image or video generator. Generation credits are separate.
-Scope: AI video generation is not included. Diffusers is a software library; individual model weights can use different licenses and have hardware requirements. Hosted providers charge separately and support different durations, reference controls and resolutions.
+For: Creators and small production teams planning AI-assisted visual sequences.
+Requirements: Rights-cleared references, an image/video tool with known controls, credits where required and an editor.
+Scope: Visual treatment and directing workflow, not finished video or a generation service. Provider access, credits, editing software, soundtrack and any real production are separate. Exact continuity is not guaranteed. The Python/Pillow starter creates a symbolic planning sheet; model weights and a production editing project are not included.
 
 Workshop steps:
-1. Freeze the product facts
-2. Describe one visible action
-3. Build the planning board
-4. Choose the generation route
-5. Evaluate continuity before beauty
-6. Package a usable handoff
+1. Choose an observable visual promise
+2. Make a reference and continuity contract
+3. Give camera and subject separate jobs
+4. Adapt the prompt to the production route
+5. Choose takes by continuity before beauty
+6. Deliver a cut-ready direction package
 
 First session:
-1. Open starter/shots.json and the continuity fields.
-2. Run: python -m pip install pillow
-3. From starter/, run: python storyboard.py shots.json output
-4. Inspect output/storyboard.jpg, then adapt a single shot to your chosen video tool.
+1. Choose a simple subject and read the six-shot amber-room treatment; fill your own master brief.
+2. Approve one subject reference and lock geometry, material, light and camera axis.
+3. Use the staged prompts to prototype one camera move, record actual model settings and inspect the complete clip.
+4. Select takes through the continuity gate and give an editor matching shot IDs, usable ranges, rights notes and the edit map.
 
 Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
 
 Sample prompt:
 
-Turn this brief into a shot specification: [BRIEF]. Use only these product facts: [FACTS]. Describe subject identity, action, camera position, lens feel, lighting, background and duration in separate fields. Make the action physically plausible. Define start and end frames and list details that must stay constant across takes. Provide a shorter fallback prompt if the generator ignores the main action. Finish with a review checklist for geometry, text, hands, reflections and continuity. Do not claim that any take has been generated or tested.
+Act as a director for [PROJECT] and [AUDIENCE]. Using [SUBJECT FACTS OR FICTIONAL INPUTS], [RIGHTS-CLEARED REFERENCES] and [DURATION BUDGET], define one visible promise, six shot jobs and the final attention target. Separate product facts from styling. State what cannot be claimed from concept art. Do not imitate a named filmmaker or invent a real product capability.
 
 ### UGC Ad Script Kit
 
 URL: https://promptpack.tech/products/ugc-ad-scripts/
 Category: Video
 Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 14 editable prompts, worked example, starter files, worksheets
 
-A truthful product demonstration, planned shot by shot. A concise demonstration script, evidence ledger, presenter brief and editable storyboard. The included example uses a fictional desk notebook and makes no customer-experience claim.
+Turn an honest product demonstration into a visually directed short ad. Make a 22-second product-demonstration plan with an evidence ledger, six visual boards, a recordable script and one clear next action. Approve the product facts before a presenter or image model performs them.
 
-For: Small brands briefing a presenter or producing disclosed AI-assisted ads.
-Requirements: A text AI assistant. Filming, voice and video generation tools are optional and sold separately.
-Scope: This pack plans an ad. It includes no synthetic presenter service, cloned voice, real testimonial, generated video or live campaign. Recording, model access and publishing are separate.
+For: Solo sellers, creators and small teams planning product demonstrations.
+Requirements: A product you can access, supplied product facts, rights-cleared presenter/media, an editor and optional AI tool access.
+Scope: A planning and visual-direction kit, not a finished ad or synthetic-presenter service. Real product footage, presenter/voice/music rights, editor access and any AI accounts or generation credits are your responsibility. The optional Python storyboard utility requires Pillow and makes a simple planning sheet, not the six finished concept boards. No campaign publishing, factual product verification, legal clearance or sales guarantee is included.
 
 Workshop steps:
-1. Build the claim ledger first
-2. Write an opening that the ad answers
-3. Show the product in use
-4. Choose the presenter and permissions
-5. Review the edit in context
-6. Test one variable at a time
+1. Build a demonstration worth watching
+2. Translate references into a style lock
+3. Write a hook the body can pay off
+4. Direct the shot and the presenter
+5. Review what the viewer will believe
+6. Hand off a controlled experiment
 
 First session:
-1. Read starter/script.json and verify the sample is labeled fictional.
-2. Install Pillow, then run: python storyboard.py script.json output
-3. Open output/storyboard.jpg beside the claim ledger.
-4. Replace the demo product facts and choose a consenting real or disclosed synthetic presenter.
+1. Read the six-board example and fill the master brief with one product task and supplied evidence.
+2. Translate three inspected references into an original style lock; approve one hook and one prototype shot.
+3. Use prompts 01-11 to produce the script, six scene briefs and presenter/recording handoff; rehearse with the real product.
+4. Run the quality gate, inspect the placement crop and export the approved files with captions, source ledger and a blank test plan.
 
 Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
 
 Sample prompt:
 
-Write a 20-second product demonstration script for [PRODUCT] and [AUDIENCE]. Verified benefits: [FACTS WITH SOURCES]. Presenter: [REAL CONSENTING PRESENTER OR DISCLOSED SYNTHETIC PRESENTER]. Use a problem, a visible demonstration and one CTA. Return timecodes, spoken words, shot instructions and on-screen text. Mark where an ad or synthetic-presenter disclosure belongs. Avoid first-person experience claims unless the presenter supplied them. Flag every benefit that lacks evidence. Keep the script under 50 spoken words.
+Act as a product-demonstration director. For [PRODUCT], [AUDIENCE], [ONE VISIBLE TASK], [SUPPLIED FACTS WITH SOURCES] and [NEXT ACTION], write a one-page brief. Separate verified facts, fictional staging and missing evidence. Choose one observable demonstration and state what it cannot prove. Return a promise, production route, six scene jobs and explicit stop conditions. Do not invent experience, performance results, a discount or a destination.
 
 ### Short Explainer Studio
 
 URL: https://promptpack.tech/products/short-explainer-studio/
 Category: Video
 Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-One question, a clear answer and a source for every claim. A source-led short explanation with narration notes, a timed storyboard and a caption draft. The original example explains a documented offline content queue, so the mechanism can be checked locally.
+Explain one question through a sourced script and six connected visual scenes. Plan a 30-second explanation with a claim-to-scene map, a measured-read worksheet and six art-directed storyboard frames. Use a two-gate metaphor to explain the fictional rule that approval and due time are separate conditions.
 
-For: Educators and creators making concise explanatory videos.
-Requirements: A text AI assistant, trustworthy topic sources and an editor or video generator.
-Scope: The pack contains planning files and an illustrated example, not a recorded lesson or a generated documentary clip. Whisper transcription needs review; it is not an authoritative source for factual claims.
+For: Educators, product teams and creators explaining one small mechanism.
+Requirements: A checkable topic, source material, an editor, a narration route and optional AI generation access.
+Scope: Planning kit and concept stills only: no finished video, narration, publishing system or automatic factual verification. Use your own editor and rights-cleared audio; AI image/video generation may require a separate account and credits. The retained Python/Pillow starter makes a simple planning sheet, not these visuals or an animation.
 
 Workshop steps:
-1. Choose a question small enough to answer
-2. Attach claims to sources
-3. Plan the narration budget
-4. Explain with the visual
-5. Prepare captions from the actual audio
-6. Run the explanation check
+1. Choose a question with a visible answer
+2. Study references without copying them
+3. Storyboard the reveal
+4. Choose the production route
+5. Review comprehension and captions
+6. Deliver the explanation with its limits
 
 First session:
-1. Open starter/explainer.json and its source IDs.
-2. Install Pillow and run: python storyboard.py explainer.json output
-3. Read output/storyboard.jpg from left to right.
-4. Read the narration aloud, measure its real duration and adjust cue times before editing.
+1. Read the six-frame example and fill one question, one answer and one exclusion in the master brief.
+2. Lock an original analogy and visual system, then approve the blocked-state prototype.
+3. Use the staged prompts to map claims to scenes, rehearse narration and prepare actual captions from the recording.
+4. Run the state and comprehension gates, then hand off approved stills, script, measured timing and sources to an editor.
 
 Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes; openai/whisper (MIT) https://github.com/openai/whisper
 
 Sample prompt:
 
-Explain [TOPIC] to [AUDIENCE] in a 30-second script using only [SOURCE EXCERPTS]. Choose one question and answer it directly. Return a table with time range, narration, visual action and supporting source. Use a simple original visual analogy and state its limits. Keep narration under 70 words. Mark uncertainties instead of filling gaps. End with the answer rather than an unrelated call to action. List any visuals that could misrepresent scale, causation or time.
+For [TOPIC], [AUDIENCE] and [SOURCE MATERIAL], define one question, a one-sentence answer and the exclusions. Separate sourced facts from [FICTIONAL EXAMPLE RULES]. Return an analogy map, six possible information changes and a final action. Mark unsupported statements; do not invent a study, product behavior or completed research.
 
 ### Motion Briefs for Code
 
@@ -247,129 +247,129 @@ Inspect the animation project and use its existing framework. Create a six-secon
 URL: https://promptpack.tech/products/lyric-visuals/
 Category: Video
 Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-Time readable words to an authorized track. A lyric cue sheet, a timing review method and an original silent text-motion example. No commercial song, recorded performance or third-party lyrics are included.
+Build a lyric cue plan with original imagery, exact text and honest timing. Create a six-cue lyric visual plan with exact authorized words, a recurring visual motif and a human timing-review method. The worked example pairs six newly authored lines with original paper-theatre concept art; it contains no commercial song or synchronized recording.
 
-For: Musicians and editors preparing lyric clips from their own or licensed tracks.
-Requirements: A text AI assistant, a video editor and a track plus lyrics you have permission to use.
-Scope: The bundled example is silent and demonstrates cue layout only. Automatic transcription can be inaccurate for singing; no automatic beat or lyric accuracy is promised. Music and image rights must be supplied for a real edit.
+For: Musicians, editors and creators planning text-led visuals with authorized material.
+Requirements: Approved lyrics and audio permissions, an editor, actual timing review and optional image/video generation tools.
+Scope: Lyric planning and six original concept stills, not a song, recording, beat detector or synchronized music video. Supply authorized lyrics/audio and your own editor; AI generation access and credits are separate. The retained silent HyperFrames starter uses different original words and is a limited cue-layout example. Its code and third-party notices are preserved; no new video render or audio synchronization is claimed.
 
 Workshop steps:
-1. Separate the rights and timing inputs
-2. Measure the vocal instead of guessing
-3. Build phrase-sized cues
-4. Design for the crop
-5. Use the code example as a timing instrument
-6. Prepare versions without losing the master
+1. Start with the authorized words
+2. Translate references into a visual motif
+3. Plan phrase order before cue timing
+4. Choose a text-first production route
+5. Review meaning, legibility and timing
+6. Deliver a rights-aware cue package
 
 First session:
-1. Read starter/cues.json. The demonstration words are original: One small spark / Becomes a signal.
-2. Open the included example preview and compare each hold with the cue sheet.
-3. For a real project, supply an authorized track and accurate lyrics.
-4. Measure the vocal onsets, update the cues and render the source again.
+1. Read the six original lines and fill text authority, audio status and usage permissions in the master brief.
+2. Lock an original visual motif and prototype the longest phrase over one frame.
+3. Use staged prompts to build ordered cues; measure onsets only when an authorized recording exists.
+4. Review exact words, contrast, boundaries and final hold, then hand the editor a versioned cue package with honest timing status.
 
 Public tools referenced: openai/whisper (MIT) https://github.com/openai/whisper; heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes
 
 Sample prompt:
 
-Plan a 15-second lyric clip using [AUTHORIZED LYRIC EXCERPT] and [TIMECODES]. Canvas: [RATIO]. Audience: [AUDIENCE]. Return cue in/out times, text groups, line breaks, emphasis and transition notes. Keep every word inside the platform safe area and provide a high-contrast background direction. Do not invent lyrics or timing. If timestamps are missing, return a timing worksheet and label the cut provisional. Include a readability check for a small phone screen.
+For [PROJECT], [AUTHORIZED WORDS], [AUDIO STATUS] and [USAGE PERMISSIONS], create a lyric-visual brief. Preserve exact wording and identify the text authority. Define one emotional arc, motif and deliverable. If no recording is supplied, label cue order provisional and leave measured timing blank. Do not reproduce unprovided third-party lyrics or invent an audio performance.
 
 ### Pixel Brand Prompt Kit
 
 URL: https://promptpack.tech/products/pixel-brand-kit/
 Category: Design
 Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-A small original asset set with a consistent grid and palette. A 32 x 32 original sprite, three expression variants, enlarged previews and a palette file. The included generator draws pixels directly, so its example is reproducible without an image model.
+Build an original pixel asset family with exact grids, palette roles and scaling rules. Make a small original pixel identity study with one primary symbol, five supporting icons, palette roles and application rules. Use the supplied exact 24-pixel source grids and transparent PNG exports as a worked example, then design and review your own assets.
 
-For: Creators and small teams making a consistent pixel art asset set.
-Requirements: A text AI assistant plus a pixel editor or image generator. Manual cleanup may be needed.
-Scope: The example is a small pixel character, not an animated 3D character or a finished brand identity service. LibreSprite is a separately available GPL-2.0 editor; it is referenced, not bundled. Generated examples require your own final brand review.
+For: Designers, indie makers and small teams creating compact original pixel assets.
+Requirements: A pixel-capable editor or the supplied source arrays, an application brief and your own final identity review.
+Scope: Static pixel identity study, not a trademark-cleared logo service, pixel-font license or animated character. Six original 24px icons, editable RGBA grids and 240px/480px PNG copies are included. The older Python/Pillow starter creates a separate 32px character. Use your own editor and perform actual brand/legal and destination review. No image-model access is required for the supplied grid-native assets.
 
 Workshop steps:
-1. Write the style specification
-2. Draw the silhouette first
-3. Render the original example
-4. Make expressions with constraints
-5. Review transparency and contrast
-6. Package the asset family
+1. Choose a symbol with a small job
+2. Translate references into grid decisions
+3. Lock palette and silhouette before detail
+4. Choose a route that preserves exact pixels
+5. Review at the actual display size
+6. Package a small usable identity study
 
 First session:
-1. Install Pillow: python -m pip install pillow
-2. From starter/, run: python make-sprites.py
-3. Open output/sprite-sheet.png at its native size and output/preview.png enlarged.
-4. Edit palette.json, run again and compare the silhouettes.
+1. Choose one small application and read the original 24px lantern-family study.
+2. Lock grid, silhouette, palette roles and transparency before adding variants.
+3. Use staged prompts and the exact source arrays to draw or revise assets, then export at integer scales.
+4. Inspect native size, alpha edges and applications; deliver a source/export manifest with honest identity limits.
 
 Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; LibreSprite/LibreSprite (GPL-2.0) https://github.com/LibreSprite/LibreSprite
 
 Sample prompt:
 
-Create a pixel art specification for an original [CHARACTER OR OBJECT] for [BRAND]. Grid: [SIZE]. Palette: [HEX COLORS]. Describe silhouette, proportions, light direction, outline rules and background transparency. Give a generator prompt and a manual cleanup checklist. Keep edges aligned to the pixel grid and avoid blur, gradients and anti-aliasing. Return variations for neutral, active and resting poses using the same proportions. Do not imitate a named artist or an existing character.
+For [APPLICATION], [ORIGINAL SUBJECT] and [AUDIENCE CONTEXT], define a compact pixel identity study. Specify [NATIVE GRID], primary silhouette, supporting symbols and actual deliverables. Separate a fictional concept name from a cleared brand. Do not copy a game character, third-party mark or named artist's style, and do not promise commercial recognition.
 
 ### YouTube Production Planner
 
 URL: https://promptpack.tech/products/youtube-production/
 Category: Automation
 Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-A reviewed production queue from research to upload handoff. A production brief, source ledger, shot and edit handoff, and upload-readiness checklist. The starter validates local episode records and prints missing requirements without uploading anything.
+Plan an episode from truthful packaging through recording, edit and review. Build one episode package with a viewer promise, title and thumbnail direction, a chapter outline, recording plan and editor handoff. The worked example plans a tutorial about turning one desk object into six purposeful shots; no finished episode or channel result is implied.
 
-For: Solo creators documenting a repeatable YouTube production process.
-Requirements: A text AI assistant and an editor. Scheduling or uploads require your own tools and account setup.
-Scope: The included utility does not connect to YouTube, upload videos or fetch private analytics. API uploads require your own project, authorization and current quota/policy review. The pack includes no channel account or monetization promise.
+For: Solo video creators and small channel teams planning practical tutorials.
+Requirements: A real episode topic, sources, recording/editing tools and your own channel access if publishing.
+Scope: Episode planning and visual concept kit, not a recorded tutorial, channel service or monetization system. Recording equipment, editor, channel access, rights-cleared media and any AI accounts/credits are separate. Six landscape concept boards are provided; no uploaded video, audience analytics or guaranteed results are included. The Node utility validates local fields only.
 
 Workshop steps:
-1. Define the episode promise
-2. Create a source and rights ledger
-3. Write the stage handoffs
-4. Prepare captions and metadata
-5. Validate the local record
-6. Treat publishing as a separate operation
+1. Define the promise before the package
+2. Study references and lock the episode system
+3. Outline the episode around decisions
+4. Prepare a recording and editing handoff
+5. Review the promise and the cut
+6. Publish separately and learn from real data
 
 First session:
-1. Open starter/episodes.json and inspect the fictional episode.
-2. From starter/, run: node check-episode.mjs episodes.json
-3. Read the missing-input report, then add the supplied example fields.
-4. Keep publishing as a separate action in your own channel workflow.
+1. Fill the viewer question, exact promise and final artifact in the master brief.
+2. Prototype one truthful title/thumbnail direction and outline six decision chapters.
+3. Use staged prompts to prepare the recording list, source map, scratch read and editor handoff.
+4. Review the actual rough cut against the promise, then publish separately and record only real observations.
 
 Public tools referenced: googleapis/google-api-nodejs-client (Apache-2.0) https://github.com/googleapis/google-api-nodejs-client; openai/whisper (MIT) https://github.com/openai/whisper
 
 Sample prompt:
 
-Design a reviewed production workflow for a [LENGTH]-minute YouTube video about [TOPIC]. Inputs: [SOURCES], [ORIGINAL FOOTAGE], [VOICE RIGHTS] and [CHANNEL STYLE]. Return stages for research, outline, script, assets, edit, captions, thumbnail and upload review. Each stage needs an owner, required input, output, failure condition and approval rule. Keep uploading as a separate manual approval. Add a rights ledger and a fact-check queue. Do not promise views, monetization or ranking.
+For [AUDIENCE], [EPISODE TOPIC] and [AVAILABLE EVIDENCE], write one viewer question and the concrete artifact delivered by the video. Create a title expectation, thumbnail direction and opening payoff that agree. State exclusions and required recording. Do not invent audience demand, growth results or a finished video.
 
 ### Video Shot Prompt Library
 
 URL: https://promptpack.tech/products/video-prompt-vault/
 Category: Video
 Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 24-page illustrated PDF guide, 30 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 38 editable prompts, worked example, starter files, worksheets
 
-Thirty shot briefs, organized for adaptation and review. Thirty original B-roll shot prompts plus an index, continuity worksheet and selection rubric. A local contact-sheet example shows how to plan a small set before generating footage.
+Thirty shot briefs plus a practical selection, adaptation and review workflow. Build a selected shot menu for your project from thirty original B-roll briefs, then adapt one shot into a testable production request. Use six visual material studies to distinguish a reveal, a texture shot, a silhouette, subtle subject motion, an edge reveal and an architectural hold.
 
-For: Creators who want specific starting points for generated B-roll.
-Requirements: A video generator of your choice. Each brief needs your subject and any reference assets you are licensed to use.
-Scope: The library contains original text briefs and planning assets, not thirty generated clips. A prompt cannot guarantee physical accuracy or identical output across models. Model access, hardware and generation credits are separate.
+For: Editors, product creators and AI-video operators building a purposeful B-roll menu.
+Requirements: A project brief, rights-cleared subjects, a video tool, any required credits and an editor.
+Scope: Thirty original text shot briefs plus eight staged planning prompts, not thirty generated videos. The six included images are independent concept studies, not a tested motion benchmark. Generation tool access, credits, model-specific permissions, footage, sound and editing are separate. The Python/Pillow utility is a schematic board maker only.
 
 Workshop steps:
-1. Choose by the editorial job
-2. Replace every subject placeholder
-3. Preserve one controlled action
-4. Read the tool and model requirements
-5. Score observable defects
-6. Build a small approved collection
+1. Select by editorial job
+2. Translate the reference into a system
+3. Write one movement hypothesis
+4. Adapt a library brief to the tool
+5. Review the clip through time
+6. Make a reusable selected-shot menu
 
 First session:
-1. Open PROMPTS.md and choose one of the thirty shots.
-2. Fill the subject, authorized reference and intended use before generation.
-3. Run the optional storyboard example: python storyboard.py shots.json output
-4. Generate a short test in your own video tool and record its model and settings.
+1. Read the thirty retained shot briefs and choose one editorial gap in your project.
+2. Shortlist three candidates, approve the subject reference and translate the visual system.
+3. Adapt one brief to your chosen provider, generate a modest motion test and log actual settings.
+4. Inspect the entire clip, choose a fallback if needed and hand off the selected shot with usable ranges and rights notes.
 
 Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
 
 Sample prompt:
 
-Create a six-second close-up of [PRODUCT] on a matte stone surface. A large window on camera left provides soft daylight. Begin on the edge texture, then make a slow lateral camera move to reveal the full product. The product stays still and retains the exact shape, finish and markings of [AUTHORIZED REFERENCE]. Keep the background plain and depth of field sufficient to read the product outline. Review the result for drifting labels, changing geometry and implausible reflections before using it.
+Using [EDIT OUTLINE], [AUDIENCE] and [LIBRARY PROMPT IDS], choose three candidate shots for [MISSING EDITORIAL JOB]. Explain what each adds, the neighboring shot, its likely continuity risk and a simpler fallback. Choose one first test. Do not claim an untested prompt is reliable, high-performing or compatible with every model.

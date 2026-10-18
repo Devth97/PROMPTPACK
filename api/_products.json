@@ -37,8 +37,8 @@
     "file": "products/3d-website-lab.enc",
     "filename": "3d-website-lab.zip",
     "type": "application/zip",
-    "sha256": "6e2af0bbd8e5355d97ffb72ab08ab7ea5285a246d97d5efa8b9bb689ad2f70e6",
-    "bytes": 1195560,
+    "sha256": "adb1488820634f2234df9f5d3984d615d29e96394e6fc9bffec8135ac38c36fe",
+    "bytes": 1323533,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -51,8 +51,8 @@
     "file": "products/ai-video-direction.enc",
     "filename": "ai-video-direction.zip",
     "type": "application/zip",
-    "sha256": "6270596488334b0b5b32368145a3af36dd89c220a32cf8dc9782b18a0f3e97d2",
-    "bytes": 1278614,
+    "sha256": "2d15a00018dc8ded0087a044d1c276153e2647d5c81a0aedb840cc69adb4b062",
+    "bytes": 2109067,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -65,8 +65,8 @@
     "file": "products/ugc-ad-scripts.enc",
     "filename": "ugc-ad-scripts.zip",
     "type": "application/zip",
-    "sha256": "ef1aa8d11bcfc2beb737d5bd4cc651b7735187e0d6a591e9e730a6027f110ed5",
-    "bytes": 1540634,
+    "sha256": "73c07f45b8ec73c5876f7a5a658b2ce8b4513e824eb949c123d51dfd103c5b65",
+    "bytes": 2934355,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -79,8 +79,8 @@
     "file": "products/short-explainer-studio.enc",
     "filename": "short-explainer-studio.zip",
     "type": "application/zip",
-    "sha256": "8f467f36d34f16e889d32e0a2371ae7a3d5b97ba64003537d416ba068e9f51ac",
-    "bytes": 1395031,
+    "sha256": "d23acba76abb7ac81c999fdb80df550718f7c0406776977b3c747668a2087689",
+    "bytes": 2707436,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -107,8 +107,8 @@
     "file": "products/lyric-visuals.enc",
     "filename": "lyric-visuals.zip",
     "type": "application/zip",
-    "sha256": "73955fd7836d4d72a04d192b05bf4254a8f2ca276aef8245da81659624a5fede",
-    "bytes": 1394248,
+    "sha256": "f499182728b61c31c05980984dbc6a4c9f4e555d23a4d0507327790858a7d54c",
+    "bytes": 3516995,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -121,8 +121,8 @@
     "file": "products/pixel-brand-kit.enc",
     "filename": "pixel-brand-kit.zip",
     "type": "application/zip",
-    "sha256": "e15bf75c62cd7229f1693f21f77e4d1a45c3419373da566502e936127adad885",
-    "bytes": 1016553,
+    "sha256": "0d2035cd27ad63841422a1db3a7616587d57da0ab4fbd7477605bd5d41bdbb60",
+    "bytes": 791705,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -135,8 +135,8 @@
     "file": "products/youtube-production.enc",
     "filename": "youtube-production.zip",
     "type": "application/zip",
-    "sha256": "99820036e8f56e7c742ffa82d887ae13bff13cbd3a21e4543f8a7a59163d9652",
-    "bytes": 1381238,
+    "sha256": "c8a3ddf903a0690ba271afbeaba95acbcf7c79231c555899b4e366c7a53def16",
+    "bytes": 1466761,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -149,8 +149,8 @@
     "file": "products/video-prompt-vault.enc",
     "filename": "video-prompt-vault.zip",
     "type": "application/zip",
-    "sha256": "0a274061955a82c4d37acb543edd36c3c4f4855da564436fc210c0bd4faed392",
-    "bytes": 1386948,
+    "sha256": "2a2970a536aae0411dca0aee265cf7c21b61dbe36fc603616b19fad85ed6ed34",
+    "bytes": 2044453,
     "thanks": "/checkout/thanks/"
   }
 ]

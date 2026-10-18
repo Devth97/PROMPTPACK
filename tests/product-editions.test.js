@@ -13,16 +13,22 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const products=JSON.parse(read('catalog/products.json'));
   const sources=JSON.parse(read('catalog/sources.json'));
   assert.equal(editions.length,11);
-  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),132);
+  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),180);
   // Carousel Studio Visual Edition 2.0 is built outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
   const carousel=editions.find(e=>e.slug==='carousel-studio');
   assert.equal(carousel.edition,'2.0');
   assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[13,12]);
-  assert.equal(carousel.gallery.length,6);
-  const carouselPage=read('products/carousel-studio/index.html');
-  for(const slide of carousel.gallery){
-    assert.ok(fs.statSync(path.join(root,slide.src)).size>500,slide.src);
-    assert.ok(slide.alt.length>40 && carouselPage.includes(`src="${slide.src}"`),slide.src);
+  // Visual Edition 2.0 packs come from Codex's editions-v2 folder; each ships a six-image gallery on its product page.
+  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','3d-website-lab','pixel-brand-kit'];
+  for(const slug of visual){
+    const edition=editions.find(e=>e.slug===slug);
+    assert.equal(edition.edition,'2.0',slug);
+    assert.equal(edition.gallery.length,6,slug);
+    const page=read(`products/${slug}/index.html`);
+    for(const slide of edition.gallery){
+      assert.ok(fs.statSync(path.join(root,slide.src)).size>500,slide.src);
+      assert.ok(slide.alt.length>40 && page.includes(`src="${slide.src}"`),slide.src);
+    }
   }
   assert.deepEqual(new Set(editions.map(e=>e.slug)),new Set(products.map(p=>p.slug)));
   for(const edition of editions){
