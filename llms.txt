@@ -1,0 +1,40 @@
+# PromptPack
+
+> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 13 products have purchase routes, including 11 complete guide editions with free sample prompts.
+
+Updated: 2026-10-17. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
+
+## Available now
+
+- [Money Audit Pack](https://promptpack.tech/finance): Find recurring charges in your billing emails. Turn them into a Keep / Review / Compare / Negotiate action plan with your AI assistant. Gmail setup + audit prompts + review worksheets. US$19, or ₹1,599 · one time.
+- [75+ Website Prompts](https://promptpack.tech/products/website-prompts/): Website briefs for landing pages, portfolios, SaaS and 3D-style sites. Choose a motion reference, edit the brief and build in your own AI tool. Markdown prompts + motion references. US$8.50, one-time purchase.
+
+## Complete digital guide editions
+
+- [Carousel Studio](https://promptpack.tech/products/carousel-studio/): From source notes to a six-slide carousel. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Carousel Workflow Kit](https://promptpack.tech/products/carousel-workflows/): A content queue you can inspect before anything publishes. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [3D Website Lab](https://promptpack.tech/products/3d-website-lab/): A lightweight 3D product scene with a readable HTML fallback. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [AI Video Direction Kit](https://promptpack.tech/products/ai-video-direction/): Build a shot specification you can actually evaluate. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [UGC Ad Script Kit](https://promptpack.tech/products/ugc-ad-scripts/): A truthful product demonstration, planned shot by shot. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Short Explainer Studio](https://promptpack.tech/products/short-explainer-studio/): One question, a clear answer and a source for every claim. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Motion Briefs for Code](https://promptpack.tech/products/motion-with-code/): A deterministic six-second title sequence from an editable brief. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Lyric Visual Planner](https://promptpack.tech/products/lyric-visuals/): Time readable words to an authorized track. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Pixel Brand Prompt Kit](https://promptpack.tech/products/pixel-brand-kit/): A small original asset set with a consistent grid and palette. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [YouTube Production Planner](https://promptpack.tech/products/youtube-production/): A reviewed production queue from research to upload handoff. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Video Shot Prompt Library](https://promptpack.tech/products/video-prompt-vault/): Thirty shot briefs, organized for adaptation and review. 24-page guide, 30 prompts, starter files. Free sample prompt on the page.
+
+## Guides
+
+- [AI website prompts and tutorials](https://promptpack.tech/blog/)
+
+## Policies and support
+
+- [Contact and about](https://promptpack.tech/contact): support, billing and refund questions (ornalens@gmail.com)
+- [Terms](https://promptpack.tech/terms)
+- [Privacy](https://promptpack.tech/privacy)
+- [Refund policy](https://promptpack.tech/refund)
+
+## Optional
+
+- [Full catalog text](https://promptpack.tech/llms-full.txt): every product's contents, requirements, workshop steps and sample prompt in one file
+- [Sitemap](https://promptpack.tech/sitemap.xml)

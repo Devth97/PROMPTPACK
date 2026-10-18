@@ -1,0 +1,18 @@
+# Keep paid source files, launch archives and local research out of public deployments.
+private/catalog/
+output/
+product-build/
+.npm-local-cache/
+catalog/
+docs/
+tests/
+scripts/
+ad-research/
+.claude/
+.claude-flow/
+.swarm/
+.kilo/
+MONEY AUDIT TOOLKIT/
+*.zip
+*.pdf
+.env*

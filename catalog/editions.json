@@ -1,0 +1,484 @@
+[
+  {
+    "slug": "carousel-studio",
+    "name": "Carousel Studio",
+    "edition": "1.1",
+    "subtitle": "From source notes to a six-slide carousel",
+    "outcome": "A six-slide, 1080 x 1350 carousel, its caption, alt text and a source ledger. The included local renderer creates editable example slides without an account or a generation credit.",
+    "limits": "The renderer is a simple typography template, not a publishing service. AI writing is optional. The pack includes no social account access, proprietary design software or performance guarantee.",
+    "first_run": [
+      "Open starter/slides.json and read all six slide objects.",
+      "Install the single rendering dependency: python -m pip install pillow",
+      "From starter/, run: python render.py slides.json output",
+      "Open output/contact-sheet.jpg. Read each full-size slide before exporting."
+    ],
+    "lessons": [
+      "Start with one reader question",
+      "Give each slide a job",
+      "Build from the JSON template",
+      "Make the images readable",
+      "Write the caption and alt text",
+      "Export and record the version"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "carousel-studio.zip",
+    "archive_bytes": 1369582,
+    "sha256": "56f03f90d893ceb0940cc9aa580319392ceaf736087bb31a006945b66cd3701f",
+    "sources": [
+      "pillow",
+      "playwright",
+      "instagram-skills"
+    ],
+    "cover": "/assets/product-covers/carousel-studio.webp",
+    "inside": "/assets/product-previews/carousel-studio-inside.webp",
+    "example": "/assets/product-previews/carousel-studio-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "carousel-workflows",
+    "name": "Carousel Workflow Kit",
+    "edition": "1.1",
+    "subtitle": "A content queue you can inspect before anything publishes",
+    "outcome": "A documented queue with approval states, due times and duplicate checks. The included offline validator prints a publishing plan; it never sends a post or stores credentials.",
+    "limits": "The starter is an offline queue validator. Live scheduling requires a separate integration, account authorization and current platform permissions. The referenced PostOnce software repository is MIT; its hosted service can have separate charges.",
+    "first_run": [
+      "Install Node.js from its official source.",
+      "Open starter/queue.json and inspect the two fictional rows.",
+      "From starter/, run: node validate-queue.mjs queue.json",
+      "Read the due plan and blocked rows. Change one approval state and run again."
+    ],
+    "lessons": [
+      "Separate approval from scheduling",
+      "Keep the local dry run useful",
+      "Design the state transitions",
+      "Handle retries without double posting",
+      "Choose an integration deliberately",
+      "Reconcile and measure the process"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "carousel-workflows.zip",
+    "archive_bytes": 1296656,
+    "sha256": "b75d256951e0ce27f2b47245dcd66d266b55de8892be52c97a842749e895db61",
+    "sources": [
+      "instagram-mcp",
+      "instagram-skills"
+    ],
+    "cover": "/assets/product-covers/carousel-workflows.webp",
+    "inside": "/assets/product-previews/carousel-workflows-inside.webp",
+    "example": "/assets/product-previews/carousel-workflows-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "3d-website-lab",
+    "name": "3D Website Lab",
+    "edition": "1.1",
+    "subtitle": "A lightweight 3D product scene with a readable HTML fallback",
+    "outcome": "An original product landing-page starter with a Three.js geometric object, a pause control and a static fallback. The sample sells no real product and includes no checkout integration.",
+    "limits": "The starter is a front-end demonstration. It needs a network connection for the pinned Three.js dependency unless you vendor it with its license. It does not supply a domain, payment processing, a custom model or a performance certification.",
+    "first_run": [
+      "From starter/, run: python -m http.server 8011 --bind 127.0.0.1",
+      "Open http://127.0.0.1:8011/ in a browser.",
+      "The starter loads a pinned Three.js module from jsDelivr; allow that request to see WebGL.",
+      "Use Pause motion, then block the module or disable WebGL to inspect the CSS fallback."
+    ],
+    "lessons": [
+      "Design the page before the scene",
+      "Understand the small scene",
+      "Treat motion as optional",
+      "Make resizing predictable",
+      "Use the fallback as a real design",
+      "Prepare the handoff"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "3d-website-lab.zip",
+    "archive_bytes": 1195560,
+    "sha256": "6e2af0bbd8e5355d97ffb72ab08ab7ea5285a246d97d5efa8b9bb689ad2f70e6",
+    "sources": [
+      "three",
+      "playwright"
+    ],
+    "cover": "/assets/product-covers/3d-website-lab.webp",
+    "inside": "/assets/product-previews/3d-website-lab-inside.webp",
+    "example": "/assets/product-previews/3d-website-lab-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "ai-video-direction",
+    "name": "AI Video Direction Kit",
+    "edition": "1.1",
+    "subtitle": "Build a shot specification you can actually evaluate",
+    "outcome": "A production-ready shot brief, continuity block, take log and a visual shot-board example. The starter creates a local contact sheet for the planned shots; it does not call a video model.",
+    "limits": "AI video generation is not included. Diffusers is a software library; individual model weights can use different licenses and have hardware requirements. Hosted providers charge separately and support different durations, reference controls and resolutions.",
+    "first_run": [
+      "Open starter/shots.json and the continuity fields.",
+      "Run: python -m pip install pillow",
+      "From starter/, run: python storyboard.py shots.json output",
+      "Inspect output/storyboard.jpg, then adapt a single shot to your chosen video tool."
+    ],
+    "lessons": [
+      "Freeze the product facts",
+      "Describe one visible action",
+      "Build the planning board",
+      "Choose the generation route",
+      "Evaluate continuity before beauty",
+      "Package a usable handoff"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "ai-video-direction.zip",
+    "archive_bytes": 1278614,
+    "sha256": "6270596488334b0b5b32368145a3af36dd89c220a32cf8dc9782b18a0f3e97d2",
+    "sources": [
+      "diffusers"
+    ],
+    "cover": "/assets/product-covers/ai-video-direction.webp",
+    "inside": "/assets/product-previews/ai-video-direction-inside.webp",
+    "example": "/assets/product-previews/ai-video-direction-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "ugc-ad-scripts",
+    "name": "UGC Ad Script Kit",
+    "edition": "1.1",
+    "subtitle": "A truthful product demonstration, planned shot by shot",
+    "outcome": "A concise demonstration script, evidence ledger, presenter brief and editable storyboard. The included example uses a fictional desk notebook and makes no customer-experience claim.",
+    "limits": "This pack plans an ad. It includes no synthetic presenter service, cloned voice, real testimonial, generated video or live campaign. Recording, model access and publishing are separate.",
+    "first_run": [
+      "Read starter/script.json and verify the sample is labeled fictional.",
+      "Install Pillow, then run: python storyboard.py script.json output",
+      "Open output/storyboard.jpg beside the claim ledger.",
+      "Replace the demo product facts and choose a consenting real or disclosed synthetic presenter."
+    ],
+    "lessons": [
+      "Build the claim ledger first",
+      "Write an opening that the ad answers",
+      "Show the product in use",
+      "Choose the presenter and permissions",
+      "Review the edit in context",
+      "Test one variable at a time"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "ugc-ad-scripts.zip",
+    "archive_bytes": 1540634,
+    "sha256": "ef1aa8d11bcfc2beb737d5bd4cc651b7735187e0d6a591e9e730a6027f110ed5",
+    "sources": [
+      "diffusers",
+      "instagram-skills"
+    ],
+    "cover": "/assets/product-covers/ugc-ad-scripts.webp",
+    "inside": "/assets/product-previews/ugc-ad-scripts-inside.webp",
+    "example": "/assets/product-previews/ugc-ad-scripts-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "short-explainer-studio",
+    "name": "Short Explainer Studio",
+    "edition": "1.1",
+    "subtitle": "One question, a clear answer and a source for every claim",
+    "outcome": "A source-led short explanation with narration notes, a timed storyboard and a caption draft. The original example explains a documented offline content queue, so the mechanism can be checked locally.",
+    "limits": "The pack contains planning files and an illustrated example, not a recorded lesson or a generated documentary clip. Whisper transcription needs review; it is not an authoritative source for factual claims.",
+    "first_run": [
+      "Open starter/explainer.json and its source IDs.",
+      "Install Pillow and run: python storyboard.py explainer.json output",
+      "Read output/storyboard.jpg from left to right.",
+      "Read the narration aloud, measure its real duration and adjust cue times before editing."
+    ],
+    "lessons": [
+      "Choose a question small enough to answer",
+      "Attach claims to sources",
+      "Plan the narration budget",
+      "Explain with the visual",
+      "Prepare captions from the actual audio",
+      "Run the explanation check"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "short-explainer-studio.zip",
+    "archive_bytes": 1395031,
+    "sha256": "8f467f36d34f16e889d32e0a2371ae7a3d5b97ba64003537d416ba068e9f51ac",
+    "sources": [
+      "hyperframes",
+      "whisper"
+    ],
+    "cover": "/assets/product-covers/short-explainer-studio.webp",
+    "inside": "/assets/product-previews/short-explainer-studio-inside.webp",
+    "example": "/assets/product-previews/short-explainer-studio-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "motion-with-code",
+    "name": "Motion Briefs for Code",
+    "edition": "1.1",
+    "subtitle": "A deterministic six-second title sequence from an editable brief",
+    "outcome": "An editable timing brief, a local HyperFrames example and a rendered silent preview. The included composition uses original typography and the PromptPack palette.",
+    "limits": "The pack is a compact starter and prompt workshop. Rendering depends on your browser and media tools. It includes no hosted rendering credits or promise that arbitrary animation projects will render unchanged.",
+    "first_run": [
+      "Install Node.js and the system tools required by your current HyperFrames release.",
+      "Open starter/README.md and the pinned project package.json.",
+      "Run the project check command before changing the composition.",
+      "Change the copy, capture the listed proof times, then render with the project command."
+    ],
+    "lessons": [
+      "Inspect the runtime before writing motion",
+      "Give every beat a purpose",
+      "Keep the timeline seekable",
+      "Expose the useful edit points",
+      "Review proof times before export",
+      "Deliver the project as well as the movie"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "motion-with-code.zip",
+    "archive_bytes": 1507861,
+    "sha256": "76417939a7621790ae75976f47b953efd1ae72cfa0bad6fee5a68e1b4f1dc837",
+    "sources": [
+      "hyperframes"
+    ],
+    "cover": "/assets/product-covers/motion-with-code.webp",
+    "inside": "/assets/product-previews/motion-with-code-inside.webp",
+    "example": "/assets/product-previews/motion-with-code-example.webp",
+    "video": "/assets/product-previews/motion-with-code.mp4",
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "lyric-visuals",
+    "name": "Lyric Visual Planner",
+    "edition": "1.1",
+    "subtitle": "Time readable words to an authorized track",
+    "outcome": "A lyric cue sheet, a timing review method and an original silent text-motion example. No commercial song, recorded performance or third-party lyrics are included.",
+    "limits": "The bundled example is silent and demonstrates cue layout only. Automatic transcription can be inaccurate for singing; no automatic beat or lyric accuracy is promised. Music and image rights must be supplied for a real edit.",
+    "first_run": [
+      "Read starter/cues.json. The demonstration words are original: One small spark / Becomes a signal.",
+      "Open the included example preview and compare each hold with the cue sheet.",
+      "For a real project, supply an authorized track and accurate lyrics.",
+      "Measure the vocal onsets, update the cues and render the source again."
+    ],
+    "lessons": [
+      "Separate the rights and timing inputs",
+      "Measure the vocal instead of guessing",
+      "Build phrase-sized cues",
+      "Design for the crop",
+      "Use the code example as a timing instrument",
+      "Prepare versions without losing the master"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "lyric-visuals.zip",
+    "archive_bytes": 1394248,
+    "sha256": "73955fd7836d4d72a04d192b05bf4254a8f2ca276aef8245da81659624a5fede",
+    "sources": [
+      "whisper",
+      "hyperframes"
+    ],
+    "cover": "/assets/product-covers/lyric-visuals.webp",
+    "inside": "/assets/product-previews/lyric-visuals-inside.webp",
+    "example": "/assets/product-previews/lyric-visuals-example.webp",
+    "video": "/assets/product-previews/lyric-visuals.mp4",
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "pixel-brand-kit",
+    "name": "Pixel Brand Prompt Kit",
+    "edition": "1.1",
+    "subtitle": "A small original asset set with a consistent grid and palette",
+    "outcome": "A 32 x 32 original sprite, three expression variants, enlarged previews and a palette file. The included generator draws pixels directly, so its example is reproducible without an image model.",
+    "limits": "The example is a small pixel character, not an animated 3D character or a finished brand identity service. LibreSprite is a separately available GPL-2.0 editor; it is referenced, not bundled. Generated examples require your own final brand review.",
+    "first_run": [
+      "Install Pillow: python -m pip install pillow",
+      "From starter/, run: python make-sprites.py",
+      "Open output/sprite-sheet.png at its native size and output/preview.png enlarged.",
+      "Edit palette.json, run again and compare the silhouettes."
+    ],
+    "lessons": [
+      "Write the style specification",
+      "Draw the silhouette first",
+      "Render the original example",
+      "Make expressions with constraints",
+      "Review transparency and contrast",
+      "Package the asset family"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "pixel-brand-kit.zip",
+    "archive_bytes": 1016553,
+    "sha256": "e15bf75c62cd7229f1693f21f77e4d1a45c3419373da566502e936127adad885",
+    "sources": [
+      "pillow",
+      "libresprite"
+    ],
+    "cover": "/assets/product-covers/pixel-brand-kit.webp",
+    "inside": "/assets/product-previews/pixel-brand-kit-inside.webp",
+    "example": "/assets/product-previews/pixel-brand-kit-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "youtube-production",
+    "name": "YouTube Production Planner",
+    "edition": "1.1",
+    "subtitle": "A reviewed production queue from research to upload handoff",
+    "outcome": "A production brief, source ledger, shot and edit handoff, and upload-readiness checklist. The starter validates local episode records and prints missing requirements without uploading anything.",
+    "limits": "The included utility does not connect to YouTube, upload videos or fetch private analytics. API uploads require your own project, authorization and current quota/policy review. The pack includes no channel account or monetization promise.",
+    "first_run": [
+      "Open starter/episodes.json and inspect the fictional episode.",
+      "From starter/, run: node check-episode.mjs episodes.json",
+      "Read the missing-input report, then add the supplied example fields.",
+      "Keep publishing as a separate action in your own channel workflow."
+    ],
+    "lessons": [
+      "Define the episode promise",
+      "Create a source and rights ledger",
+      "Write the stage handoffs",
+      "Prepare captions and metadata",
+      "Validate the local record",
+      "Treat publishing as a separate operation"
+    ],
+    "pdf_pages": 14,
+    "prompt_count": 10,
+    "archive": "youtube-production.zip",
+    "archive_bytes": 1381238,
+    "sha256": "99820036e8f56e7c742ffa82d887ae13bff13cbd3a21e4543f8a7a59163d9652",
+    "sources": [
+      "googleapis",
+      "whisper"
+    ],
+    "cover": "/assets/product-covers/youtube-production.webp",
+    "inside": "/assets/product-previews/youtube-production-inside.webp",
+    "example": "/assets/product-previews/youtube-production-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "14-page PDF field guide",
+      "10 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  },
+  {
+    "slug": "video-prompt-vault",
+    "name": "Video Shot Prompt Library",
+    "edition": "1.1",
+    "subtitle": "Thirty shot briefs, organized for adaptation and review",
+    "outcome": "Thirty original B-roll shot prompts plus an index, continuity worksheet and selection rubric. A local contact-sheet example shows how to plan a small set before generating footage.",
+    "limits": "The library contains original text briefs and planning assets, not thirty generated clips. A prompt cannot guarantee physical accuracy or identical output across models. Model access, hardware and generation credits are separate.",
+    "first_run": [
+      "Open PROMPTS.md and choose one of the thirty shots.",
+      "Fill the subject, authorized reference and intended use before generation.",
+      "Run the optional storyboard example: python storyboard.py shots.json output",
+      "Generate a short test in your own video tool and record its model and settings."
+    ],
+    "lessons": [
+      "Choose by the editorial job",
+      "Replace every subject placeholder",
+      "Preserve one controlled action",
+      "Read the tool and model requirements",
+      "Score observable defects",
+      "Build a small approved collection"
+    ],
+    "pdf_pages": 24,
+    "prompt_count": 30,
+    "archive": "video-prompt-vault.zip",
+    "archive_bytes": 1386948,
+    "sha256": "0a274061955a82c4d37acb543edd36c3c4f4855da564436fc210c0bd4faed392",
+    "sources": [
+      "diffusers"
+    ],
+    "cover": "/assets/product-covers/video-prompt-vault.webp",
+    "inside": "/assets/product-previews/video-prompt-vault-inside.webp",
+    "example": "/assets/product-previews/video-prompt-vault-example.webp",
+    "video": null,
+    "content_status": "built",
+    "sale_status": "checkout-configured",
+    "includes": [
+      "24-page PDF field guide",
+      "30 editable prompts",
+      "Original worked example and starter files",
+      "Blank and filled worksheets",
+      "Repository source register and usage notes"
+    ]
+  }
+]

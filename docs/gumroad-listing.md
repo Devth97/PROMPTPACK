@@ -42,7 +42,7 @@ Not financial advice. Savings are not guaranteed.
 
 ## Step 3 — Meta Pixel (so Gumroad reports Purchase)
 Gumroad → Settings → Third-party analytics → add Meta Pixel ID `2116311975585050` (same Pixel as promptpack.tech).
-Gumroad then sends its own InitiateCheckout/Purchase for Gumroad sales. These land in the same Pixel as website sales (website: $19, Gumroad: $25); each sale is counted once. Point Meta ads at promptpack.tech/finance only, so Purchase optimisation learns from the website checkout.
+Gumroad then sends its own InitiateCheckout/Purchase for Gumroad sales. These land in the same Pixel as website sales (website: $19, Gumroad: $25); each sale is counted once. Meta ads pointed at promptpack.tech/finance keep Purchase optimisation learning from the website checkout. A ₹500 Gumroad-destination campaign now runs alongside it as a deliberate split test — see docs/meta-ads-launch.md for why that weakens the Pixel data and what it buys you.
 
 ## Step 4 — Test
 Do one purchase on the Gumroad page and check Meta Events Manager → Test Events for InitiateCheckout and Purchase (value 25, USD).
@@ -51,4 +51,4 @@ Do one purchase on the Gumroad page and check Meta Events Manager → Test Event
 - Cover image 1280×720 and thumbnail 600×600 for the Gumroad page.
 
 ## Attribution limit
-Meta ads should point to promptpack.tech/finance (Razorpay). Gumroad sales are not tied to a campaign from the site.
+Gumroad sales are not tied to a campaign from the site: UTMs never reach a Razorpay order note, so a Gumroad-destination campaign can only be read off Gumroad analytics plus Events Manager. Budget split and the reasoning: docs/meta-ads-launch.md.

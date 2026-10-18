@@ -16,3 +16,20 @@ Thumbs.db
 *.pdf
 .env
 .env.*
+
+# competitor ad screenshots — research only, never ship to the public site
+/ad-research/
+
+# Paid catalog source and generated launch bundles stay local.
+/private/catalog/
+/output/catalog-research/
+/output/product-launch/
+/product-build/
+/.npm-local-cache/
+.env*
+
+# Local agent/tool state and unrelated generated output stay out of Git.
+.claude/
+.claude-flow/
+.swarm/
+/output/

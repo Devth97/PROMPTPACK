@@ -60,6 +60,7 @@ function startMockRazorpay(port) {
     if (req.method === 'POST' && p === '/emails') { emails.push(JSON.parse(raw)); return json(200, { id: 'email_1' }); }
     if (req.method === 'GET' && p === '/__emails') return json(200, emails);
     if (req.method === 'POST' && p === '/__put_order') { const o = JSON.parse(raw); orders.set(o.id, o); return json(200, o); }
+    if (req.method === 'POST' && p === '/__put_payment') { const pay = JSON.parse(raw); payments.set(pay.id, pay); return json(200, pay); }
     return json(404, { error: { description: 'not found' } });
   });
   return new Promise((r) => server.listen(port, () => r({ server, orders, payments, emails })));
@@ -86,8 +87,9 @@ function startSite(port, rzpPort) {
       const r = await fetch('http://localhost:' + rzpPort + '/__pay/' + p.split('/').pop(), { method: 'POST', body: '{}' });
       res.setHeader('Content-Type', 'application/json'); return res.end(await r.text());
     }
-    let f = path.join(ROOT, p);
-    if (!f.startsWith(ROOT)) { res.statusCode = 403; return res.end(); }
+    if (/^\/(?:private|product-build|catalog|scripts|tests|docs|api|\.git|\.env|\.vercel)(?:[/.]|$)/i.test(p)) { res.statusCode=404; return res.end('not found'); }
+    let f = path.resolve(ROOT, '.'+p);
+    if (f !== ROOT && !f.startsWith(ROOT+path.sep)) { res.statusCode = 403; return res.end(); }
     if (fs.existsSync(f) && fs.statSync(f).isDirectory()) f = path.join(f, 'index.html');
     else if (!fs.existsSync(f) && fs.existsSync(path.join(f, 'index.html'))) f = path.join(f, 'index.html');
     if (!fs.existsSync(f)) { res.statusCode = 404; return res.end('not found'); }

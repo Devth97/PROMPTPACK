@@ -12,14 +12,16 @@ module.exports = async (req, res) => {
     res.setHeader('Cache-Control', 'no-store');
     return res.end('This download link is invalid or has expired. Contact support with your payment reference and we will re-issue it.');
   }
+  const product=L.catalog.byId(claims.product);
   let pdf;
-  try { pdf = L.decryptPack(); } catch (e) {
+  try { pdf = L.decryptPack(product); } catch (e) {
     console.error('download: cannot read pack', e.message);
     return L.send(res, 500, { error: 'file_unavailable' });
   }
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'application/pdf');
-  res.setHeader('Content-Disposition', 'attachment; filename="AI-Money-Audit-Prompt-Pack.pdf"');
+  res.setHeader('Content-Type', product.type);
+  res.setHeader('Content-Disposition', 'attachment; filename="'+product.filename+'"');
+  res.setHeader('X-Content-Type-Options','nosniff');
   res.setHeader('Content-Length', String(pdf.length));
   res.setHeader('Cache-Control', 'private, no-store');
   res.setHeader('X-Robots-Tag', 'noindex');

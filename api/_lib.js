@@ -7,6 +7,7 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const catalog = require('./_products');
 
 const PRODUCT_ID = 'ai-money-audit-prompt-pack';
 const PRODUCT_NAME = 'AI Money Audit Prompt Pack';
@@ -54,8 +55,8 @@ async function readRaw(req) {
 }
 
 async function readJson(req) {
-  if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) return req.body;
-  try { return JSON.parse((await readRaw(req)).toString('utf8') || '{}'); } catch (e) { return {}; }
+  if (req.body && typeof req.body === 'object' && !Buffer.isBuffer(req.body)) return Array.isArray(req.body)?{}:req.body;
+  try { const parsed=JSON.parse((await readRaw(req)).toString('utf8') || '{}');return parsed && typeof parsed==='object' && !Array.isArray(parsed)?parsed:{}; } catch (e) { return {}; }
 }
 
 /* ---------- Razorpay REST ---------- */
@@ -80,39 +81,45 @@ function safeEqual(a, b) {
 }
 
 /** Signed, expiring download token: base64url(payload).base64url(hmac). Payload: o=order, p=payment, a=amount, c=currency, exp. */
-function signToken(o, p, a, c) {
+function signToken(o, p, a, c, product = PRODUCT_ID) {
   const days = parseInt(env('TOKEN_TTL_DAYS') || '7', 10);
-  const body = b64u(JSON.stringify({ o, p, a, c, exp: Math.floor(Date.now() / 1000) + days * 86400 }));
+  const body = b64u(JSON.stringify({ o, p, a, c, product, exp: Math.floor(Date.now() / 1000) + days * 86400 }));
   return body + '.' + b64u(hmac(env('DOWNLOAD_SIGNING_SECRET'), body));
 }
 function readToken(tok) {
   try {
-    const [body, sig] = String(tok || '').split('.');
+    const parts = String(tok || '').split('.');
+    if(parts.length!==2)return null;
+    const [body, sig] = parts;
     if (!body || !sig || !env('DOWNLOAD_SIGNING_SECRET')) return null;
     if (!safeEqual(sig, b64u(hmac(env('DOWNLOAD_SIGNING_SECRET'), body)))) return null;
     const p = JSON.parse(Buffer.from(body, 'base64url').toString('utf8'));
     if (!p.exp || Date.now() / 1000 > p.exp) return null;
+    // Existing Finance links predate the product claim and must remain usable.
+    if(!Object.hasOwn(p,'product'))p.product=PRODUCT_ID;
+    if(!catalog.byId(p.product))return null;
     return p;
   } catch (e) { return null; }
 }
 
 /** The PDF is stored AES-256-GCM encrypted in the repo (private/pack.enc); the key lives only in env. Layout: iv(12) | tag(16) | ciphertext. */
-function decryptPack() {
+function packPath(product = catalog.finance) {
+  return [path.join(process.cwd(),'private',product.file),path.join(__dirname,'..','private',product.file)].find(f=>fs.existsSync(f));
+}
+function decryptPack(product = catalog.finance) {
   const key = Buffer.from(env('DOWNLOAD_FILE_KEY'), 'hex');
   if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
-  const candidates = [
-    path.join(process.cwd(), 'private', 'pack.enc'),
-    path.join(__dirname, '..', 'private', 'pack.enc'),
-  ];
-  const file = candidates.find((f) => fs.existsSync(f));
+  const file = packPath(product);
   if (!file) throw new Error('pack.enc not found');
   const buf = fs.readFileSync(file);
   const d = crypto.createDecipheriv('aes-256-gcm', key, buf.subarray(0, 12));
   d.setAuthTag(buf.subarray(12, 28));
-  return Buffer.concat([d.update(buf.subarray(28)), d.final()]);
+  const plain=Buffer.concat([d.update(buf.subarray(28)), d.final()]);
+  if(product.sha256 && crypto.createHash('sha256').update(plain).digest('hex')!==product.sha256)throw new Error('Pack digest mismatch');
+  return plain;
 }
 
 module.exports = {
   PRODUCT_ID, PRODUCT_NAME, env, siteUrl, missing, price, send, sameOrigin, readRaw, readJson,
-  rzp, hmac, safeEqual, signToken, readToken, decryptPack,
+  rzp, hmac, safeEqual, signToken, readToken, decryptPack, packPath, catalog,
 };

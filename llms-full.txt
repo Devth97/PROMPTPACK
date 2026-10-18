@@ -1,0 +1,375 @@
+# PromptPack
+
+> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 13 products have purchase routes, including 11 complete guide editions with free sample prompts.
+
+Updated: 2026-10-17. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
+
+## Available now
+
+- [Money Audit Pack](https://promptpack.tech/finance): Find recurring charges in your billing emails. Turn them into a Keep / Review / Compare / Negotiate action plan with your AI assistant. Gmail setup + audit prompts + review worksheets. US$19, or ₹1,599 · one time.
+- [75+ Website Prompts](https://promptpack.tech/products/website-prompts/): Website briefs for landing pages, portfolios, SaaS and 3D-style sites. Choose a motion reference, edit the brief and build in your own AI tool. Markdown prompts + motion references. US$8.50, one-time purchase.
+
+## Digital guide details
+
+### Carousel Studio
+
+URL: https://promptpack.tech/products/carousel-studio/
+Category: Social content
+Status: available through Razorpay checkout for US$12 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+From source notes to a six-slide carousel. A six-slide, 1080 x 1350 carousel, its caption, alt text and a source ledger. The included local renderer creates editable example slides without an account or a generation credit.
+
+For: Creators and small business owners who write their own social posts.
+Requirements: A text AI assistant and a slide or design editor. Image generation is optional.
+Scope: The renderer is a simple typography template, not a publishing service. AI writing is optional. The pack includes no social account access, proprietary design software or performance guarantee.
+
+Workshop steps:
+1. Start with one reader question
+2. Give each slide a job
+3. Build from the JSON template
+4. Make the images readable
+5. Write the caption and alt text
+6. Export and record the version
+
+First session:
+1. Open starter/slides.json and read all six slide objects.
+2. Install the single rendering dependency: python -m pip install pillow
+3. From starter/, run: python render.py slides.json output
+4. Open output/contact-sheet.jpg. Read each full-size slide before exporting.
+
+Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
+
+Sample prompt:
+
+Act as a carousel editor. Topic: [TOPIC]. Reader: [AUDIENCE]. Source notes: [VERIFIED NOTES]. Goal: [ONE ACTION]. Draft six slides: a specific opening, the problem, two practical steps, one worked example and a closing action. For each slide give a headline under nine words, body copy under 35 words and one visual direction. Separate any claim needing a source. Finish with a caption and alt text for each slide. Do not invent results or customer quotes.
+
+### Carousel Workflow Kit
+
+URL: https://promptpack.tech/products/carousel-workflows/
+Category: Automation
+Status: available through Razorpay checkout for US$15 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A content queue you can inspect before anything publishes. A documented queue with approval states, due times and duplicate checks. The included offline validator prints a publishing plan; it never sends a post or stores credentials.
+
+For: Creators moving from manual posting to a reviewed publishing workflow.
+Requirements: A text AI assistant. Implementing the plans requires your own automation platform and connected publishing accounts.
+Scope: The starter is an offline queue validator. Live scheduling requires a separate integration, account authorization and current platform permissions. The referenced PostOnce software repository is MIT; its hosted service can have separate charges.
+
+Workshop steps:
+1. Separate approval from scheduling
+2. Keep the local dry run useful
+3. Design the state transitions
+4. Handle retries without double posting
+5. Choose an integration deliberately
+6. Reconcile and measure the process
+
+First session:
+1. Install Node.js from its official source.
+2. Open starter/queue.json and inspect the two fictional rows.
+3. From starter/, run: node validate-queue.mjs queue.json
+4. Read the due plan and blocked rows. Change one approval state and run again.
+
+Public tools referenced: postoncehq/instagram-mcp (MIT) https://github.com/postoncehq/instagram-mcp; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
+
+Sample prompt:
+
+Design a content queue for [CHANNEL] using [AUTOMATION TOOL]. Store draft_id, content_url, scheduled_at, timezone, approval_state, publish_state, external_post_id and last_error. Only approved rows may publish. Describe states and transitions, a duplicate prevention key, retry rules for timeouts and rate limits, and how an operator reconciles a post that succeeded remotely but timed out locally. Return a table and five acceptance tests. Keep credentials out of the queue. Do not publish anything.
+
+### 3D Website Lab
+
+URL: https://promptpack.tech/products/3d-website-lab/
+Category: Websites
+Status: available through Razorpay checkout for US$15 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A lightweight 3D product scene with a readable HTML fallback. An original product landing-page starter with a Three.js geometric object, a pause control and a static fallback. The sample sells no real product and includes no checkout integration.
+
+For: Freelancers and founders building a product landing page with a coding assistant.
+Requirements: An AI coding tool and a browser. Supply your own licensed models, images or video when the brief needs them.
+Scope: The starter is a front-end demonstration. It needs a network connection for the pinned Three.js dependency unless you vendor it with its license. It does not supply a domain, payment processing, a custom model or a performance certification.
+
+Workshop steps:
+1. Design the page before the scene
+2. Understand the small scene
+3. Treat motion as optional
+4. Make resizing predictable
+5. Use the fallback as a real design
+6. Prepare the handoff
+
+First session:
+1. From starter/, run: python -m http.server 8011 --bind 127.0.0.1
+2. Open http://127.0.0.1:8011/ in a browser.
+3. The starter loads a pinned Three.js module from jsDelivr; allow that request to see WebGL.
+4. Use Pause motion, then block the module or disable WebGL to inspect the CSS fallback.
+
+Public tools referenced: mrdoob/three.js (MIT) https://github.com/mrdoob/three.js; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright
+
+Sample prompt:
+
+Inspect my current app before editing. Build a product landing page for [PRODUCT] aimed at [AUDIENCE]. Use [EXISTING STACK]. Start with a readable HTML hero and [PRIMARY CTA]. Add one optional 3D object from [LICENSED ASSET] only after the main content loads. Provide a static poster when WebGL fails, reduced motion is enabled or the device cannot sustain the scene. Keep text and navigation outside the canvas. Return the implementation plan, asset requirements and checks for keyboard access, small screens and loading performance.
+
+### AI Video Direction Kit
+
+URL: https://promptpack.tech/products/ai-video-direction/
+Category: Video
+Status: available through Razorpay checkout for US$12 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+Build a shot specification you can actually evaluate. A production-ready shot brief, continuity block, take log and a visual shot-board example. The starter creates a local contact sheet for the planned shots; it does not call a video model.
+
+For: Creators planning generated product clips and short brand films.
+Requirements: A text AI assistant plus your chosen image or video generator. Generation credits are separate.
+Scope: AI video generation is not included. Diffusers is a software library; individual model weights can use different licenses and have hardware requirements. Hosted providers charge separately and support different durations, reference controls and resolutions.
+
+Workshop steps:
+1. Freeze the product facts
+2. Describe one visible action
+3. Build the planning board
+4. Choose the generation route
+5. Evaluate continuity before beauty
+6. Package a usable handoff
+
+First session:
+1. Open starter/shots.json and the continuity fields.
+2. Run: python -m pip install pillow
+3. From starter/, run: python storyboard.py shots.json output
+4. Inspect output/storyboard.jpg, then adapt a single shot to your chosen video tool.
+
+Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
+
+Sample prompt:
+
+Turn this brief into a shot specification: [BRIEF]. Use only these product facts: [FACTS]. Describe subject identity, action, camera position, lens feel, lighting, background and duration in separate fields. Make the action physically plausible. Define start and end frames and list details that must stay constant across takes. Provide a shorter fallback prompt if the generator ignores the main action. Finish with a review checklist for geometry, text, hands, reflections and continuity. Do not claim that any take has been generated or tested.
+
+### UGC Ad Script Kit
+
+URL: https://promptpack.tech/products/ugc-ad-scripts/
+Category: Video
+Status: available through Razorpay checkout for US$12 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A truthful product demonstration, planned shot by shot. A concise demonstration script, evidence ledger, presenter brief and editable storyboard. The included example uses a fictional desk notebook and makes no customer-experience claim.
+
+For: Small brands briefing a presenter or producing disclosed AI-assisted ads.
+Requirements: A text AI assistant. Filming, voice and video generation tools are optional and sold separately.
+Scope: This pack plans an ad. It includes no synthetic presenter service, cloned voice, real testimonial, generated video or live campaign. Recording, model access and publishing are separate.
+
+Workshop steps:
+1. Build the claim ledger first
+2. Write an opening that the ad answers
+3. Show the product in use
+4. Choose the presenter and permissions
+5. Review the edit in context
+6. Test one variable at a time
+
+First session:
+1. Read starter/script.json and verify the sample is labeled fictional.
+2. Install Pillow, then run: python storyboard.py script.json output
+3. Open output/storyboard.jpg beside the claim ledger.
+4. Replace the demo product facts and choose a consenting real or disclosed synthetic presenter.
+
+Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
+
+Sample prompt:
+
+Write a 20-second product demonstration script for [PRODUCT] and [AUDIENCE]. Verified benefits: [FACTS WITH SOURCES]. Presenter: [REAL CONSENTING PRESENTER OR DISCLOSED SYNTHETIC PRESENTER]. Use a problem, a visible demonstration and one CTA. Return timecodes, spoken words, shot instructions and on-screen text. Mark where an ad or synthetic-presenter disclosure belongs. Avoid first-person experience claims unless the presenter supplied them. Flag every benefit that lacks evidence. Keep the script under 50 spoken words.
+
+### Short Explainer Studio
+
+URL: https://promptpack.tech/products/short-explainer-studio/
+Category: Video
+Status: available through Razorpay checkout for US$12 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+One question, a clear answer and a source for every claim. A source-led short explanation with narration notes, a timed storyboard and a caption draft. The original example explains a documented offline content queue, so the mechanism can be checked locally.
+
+For: Educators and creators making concise explanatory videos.
+Requirements: A text AI assistant, trustworthy topic sources and an editor or video generator.
+Scope: The pack contains planning files and an illustrated example, not a recorded lesson or a generated documentary clip. Whisper transcription needs review; it is not an authoritative source for factual claims.
+
+Workshop steps:
+1. Choose a question small enough to answer
+2. Attach claims to sources
+3. Plan the narration budget
+4. Explain with the visual
+5. Prepare captions from the actual audio
+6. Run the explanation check
+
+First session:
+1. Open starter/explainer.json and its source IDs.
+2. Install Pillow and run: python storyboard.py explainer.json output
+3. Read output/storyboard.jpg from left to right.
+4. Read the narration aloud, measure its real duration and adjust cue times before editing.
+
+Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes; openai/whisper (MIT) https://github.com/openai/whisper
+
+Sample prompt:
+
+Explain [TOPIC] to [AUDIENCE] in a 30-second script using only [SOURCE EXCERPTS]. Choose one question and answer it directly. Return a table with time range, narration, visual action and supporting source. Use a simple original visual analogy and state its limits. Keep narration under 70 words. Mark uncertainties instead of filling gaps. End with the answer rather than an unrelated call to action. List any visuals that could misrepresent scale, causation or time.
+
+### Motion Briefs for Code
+
+URL: https://promptpack.tech/products/motion-with-code/
+Category: Video
+Status: available through Razorpay checkout for US$15 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A deterministic six-second title sequence from an editable brief. An editable timing brief, a local HyperFrames example and a rendered silent preview. The included composition uses original typography and the PromptPack palette.
+
+For: Developers creating title cards, launch clips or data animations with code.
+Requirements: An AI coding assistant and your chosen animation framework. These are prompts, not finished video templates.
+Scope: The pack is a compact starter and prompt workshop. Rendering depends on your browser and media tools. It includes no hosted rendering credits or promise that arbitrary animation projects will render unchanged.
+
+Workshop steps:
+1. Inspect the runtime before writing motion
+2. Give every beat a purpose
+3. Keep the timeline seekable
+4. Expose the useful edit points
+5. Review proof times before export
+6. Deliver the project as well as the movie
+
+First session:
+1. Install Node.js and the system tools required by your current HyperFrames release.
+2. Open starter/README.md and the pinned project package.json.
+3. Run the project check command before changing the composition.
+4. Change the copy, capture the listed proof times, then render with the project command.
+
+Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes
+
+Sample prompt:
+
+Inspect the animation project and use its existing framework. Create a six-second title card for [TITLE] in [WIDTH x HEIGHT] at [FPS]. Define a single deterministic timeline: title enters at 0.4 seconds, supporting line at 1.2 seconds, both hold until 4.8 seconds, then exit by 5.6 seconds. Expose copy and colors as variables. Use licensed local fonts. Make arbitrary-time seeking produce the same frame as sequential playback. Return file changes and checks at 0, 1.2, 3 and 5.6 seconds. Do not claim a render exists until it has completed.
+
+### Lyric Visual Planner
+
+URL: https://promptpack.tech/products/lyric-visuals/
+Category: Video
+Status: available through Razorpay checkout for US$9 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+Time readable words to an authorized track. A lyric cue sheet, a timing review method and an original silent text-motion example. No commercial song, recorded performance or third-party lyrics are included.
+
+For: Musicians and editors preparing lyric clips from their own or licensed tracks.
+Requirements: A text AI assistant, a video editor and a track plus lyrics you have permission to use.
+Scope: The bundled example is silent and demonstrates cue layout only. Automatic transcription can be inaccurate for singing; no automatic beat or lyric accuracy is promised. Music and image rights must be supplied for a real edit.
+
+Workshop steps:
+1. Separate the rights and timing inputs
+2. Measure the vocal instead of guessing
+3. Build phrase-sized cues
+4. Design for the crop
+5. Use the code example as a timing instrument
+6. Prepare versions without losing the master
+
+First session:
+1. Read starter/cues.json. The demonstration words are original: One small spark / Becomes a signal.
+2. Open the included example preview and compare each hold with the cue sheet.
+3. For a real project, supply an authorized track and accurate lyrics.
+4. Measure the vocal onsets, update the cues and render the source again.
+
+Public tools referenced: openai/whisper (MIT) https://github.com/openai/whisper; heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes
+
+Sample prompt:
+
+Plan a 15-second lyric clip using [AUTHORIZED LYRIC EXCERPT] and [TIMECODES]. Canvas: [RATIO]. Audience: [AUDIENCE]. Return cue in/out times, text groups, line breaks, emphasis and transition notes. Keep every word inside the platform safe area and provide a high-contrast background direction. Do not invent lyrics or timing. If timestamps are missing, return a timing worksheet and label the cut provisional. Include a readability check for a small phone screen.
+
+### Pixel Brand Prompt Kit
+
+URL: https://promptpack.tech/products/pixel-brand-kit/
+Category: Design
+Status: available through Razorpay checkout for US$9 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A small original asset set with a consistent grid and palette. A 32 x 32 original sprite, three expression variants, enlarged previews and a palette file. The included generator draws pixels directly, so its example is reproducible without an image model.
+
+For: Creators and small teams making a consistent pixel art asset set.
+Requirements: A text AI assistant plus a pixel editor or image generator. Manual cleanup may be needed.
+Scope: The example is a small pixel character, not an animated 3D character or a finished brand identity service. LibreSprite is a separately available GPL-2.0 editor; it is referenced, not bundled. Generated examples require your own final brand review.
+
+Workshop steps:
+1. Write the style specification
+2. Draw the silhouette first
+3. Render the original example
+4. Make expressions with constraints
+5. Review transparency and contrast
+6. Package the asset family
+
+First session:
+1. Install Pillow: python -m pip install pillow
+2. From starter/, run: python make-sprites.py
+3. Open output/sprite-sheet.png at its native size and output/preview.png enlarged.
+4. Edit palette.json, run again and compare the silhouettes.
+
+Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; LibreSprite/LibreSprite (GPL-2.0) https://github.com/LibreSprite/LibreSprite
+
+Sample prompt:
+
+Create a pixel art specification for an original [CHARACTER OR OBJECT] for [BRAND]. Grid: [SIZE]. Palette: [HEX COLORS]. Describe silhouette, proportions, light direction, outline rules and background transparency. Give a generator prompt and a manual cleanup checklist. Keep edges aligned to the pixel grid and avoid blur, gradients and anti-aliasing. Return variations for neutral, active and resting poses using the same proportions. Do not imitate a named artist or an existing character.
+
+### YouTube Production Planner
+
+URL: https://promptpack.tech/products/youtube-production/
+Category: Automation
+Status: available through Razorpay checkout for US$15 once
+Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+
+A reviewed production queue from research to upload handoff. A production brief, source ledger, shot and edit handoff, and upload-readiness checklist. The starter validates local episode records and prints missing requirements without uploading anything.
+
+For: Solo creators documenting a repeatable YouTube production process.
+Requirements: A text AI assistant and an editor. Scheduling or uploads require your own tools and account setup.
+Scope: The included utility does not connect to YouTube, upload videos or fetch private analytics. API uploads require your own project, authorization and current quota/policy review. The pack includes no channel account or monetization promise.
+
+Workshop steps:
+1. Define the episode promise
+2. Create a source and rights ledger
+3. Write the stage handoffs
+4. Prepare captions and metadata
+5. Validate the local record
+6. Treat publishing as a separate operation
+
+First session:
+1. Open starter/episodes.json and inspect the fictional episode.
+2. From starter/, run: node check-episode.mjs episodes.json
+3. Read the missing-input report, then add the supplied example fields.
+4. Keep publishing as a separate action in your own channel workflow.
+
+Public tools referenced: googleapis/google-api-nodejs-client (Apache-2.0) https://github.com/googleapis/google-api-nodejs-client; openai/whisper (MIT) https://github.com/openai/whisper
+
+Sample prompt:
+
+Design a reviewed production workflow for a [LENGTH]-minute YouTube video about [TOPIC]. Inputs: [SOURCES], [ORIGINAL FOOTAGE], [VOICE RIGHTS] and [CHANNEL STYLE]. Return stages for research, outline, script, assets, edit, captions, thumbnail and upload review. Each stage needs an owner, required input, output, failure condition and approval rule. Keep uploading as a separate manual approval. Add a rights ledger and a fact-check queue. Do not promise views, monetization or ranking.
+
+### Video Shot Prompt Library
+
+URL: https://promptpack.tech/products/video-prompt-vault/
+Category: Video
+Status: available through Razorpay checkout for US$12 once
+Format: 24-page illustrated PDF guide, 30 editable prompts, worked example, starter files, worksheets
+
+Thirty shot briefs, organized for adaptation and review. Thirty original B-roll shot prompts plus an index, continuity worksheet and selection rubric. A local contact-sheet example shows how to plan a small set before generating footage.
+
+For: Creators who want specific starting points for generated B-roll.
+Requirements: A video generator of your choice. Each brief needs your subject and any reference assets you are licensed to use.
+Scope: The library contains original text briefs and planning assets, not thirty generated clips. A prompt cannot guarantee physical accuracy or identical output across models. Model access, hardware and generation credits are separate.
+
+Workshop steps:
+1. Choose by the editorial job
+2. Replace every subject placeholder
+3. Preserve one controlled action
+4. Read the tool and model requirements
+5. Score observable defects
+6. Build a small approved collection
+
+First session:
+1. Open PROMPTS.md and choose one of the thirty shots.
+2. Fill the subject, authorized reference and intended use before generation.
+3. Run the optional storyboard example: python storyboard.py shots.json output
+4. Generate a short test in your own video tool and record its model and settings.
+
+Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
+
+Sample prompt:
+
+Create a six-second close-up of [PRODUCT] on a matte stone surface. A large window on camera left provides soft daylight. Begin on the edge texture, then make a slow lateral camera move to reveal the full product. The product stays still and retains the exact shape, finish and markings of [AUTHORIZED REFERENCE]. Keep the background plain and depth of field sufficient to read the product outline. Review the result for drifting labels, changing geometry and implausible reflections before using it.

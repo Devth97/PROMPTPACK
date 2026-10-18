@@ -22,7 +22,17 @@ module.exports = async (req, res) => {
 
   const order = evt.payload && evt.payload.order && evt.payload.order.entity;
   const payment = evt.payload && evt.payload.payment && evt.payload.payment.entity;
-  if (!order || !payment || !order.notes || order.notes.product !== L.PRODUCT_ID) return L.send(res, 200, { ignored: 'not_our_product' });
+  const product=L.catalog.byId(order && order.notes && order.notes.product);
+  if (!product || !payment) return L.send(res, 200, { ignored: 'not_our_product' });
+  // Acknowledge (200) rather than reject: Razorpay retries non-2xx responses and can disable the webhook.
+  if(order.status!=='paid' || order.amount_paid<order.amount || payment.order_id!==order.id || payment.status!=='captured' || payment.amount!==order.amount || payment.currency!==order.currency || payment.amount_refunded>0){
+    console.warn('webhook: order', order.id, 'is not a completed captured payment; no email sent');
+    return L.send(res,200,{ignored:'payment_not_completed'});
+  }
+  if(product!==L.catalog.finance && (order.amount!==product.amount || order.currency!==product.currency)){
+    console.warn('webhook: order', order.id, 'does not match the server price for', product.slug);
+    return L.send(res,200,{ignored:'wrong_price'});
+  }
 
   const email = payment.email;
   const apiKey = L.env('RESEND_API_KEY'), from = L.env('EMAIL_FROM');
@@ -31,10 +41,10 @@ module.exports = async (req, res) => {
     return L.send(res, 200, { ok: true, emailed: false });
   }
 
-  const token = L.signToken(order.id, payment.id, order.amount_paid || order.amount, order.currency);
-  const link = L.siteUrl() + '/finance/thanks#t=' + token;
+  const token = L.signToken(order.id, payment.id, order.amount_paid || order.amount, order.currency, product.id);
+  const link = L.siteUrl() + product.thanks+'#t=' + token;
   const html = '<div style="font-family:Arial,sans-serif;max-width:520px">'
-    + '<h2>Your ' + L.PRODUCT_NAME + ' is ready</h2>'
+    + '<h2>Your ' + product.name + ' is ready</h2>'
     + '<p>Thanks for your purchase. Download your pack here:</p>'
     + '<p><a href="' + link + '" style="background:#F598F2;color:#000;padding:12px 20px;text-decoration:none;font-weight:bold;border:2px solid #000">Download the pack</a></p>'
     + '<p style="font-size:13px;color:#555">This link expires in ' + (L.env('TOKEN_TTL_DAYS') || '7') + ' days. Payment reference: ' + payment.id
@@ -42,8 +52,9 @@ module.exports = async (req, res) => {
 
   const r = await fetch(L.env('EMAIL_API_BASE') || 'https://api.resend.com/emails', {
     method: 'POST',
-    headers: { Authorization: 'Bearer ' + apiKey, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ from, to: [email], subject: 'Your ' + L.PRODUCT_NAME + ' download', html }),
+    headers: { Authorization: 'Bearer ' + apiKey, 'Content-Type': 'application/json', 'Idempotency-Key':'download-'+order.id },
+    // Replies go to EMAIL_FROM's inbox unless EMAIL_REPLY_TO names a different support mailbox.
+    body: JSON.stringify({ from, to: [email], ...(L.env('EMAIL_REPLY_TO') && { reply_to: L.env('EMAIL_REPLY_TO') }), subject: 'Your ' + product.name + ' download', html }),
   });
   if (!r.ok) { console.error('webhook: email provider error', r.status); return L.send(res, 502, { error: 'email_failed' }); } // Razorpay will retry
   return L.send(res, 200, { ok: true, emailed: true });

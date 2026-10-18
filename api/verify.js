@@ -28,7 +28,10 @@ module.exports = async (req, res) => {
 
   const o = await L.rzp('GET', '/v1/orders/' + orderId);
   if (!o.ok) return L.send(res, 502, { error: 'order_lookup_failed' });
-  if (!o.data.notes || o.data.notes.product !== L.PRODUCT_ID) return L.send(res, 403, { error: 'wrong_product' });
+  const product=L.catalog.byId(o.data.notes && o.data.notes.product);
+  if (!product) return L.send(res, 403, { error: 'wrong_product' });
+  if(b.product!==undefined && b.product!==product.slug)return L.send(res,403,{error:'wrong_product'});
+  if(product!==L.catalog.finance && (o.data.amount!==product.amount || o.data.currency!==product.currency))return L.send(res,403,{error:'wrong_price'});
 
   let order = o.data;
   if (order.status !== 'paid') {
@@ -40,13 +43,18 @@ module.exports = async (req, res) => {
       if (again.ok) order = again.data;
     }
   }
-  if (order.status !== 'paid') return L.send(res, 402, { error: 'payment_not_completed' });
+  if (order.status !== 'paid' || order.amount_paid<order.amount) return L.send(res, 402, { error: 'payment_not_completed' });
+  const captured=await L.rzp('GET','/v1/payments/'+paymentId);
+  if(!captured.ok || captured.data.order_id!==orderId || captured.data.status!=='captured' || captured.data.amount!==order.amount || captured.data.currency!==order.currency || captured.data.amount_refunded>0)return L.send(res,402,{error:'payment_not_completed'});
 
   return L.send(res, 200, {
     ok: true,
     order_id: orderId,
     amount: order.amount_paid || order.amount,
     currency: order.currency,
-    token: L.signToken(orderId, paymentId, order.amount_paid || order.amount, order.currency),
+    product: product.slug,
+    product_name: product.name,
+    thanks: product.thanks,
+    token: L.signToken(orderId, paymentId, order.amount_paid || order.amount, order.currency, product.id),
   });
 };
