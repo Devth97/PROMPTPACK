@@ -17,13 +17,13 @@ module.exports = async (req, res) => {
   if(!product)return L.send(res,400,{error:'unknown_product'});
   if(product!==L.catalog.finance && (L.missing(['DOWNLOAD_FILE_KEY']).length || !L.packPath(product)))return L.send(res,503,{error:'file_unavailable'});
   if(product!==L.catalog.finance){try{L.decryptPack(product);}catch(_){return L.send(res,503,{error:'file_unavailable'});}}
-  if(product!==L.catalog.finance && body.plan && body.plan!=='usd')return L.send(res,400,{error:'unsupported_price_plan'});
+  if(product!==L.catalog.finance && body.plan!==undefined && !L.catalog.PLANS.includes(body.plan))return L.send(res,400,{error:'unsupported_price_plan'});
   const plan = body && body.plan === 'inr' ? 'inr' : 'usd';
   const notes = { product: product.id, price_plan: plan };
   const attr = (body && body.attribution) || {};
   ATTR_KEYS.forEach((k) => { if (typeof attr[k] === 'string' && attr[k]) notes[k] = attr[k].slice(0, 100); });
 
-  const { amount, currency } = product===L.catalog.finance ? L.price(plan) : product;
+  const { amount, currency } = product===L.catalog.finance ? L.price(plan) : L.catalog.priceFor(product, plan);
   // Razorpay minimum is 100 paise (1 INR) / 100 cents-equivalents; a bad PRICE_AMOUNT is a server config error.
   if (!Number.isInteger(amount) || amount < 100) {
     console.error('create-order: PRICE_AMOUNT must be an integer >= 100 (smallest currency unit)');

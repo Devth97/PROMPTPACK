@@ -69,3 +69,7 @@ Done and verified locally with mock Razorpay/email only. No deployment, real cha
 Remaining external steps (owner): deploy; confirm production env vars (`RAZORPAY_KEY_ID/SECRET`, `RAZORPAY_WEBHOOK_SECRET`, `DOWNLOAD_SIGNING_SECRET`, the existing `DOWNLOAD_FILE_KEY`, `RESEND_API_KEY`, `EMAIL_FROM`) and that the Razorpay account accepts USD (international payments); make one Razorpay test-mode payment for a new pack and for Finance, then check the download and backup email.
 
 SEO note for Codex: the user asked (2026-10-17) for keywords and SEO tags optimized first for European, American and Middle East markets.
+
+## Update (2026-10-18): INR/UPI for all packs
+
+User chose lower India pricing: US$9 → ₹499, US$12 → ₹699, US$15 → ₹899 (`price_inr` in `catalog/products.json`, `amount_inr` in `api/_products.json`). Checkout pages offer "Pay ₹… (UPI, Indian cards, netbanking & wallets)" or "Pay US$… (international card)". The server validates either exact price via `priceFor`/`priceMatches` in `api/_products.js`. `prepare-checkout.js` now keeps existing encrypted files when they still hold the same archive. SEO note for Codex: product FAQ/llms text still quotes only the US$ price.

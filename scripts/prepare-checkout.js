@@ -23,13 +23,22 @@ const catalog=products.map(p=>{
  // Vercel serverless responses are capped at 4.5 MB; /api/download returns the whole file in one response.
  if(plain.length>4_000_000)throw Error('Archive too large for single-response delivery: '+p.slug);
  if(!Number.isInteger(p.price)||p.price<1)throw Error('Invalid catalog price: '+p.slug);
+ // INR enables UPI, Indian cards, netbanking and wallets in Razorpay; USD shows international cards only.
+ if(!Number.isInteger(p.price_inr)||p.price_inr<1)throw Error('Invalid catalog INR price: '+p.slug);
  const file='products/'+p.slug+'.enc';
- const iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
- const encrypted=Buffer.concat([cipher.update(plain),cipher.final()]);
- fs.writeFileSync(path.join(root,'private',file),Buffer.concat([iv,cipher.getAuthTag(),encrypted]));
- const d=crypto.createDecipheriv('aes-256-gcm',key,iv);d.setAuthTag(cipher.getAuthTag());
- if(!Buffer.concat([d.update(encrypted),d.final()]).equals(plain))throw Error('Encryption check failed: '+p.slug);
- return {id:'promptpack-'+p.slug,slug:p.slug,name:p.name,amount:p.price*100,currency:'USD',file,filename:p.slug+'.zip',type:'application/zip',sha256:digest,bytes:plain.length,thanks:'/checkout/thanks/'};
+ const target=path.join(root,'private',file);
+ const decrypt=buf=>{const d=crypto.createDecipheriv('aes-256-gcm',key,buf.subarray(0,12));d.setAuthTag(buf.subarray(12,28));return Buffer.concat([d.update(buf.subarray(28)),d.final()]);};
+ // Keep an existing encrypted file that still holds this exact archive, so price-only changes do not churn deploy files.
+ let current=null;
+ try{if(fs.existsSync(target))current=decrypt(fs.readFileSync(target));}catch(_){current=null;}
+ if(!current||!current.equals(plain)){
+  const iv=crypto.randomBytes(12),cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
+  const encrypted=Buffer.concat([iv,Buffer.alloc(16),cipher.update(plain),cipher.final()]);
+  cipher.getAuthTag().copy(encrypted,12);
+  if(!decrypt(encrypted).equals(plain))throw Error('Encryption check failed: '+p.slug);
+  fs.writeFileSync(target,encrypted);
+ }
+ return {id:'promptpack-'+p.slug,slug:p.slug,name:p.name,amount:p.price*100,currency:'USD',amount_inr:p.price_inr*100,file,filename:p.slug+'.zip',type:'application/zip',sha256:digest,bytes:plain.length,thanks:'/checkout/thanks/'};
 });
 fs.writeFileSync(path.join(root,'api','_products.json'),JSON.stringify(catalog,null,2)+'\n');
 for(const edition of editions)edition.sale_status='checkout-configured';

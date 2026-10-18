@@ -15,7 +15,7 @@ yellow palette matching the Finance page. It includes:
 - Sample prompts on upcoming product pages
 - Gumroad checkout for the original website pack
 - The existing Razorpay checkout and fulfillment for the Finance pack (USD and INR)
-- Razorpay checkout (USD) and encrypted ZIP delivery for the eleven new packs at `/checkout/<slug>/`
+- Razorpay checkout and encrypted ZIP delivery for the eleven new packs at `/checkout/<slug>/`: INR (`price_inr` in `catalog/products.json`; UPI, Indian cards, netbanking, wallets) or USD (`price`; international cards)
 - Matching navigation on product, guide, policy and support pages
 
 ## Structure
@@ -67,7 +67,7 @@ Edit generated layouts in their generator source so a rebuild preserves changes.
 
 The eleven new editions have illustrated PDF guides, original prompt libraries,
 worked examples, practical starter files and source registers. Each is sold through
-Razorpay at its catalog USD price; after server-side verification of a captured, unrefunded
+Razorpay at its catalog INR or USD price; after server-side verification of a captured, unrefunded
 payment for the right product and amount, `/api/download` returns that product's ZIP from
 `private/products/<slug>.enc`. Plain ZIPs stay local under `product-build/editions/`.
 

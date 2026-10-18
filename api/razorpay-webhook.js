@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
     console.warn('webhook: order', order.id, 'is not a completed captured payment; no email sent');
     return L.send(res,200,{ignored:'payment_not_completed'});
   }
-  if(product!==L.catalog.finance && (order.amount!==product.amount || order.currency!==product.currency)){
+  if(product!==L.catalog.finance && !L.catalog.priceMatches(product, order.amount, order.currency)){
     console.warn('webhook: order', order.id, 'does not match the server price for', product.slug);
     return L.send(res,200,{ignored:'wrong_price'});
   }

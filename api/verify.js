@@ -31,7 +31,7 @@ module.exports = async (req, res) => {
   const product=L.catalog.byId(o.data.notes && o.data.notes.product);
   if (!product) return L.send(res, 403, { error: 'wrong_product' });
   if(b.product!==undefined && b.product!==product.slug)return L.send(res,403,{error:'wrong_product'});
-  if(product!==L.catalog.finance && (o.data.amount!==product.amount || o.data.currency!==product.currency))return L.send(res,403,{error:'wrong_price'});
+  if(product!==L.catalog.finance && !L.catalog.priceMatches(product, o.data.amount, o.data.currency))return L.send(res,403,{error:'wrong_price'});
 
   let order = o.data;
   if (order.status !== 'paid') {
