@@ -11,7 +11,7 @@ Updated: 2026-10-17. All products are digital downloads used with the buyer's ow
 
 ## Complete digital guide editions
 
-- [Carousel Studio](https://promptpack.tech/products/carousel-studio/): From source notes to a six-slide carousel. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
+- [Carousel Studio](https://promptpack.tech/products/carousel-studio/): A reference-led system for six-slide carousels with a cover that earns the swipe. 13-page guide, 12 prompts, starter files. Free sample prompt on the page.
 - [Carousel Workflow Kit](https://promptpack.tech/products/carousel-workflows/): A content queue you can inspect before anything publishes. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
 - [3D Website Lab](https://promptpack.tech/products/3d-website-lab/): A lightweight 3D product scene with a readable HTML fallback. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.
 - [AI Video Direction Kit](https://promptpack.tech/products/ai-video-direction/): Build a shot specification you can actually evaluate. 14-page guide, 10 prompts, starter files. Free sample prompt on the page.

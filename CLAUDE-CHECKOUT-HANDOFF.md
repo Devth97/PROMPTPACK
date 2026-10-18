@@ -73,3 +73,9 @@ SEO note for Codex: the user asked (2026-10-17) for keywords and SEO tags optimi
 ## Update (2026-10-18): INR/UPI for all packs
 
 User chose lower India pricing: US$9 → ₹499, US$12 → ₹699, US$15 → ₹899 (`price_inr` in `catalog/products.json`, `amount_inr` in `api/_products.json`). Checkout pages offer "Pay ₹… (UPI, Indian cards, netbanking & wallets)" or "Pay US$… (international card)". The server validates either exact price via `priceFor`/`priceMatches` in `api/_products.js`. `prepare-checkout.js` now keeps existing encrypted files when they still hold the same archive. SEO note for Codex: product FAQ/llms text still quotes only the US$ price.
+
+## Update (2026-10-18): Carousel Studio Visual Edition 2.0
+
+The user supplied `PromptPack-Carousel-Studio-Visual-Edition-2.zip` (13-page guide, 12 prompts, editorial-news example). It is now the Carousel Studio buyer bundle (`product-build/editions/carousel-studio.zip`; the 1.1 bundle is kept as `carousel-studio-edition-1.1.zip`). To stay under the 4 MB single-response download limit, the six generated editorial slides were re-encoded from PNG to JPEG (quality 92, 4:4:4, 1080x1350; mean pixel difference about 1/255), noted in the bundle CHANGELOG. ZIP: 3.92 MB.
+**Codex: `scripts/build-product-editions.py` still regenerates Carousel Studio 1.1. Do not let it overwrite this bundle or its `catalog/editions.json` entry.** A test now fails if the carousel edition is not 2.0. After any bundle change, run prepare-checkout.js, then build-catalog.js.
+Website: new inside/example previews, plus a six-slide swipe gallery (`gallery` in editions.json, with the bundle's alt text) on the product page.

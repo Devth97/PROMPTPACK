@@ -2,29 +2,29 @@
   {
     "slug": "carousel-studio",
     "name": "Carousel Studio",
-    "edition": "1.1",
-    "subtitle": "From source notes to a six-slide carousel",
-    "outcome": "A six-slide, 1080 x 1350 carousel, its caption, alt text and a source ledger. The included local renderer creates editable example slides without an account or a generation credit.",
-    "limits": "The renderer is a simple typography template, not a publishing service. AI writing is optional. The pack includes no social account access, proprietary design software or performance guarantee.",
+    "edition": "2.0",
+    "subtitle": "A reference-led system for six-slide carousels with a cover that earns the swipe",
+    "outcome": "Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger. The guide teaches the visual decisions; the staged prompts carry them through research, style lock, storyboard, image prompts and review.",
+    "limits": "Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit with a simple typography template; it does not generate illustrations or publish. No social account access or scheduling is included, and the examples show an editorial process, not guaranteed reach or engagement.",
     "first_run": [
-      "Open starter/slides.json and read all six slide objects.",
-      "Install the single rendering dependency: python -m pip install pillow",
-      "From starter/, run: python render.py slides.json output",
-      "Open output/contact-sheet.jpg. Read each full-size slide before exporting."
+      "Read GUIDE.pdf, then fill MASTER-BRIEF.md and collect verified source notes.",
+      "Study references with REFERENCE-WORKSHEET.csv, then plan every slide in WORKSHEET.csv.",
+      "Run the staged prompts in PROMPTS.md: choose an angle, lock the visual system and storyboard six slides.",
+      "Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md."
     ],
     "lessons": [
-      "Start with one reader question",
-      "Give each slide a job",
-      "Build from the JSON template",
-      "Make the images readable",
-      "Write the caption and alt text",
-      "Export and record the version"
+      "Choose one reader and one job",
+      "Study references as a designer",
+      "Lock a system, not six layouts",
+      "Make the cover earn the swipe",
+      "Write a complete image prompt",
+      "Review the output, not the prompt"
     ],
-    "pdf_pages": 14,
-    "prompt_count": 10,
+    "pdf_pages": 13,
+    "prompt_count": 12,
     "archive": "carousel-studio.zip",
-    "archive_bytes": 1369582,
-    "sha256": "56f03f90d893ceb0940cc9aa580319392ceaf736087bb31a006945b66cd3701f",
+    "archive_bytes": 3924258,
+    "sha256": "fad3ba7febc6596805107273e605346cda3887dca9bdb471326bde4e9de82b04",
     "sources": [
       "pillow",
       "playwright",
@@ -37,11 +37,37 @@
     "content_status": "built",
     "sale_status": "checkout-configured",
     "includes": [
-      "14-page PDF field guide",
-      "10 editable prompts",
-      "Original worked example and starter files",
-      "Blank and filled worksheets",
-      "Repository source register and usage notes"
+      "13-page illustrated PDF field guide",
+      "12 staged prompts, from source research to export",
+      "Master brief, reference and slide worksheets",
+      "Six-slide editorial carousel example with caption, alt text and sources",
+      "Six original illustrated example slides and a quality checklist"
+    ],
+    "gallery": [
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-01.webp",
+        "alt": "Black editorial cover with oversized ivory headline, AI just got a new playbook. Chrome robotic fingers hold a cracked luminous lime orb. Introduces three releases: Gemini, coding agents, Claude."
+      },
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-02.webp",
+        "alt": "Ivory slide with a large industrial toggle switch and lime Access First ticket. A launch isn't your workflow. Checklist: check your plan, check your platform, pick one real task."
+      },
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-03.webp",
+        "alt": "Black slide with an iridescent glass sphere and starburst on a graphite plinth. Meet Gemini 4 Argon. Google, 13 October 2026: rolling out globally in Gemini to Google AI Pro and Ultra subscribers; positioned for complex tasks."
+      },
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-04.webp",
+        "alt": "Ivory slide featuring a silver laptop and translucent green sheets. From chat to code. Google, 13 October 2026: Antigravity is inside Gemini on macOS; agents build and test after plan approval. English, eligible accounts aged 18+, supported regions."
+      },
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-05.webp",
+        "alt": "Black slide featuring a tiny lime processor in a large heatsink. Small model. Busy work. Anthropic, 7 October 2026: Claude Haiku 5.5 is designed for high-volume, cost-sensitive tasks including summaries and classification. Categorizing support requests is a suggested test."
+      },
+      {
+        "src": "/assets/product-previews/carousel-studio-slide-06.webp",
+        "alt": "Lime slide with a sculptural black checkmark. Don't chase every launch. Test one. Compare accuracy, time and cost on one real task; review the result before switching."
+      }
     ]
   },
   {

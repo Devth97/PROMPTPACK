@@ -16,33 +16,33 @@ Updated: 2026-10-17. All products are digital downloads used with the buyer's ow
 URL: https://promptpack.tech/products/carousel-studio/
 Category: Social content
 Status: available through Razorpay checkout for US$12 once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 13-page illustrated PDF guide, 12 editable prompts, worked example, starter files, worksheets
 
-From source notes to a six-slide carousel. A six-slide, 1080 x 1350 carousel, its caption, alt text and a source ledger. The included local renderer creates editable example slides without an account or a generation credit.
+A reference-led system for six-slide carousels with a cover that earns the swipe. Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger. The guide teaches the visual decisions; the staged prompts carry them through research, style lock, storyboard, image prompts and review.
 
-For: Creators and small business owners who write their own social posts.
-Requirements: A text AI assistant and a slide or design editor. Image generation is optional.
-Scope: The renderer is a simple typography template, not a publishing service. AI writing is optional. The pack includes no social account access, proprietary design software or performance guarantee.
+For: Creators, marketers and small business owners who publish educational or news carousels.
+Requirements: A text AI assistant and an image generator (ideally one that accepts reference images), or a design editor for art-plus-typesetting. Image tools, accounts and credits are separate.
+Scope: Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit with a simple typography template; it does not generate illustrations or publish. No social account access or scheduling is included, and the examples show an editorial process, not guaranteed reach or engagement.
 
 Workshop steps:
-1. Start with one reader question
-2. Give each slide a job
-3. Build from the JSON template
-4. Make the images readable
-5. Write the caption and alt text
-6. Export and record the version
+1. Choose one reader and one job
+2. Study references as a designer
+3. Lock a system, not six layouts
+4. Make the cover earn the swipe
+5. Write a complete image prompt
+6. Review the output, not the prompt
 
 First session:
-1. Open starter/slides.json and read all six slide objects.
-2. Install the single rendering dependency: python -m pip install pillow
-3. From starter/, run: python render.py slides.json output
-4. Open output/contact-sheet.jpg. Read each full-size slide before exporting.
+1. Read GUIDE.pdf, then fill MASTER-BRIEF.md and collect verified source notes.
+2. Study references with REFERENCE-WORKSHEET.csv, then plan every slide in WORKSHEET.csv.
+3. Run the staged prompts in PROMPTS.md: choose an angle, lock the visual system and storyboard six slides.
+4. Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md.
 
 Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
 
 Sample prompt:
 
-Act as a carousel editor. Topic: [TOPIC]. Reader: [AUDIENCE]. Source notes: [VERIFIED NOTES]. Goal: [ONE ACTION]. Draft six slides: a specific opening, the problem, two practical steps, one worked example and a closing action. For each slide give a headline under nine words, body copy under 35 words and one visual direction. Separate any claim needing a source. Finish with a caption and alt text for each slide. Do not invent results or customer quotes.
+Create a reusable style block for [APPROVED ANGLE + BRAND + REFERENCES]. Specify canvas and safe zone, palette roles with hex values, headline/body/metadata hierarchy, image medium, material, light direction, texture, connectors, source/page-marker positions and avoid list. State what remains consistent and what varies. Offer one recommended direction, then repeat its style block verbatim for use in every slide prompt. Do not treat one creator's profile as one universal visual style.
 
 ### Carousel Workflow Kit
 

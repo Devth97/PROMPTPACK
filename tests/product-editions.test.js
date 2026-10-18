@@ -13,7 +13,17 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const products=JSON.parse(read('catalog/products.json'));
   const sources=JSON.parse(read('catalog/sources.json'));
   assert.equal(editions.length,11);
-  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),130);
+  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),132);
+  // Carousel Studio Visual Edition 2.0 is built outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
+  const carousel=editions.find(e=>e.slug==='carousel-studio');
+  assert.equal(carousel.edition,'2.0');
+  assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[13,12]);
+  assert.equal(carousel.gallery.length,6);
+  const carouselPage=read('products/carousel-studio/index.html');
+  for(const slide of carousel.gallery){
+    assert.ok(fs.statSync(path.join(root,slide.src)).size>500,slide.src);
+    assert.ok(slide.alt.length>40 && carouselPage.includes(`src="${slide.src}"`),slide.src);
+  }
   assert.deepEqual(new Set(editions.map(e=>e.slug)),new Set(products.map(p=>p.slug)));
   for(const edition of editions){
     assert.equal(edition.content_status,'built');
