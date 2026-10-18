@@ -16,3 +16,6 @@ MONEY AUDIT TOOLKIT/
 *.zip
 *.pdf
 .env*
+
+# Internal notes and handoffs are for the repo only, never the public site
+*.md

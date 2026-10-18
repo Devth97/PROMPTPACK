@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f7-card { margin-top: 56px; padding: 64px 56px 150px; position: relative; }
+#f7-card .kicker { font-size: 30px; font-weight: 900; letter-spacing: 0.14em; text-transform: uppercase; color: #2b2b33; }
+#f7-card .title { font-size: 138px; font-weight: 900; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; margin: 18px 0 44px; }
+#f7-card ul { list-style: none; }
+#f7-card li { display: flex; align-items: center; gap: 26px; font-size: 50px; font-weight: 800; padding: 26px 0; border-top: 4px solid #0b0b0f; }
+#f7-card li b { flex: none; width: 56px; height: 56px; display: grid; place-items: center; border: 4px solid #0b0b0f; background: #a8f0c6; font-size: 36px; }
+#f7-price { position: absolute; right: -30px; bottom: -120px; width: 330px; height: 330px; border-radius: 50%;
+  background: #ffe14d; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; }
+#f7-price .buy { font-size: 62px; font-weight: 900; line-height: 0.95; letter-spacing: -0.02em; text-transform: uppercase; text-align: center; }
+</style>
+      <div id="root" data-composition-id="f7" data-width="1080" data-height="1920">
+<div id="f7-dots" class="dots"></div>
+<div class="safe">
+  <div class="tag">The pack</div>
+  <div id="f7-card" class="card">
+    <div class="kicker">PromptPack · Edition 2</div>
+    <div class="title">Motion Briefs for Code</div>
+    <ul>
+      <li><b>✓</b>The engine, ready to run</li>
+      <li><b>✓</b>The step-by-step guide</li>
+      <li><b>✓</b>Ready-to-render episodes</li>
+      <li><b>✓</b>Character + voice kit</li>
+    </ul>
+    <div id="f7-price"><div class="buy">Buy it</div><div class="buy">now</div></div>
+  </div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f7-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 5.5, ease: 'none' }, 0);
+
+        tl.fromTo('#f7-card', { y: 160, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.6, ease: 'expo.out' }, 0.15);
+        [0.7, 1.6, 2.3, 3.0].forEach((at, i) => {
+          tl.fromTo('#f7-card li:nth-child(' + (i + 1) + ')', { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.35, ease: 'power3.out' }, at);
+        });
+        tl.fromTo('#f7-price', { scale: 0, rotation: -40 }, { scale: 1.12, rotation: -8, duration: 0.32, ease: 'power3.out' }, 3.9);
+        tl.fromTo('#f7-price', { scale: 1.12 }, { scale: 1, duration: 0.3, ease: 'back.out(3)', immediateRender: false }, 4.22);
+
+        window.__timelines["f7"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

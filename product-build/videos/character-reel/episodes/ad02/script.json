@@ -1,0 +1,291 @@
+{
+  "title": "How we're made",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "Pixel. Everyone's asking how we're made.",
+      "pause": 0.3,
+      "shot": "junoCity",
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "I read the comments. All of them.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "tall",
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "They want the whole recipe.",
+      "pause": 0.3,
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "It's short. Want to show them?",
+      "pause": 0.3,
+      "camera": "dollyIn",
+      "shot": "close-up-on:show"
+    },
+    {
+      "id": "l05",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Here? In under a minute?",
+      "pause": 0.3,
+      "screen": "recipe",
+      "camera": "sliderLeft"
+    },
+    {
+      "id": "l06",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Ingredient one. A script.",
+      "pause": 0.3,
+      "screen": "script",
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l07",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "That's it?",
+      "pause": 0.3,
+      "say": "...That's it?",
+      "camera": "static"
+    },
+    {
+      "id": "l08",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Ingredient two. You're a few spheres with opinions.",
+      "pause": 0.3,
+      "screen": "you",
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "I need a minute.",
+      "pause": 0.3,
+      "say": "...I need a minute.",
+      "shot": "overhead",
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l10",
+      "speaker": "pixel",
+      "emotion": "sarcastic",
+      "text": "Three ingredients left.",
+      "pause": 0.3,
+      "screen": "more",
+      "shot": "pixelECU",
+      "eyes": "bored",
+      "camera": "static"
+    },
+    {
+      "id": "l11",
+      "speaker": "juno",
+      "emotion": "frustrated",
+      "text": "Stop. Put it in a pack. Step by step.",
+      "pause": 0.3,
+      "shot": "junoCity",
+      "camera": "dollyIn+handheld"
+    },
+    {
+      "id": "l12",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Packing.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "tall",
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l13",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Packing what?",
+      "pause": 0.3,
+      "say": "...Packing what?",
+      "camera": "static"
+    },
+    {
+      "id": "l14",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Guide's written. Engine's zipped.",
+      "pause": 0.3,
+      "screen": "pack",
+      "shot": "threeQ",
+      "camera": "arcRight"
+    },
+    {
+      "id": "l15",
+      "speaker": "juno",
+      "emotion": "shocked",
+      "text": "During my sentence?",
+      "pause": 0.3,
+      "say": "During my sentence?!",
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l16",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Your sentences have intermissions.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "square",
+      "camera": "static"
+    },
+    {
+      "id": "l17",
+      "speaker": "juno",
+      "emotion": "whisper",
+      "text": "Is everything in there?",
+      "pause": 0.3,
+      "say": "...Is everything in there?",
+      "shot": "junoCity",
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l18",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Everything. Even the file that draws you.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "fond",
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l19",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "How do people get it?",
+      "pause": 0.3,
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l20",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Link in bio. Or comment PIXEL.",
+      "pause": 0.3,
+      "screen": "cta",
+      "shot": "pixelCU",
+      "camera": "static",
+      "say": "Link in bio. Or comment, Pixel."
+    },
+    {
+      "id": "l21",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Why PIXEL?",
+      "pause": 0.3,
+      "say": "Why Pixel?",
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l22",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Because I read the comments. All of them.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "recipe",
+      "title": "The recipe",
+      "rows": [
+        "5 ingredients",
+        "no camera, no animator"
+      ],
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "script",
+      "title": "01 Script",
+      "rows": [
+        "~100 words",
+        "who · feeling · pause"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "you",
+      "title": "02 Juno",
+      "rows": [
+        "spheres + opinions",
+        "drawn in code"
+      ],
+      "color": "#9dcbff"
+    },
+    {
+      "id": "more",
+      "title": "03 – 05",
+      "rows": [
+        "voices · shots",
+        "render + mix"
+      ],
+      "color": "#f598f2"
+    },
+    {
+      "id": "pack",
+      "title": "The pack",
+      "rows": [
+        "guide · engine",
+        "prompts · zipped"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "cta",
+      "title": "Get it",
+      "rows": [
+        "link in bio",
+        "comment PIXEL"
+      ],
+      "color": "#ffb36b"
+    }
+  ],
+  "endcard": {
+    "kicker": "MADE ENTIRELY IN CODE",
+    "title": "Motion Briefs for Code",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "title": "Who animated us?",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "voice": "af_heart",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "voice": "am_michael",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "curious",
+      "pause": 0.25,
+      "text": "Pixel. Who animated us?",
+      "say": "Pixel... who animated us?",
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "pause": 0.45,
+      "text": "Nobody. We're code.",
+      "say": "Nobody. ... We're code.",
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "pause": 0.35,
+      "text": "Code can act?",
+      "say": "Code... can act?",
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "pause": 0.4,
+      "screen": "reveal",
+      "text": "No camera. No animator. No video model. Just a page that draws one moment at a time.",
+      "camera": "arcRight"
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "pause": 0.35,
+      "screen": "step1",
+      "text": "Step one, a script. About a hundred words. Who speaks, how they feel, where they pause.",
+      "camera": "sliderLeft"
+    },
+    {
+      "id": "l06",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "pause": 0.25,
+      "screen": "step2",
+      "text": "Step two, voices. Every word gets a timestamp.",
+      "camera": "sliderRight"
+    },
+    {
+      "id": "l07",
+      "speaker": "juno",
+      "emotion": "teasing",
+      "pause": 0.2,
+      "text": "You don't even have a mouth.",
+      "say": "You don't even have a mouth!",
+      "camera": "whipIn+handheld"
+    },
+    {
+      "id": "l08",
+      "speaker": "pixel",
+      "emotion": "smug",
+      "pause": 0.45,
+      "text": "Exactly. Yours reads the timestamps.",
+      "camera": "zoomIn"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "pause": 0.35,
+      "screen": "step3",
+      "shot": "close-up-on:close-up",
+      "text": "Step three, the engine picks every camera. Like this close-up.",
+      "camera": "truckLeft"
+    },
+    {
+      "id": "l10",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "pause": 0.25,
+      "screen": "step45",
+      "text": "Then it renders every frame, and mixes the music under us.",
+      "camera": "arcRight",
+      "shot": "threeQ"
+    },
+    {
+      "id": "l11",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "pause": 0.2,
+      "text": "The same way every time?",
+      "camera": "dollyIn+handheld"
+    },
+    {
+      "id": "l12",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "pause": 0.5,
+      "text": "Change one line, render again. Nothing else moves.",
+      "camera": "pedestalUp",
+      "shot": "threeQ"
+    },
+    {
+      "id": "l13",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "pause": 0.3,
+      "text": "So I'm a function.",
+      "say": "So... I'm a function.",
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l14",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "pause": 1.6,
+      "screen": "end",
+      "text": "A very well-lit one.",
+      "say": "A very... well-lit one."
+    }
+  ],
+  "panels": [
+    {
+      "id": "reveal",
+      "title": "This reel",
+      "rows": [
+        "no camera",
+        "no animator",
+        "no video model"
+      ],
+      "strike": true,
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "step1",
+      "title": "01 Script",
+      "rows": [
+        "~100 words",
+        "speaker · emotion",
+        "pause"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "step2",
+      "title": "02 Voices",
+      "rows": [
+        "every word",
+        "gets a timestamp"
+      ],
+      "color": "#9dcbff"
+    },
+    {
+      "id": "step3",
+      "title": "03 Shots",
+      "rows": [
+        "a camera",
+        "for every line"
+      ],
+      "color": "#f598f2"
+    },
+    {
+      "id": "step45",
+      "title": "04 Render  05 Mix",
+      "rows": [
+        "same frames",
+        "every time"
+      ],
+      "color": "#ffe14d"
+    }
+  ],
+  "endcard": {
+    "kicker": "MADE ENTIRELY IN CODE",
+    "title": "Motion Briefs for Code",
+    "brand": "PROMPTPACK"
+  }
+}

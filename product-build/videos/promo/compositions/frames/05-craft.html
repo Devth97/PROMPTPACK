@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f5-top, #f5-bottom { display: flex; gap: 36px; align-items: flex-start; }
+#f5-top { margin-top: 44px; }
+#f5-bottom { margin-top: 60px; flex: 1; min-height: 0; }
+#root .num5 { font-weight: 900; font-size: 250px; line-height: 0.82; letter-spacing: -0.05em; }
+#root .lbl5 { font-size: 50px; font-weight: 900; text-transform: uppercase; margin: 10px 0 22px; }
+#root .col5 { flex: 1; min-width: 0; }
+#root .chips5 .chip { font-size: 30px; padding: 8px 18px; }
+#f5-tile { flex: none; width: 360px; height: 640px; }
+</style>
+      <div id="root" data-composition-id="f5" data-width="1080" data-height="1920">
+<div id="f5-dots" class="dots"></div>
+<div class="safe">
+  <div class="tag">Directed, not dumped</div>
+  <div id="f5-top"><div class="col5"><div class="num5">0</div><div class="lbl5">emotions</div>
+    <div class="chips5"><span class="chip" style="background:#ffe14d">panicked</span><span class="chip">deadpan</span><span class="chip" style="background:#f598f2">smug</span><span class="chip">whisper</span><span class="chip" style="background:#a8f0c6">shocked</span></div></div></div>
+  <div id="f5-bottom"><div class="col5"><div class="num5">0</div><div class="lbl5">camera moves</div>
+    <div class="chips5"><span class="chip" style="background:#9dcbff">crash zoom</span><span class="chip">whip pan</span><span class="chip" style="background:#ff9f8e">orbit</span><span class="chip">handheld</span></div></div>
+    <div id="f5-tile" class="tile"><video id="f5-video" class="clip" src="assets/footage/ep01-v2.mp4" muted playsinline data-start="0" data-duration="4.9" data-media-start="4.5"></video></div></div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f5-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.9, ease: 'none' }, 0);
+
+        const n18 = document.querySelector('#f5-top .num5'), n24 = document.querySelector('#f5-bottom .num5');
+        const c18 = { v: 0 }, c24 = { v: 0 };
+        tl.fromTo(c18, { v: 0 }, { v: 18, duration: 0.8, ease: 'power2.out', onUpdate: () => { n18.textContent = Math.round(c18.v); } }, 0.3);
+        tl.fromTo(n18, { scale: 0.6 }, { scale: 1, duration: 0.8, ease: 'power2.out' }, 0.3);
+        tl.fromTo('#f5-top .chip', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2)', stagger: 0.08 }, 0.9);
+        tl.fromTo(c24, { v: 0 }, { v: 24, duration: 0.8, ease: 'power2.out', immediateRender: false, onUpdate: () => { n24.textContent = Math.round(c24.v); } }, 1.85);
+        tl.fromTo(n24, { scale: 0.6 }, { scale: 1, duration: 0.8, ease: 'power2.out' }, 1.85);
+        tl.fromTo('#f5-bottom .chip', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2)', stagger: 0.08 }, 2.4);
+        tl.fromTo('#f5-tile', { x: 420, rotation: 6 }, { x: 0, rotation: 0, duration: 0.55, ease: 'expo.out' }, 1.5);
+
+        window.__timelines["f5"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

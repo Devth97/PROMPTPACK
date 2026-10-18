@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f4-bg { position: absolute; inset: 0; background: #a8f0c6; }
+#f4-ghost { right: -30px; top: 1000px; font-size: 640px; color: #fff; opacity: 0.55; }
+#f4-head { margin-top: 80px; font-size: 220px; }
+#f4-head .line { display: block; }
+#f4-chips { margin-top: 90px; max-width: 760px; }
+#f4-chips .chip { position: relative; font-size: 44px; padding: 14px 28px; }
+#f4-premium { margin-top: 40px; padding: 34px 40px; background: #f598f2; font-size: 50px; font-weight: 900; line-height: 1.15; max-width: 900px; }
+#f4-premium small { display: block; font-size: 34px; font-weight: 700; margin-top: 10px; }
+#f4-note { margin-top: auto; font-size: 28px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; }
+</style>
+      <div id="root" data-composition-id="f4" data-width="1080" data-height="1920">
+<div id="f4-bg"></div>
+<div id="f4-dots" class="dots"></div>
+<div id="f4-ghost" class="ghost" aria-hidden="true" data-layout-allow-overlap>₹0</div>
+<div class="safe">
+  <div class="tag">Built in</div>
+  <div id="f4-head" class="huge"><span class="line">Free</span><span class="line"><span class="mark">voices.</span></span></div>
+  <div id="f4-chips"><span class="chip">✓ runs on your computer</span><span class="chip">✓ no API key</span><span class="chip">✓ no voice bill</span></div>
+  <div id="f4-premium" class="card">Want premium voices?<small>Plug in your own ElevenLabs key.</small></div>
+  <div id="f4-note">This narration: ElevenLabs premium voice</div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f4-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 8.3, ease: 'none' }, 0);
+
+        tl.fromTo('#f4-bg', { clipPath: 'circle(0% at 50% 40%)' }, { clipPath: 'circle(150% at 50% 40%)', duration: 0.55, ease: 'power3.inOut' }, 0);
+        tl.fromTo('#f4-head .line:nth-child(1)', { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: 'circ.out' }, 0.35);
+        tl.fromTo('#f4-head .line:nth-child(2)', { scale: 1.6, filter: 'blur(14px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.5, ease: 'power4.out' }, 0.7);
+        tl.fromTo('#f4-premium', { y: 120, rotation: -3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, 3.75);
+        tl.fromTo('#f4-premium small', { x: -40, opacity: 0 }, { x: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, 5.75);
+        tl.fromTo('#f4-note', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 6.2);
+        [2.0, 2.45, 2.9].forEach((at, i) => {
+          tl.fromTo('#f4-chips .chip:nth-child(' + (i + 1) + ')', { x: 120, rotation: 6, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, at);
+        });
+        tl.fromTo('#f4-ghost', { scale: 0.92 }, { scale: 1.06, duration: 8.3, ease: 'sine.inOut' }, 0);
+
+        window.__timelines["f4"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

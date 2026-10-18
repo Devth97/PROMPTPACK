@@ -1,0 +1,182 @@
+{
+  "title": "Nine packs, rebuilt",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "voice": "af_heart",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "voice": "am_michael",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "Pixel, why is the screen so busy?",
+      "pause": 0.25,
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Nine packs got rebuilt today.",
+      "pause": 0.35,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Rebuilt how?",
+      "pause": 0.3,
+      "say": "Rebuilt... how?"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Carousel Studio. Twelve staged prompts, from research to six finished slides.",
+      "pause": 0.3,
+      "screen": "carousel"
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "UGC Ad Scripts. A product demo, planned as six visual boards.",
+      "pause": 0.3,
+      "screen": "ugc",
+      "say": "U G C Ad Scripts. A product demo, planned as six visual boards."
+    },
+    {
+      "id": "l06",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "And the shot library has thirty original shot briefs.",
+      "pause": 0.2,
+      "screen": "vault"
+    },
+    {
+      "id": "l07",
+      "speaker": "juno",
+      "emotion": "shocked",
+      "text": "Thirty?",
+      "pause": 0.3,
+      "say": "Thirty?!",
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l08",
+      "speaker": "pixel",
+      "emotion": "smug",
+      "text": "Each one comes with an illustrated guide and a worked example.",
+      "pause": 0.35,
+      "screen": "guide"
+    },
+    {
+      "id": "l09",
+      "speaker": "juno",
+      "emotion": "worried",
+      "text": "Okay, but I pay in rupees.",
+      "pause": 0.25
+    },
+    {
+      "id": "l10",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "UPI, Indian cards or netbanking. The download unlocks right after you pay.",
+      "pause": 0.35,
+      "screen": "pay",
+      "say": "U P I, Indian cards, or netbanking. The download unlocks right after you pay."
+    },
+    {
+      "id": "l11",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "So you basically built a shop.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l12",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Somebody had to. You were busy panicking.",
+      "pause": 0.4,
+      "camera": "static"
+    },
+    {
+      "id": "l13",
+      "speaker": "juno",
+      "emotion": "teasing",
+      "text": "Fine. Where do people find it?",
+      "pause": 0.3
+    },
+    {
+      "id": "l14",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "promptpack.tech. Link in bio.",
+      "pause": 1.6,
+      "say": "Prompt pack dot tech. Link in bio."
+    }
+  ],
+  "panels": [
+    {
+      "id": "carousel",
+      "title": "Carousel Studio",
+      "rows": [
+        "12 staged prompts",
+        "6 finished slides"
+      ],
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "ugc",
+      "title": "UGC Ad Scripts",
+      "rows": [
+        "14 prompts",
+        "6 visual boards"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "vault",
+      "title": "Shot Library",
+      "rows": [
+        "30 shot briefs",
+        "for real B-roll"
+      ],
+      "color": "#9dcbff"
+    },
+    {
+      "id": "guide",
+      "title": "Every pack",
+      "rows": [
+        "illustrated guide",
+        "worked example"
+      ],
+      "color": "#f598f2"
+    },
+    {
+      "id": "pay",
+      "title": "Checkout",
+      "rows": [
+        "UPI · cards · netbanking",
+        "instant download"
+      ],
+      "color": "#ffe14d"
+    }
+  ],
+  "endcard": {
+    "kicker": "9 PACKS · EDITION 2.0",
+    "title": "PromptPack",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

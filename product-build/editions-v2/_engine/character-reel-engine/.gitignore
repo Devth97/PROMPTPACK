@@ -1,0 +1,5 @@
+.env
+.env.*
+renders/
+assets/voice/
+assets/music/

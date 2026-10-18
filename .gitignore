@@ -24,8 +24,39 @@ Thumbs.db
 /private/catalog/
 /output/catalog-research/
 /output/product-launch/
-/product-build/
 /.npm-local-cache/
+
+# product-build/ stays local (paid pack files, Python envs, research, big media), except the
+# source code of the reel engine and the promo, so work can continue from a fresh clone.
+# .vercelignore keeps all of product-build/ off the public site.
+/product-build/*
+!/product-build/videos/
+/product-build/videos/*
+!/product-build/videos/character-reel/
+!/product-build/videos/promo/
+!/product-build/editions-v2/
+/product-build/editions-v2/*
+!/product-build/editions-v2/_engine/
+# Generated media and per-episode engine copies inside those projects are rebuilt by the tools
+/product-build/videos/*/renders/
+/product-build/videos/*/assets/voice/
+/product-build/videos/*/assets/voice-v1/
+/product-build/videos/*/assets/music/
+/product-build/videos/*/assets/footage/
+/product-build/videos/*/assets/audition/
+/product-build/videos/*/assets/stills/
+/product-build/videos/*/boards/
+/product-build/videos/*/.hyperframes/
+/product-build/videos/character-reel/episodes/*/*
+!/product-build/videos/character-reel/episodes/*/script.json
+__pycache__/
+*.wav
+*.pcm
+*.mp4
+
+# Reference frames from other creators' videos: research only, never shared
+/promo_frames/
+/Video-85387_frames/
 .env*
 
 # Local agent/tool state and unrelated generated output stay out of Git.
@@ -33,3 +64,9 @@ Thumbs.db
 .claude-flow/
 .swarm/
 /output/
+
+# Finished videos (large files, kept local)
+rendered-videos/
+.waveform-cache/
+.thumbnails/
+.media/

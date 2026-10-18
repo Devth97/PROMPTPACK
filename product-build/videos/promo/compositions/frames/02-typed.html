@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f2-ghost { right: -60px; top: 1180px; font-size: 520px; color: #ff9f8e; opacity: 0.22; }
+#f2-code { background: #0b0b0f; color: #fffbf2; padding: 56px 56px; font-size: 46px; line-height: 1.55; margin-top: 56px; }
+#f2-code .c { color: #8b8796; } #f2-code .k { color: #f598f2; } #f2-code .s { color: #a8f0c6; } #f2-code .y { color: #ffe14d; }
+#f2-head { margin-top: auto; font-size: 210px; }
+#f2-head .line { display: block; }
+#f2-head .line + .line { margin-top: 26px; }
+</style>
+      <div id="root" data-composition-id="f2" data-width="1080" data-height="1920">
+<div id="f2-dots" class="dots"></div>
+<div id="f2-ghost" class="ghost mono" aria-hidden="true" data-layout-allow-overlap>{ }</div>
+<div class="safe">
+  <div class="tag">What you just watched</div>
+  <div id="f2-code" class="card mono">
+    <div class="c">// assets/scene.js</div>
+    <div><span class="k">const</span> juno = <span class="y">buildJuno</span>();</div>
+    <div><span class="k">const</span> pixel = <span class="y">buildBlocBlock</span>({</div>
+    <div>&nbsp;&nbsp;color: PALETTE.pixel,</div>
+    <div>&nbsp;&nbsp;legs: <span class="s">4</span>, antenna: <span class="s">true</span>,</div>
+    <div>});</div>
+  </div>
+  <div id="f2-head" class="huge"><span class="line"><span class="mark">Typed,</span></span><span class="line">not filmed.</span></div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f2-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 5.3, ease: 'none' }, 0);
+
+        tl.fromTo('#f2-code', { x: 260, opacity: 0 }, { x: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, 0.05);
+        gsap.utils.toArray('#f2-code > div').forEach((row, i) => {
+          tl.fromTo(row, { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.22, ease: 'none' }, 0.35 + i * 0.16);
+        });
+        tl.fromTo('#f2-head .line:nth-child(1)', { scale: 1.5, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.5, ease: 'power4.out' }, 2.7);
+        tl.fromTo('#f2-head .line:nth-child(2)', { x: -340, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 3.85);
+        tl.fromTo('#f2-ghost', { rotation: -8, scale: 0.9 }, { rotation: 6, scale: 1.05, duration: 5.3, ease: 'sine.inOut' }, 0);
+
+        window.__timelines["f2"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

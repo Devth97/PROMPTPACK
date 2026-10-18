@@ -1,0 +1,57 @@
+{
+  "title": "Promo VO",
+  "cast": {
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "f2",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Every frame you just saw was typed, not filmed."
+    },
+    {
+      "id": "f3",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "You write about a hundred words. The engine voices us, times every word, picks every camera and renders the reel."
+    },
+    {
+      "id": "f4",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Free voices are built in, and run on your own computer. Want premium voices? Plug in ElevenLabs."
+    },
+    {
+      "id": "f5",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Eighteen emotions. Twenty-four camera moves."
+    },
+    {
+      "id": "f6",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Render as many reels as you like. No per-video fee."
+    },
+    {
+      "id": "f7",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Get the engine, the guide and ready-to-render episodes."
+    },
+    {
+      "id": "f8",
+      "speaker": "pixel",
+      "emotion": "excited",
+      "text": "Buy it now from promptpack.tech.",
+      "say": "Buy it now, from prompt pack dot tech."
+    }
+  ]
+}

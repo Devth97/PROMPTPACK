@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f8-bg { position: absolute; inset: 0; background: #ffe14d; }
+#f8-tile { width: 470px; height: 836px; align-self: center; margin-top: 10px; }
+#f8-buy { align-self: center; margin-top: auto; background: #ff9f8e; font-size: 44px; }
+#f8-url { margin-top: 34px; font-weight: 900; font-size: 116px; line-height: 1; letter-spacing: -0.04em; text-transform: uppercase; text-align: center; }
+#f8-bio { align-self: center; margin-top: 30px; background: #fff; }
+</style>
+      <div id="root" data-composition-id="f8" data-width="1080" data-height="1920">
+<div id="f8-bg"></div>
+<div id="f8-dots" class="dots"></div>
+<div class="safe">
+  <div id="f8-tile" class="tile"><video id="f8-video" class="clip" src="assets/footage/ep01-v2.mp4" muted playsinline data-start="0" data-duration="4.8" data-media-start="41.4"></video></div>
+  <div id="f8-buy" class="tag">Buy it now</div>
+  <div id="f8-url"><div>promptpack</div><div>.tech</div></div>
+  <div id="f8-bio" class="tag">link in bio</div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f8-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.8, ease: 'none' }, 0);
+
+        tl.fromTo('#f8-bg', { clipPath: 'inset(100% 0 0 0)' }, { clipPath: 'inset(0% 0 0 0)', duration: 0.5, ease: 'power3.inOut' }, 0);
+        tl.fromTo('#f8-tile', { y: -200, rotation: -4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'expo.out' }, 0.2);
+        tl.fromTo('#f8-url > div:nth-child(1)', { scale: 1.5, filter: 'blur(14px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.5, ease: 'power4.out' }, 1.25);
+        tl.fromTo('#f8-url > div:nth-child(2)', { x: 300, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 1.55);
+        tl.fromTo('#f8-bio', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'back.out(2)' }, 2.1);
+        tl.fromTo('#f8-url', { scale: 1 }, { scale: 1.03, duration: 1.15, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 2.5);
+        tl.fromTo('#f8-buy', { scale: 0.3, rotation: -12, opacity: 0 }, { scale: 1, rotation: -3, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 0.35);
+
+        window.__timelines["f8"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

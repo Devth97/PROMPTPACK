@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f;
+  font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .ghost { position: absolute; font-weight: 900; line-height: 0.8; letter-spacing: -0.04em; white-space: nowrap; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 168px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800;
+  box-shadow: 5px 5px 0 #0b0b0f; margin: 0 14px 18px 0; }
+#root .mono { font-family: 'JetBrains Mono', monospace; }
+#root .tile { border: 6px solid #0b0b0f; box-shadow: 12px 12px 0 #0b0b0f; background: #0b0b0f; overflow: hidden; position: relative; }
+#root .tile video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#f3-title { font-size: 108px; margin: 34px 0 34px; }
+#f3-list { display: flex; flex-direction: column; gap: 26px; flex: 1; }
+#f3-list .row { display: flex; align-items: center; gap: 28px; padding: 22px 28px; flex: 1; min-height: 0; }
+#f3-list .num { flex: none; width: 112px; height: 112px; display: grid; place-items: center; border: 5px solid #0b0b0f;
+  font-size: 50px; font-weight: 900; }
+#f3-list .body { flex: 1; min-width: 0; }
+#f3-list .label { font-size: 42px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 10px; }
+#f3-list .snip { font-size: 28px; line-height: 1.35; color: #2b2b33; white-space: nowrap; }
+#f3-wave { display: flex; align-items: center; gap: 5px; height: 124px; }
+#f3-wave i { display: block; width: 9px; background: #0b0b0f; border-radius: 2px; }
+#f3-words span { display: inline-block; border: 3px solid #0b0b0f; padding: 4px 12px; margin-right: 8px; font-size: 26px; font-weight: 800; background: #9dcbff; }
+#f3-moves span { display: inline-block; border: 3px solid #0b0b0f; padding: 4px 12px; margin-right: 8px; font-size: 26px; font-weight: 800; background: #f598f2; }
+#f3-strip { display: flex; gap: 10px; }
+#f3-strip img { width: 72px; height: 128px; object-fit: cover; border: 3px solid #0b0b0f; display: block; }
+</style>
+      <div id="root" data-composition-id="f3" data-width="1080" data-height="1920">
+<div id="f3-dots" class="dots"></div>
+<div class="safe">
+  <div class="tag">How a reel is made</div>
+  <div id="f3-title" class="huge">100 words in.</div>
+  <div id="f3-list">
+    <div class="row card"><div class="num" style="background:#ffe14d">01</div><div class="body"><div class="label">Script</div>
+      <div class="snip mono"><div>"emotion": "deadpan",</div><div>"text": "Nobody. We're code."</div></div></div></div>
+    <div class="row card"><div class="num" style="background:#a8f0c6">02</div><div class="body"><div class="label">Voices</div>
+      <div id="f3-wave"><i style="height:12px"></i><i style="height:35px"></i><i style="height:120px"></i><i style="height:52px"></i><i style="height:17px"></i><i style="height:34px"></i><i style="height:28px"></i><i style="height:50px"></i><i style="height:100px"></i><i style="height:77px"></i><i style="height:62px"></i><i style="height:40px"></i><i style="height:12px"></i><i style="height:6px"></i><i style="height:6px"></i><i style="height:6px"></i><i style="height:6px"></i><i style="height:100px"></i><i style="height:100px"></i><i style="height:30px"></i><i style="height:19px"></i><i style="height:77px"></i><i style="height:84px"></i><i style="height:95px"></i><i style="height:113px"></i><i style="height:109px"></i><i style="height:118px"></i><i style="height:106px"></i><i style="height:58px"></i><i style="height:53px"></i><i style="height:36px"></i><i style="height:49px"></i><i style="height:14px"></i><i style="height:47px"></i><i style="height:36px"></i><i style="height:23px"></i><i style="height:18px"></i><i style="height:19px"></i><i style="height:24px"></i><i style="height:20px"></i><i style="height:17px"></i><i style="height:6px"></i><i style="height:6px"></i><i style="height:6px"></i></div></div></div>
+    <div class="row card"><div class="num" style="background:#9dcbff">03</div><div class="body"><div class="label">Every word timed</div>
+      <div id="f3-words"><span>Pixel 0.50s</span><span>Who 1.04s</span><span>animated 1.28s</span></div></div></div>
+    <div class="row card"><div class="num" style="background:#f598f2">04</div><div class="body"><div class="label">A camera per line</div>
+      <div id="f3-moves"><span>crashZoomIn</span><span>whipIn</span><span>pushSlow</span></div></div></div>
+    <div class="row card"><div class="num" style="background:#ff9f8e">05</div><div class="body"><div class="label">Rendered reel</div>
+      <div id="f3-strip"><img src="assets/stills/strip-1.png" alt=""><img src="assets/stills/strip-2.png" alt=""><img src="assets/stills/strip-3.png" alt=""><img src="assets/stills/strip-4.png" alt=""><img src="assets/stills/strip-5.png" alt=""></div></div></div>
+  </div>
+</div>
+</div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#f3-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 8.6, ease: 'none' }, 0);
+
+        tl.fromTo('#f3-title', { y: 90, rotation: 4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.15);
+        [0.6, 2.85, 3.7, 5.3, 6.75].forEach((at, i) => {
+          tl.fromTo('#f3-list .row:nth-child(' + (i + 1) + ')', { x: -160, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, at);
+        });
+        tl.fromTo('#f3-wave i', { scaleY: 0.05 }, { scaleY: 1, duration: 0.35, ease: 'back.out(2)', stagger: 0.012 }, 3.0);
+        tl.fromTo('#f3-words span', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'back.out(2.2)', stagger: 0.12 }, 3.9);
+        tl.fromTo('#f3-moves span', { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: 'back.out(2.2)', stagger: 0.12 }, 5.5);
+        tl.fromTo('#f3-strip img', { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: 0.3, ease: 'power3.out', stagger: 0.09 }, 7.0);
+
+        window.__timelines["f3"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
