@@ -73,29 +73,29 @@
   {
     "slug": "carousel-workflows",
     "name": "Carousel Workflow Kit",
-    "edition": "1.1",
-    "subtitle": "A content queue you can inspect before anything publishes",
-    "outcome": "A documented queue with approval states, due times and duplicate checks. The included offline validator prints a publishing plan; it never sends a post or stores credentials.",
-    "limits": "The starter is an offline queue validator. Live scheduling requires a separate integration, account authorization and current platform permissions. The referenced PostOnce software repository is MIT; its hosted service can have separate charges.",
+    "edition": "2.0",
+    "subtitle": "Plan each day, review the slides, publish officially and learn from your own results",
+    "outcome": "Build a daily carousel folder, rank your own post results and prepare an approved publishing package. Use the local planner and explicit Instagram API starter, with manual creation/review and separate official account setup.",
+    "limits": "Local starter with mock-tested Instagram publishing/private-reply paths, not a hosted or account-connected service. Slides need your own tools. LinkedIn and YouTube routes are documented, not implemented. Credentials, app review, hosting and any service charges are separate; reconcile unknown outcomes before retrying.",
     "first_run": [
-      "Install Node.js from its official source.",
-      "Open starter/queue.json and inspect the two fictional rows.",
-      "From starter/, run: node validate-queue.mjs queue.json",
-      "Read the due plan and blocked rows. Change one approval state and run again."
+      "Choose one post ID, revision and owner, then inspect the original six-slide process example.",
+      "Lock the visual/approval system and assemble exact copy, sources, ordered images and alt text.",
+      "Use staged prompts to create a manifest and state table, then run the local queue validator with a fixed clock.",
+      "Inspect the actual files and approvals before handing the package to a separate human or authorized publishing integration."
     ],
     "lessons": [
-      "Separate approval from scheduling",
-      "Keep the local dry run useful",
-      "Design the state transitions",
-      "Handle retries without double posting",
-      "Choose an integration deliberately",
-      "Reconcile and measure the process"
+      "Start with one owned content unit",
+      "Use references to improve the process",
+      "Separate draft, approval and publication state",
+      "Build the complete handoff package",
+      "Review for correctness before speed",
+      "Close the loop with an honest delivery record"
     ],
-    "pdf_pages": 14,
-    "prompt_count": 10,
+    "pdf_pages": 16,
+    "prompt_count": 16,
     "archive": "carousel-workflows.zip",
-    "archive_bytes": 1296656,
-    "sha256": "b75d256951e0ce27f2b47245dcd66d266b55de8892be52c97a842749e895db61",
+    "archive_bytes": 988872,
+    "sha256": "061ff8755f4b43e29d6dcfc1368b286f0a246d1d70d500cc53e7d97e115fdf1f",
     "sources": [
       "instagram-mcp",
       "instagram-skills"
@@ -107,11 +107,51 @@
     "content_status": "built",
     "sale_status": "checkout-configured",
     "includes": [
-      "14-page PDF field guide",
-      "10 editable prompts",
-      "Original worked example and starter files",
-      "Blank and filled worksheets",
-      "Repository source register and usage notes"
+      "16-page guide plus automation setup manual",
+      "16 editable planning prompts",
+      "Daily planner, result ranking and approval checks",
+      "Explicit Instagram API starter and mock tests",
+      "Six sample workflow visuals and paired worksheets"
+    ],
+    "gallery_title": "See the six example workflow screens",
+    "gallery_note": "Six illustrated screens from the worked example, built from fictional sample data. They show the workflow, not real account results.",
+    "gallery": [
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-01.webp",
+        "alt": "A central One owner card links the ideas of one post ID and one asset set. The cover defines the content unit before automation.",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-02.webp",
+        "alt": "Six connected cards show a route from question through sources, brief, draft and review to a final package.",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-03.webp",
+        "alt": "Two comparison cards distinguish a draft needing revision from approved content still needing inspection before publication.",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-04.webp",
+        "alt": "A four-tile review matrix names claims/sources, rights/copy, image order and caption/alt text as actual file-review gates.",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-05.webp",
+        "alt": "A check path ends with human review after identity, approval, due time, assets and duplicate-ID checks. It explicitly represents local planning, not publishing.",
+        "width": 720,
+        "height": 900
+      },
+      {
+        "src": "/assets/product-previews/carousel-workflows-slide-06.webp",
+        "alt": "Four closing cards specify ordered images, exact caption, alt text/sources and version/owner for an approved package, leaving publication as a separate action.",
+        "width": 720,
+        "height": 900
+      }
     ]
   },
   {
@@ -452,45 +492,90 @@
   {
     "slug": "motion-with-code",
     "name": "Motion Briefs for Code",
-    "edition": "1.1",
-    "subtitle": "A deterministic six-second title sequence from an editable brief",
-    "outcome": "An editable timing brief, a local HyperFrames example and a rendered silent preview. The included composition uses original typography and the PromptPack palette.",
-    "limits": "The pack is a compact starter and prompt workshop. Rendering depends on your browser and media tools. It includes no hosted rendering credits or promise that arbitrary animation projects will render unchanged.",
+    "edition": "2.0",
+    "subtitle": "Two-character AI reels, made entirely in code",
+    "outcome": "Write a short two-character script and render a voiced, captioned vertical reel on your own computer. Use the included engine, ten original episodes and four reusable formats, then reskin a working copy for your own brand.",
+    "limits": "The core uses free local tools after downloading models and a browser. You supply a computer, setup time, storage and electricity; rendering is not instant. Models, Python/Node runtimes and HyperFrames are installed separately. Ten new scripts are format-validated, not ten rendered movies. No MP4, paid API, hosting, publishing service or audience result is included.",
     "first_run": [
-      "Install Node.js and the system tools required by your current HyperFrames release.",
-      "Open starter/README.md and the pinned project package.json.",
-      "Run the project check command before changing the composition.",
-      "Change the copy, capture the listed proof times, then render with the project command."
+      "Install the free local runtime, voice/model cache and browser, then run the script validator.",
+      "Inspect one original episode and its factual source; keep the supplied engine unchanged.",
+      "Prepare with the explicit-Parakeet wrapper, preview, then render one full episode on your computer.",
+      "Review the actual movie, measure its end-card hold and publish separately with one real CTA."
     ],
     "lessons": [
-      "Inspect the runtime before writing motion",
-      "Give every beat a purpose",
-      "Keep the timeline seekable",
-      "Expose the useful edit points",
-      "Review proof times before export",
-      "Deliver the project as well as the movie"
+      "Build a repeatable two-character show",
+      "Set up the free local production route",
+      "Direct voices, emotions and eyes",
+      "Choose the camera for the beat",
+      "Show proof and reskin the brand",
+      "Review, render and publish deliberately"
     ],
-    "pdf_pages": 14,
-    "prompt_count": 10,
+    "pdf_pages": 16,
+    "prompt_count": 20,
     "archive": "motion-with-code.zip",
-    "archive_bytes": 1507861,
-    "sha256": "76417939a7621790ae75976f47b953efd1ae72cfa0bad6fee5a68e1b4f1dc837",
+    "archive_bytes": 2028977,
+    "sha256": "92662c7c1c235804a06df1d9f6e511adadd7d8d5c6fdfa78796dcf7a80aaebeb",
     "sources": [
       "hyperframes"
     ],
     "cover": "/assets/product-covers/motion-with-code.webp",
     "inside": "/assets/product-previews/motion-with-code-inside.webp",
     "example": "/assets/product-previews/motion-with-code-example.webp",
-    "video": "/assets/product-previews/motion-with-code.mp4",
+    "video": "/assets/product-previews/motion-with-code-reel.mp4",
     "content_status": "built",
     "sale_status": "checkout-configured",
     "includes": [
-      "14-page PDF field guide",
-      "10 editable prompts",
-      "Original worked example and starter files",
-      "Blank and filled worksheets",
-      "Repository source register and usage notes"
-    ]
+      "16-page guide and 20 editable prompts",
+      "Unchanged character engine and ten original scripts",
+      "Four formats with complete example scripts",
+      "Character/voice kits, reskin guide and paired worksheets",
+      "Thirty-day calendar, CTA kit and six real-render stills"
+    ],
+    "gallery_title": "See six frames rendered by the engine",
+    "gallery_note": "Six stills from real renders made with the included engine, with the script lines they come from. Characters, camera and captions are all drawn in code.",
+    "gallery": [
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-01.webp",
+        "alt": "Actual engine-rendered vertical frame at 1.42 seconds: juno says \"Pixel. Who animated us?\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-02.webp",
+        "alt": "Actual engine-rendered vertical frame at 3.2 seconds: pixel says \"Nobody. We're code.\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-03.webp",
+        "alt": "Actual engine-rendered vertical frame at 10.84 seconds: pixel says \"No camera. No animator. No video model. Just a page that draws one moment at a time.\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-04.webp",
+        "alt": "Actual engine-rendered vertical frame at 16.35 seconds: pixel says \"Step one, a script. About a hundred words. Who speaks, how they feel, where they pause.\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-05.webp",
+        "alt": "Actual engine-rendered vertical frame at 29.98 seconds: pixel says \"Step three, the engine picks every camera. Like this close-up.\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      },
+      {
+        "src": "/assets/product-previews/motion-with-code-slide-06.webp",
+        "alt": "Actual engine-rendered vertical frame at 44.83 seconds: pixel says \"A very well-lit one.\". Low-poly characters perform on a laptop keyboard, with a native footer identifying the source line.",
+        "width": 720,
+        "height": 1280
+      }
+    ],
+    "video_poster": "/assets/product-previews/motion-with-code-reel-poster.jpg",
+    "video_width": 720,
+    "video_height": 1280,
+    "video_title": "Watch a reel made with this engine",
+    "video_note": "Episode 1, rendered with the included engine and its free built-in voices. The download contains the engine, scripts and guide, not this video file."
   },
   {
     "slug": "lyric-visuals",

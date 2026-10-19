@@ -13,13 +13,13 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const products=JSON.parse(read('catalog/products.json'));
   const sources=JSON.parse(read('catalog/sources.json'));
   assert.equal(editions.length,11);
-  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),180);
+  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),196);
   // Carousel Studio Visual Edition 2.0 is built outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
   const carousel=editions.find(e=>e.slug==='carousel-studio');
   assert.equal(carousel.edition,'2.0');
   assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[13,12]);
   // Visual Edition 2.0 packs come from Codex's editions-v2 folder; each ships a six-image gallery on its product page.
-  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','3d-website-lab','pixel-brand-kit'];
+  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','3d-website-lab','pixel-brand-kit','carousel-workflows','motion-with-code'];
   for(const slug of visual){
     const edition=editions.find(e=>e.slug===slug);
     assert.equal(edition.edition,'2.0',slug);
@@ -43,7 +43,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
     for(const image of [edition.cover,edition.inside,edition.example])assert.ok(fs.statSync(path.join(root,image)).size>500,image);
     if(edition.video){
       // A listed demo needs its exported MP4 and the poster the product page references.
-      const poster=`/assets/product-previews/${edition.slug}-poster.jpg`;
+      const poster=edition.video_poster||`/assets/product-previews/${edition.slug}-poster.jpg`;
       for(const file of [edition.video,poster])assert.ok(fs.statSync(path.join(root,file)).size>500,file);
       assert.ok(html.includes(`src="${edition.video}"`)&&html.includes(`poster="${poster}"`));
     }
@@ -57,7 +57,9 @@ test('editions: eleven built bundles have source evidence and accurate public pr
     assert.doesNotMatch(html,/href="[^\"]*product-build|href="[^\"]*private\/|href="[^\"]*\.zip/);
   }
   assert.match(read('.vercelignore'),/^product-build\/$/m);
-  assert.match(read('.gitignore'),/^\/product-build\/$/m);
+  // product-build/ stays out of Git except the reel engine and promo source (paid packs never tracked)
+  assert.match(read('.gitignore'),/^\/product-build\/\*$/m);
+  assert.doesNotMatch(read('.gitignore'),/^!\/product-build\/editions\/?$/m);
 });
 
 function runUtility(script,value,args=[]){

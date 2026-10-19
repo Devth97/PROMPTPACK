@@ -49,33 +49,33 @@ Create a reusable style block for [APPROVED ANGLE + BRAND + REFERENCES]. Specify
 URL: https://promptpack.tech/products/carousel-workflows/
 Category: Automation
 Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Format: 16-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
 
-A content queue you can inspect before anything publishes. A documented queue with approval states, due times and duplicate checks. The included offline validator prints a publishing plan; it never sends a post or stores credentials.
+Plan each day, review the slides, publish officially and learn from your own results. Build a daily carousel folder, rank your own post results and prepare an approved publishing package. Use the local planner and explicit Instagram API starter, with manual creation/review and separate official account setup.
 
-For: Creators moving from manual posting to a reviewed publishing workflow.
-Requirements: A text AI assistant. Implementing the plans requires your own automation platform and connected publishing accounts.
-Scope: The starter is an offline queue validator. Live scheduling requires a separate integration, account authorization and current platform permissions. The referenced PostOnce software repository is MIT; its hosted service can have separate charges.
+For: Solo creators and small teams coordinating carousel reviews and publishing handoffs.
+Requirements: Node.js for the optional local validator, actual content files, review owners and separate publishing access if needed.
+Scope: Local starter with mock-tested Instagram publishing/private-reply paths, not a hosted or account-connected service. Slides need your own tools. LinkedIn and YouTube routes are documented, not implemented. Credentials, app review, hosting and any service charges are separate; reconcile unknown outcomes before retrying.
 
 Workshop steps:
-1. Separate approval from scheduling
-2. Keep the local dry run useful
-3. Design the state transitions
-4. Handle retries without double posting
-5. Choose an integration deliberately
-6. Reconcile and measure the process
+1. Start with one owned content unit
+2. Use references to improve the process
+3. Separate draft, approval and publication state
+4. Build the complete handoff package
+5. Review for correctness before speed
+6. Close the loop with an honest delivery record
 
 First session:
-1. Install Node.js from its official source.
-2. Open starter/queue.json and inspect the two fictional rows.
-3. From starter/, run: node validate-queue.mjs queue.json
-4. Read the due plan and blocked rows. Change one approval state and run again.
+1. Choose one post ID, revision and owner, then inspect the original six-slide process example.
+2. Lock the visual/approval system and assemble exact copy, sources, ordered images and alt text.
+3. Use staged prompts to create a manifest and state table, then run the local queue validator with a fixed clock.
+4. Inspect the actual files and approvals before handing the package to a separate human or authorized publishing integration.
 
 Public tools referenced: postoncehq/instagram-mcp (MIT) https://github.com/postoncehq/instagram-mcp; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
 
 Sample prompt:
 
-Design a content queue for [CHANNEL] using [AUTOMATION TOOL]. Store draft_id, content_url, scheduled_at, timezone, approval_state, publish_state, external_post_id and last_error. Only approved rows may publish. Describe states and transitions, a duplicate prevention key, retry rules for timeouts and rate limits, and how an operator reconciles a post that succeeded remotely but timed out locally. Return a table and five acceptance tests. Keep credentials out of the queue. Do not publish anything.
+For [TEAM], [CAROUSEL TOPIC], [AUDIENCE] and [APPROVED SOURCES], define one content unit with [POST ID], [REVISION], owner and final deliverables. Distinguish content approval from publication. Return the brief, required files and stop conditions. Do not invent source verification, account access, publishing results or engagement metrics.
 
 ### 3D Website Lab
 
@@ -213,34 +213,34 @@ For [TOPIC], [AUDIENCE] and [SOURCE MATERIAL], define one question, a one-senten
 
 URL: https://promptpack.tech/products/motion-with-code/
 Category: Video
-Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 10 editable prompts, worked example, starter files, worksheets
+Status: available through Razorpay checkout for ₹1,499 (UPI, Indian cards, netbanking or wallets) or US$29 (international cards), paid once
+Format: 16-page illustrated PDF guide, 20 editable prompts, worked example, starter files, worksheets
 
-A deterministic six-second title sequence from an editable brief. An editable timing brief, a local HyperFrames example and a rendered silent preview. The included composition uses original typography and the PromptPack palette.
+Two-character AI reels, made entirely in code. Write a short two-character script and render a voiced, captioned vertical reel on your own computer. Use the included engine, ten original episodes and four reusable formats, then reskin a working copy for your own brand.
 
-For: Developers creating title cards, launch clips or data animations with code.
-Requirements: An AI coding assistant and your chosen animation framework. These are prompts, not finished video templates.
-Scope: The pack is a compact starter and prompt workshop. Rendering depends on your browser and media tools. It includes no hosted rendering credits or promise that arbitrary animation projects will render unchanged.
+For: Creators and small businesses comfortable running local tools who want an original recurring character series.
+Requirements: A computer, Node.js 20+, Python 3.10+, free local model/browser downloads and time to test and render. Coding assistance is useful for a new mascot.
+Scope: The core uses free local tools after downloading models and a browser. You supply a computer, setup time, storage and electricity; rendering is not instant. Models, Python/Node runtimes and HyperFrames are installed separately. Ten new scripts are format-validated, not ten rendered movies. No MP4, paid API, hosting, publishing service or audience result is included.
 
 Workshop steps:
-1. Inspect the runtime before writing motion
-2. Give every beat a purpose
-3. Keep the timeline seekable
-4. Expose the useful edit points
-5. Review proof times before export
-6. Deliver the project as well as the movie
+1. Build a repeatable two-character show
+2. Set up the free local production route
+3. Direct voices, emotions and eyes
+4. Choose the camera for the beat
+5. Show proof and reskin the brand
+6. Review, render and publish deliberately
 
 First session:
-1. Install Node.js and the system tools required by your current HyperFrames release.
-2. Open starter/README.md and the pinned project package.json.
-3. Run the project check command before changing the composition.
-4. Change the copy, capture the listed proof times, then render with the project command.
+1. Install the free local runtime, voice/model cache and browser, then run the script validator.
+2. Inspect one original episode and its factual source; keep the supplied engine unchanged.
+3. Prepare with the explicit-Parakeet wrapper, preview, then render one full episode on your computer.
+4. Review the actual movie, measure its end-card hold and publish separately with one real CTA.
 
 Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes
 
 Sample prompt:
 
-Inspect the animation project and use its existing framework. Create a six-second title card for [TITLE] in [WIDTH x HEIGHT] at [FPS]. Define a single deterministic timeline: title enters at 0.4 seconds, supporting line at 1.2 seconds, both hold until 4.8 seconds, then exit by 5.6 seconds. Expose copy and colors as variables. Use licensed local fonts. Make arbitrary-time seeking produce the same frame as sequential playback. Return file changes and checks at 0, 1.2, 3 and 5.6 seconds. Do not claim a render exists until it has completed.
+Create an original two-character series bible for [AUDIENCE] about [TOPIC RANGE]. Juno supplies a short problem and Pixel supplies a calm, bounded fix. Define character jobs, palette, end card, proof-panel rules and one CTA per episode. Openings must be eight words or fewer. Reject copied mascots, creator jokes, real-person impersonation and invented performance claims. Return a reusable bible plus five testable episode premises.
 
 ### Lyric Visual Planner
 

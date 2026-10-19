@@ -1,3 +1,10 @@
+# Status 2026-10-19 (morning)
+
+- carousel-workflows 2.0 and motion-with-code 2.0 (character-reel pack, US$29 / INR 1,499, reel video on the product page) integrated; catalog 196 prompts; 31/31 tests. motion-with-code.zip carries the current 23-file engine (Claude patched Codex's bundle; original kept as editions-v2/motion-with-code.codex-original.zip).
+- Codex's plain-language copy overlays are still in `git stash` (stash@{0}), unreviewed; its entries for these two packs are stale. Ask the user before restoring or shipping.
+- Owner decision 2026-10-19: keep the five promptbase.shop videos in assets/product-promos on the site (risk explained). Do not extend that pattern.
+- Refund of the INR 699 test payment: done by the user.
+
 # Claude session handoff: 2026-10-18 (start here)
 
 Read this first, then `CLAUDE-CHECKOUT-HANDOFF.md` (checkout and delivery state) and `CODEX-PACK-UPGRADE-BRIEF.md` (Codex's pack work). The older `CLAUDE-HANDOFF.md` is partly superseded. Work in `D:\promptpack`. Ownership: **Claude owns website code, checkout, integration and the character-reel engine. Codex produces pack content and assets** under `product-build/editions-v2/`.

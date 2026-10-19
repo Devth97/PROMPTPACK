@@ -23,8 +23,8 @@
     "file": "products/carousel-workflows.enc",
     "filename": "carousel-workflows.zip",
     "type": "application/zip",
-    "sha256": "b75d256951e0ce27f2b47245dcd66d266b55de8892be52c97a842749e895db61",
-    "bytes": 1296656,
+    "sha256": "061ff8755f4b43e29d6dcfc1368b286f0a246d1d70d500cc53e7d97e115fdf1f",
+    "bytes": 988872,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -87,14 +87,14 @@
     "id": "promptpack-motion-with-code",
     "slug": "motion-with-code",
     "name": "Motion Briefs for Code",
-    "amount": 1500,
+    "amount": 2900,
     "currency": "USD",
-    "amount_inr": 89900,
+    "amount_inr": 149900,
     "file": "products/motion-with-code.enc",
     "filename": "motion-with-code.zip",
     "type": "application/zip",
-    "sha256": "76417939a7621790ae75976f47b953efd1ae72cfa0bad6fee5a68e1b4f1dc837",
-    "bytes": 1507861,
+    "sha256": "92662c7c1c235804a06df1d9f6e511adadd7d8d5c6fdfa78796dcf7a80aaebeb",
+    "bytes": 2028977,
     "thanks": "/checkout/thanks/"
   },
   {

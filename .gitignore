@@ -50,9 +50,9 @@ Thumbs.db
 /product-build/videos/character-reel/episodes/*/*
 !/product-build/videos/character-reel/episodes/*/script.json
 __pycache__/
-*.wav
-*.pcm
-*.mp4
+/product-build/**/*.wav
+/product-build/**/*.pcm
+/product-build/**/*.mp4
 
 # Reference frames from other creators' videos: research only, never shared
 /promo_frames/
@@ -70,3 +70,4 @@ rendered-videos/
 .waveform-cache/
 .thumbnails/
 .media/
+/launch_frames_carasouls/
