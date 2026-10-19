@@ -209,14 +209,14 @@ Sample prompt:
 
 For [TOPIC], [AUDIENCE] and [SOURCE MATERIAL], define one question, a one-sentence answer and the exclusions. Separate sourced facts from [FICTIONAL EXAMPLE RULES]. Return an analogy map, six possible information changes and a final action. Mark unsupported statements; do not invent a study, product behavior or completed research.
 
-### Motion Briefs for Code
+### Juno & Pixel
 
 URL: https://promptpack.tech/products/motion-with-code/
 Category: Video
 Status: available through Razorpay checkout for ₹1,499 (UPI, Indian cards, netbanking or wallets) or US$29 (international cards), paid once
 Format: 16-page illustrated PDF guide, 20 editable prompts, worked example, starter files, worksheets
 
-Two-character AI reels, made entirely in code. Write a short two-character script and render a voiced, captioned vertical reel on your own computer. Use the included engine, ten original episodes and four reusable formats, then reskin a working copy for your own brand.
+Two-character 3D reels from a 100-word script, made entirely in code. Write a short two-character script and render a voiced, captioned vertical reel on your own computer. Use the included engine, ten original episodes and four reusable formats, then reskin a working copy for your own brand.
 
 For: Creators and small businesses comfortable running local tools who want an original recurring character series.
 Requirements: A computer, Node.js 20+, Python 3.10+, free local model/browser downloads and time to test and render. Coding assistance is useful for a new mascot.

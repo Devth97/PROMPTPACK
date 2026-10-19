@@ -501,9 +501,9 @@
   },
   {
     "slug": "motion-with-code",
-    "name": "Motion Briefs for Code",
+    "name": "Juno & Pixel",
     "edition": "2.0",
-    "subtitle": "Two-character AI reels, made entirely in code",
+    "subtitle": "Two-character 3D reels from a 100-word script, made entirely in code",
     "outcome": "Write a short two-character script and render a voiced, captioned vertical reel on your own computer. Use the included engine, ten original episodes and four reusable formats, then reskin a working copy for your own brand.",
     "limits": "The core uses free local tools after downloading models and a browser. You supply a computer, setup time, storage and electricity; rendering is not instant. Models, Python/Node runtimes and HyperFrames are installed separately. Ten new scripts are format-validated, not ten rendered movies. No MP4, paid API, hosting, publishing service or audience result is included.",
     "first_run": [
@@ -531,7 +531,6 @@
     "cover": "/assets/product-covers/motion-with-code.webp",
     "inside": "/assets/product-previews/motion-with-code-inside.webp",
     "example": "/assets/product-previews/motion-with-code-example.webp",
-    "video": "/assets/product-previews/motion-with-code-reel.mp4",
     "content_status": "built",
     "sale_status": "checkout-configured",
     "includes": [
@@ -581,11 +580,7 @@
         "height": 1280
       }
     ],
-    "video_poster": "/assets/product-previews/motion-with-code-reel-poster.jpg",
-    "video_width": 720,
-    "video_height": 1280,
-    "video_title": "Watch a reel made with this engine",
-    "video_note": "Episode 1, rendered with the included engine and its free built-in voices. The download contains the engine, scripts and guide, not this video file."
+    "video": null
   },
   {
     "slug": "lyric-visuals",
