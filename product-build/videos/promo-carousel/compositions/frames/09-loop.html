@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 150px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 28px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; }
+#root .clipvid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#c9-head { margin-top: 40px; font-size: 128px; }
+#c9-loop { margin: auto 0; display: flex; flex-direction: column; align-items: center; gap: 30px; }
+#c9-loop .chip { font-size: 64px; padding: 26px 46px; }
+#c9-arrow { font-size: 120px; font-weight: 900; line-height: 1; }
+#c9-shot { width: 420px; height: 525px; object-fit: cover; align-self: center; margin-top: auto; }
+</style>
+      <div data-hf-id="hf-566b" id="root" data-composition-id="c9" data-width="1080" data-height="1920">
+<div data-hf-id="hf-j1eb" id="c9-dots" class="dots"></div>
+<div data-hf-id="hf-zbmn" class="safe">
+  <div data-hf-id="hf-482z" class="tag">Close the loop</div>
+  <div data-hf-id="hf-a5of" id="c9-head" class="huge">Results in. Brief out.</div>
+  <div data-hf-id="hf-fh3o" id="c9-loop">
+    <span data-hf-id="hf-dkw5" id="c9-a" class="chip" style="background:#9dcbff">Your own results</span>
+    <div data-hf-id="hf-5iem" id="c9-arrow">↓</div>
+    <span data-hf-id="hf-z3xq" id="c9-b" class="chip" style="background:#ffe14d">Tomorrow's brief</span>
+  </div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c9-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 3.8, ease: 'none' }, 0);
+        tl.fromTo('#c9-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.1);
+
+        tl.fromTo('#c9-a', { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 0.9);
+        tl.fromTo('#c9-arrow', { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.4, ease: 'power3.out' }, 1.5);
+        tl.fromTo('#c9-b', { scale: 0.4, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 2.1);
+
+        window.__timelines["c9"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

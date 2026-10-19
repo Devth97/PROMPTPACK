@@ -34,6 +34,7 @@ Thumbs.db
 /product-build/videos/*
 !/product-build/videos/character-reel/
 !/product-build/videos/promo/
+!/product-build/videos/promo-carousel/
 !/product-build/editions-v2/
 /product-build/editions-v2/*
 !/product-build/editions-v2/_engine/

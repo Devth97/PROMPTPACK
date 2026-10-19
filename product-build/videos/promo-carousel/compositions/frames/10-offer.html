@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 150px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 28px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; }
+#root .clipvid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#c10-cards { display: flex; flex-direction: column; gap: 46px; margin-top: 56px; }
+#c10-cards .pack { padding: 0; position: relative; }
+#c10-cards img { display: block; width: 100%; aspect-ratio: 2.15 / 1; object-fit: cover; object-position: center top; border-bottom: 6px solid #0b0b0f; }
+#c10-cards .name { padding: 22px 30px; font-size: 46px; font-weight: 900; text-transform: uppercase; }
+#c10-buy { position: absolute; right: 40px; bottom: 640px; width: 300px; height: 300px; border-radius: 50%; background: #ffe14d;
+  border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#c10-buy div { font-size: 58px; font-weight: 900; line-height: 0.95; text-transform: uppercase; }
+</style>
+      <div data-hf-id="hf-56qt" id="root" data-composition-id="c10" data-width="1080" data-height="1920">
+<div data-hf-id="hf-qxyn" id="c10-dots" class="dots"></div>
+<div data-hf-id="hf-zbmn" class="safe">
+  <div data-hf-id="hf-zzpv" class="tag">The two packs</div>
+  <div data-hf-id="hf-r5yl" id="c10-cards">
+    <div data-hf-id="hf-qc0l" id="c10-a" class="pack card"><img data-hf-id="hf-rv4n" src="assets/slides/cover-studio.webp" alt=""><div data-hf-id="hf-ubyj" class="name">Carousel Studio</div></div>
+    <div data-hf-id="hf-ua4m" id="c10-b" class="pack card"><img data-hf-id="hf-1dnp" src="assets/slides/cover-flow.webp" alt=""><div data-hf-id="hf-v44k" class="name">Carousel Workflow Kit</div></div>
+  </div>
+</div>
+<div data-hf-id="hf-l1z4" id="c10-buy"><div data-hf-id="hf-g15p">Buy it</div><div data-hf-id="hf-ft7c">now</div></div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c10-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.7, ease: 'none' }, 0);
+
+        tl.fromTo('#c10-a', { x: -300, rotation: -3, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'expo.out' }, 0.3);
+        tl.fromTo('#c10-b', { x: 300, rotation: 3, opacity: 0 }, { x: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'expo.out' }, 2.5);
+        tl.fromTo('#c10-buy', { scale: 0, rotation: -40 }, { scale: 1.12, rotation: -8, duration: 0.32, ease: 'power3.out' }, 3.55);
+        tl.fromTo('#c10-buy', { scale: 1.12 }, { scale: 1, duration: 0.3, ease: 'back.out(3)', immediateRender: false }, 3.87);
+
+        window.__timelines["c10"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

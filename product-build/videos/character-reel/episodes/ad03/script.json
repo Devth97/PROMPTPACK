@@ -1,0 +1,95 @@
+{
+  "title": "Six slides already",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "shocked",
+      "text": "Pixel, six slides already?",
+      "pause": 0.3,
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "One brief. One locked style.",
+      "pause": 1.2,
+      "screen": "brief",
+      "camera": "sliderLeft"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Okay, but every single day?",
+      "pause": 1.0,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Buy them now from promptpack.tech.",
+      "say": "Buy them now, from prompt pack dot tech.",
+      "pause": 1.8
+    }
+  ],
+  "panels": [
+    {
+      "id": "brief",
+      "title": "Carousel",
+      "rows": [
+        "1 brief",
+        "6 slides"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "style",
+      "title": "Style lock",
+      "rows": [
+        "one system",
+        "not six layouts"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "approve",
+      "title": "You approve",
+      "rows": [
+        "every post"
+      ],
+      "color": "#f598f2"
+    },
+    {
+      "id": "publish",
+      "title": "Official API",
+      "rows": [
+        "your own app"
+      ],
+      "color": "#9dcbff"
+    }
+  ],
+  "endcard": {
+    "kicker": "CAROUSEL STUDIO + WORKFLOW KIT",
+    "title": "PromptPack",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

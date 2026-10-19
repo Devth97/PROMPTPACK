@@ -4,6 +4,8 @@
 - Codex's plain-language copy overlays are still in `git stash` (stash@{0}), unreviewed; its entries for these two packs are stale. Ask the user before restoring or shipping.
 - Owner decision 2026-10-19: keep the five promptbase.shop videos in assets/product-promos on the site (risk explained). Do not extend that pattern.
 - Refund of the INR 699 test payment: done by the user.
+- Carousel promo (Carousel Studio + Workflow Kit) built and rendered: `product-build/videos/promo-carousel/` (56.5 s, Juno & Pixel from engine episode ad03, premium voices), copied to rendered-videos/1 - Promos. Launch promo and both ads are postable now (packs live).
+- Live-site gap to fix (Codex): the product cover images of the upgraded packs still say "GUIDE + 10 PROMPTS"; the packs now have 12 to 38 prompts. Covers need regenerating.
 
 # Claude session handoff: 2026-10-18 (start here)
 

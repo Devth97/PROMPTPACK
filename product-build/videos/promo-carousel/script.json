@@ -1,0 +1,63 @@
+{
+  "title": "Carousel promo VO",
+  "cast": {
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "f2",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "That's a real carousel from Carousel Studio."
+    },
+    {
+      "id": "f3",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Twelve staged prompts take you from one brief to a locked style and six image prompts."
+    },
+    {
+      "id": "f4",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "The cover gets its own job: earn the swipe."
+    },
+    {
+      "id": "f5",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Then a checklist, a caption, alt text and dated sources."
+    },
+    {
+      "id": "f7",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Each day gets its own folder. Nothing posts until you approve it, then it goes out through Instagram's official API.",
+      "say": "Each day gets its own folder. Nothing posts until you approve it, then it goes out through Instagram's official A P I."
+    },
+    {
+      "id": "f8",
+      "speaker": "pixel",
+      "emotion": "smug",
+      "text": "A keyword comment can get a private reply, the official way."
+    },
+    {
+      "id": "f9",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "And your own results shape tomorrow's brief."
+    },
+    {
+      "id": "f10",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Carousel Studio and the Workflow Kit."
+    }
+  ]
+}

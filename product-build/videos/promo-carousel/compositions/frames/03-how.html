@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16;
+  background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 72px; right: 72px; top: 230px; bottom: 330px; display: flex; flex-direction: column; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d;
+  box-shadow: 7px 7px 0 #0b0b0f; padding: 12px 26px; font-size: 32px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 150px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 18px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 28px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; }
+#root .clipvid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+
+#c3-head { margin: 34px 0 34px; font-size: 112px; }
+#c3-list { display: flex; flex-direction: column; gap: 22px; flex: 1; }
+#c3-list .row { display: flex; align-items: center; gap: 26px; padding: 20px 26px; flex: 1; min-height: 0; }
+#c3-list .num { flex: none; width: 100px; height: 100px; display: grid; place-items: center; border: 5px solid #0b0b0f; font-size: 44px; font-weight: 900; }
+#c3-list .label { font-size: 42px; font-weight: 900; text-transform: uppercase; }
+#c3-list .sub { font-size: 30px; font-weight: 600; color: #2b2b33; margin-top: 6px; }
+</style>
+      <div data-hf-id="hf-rpsd" id="root" data-composition-id="c3" data-width="1080" data-height="1920">
+<div data-hf-id="hf-whid" id="c3-dots" class="dots"></div>
+<div data-hf-id="hf-zbmn" class="safe">
+  <div data-hf-id="hf-t8ko" class="tag">12 staged prompts</div>
+  <div data-hf-id="hf-vefn" id="c3-head" class="huge">One brief in.</div>
+  <div data-hf-id="hf-zyfs" id="c3-list">
+    <div data-hf-id="hf-jola" class="row card"><div data-hf-id="hf-1st8" class="num" style="background:#ffe14d">01</div><div data-hf-id="hf-yeow"><div data-hf-id="hf-mqsq" class="label">Brief</div><div data-hf-id="hf-ay3s" class="sub">one reader, one job</div></div></div>
+    <div data-hf-id="hf-w7j6" class="row card"><div data-hf-id="hf-bg9x" class="num" style="background:#a8f0c6">02</div><div data-hf-id="hf-y7yw"><div data-hf-id="hf-6rzw" class="label">References</div><div data-hf-id="hf-e7sf" class="sub">studied like a designer</div></div></div>
+    <div data-hf-id="hf-wlu7" class="row card"><div data-hf-id="hf-wcao" class="num" style="background:#9dcbff">03</div><div data-hf-id="hf-x11t"><div data-hf-id="hf-6qz6" class="label">Style lock</div><div data-hf-id="hf-4rkf" class="sub">one system, not six layouts</div></div></div>
+    <div data-hf-id="hf-x058" class="row card"><div data-hf-id="hf-fyq1" class="num" style="background:#f598f2">04</div><div data-hf-id="hf-xfcu"><div data-hf-id="hf-jtus" class="label">Six image prompts</div><div data-hf-id="hf-dtct" class="sub">for your own image tool</div></div></div>
+    <div data-hf-id="hf-xeg9" class="row card"><div data-hf-id="hf-wuhu" class="num" style="background:#ff9f8e">05</div><div data-hf-id="hf-w8fr"><div data-hf-id="hf-v04q" class="label">Review</div><div data-hf-id="hf-o166" class="sub">the output, not the prompt</div></div></div>
+  </div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c3-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 7.1, ease: 'none' }, 0);
+        tl.fromTo('#c3-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.15);
+        tl.fromTo('#c3-list .row:nth-child(1)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 2.4);
+        tl.fromTo('#c3-list .row:nth-child(2)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 2.9);
+        tl.fromTo('#c3-list .row:nth-child(3)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 3.3);
+        tl.fromTo('#c3-list .row:nth-child(4)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 4.85);
+        tl.fromTo('#c3-list .row:nth-child(5)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 5.8);
+
+        window.__timelines["c3"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
