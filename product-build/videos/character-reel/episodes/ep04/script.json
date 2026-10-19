@@ -1,0 +1,118 @@
+{
+  "title": "Claude keeps forgetting",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "frustrated",
+      "text": "Claude keeps forgetting what we decided!",
+      "pause": 0.3,
+      "camera": "crashZoomIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "It's not forgetting. Nobody wrote it down.",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "It's an AI. It should just know.",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "You also forget where you parked.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "bored",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Put your decisions in a CLAUDE.md file in the project. Claude Code reads it at the start of every session.",
+      "pause": 0.3,
+      "screen": "f1",
+      "say": "Put your decisions in a Claude dot M D file in the project. Claude Code reads it at the start of every session."
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "What goes in it?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "The stack, the rules, what's done and what's next. Short and current.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "So the memory is a file I own.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Update it like a diary. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "CLAUDE.md",
+      "rows": [
+        "read every session",
+        "lives in your project"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "f2",
+      "title": "What goes in",
+      "rows": [
+        "stack + rules",
+        "done + next"
+      ],
+      "color": "#a8f0c6"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

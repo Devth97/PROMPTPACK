@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16; background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 110px; right: 110px; top: 90px; bottom: 90px; display: flex; gap: 80px; align-items: center; }
+#root .colL { flex: none; width: 720px; display: flex; flex-direction: column; }
+#root .colR { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d; box-shadow: 7px 7px 0 #0b0b0f;
+  padding: 10px 24px; font-size: 28px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 120px; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 34px; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 16px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; margin-top: 30px; }
+#root .lede { font-size: 40px; font-weight: 700; line-height: 1.25; margin-top: 34px; max-width: 900px; }
+#root .clipvid { position: absolute; left: 160px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #0b0b0f; box-shadow: 14px 14px 0 #0b0b0f; background: #0b0b0f; }
+#root .clipside { position: absolute; left: 820px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+
+#c5-card { padding: 30px 44px; }
+#c5-card li { list-style: none; display: flex; align-items: center; gap: 24px; font-size: 46px; font-weight: 800; padding: 18px 0; border-top: 4px solid #0b0b0f; }
+#c5-card li:first-child { border-top: none; }
+#c5-card li b { flex: none; width: 56px; height: 56px; display: grid; place-items: center; border: 4px solid #0b0b0f; background: #a8f0c6; font-size: 34px; }
+#c5-thumb { position: absolute; right: 120px; bottom: 90px; width: 240px; height: 300px; object-fit: cover; }
+</style>
+      <div id="root" data-composition-id="c5" data-width="1920" data-height="1080">
+<div id="c5-dots" class="dots"></div>
+<div class="safe">
+  <div class="colL"><div class="tag">Before it ships</div><div id="c5-head" class="huge">Then the checks.</div></div>
+  <div class="colR" style="padding-right:200px"><ul id="c5-card" class="card"><li><b>✓</b>Quality checklist</li><li><b>✓</b>Caption</li><li><b>✓</b>Alt text</li><li><b>✓</b>Dated sources</li></ul></div>
+</div>
+<img id="c5-thumb" class="shot" src="assets/slides/studio-6.webp" alt=""></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c5-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.3, ease: 'none' }, 0);
+        tl.fromTo('#c5-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.1);
+
+        tl.fromTo('#c5-card', { y: 80, opacity: 0 }, { y: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 0.45);
+        tl.fromTo('#c5-thumb', { x: 300, rotation: 8 }, { x: 0, rotation: 4, duration: 0.55, ease: 'expo.out' }, 0.7);
+        tl.fromTo('#c5-card li:nth-child(1) b', { scale: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 0.8);
+        tl.fromTo('#c5-card li:nth-child(2) b', { scale: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 1.6);
+        tl.fromTo('#c5-card li:nth-child(3) b', { scale: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 2.15);
+        tl.fromTo('#c5-card li:nth-child(4) b', { scale: 0 }, { scale: 1, duration: 0.3, ease: 'back.out(3)' }, 3.2);
+
+        window.__timelines["c5"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

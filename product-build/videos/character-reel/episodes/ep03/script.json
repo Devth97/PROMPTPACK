@@ -1,0 +1,119 @@
+{
+  "title": "My API key is on GitHub",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "panicked",
+      "text": "My API key is on GitHub. Publicly!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld",
+      "say": "My A P I key is on GitHub. Publicly!"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Rotate it. Right now. Before anything else.",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Can't I just delete the file?",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Git remembers. And bots scan public repos fast.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Make a new key, revoke the old one, then check the usage page for anything you didn't do.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "worried",
+      "text": "And next time?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Keys live in a dot env file that git ignores. Turn on secret scanning so GitHub warns you first.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "So deleting it was the least important step.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Rotating was the important one. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "Right now",
+      "rows": [
+        "new key",
+        "revoke the old one",
+        "check usage"
+      ],
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "f2",
+      "title": "Next time",
+      "rows": [
+        ".env + .gitignore",
+        "secret scanning on"
+      ],
+      "color": "#a8f0c6"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

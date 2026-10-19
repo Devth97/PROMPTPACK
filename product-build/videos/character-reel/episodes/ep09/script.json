@@ -1,0 +1,117 @@
+{
+  "title": "Claude rewrote everything overnight",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "shocked",
+      "text": "Claude rewrote my whole codebase overnight!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Was it on a branch?",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "worried",
+      "text": "What's a branch?",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "That explains the overnight part.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Before big changes, commit what works. Then let it work on a separate branch, so main stays safe.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "And how do I check what it did?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Read the diff, file by file. Ask for small commits with clear messages, not one giant surprise.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "Small steps I can actually review.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "And undo. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "Before",
+      "rows": [
+        "commit what works",
+        "new branch"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "f2",
+      "title": "After",
+      "rows": [
+        "read the diff",
+        "small commits"
+      ],
+      "color": "#a8f0c6"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

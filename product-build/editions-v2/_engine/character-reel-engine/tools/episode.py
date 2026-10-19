@@ -83,13 +83,33 @@ def build(ep_dir, render):
     out = ROOT / 'renders' / f'{ep_dir.name}.mp4'
     out.parent.mkdir(exist_ok=True)
     started = time.time()
-    run([NPX, '--yes', HF, 'render', '--quality', 'high', '--workers', '1', '--output', out], ep_dir, env)
+    run([NPX, '--yes', HF, 'render', '--quality', 'high', '--workers', '2', '--output', out], ep_dir, env)
+    normalize_loudness(out)
     took = time.time() - started
     with open(ROOT / 'renders' / 'batch-log.txt', 'a', encoding='utf-8') as log:
         log.write(f'{time.strftime("%Y-%m-%d %H:%M")}  {ep_dir.name}  {duration:g}s video  rendered in {took / 60:.1f} min  {out.name}\n')
     print(f'  rendered {out.name} in {took / 60:.1f} min')
     publish(ep_dir.name, script, out)
     return took
+
+
+def normalize_loudness(video, target=-14.0, peak=-1.5):
+    """Two-pass ffmpeg loudnorm to the usual Reels/Shorts level; the picture is copied untouched.
+    Skipped with a note when ffmpeg is not installed."""
+    if not shutil.which('ffmpeg'):
+        print('  ffmpeg not found: skipped loudness normalisation')
+        return
+    probe = subprocess.run(['ffmpeg', '-hide_banner', '-i', str(video), '-af',
+                            f'loudnorm=I={target}:TP={peak}:LRA=11:print_format=json', '-f', 'null', '-'],
+                           capture_output=True, text=True)
+    stats = json.loads(probe.stderr[probe.stderr.rindex('{'):probe.stderr.rindex('}') + 1])
+    tmp = video.with_name(video.stem + '.loud.mp4')
+    af = (f"loudnorm=I={target}:TP={peak}:LRA=11:measured_I={stats['input_i']}:measured_TP={stats['input_tp']}:"
+          f"measured_LRA={stats['input_lra']}:measured_thresh={stats['input_thresh']}:offset={stats['target_offset']}:linear=true")
+    subprocess.run(['ffmpeg', '-hide_banner', '-loglevel', 'error', '-y', '-i', str(video), '-c:v', 'copy', '-af', af,
+                    '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', str(tmp)], check=True)
+    tmp.replace(video)
+    print(f"  loudness {float(stats['input_i']):.1f} -> {target:g} LUFS")
 
 
 def publish(name, script, video):

@@ -1,0 +1,117 @@
+{
+  "title": "My cloud bill",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "shocked",
+      "text": "My cloud bill gave me a heart attack!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Okay. First, find what's still running.",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "worried",
+      "text": "But I deleted the project.",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Deleting the code doesn't delete the servers.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Open billing and sort by service. Shut down anything idle: servers, databases, old storage.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "How do I stop this happening again?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Set a budget alert. Most clouds email you when spending passes a limit you choose.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "So the alarm comes before the bill.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Much healthier. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "Today",
+      "rows": [
+        "sort by service",
+        "shut idle things"
+      ],
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "f2",
+      "title": "From now",
+      "rows": [
+        "budget alert",
+        "email at your limit"
+      ],
+      "color": "#a8f0c6"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

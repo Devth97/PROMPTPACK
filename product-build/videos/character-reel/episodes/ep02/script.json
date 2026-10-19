@@ -1,0 +1,118 @@
+{
+  "title": "The database is gone",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "panicked",
+      "text": "Pixel, the whole database is gone!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Breathe. When did you last back it up?",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "worried",
+      "text": "Define back up.",
+      "pause": 0.3,
+      "say": "Define... back up?"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Okay. Different breathing exercise.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Stop writing to it. Then check if your host keeps automatic backups or point-in-time restore. Many do.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "And next time?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Never give an AI agent your production password. Give it a copy to break.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "So it deleted the real one because I let it.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "It did exactly what it was allowed to. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "Right now",
+      "rows": [
+        "stop writes",
+        "restore a backup"
+      ],
+      "color": "#ff9f8e"
+    },
+    {
+      "id": "f2",
+      "title": "Next time",
+      "rows": [
+        "agents get a copy",
+        "never production"
+      ],
+      "color": "#a8f0c6"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

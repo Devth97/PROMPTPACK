@@ -1,0 +1,117 @@
+{
+  "title": "My site is down",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "panicked",
+      "text": "My site is down. Everyone's messaging me!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "First, put it back. Then find out why.",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "skeptical",
+      "text": "Put it back how?",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Most hosts let you roll back to the last deploy that worked. One click, site's up.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l05",
+      "speaker": "juno",
+      "emotion": "relieved",
+      "text": "Okay. It's up.",
+      "pause": 0.3
+    },
+    {
+      "id": "l06",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Now read the failed deploy's logs. Fix it on a branch, preview it, then ship again.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l07",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "Restore first, investigate second.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l08",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Panic third, if there's time.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "bored",
+      "punch": true
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "1. Restore",
+      "rows": [
+        "roll back",
+        "last good deploy"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "f2",
+      "title": "2. Investigate",
+      "rows": [
+        "read the logs",
+        "fix, preview, ship"
+      ],
+      "color": "#9dcbff"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

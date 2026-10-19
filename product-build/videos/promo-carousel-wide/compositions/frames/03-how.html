@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16; background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 110px; right: 110px; top: 90px; bottom: 90px; display: flex; gap: 80px; align-items: center; }
+#root .colL { flex: none; width: 720px; display: flex; flex-direction: column; }
+#root .colR { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d; box-shadow: 7px 7px 0 #0b0b0f;
+  padding: 10px 24px; font-size: 28px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 120px; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 34px; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 16px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; margin-top: 30px; }
+#root .lede { font-size: 40px; font-weight: 700; line-height: 1.25; margin-top: 34px; max-width: 900px; }
+#root .clipvid { position: absolute; left: 160px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #0b0b0f; box-shadow: 14px 14px 0 #0b0b0f; background: #0b0b0f; }
+#root .clipside { position: absolute; left: 820px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+
+#c3-list { display: flex; flex-direction: column; gap: 18px; }
+#c3-list .row { display: flex; align-items: center; gap: 24px; padding: 14px 24px; }
+#c3-list .num { flex: none; width: 76px; height: 76px; display: grid; place-items: center; border: 5px solid #0b0b0f; font-size: 34px; font-weight: 900; }
+#c3-list .label { font-size: 36px; font-weight: 900; text-transform: uppercase; }
+#c3-list .sub { font-size: 26px; font-weight: 600; color: #2b2b33; margin-top: 4px; }
+</style>
+      <div id="root" data-composition-id="c3" data-width="1920" data-height="1080">
+<div id="c3-dots" class="dots"></div>
+<div class="safe">
+  <div class="colL"><div class="tag">12 staged prompts</div><div id="c3-head" class="huge">One brief in.</div>
+    <div class="lede">Every step from the idea to six finished image prompts.</div></div>
+  <div class="colR"><div id="c3-list">
+    <div class="row card"><div class="num" style="background:#ffe14d">01</div><div><div class="label">Brief</div><div class="sub">one reader, one job</div></div></div>
+    <div class="row card"><div class="num" style="background:#a8f0c6">02</div><div><div class="label">References</div><div class="sub">studied like a designer</div></div></div>
+    <div class="row card"><div class="num" style="background:#9dcbff">03</div><div><div class="label">Style lock</div><div class="sub">one system, not six layouts</div></div></div>
+    <div class="row card"><div class="num" style="background:#f598f2">04</div><div><div class="label">Six image prompts</div><div class="sub">for your own image tool</div></div></div>
+    <div class="row card"><div class="num" style="background:#ff9f8e">05</div><div><div class="label">Review</div><div class="sub">the output, not the prompt</div></div></div>
+  </div></div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c3-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 7.1, ease: 'none' }, 0);
+        tl.fromTo('#c3-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.15);
+        tl.fromTo('#c3-list .row:nth-child(1)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 2.4);
+        tl.fromTo('#c3-list .row:nth-child(2)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 2.9);
+        tl.fromTo('#c3-list .row:nth-child(3)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 3.3);
+        tl.fromTo('#c3-list .row:nth-child(4)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 4.85);
+        tl.fromTo('#c3-list .row:nth-child(5)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 5.8);
+
+        window.__timelines["c3"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

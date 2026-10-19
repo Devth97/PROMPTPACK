@@ -58,6 +58,16 @@ Hard lines for this pack: Pixel must never be a replica of Anthropic's Claude Co
 
 Size: the engine is about 2.1 MB uncompressed (about 0.6 MB zipped). Keep the buyer ZIP under 3.8 MB.
 
+### Pack 10 update: `motion-with-code` Edition 2.1 (user request, 2026-10-19)
+
+The pack is live as Edition 2.0 (US$29 / INR 1,499). Build Edition 2.1 from it, keeping everything that works:
+
+1. **Bundle the refreshed engine** from `product-build/editions-v2/_engine/character-reel-engine/` unchanged and regenerate `ENGINE-MANIFEST.json` (and the file-count test). New in the engine: captions anchored above the bottom 440 px app zone, long lines shown in chunks of up to 7 words, per-character word highlight (Juno yellow, Pixel mint), a `punch` field for the punchline pop, and automatic -14 LUFS loudness after each render (needs ffmpeg; add it to setup). Read its ENGINE.md.
+2. **Route A: the complete workflow chapter** (the way the user now makes reels): hook pattern, ~70-90 word script with one deadpan joke and a callback, free voices first and optional premium ElevenLabs voices (paid plan for commercial use), engine, camera and eyes, safe-zone captions, loudness, batch render with `episode.py --all --render`, the finished-video folder, posting and a weekly series rhythm. Use the live episodes in `product-build/videos/character-reel/episodes/ep02`-`ep11` (the "Dev Disasters" series, script.json files) as worked examples of structure; you may quote one in full as an example, but keep the pack's own ten scripts as the buyer's starter set.
+3. **Route B: an AI-generated version, new chapter, written originally.** Teach how to make a Juno and Pixel style two-character reel with generative tools instead of code: character sheets and a consistent world with an image model; one first frame per ~8-second clip; image-to-video for each clip with a fixed style lock and voice description repeated in every clip; then cutting, captioning and loudness (the engine's caption and loudness rules apply). Give honest trade-offs against Route A: per-clip credits and costs, character drift between clips, longer time per reel, and each tool's current commercial-use terms (check and date them; name tools generically or as examples, never as requirements). Include original prompt templates with [BRACKETED] fields. Do not reuse wording, prompts or structure from any other creator's guide (the user showed one from another creator; it is a reference for the idea only, not to copy). Characters must stay original: no Claude mascot look-alikes.
+4. Update GUIDE.pdf/GUIDE.md (aim 20-24 pages), PROMPTS.md (add Route B prompts), START-HERE, QUALITY-CHECKLIST (safe zone, two-line captions, -14 LUFS, rights), CHANGELOG (2.1) and the JSON metadata (edition "2.1", page and prompt counts, includes, lessons still exactly 6). Keep the buyer ZIP under 3.8 MB.
+5. Deliver as before (`motion-with-code.zip`, `.json`, `.web/`) and add a Progress line. Claude integrates and updates the website.
+
 ## What each pack needs
 
 - An illustrated GUIDE.pdf (about 12–16 pages) and GUIDE.md, built around decisions and visual quality, not generic steps. Open with a visual idea, then cover references, a style or system lock, the hook or opening, structure, production route, a complete prompt anatomy, a review gate and a first production session.
@@ -110,6 +120,8 @@ For each finished pack, write:
 When a pack is done, add one line to the "Progress" section below with the slug, ZIP size and anything Claude should know.
 
 ## Progress
+
+- `motion-with-code` Edition 2.1 (2026-10-19): 2,026,505 bytes; 24-page guide, 28 prompts, six lessons, complete Route A and original Route B with dated optional-tool costs/terms, ten live structural examples, ten original starter scripts preserved, four formats and eight web previews. All 23 engine files and their archived copies are byte-identical to the refreshed export; manifest/file-count test refreshed, eight tests and archive/metadata/visual QA passed. Claude: integrate only the editions-v2 ZIP/JSON/web artifacts; the separate wrapper forces local Parakeet and now calls the supplied loudness function. Upstream observations: native runner still uses auto ASR with --model small.en; tools/episode.py retains a studio absolute path in a docstring, preserved under the unchanged-engine instruction (no runtime dependency; remove upstream for a strictly path-free export). Existing showcase stills are identified as earlier renders. No new full episode render, batch benchmark or paid generation was performed. Validation: product-build/editions-v2/_review/motion-with-code/validation.json.
 
 - `ugc-ad-scripts`: 2,934,355 bytes (2.93 MB); 14-page guide, 14 prompts, six showcase JPEGs and eight web previews; schema, archive and visual QA passed. Claude: integrate only the editions-v2 ZIP/JSON/web files; legacy starter limits are documented.
 - `short-explainer-studio`: 2,707,436 bytes (2.71 MB); 14-page guide, 16 prompts, six showcase JPEGs and eight web previews; schema, archive and visual QA passed. Claude: integrate only the editions-v2 ZIP/JSON/web files; legacy starter limits are documented.

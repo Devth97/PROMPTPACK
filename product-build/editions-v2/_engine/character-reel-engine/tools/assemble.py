@@ -66,7 +66,7 @@ timing = {
         {k: v for k, v in {
             'id': line['id'], 'speaker': line['speaker'], 'emotion': line.get('emotion'),
             'text': line['text'], 'start': round(start, 3), 'end': round(end, 3),
-            'screen': line.get('screen'), 'shot': line.get('shot'), 'camera': line.get('camera'), 'eyes': line.get('eyes'),
+            'screen': line.get('screen'), 'shot': line.get('shot'), 'camera': line.get('camera'), 'eyes': line.get('eyes'), 'punch': line.get('punch'),
         }.items() if v is not None}
         for line, audio, start, end in placed
     ],

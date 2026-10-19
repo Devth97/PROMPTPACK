@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16; background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 110px; right: 110px; top: 90px; bottom: 90px; display: flex; gap: 80px; align-items: center; }
+#root .colL { flex: none; width: 720px; display: flex; flex-direction: column; }
+#root .colR { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d; box-shadow: 7px 7px 0 #0b0b0f;
+  padding: 10px 24px; font-size: 28px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 120px; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 34px; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 16px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; margin-top: 30px; }
+#root .lede { font-size: 40px; font-weight: 700; line-height: 1.25; margin-top: 34px; max-width: 900px; }
+#root .clipvid { position: absolute; left: 160px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #0b0b0f; box-shadow: 14px 14px 0 #0b0b0f; background: #0b0b0f; }
+#root .clipside { position: absolute; left: 820px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+
+#c8-thread { display: flex; flex-direction: column; gap: 40px; }
+#c8-thread .bubble { max-width: 760px; padding: 28px 34px; font-size: 42px; font-weight: 700; line-height: 1.25; }
+#c8-thread .who { display: block; font-size: 24px; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+#c8-reply { align-self: flex-end; background: #a8f0c6; }
+</style>
+      <div id="root" data-composition-id="c8" data-width="1920" data-height="1080">
+<div id="c8-dots" class="dots"></div>
+<div class="safe">
+  <div class="colL"><div class="tag">Comment to reply</div><div id="c8-head" class="huge">Say the word.</div>
+    <div id="c8-note" class="note">Official Instagram API · your own app · sample conversation</div></div>
+  <div class="colR"><div id="c8-thread">
+    <div id="c8-comment" class="bubble card"><span class="who">Comment · @reader</span>GUIDE</div>
+    <div id="c8-reply" class="bubble card"><span class="who">Private reply · you</span>Here's the guide you asked for.</div>
+  </div></div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c8-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.8, ease: 'none' }, 0);
+        tl.fromTo('#c8-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.1);
+
+        tl.fromTo('#c8-comment', { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 0.4);
+        tl.fromTo('#c8-reply', { x: 200, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 2.0);
+        tl.fromTo('#c8-note', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 3.3);
+
+        window.__timelines["c8"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

@@ -12,13 +12,15 @@
       html, body { width: 1080px; height: 1920px; overflow: hidden; background: #1a1220; }
       #root { position: relative; width: 100%; height: 100%; overflow: hidden; font-family: Montserrat, system-ui, sans-serif; }
       #stage { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-      #captions { position: absolute; left: 70px; right: 70px; top: 1330px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
+      #captions { position: absolute; left: 70px; right: 70px; bottom: 440px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
       #speaker { font-size: 26px; font-weight: 900; letter-spacing: 0.18em; padding: 6px 16px; border: 3px solid #0b0b0f; box-shadow: 4px 4px 0 #0b0b0f; color: #0b0b0f; background: #a8f0c6; }
       #speaker[data-who="pixel"] { background: #ff6a2a; }
       #line { font-size: 66px; line-height: 1.12; font-weight: 900; color: #fffbf2; letter-spacing: -0.01em; text-shadow: 0 4px 0 #0b0b0f, 0 0 24px rgba(11, 11, 15, 0.85); max-width: 940px; }
-      #line .w { opacity: 0.45; }
+      #line .w { opacity: 0.55; display: inline-block; margin: 0 0.07em; transform-origin: 50% 70%; -webkit-text-stroke: 3px #0b0b0f; paint-order: stroke fill; }
       #line .w.on { opacity: 1; }
       #line .w.now { color: #ffe14d; }
+      #captions[data-who="pixel"] #line .w.now { color: #a8f0c6; }
+      #captions.punch #line { font-size: 80px; }
       #endcard { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; padding-bottom: 260px; gap: 18px; opacity: 0; }
       #endcard .kicker { font-size: 30px; font-weight: 900; letter-spacing: 0.2em; color: #a8f0c6; }
       #endcard .title { font-size: 92px; line-height: 0.95; font-weight: 900; color: #fffbf2; text-align: center; text-transform: uppercase; text-shadow: 0 6px 0 #0b0b0f; }

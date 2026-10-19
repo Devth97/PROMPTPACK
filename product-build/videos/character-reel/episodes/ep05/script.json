@@ -1,0 +1,117 @@
+{
+  "title": "Fixed one bug, broke three",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "panicked",
+      "text": "It fixed one bug and broke three!",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Classic. Did you have tests?",
+      "pause": 0.3,
+      "camera": "static"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "teasing",
+      "text": "I had vibes.",
+      "pause": 0.3
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "Vibes don't fail loudly.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Before the fix, ask for a test that fails because of the bug. Then fix until that test passes.",
+      "pause": 0.3,
+      "screen": "f1"
+    },
+    {
+      "id": "l06",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "And the other three?",
+      "pause": 0.3
+    },
+    {
+      "id": "l07",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Run every test after each change. If something old breaks, you see it in seconds, not on Monday.",
+      "pause": 0.3,
+      "screen": "f2"
+    },
+    {
+      "id": "l08",
+      "speaker": "juno",
+      "emotion": "realizing",
+      "text": "Tests are the receipts.",
+      "pause": 0.3,
+      "camera": "pushSlow"
+    },
+    {
+      "id": "l09",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Keep the receipts. Follow for tomorrow's disaster.",
+      "pause": 1.6
+    }
+  ],
+  "panels": [
+    {
+      "id": "f1",
+      "title": "First",
+      "rows": [
+        "failing test",
+        "then the fix"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "f2",
+      "title": "Every change",
+      "rows": [
+        "run all tests",
+        "catch it in seconds"
+      ],
+      "color": "#9dcbff"
+    }
+  ],
+  "endcard": {
+    "kicker": "JUNO & PIXEL · DEV DISASTERS",
+    "title": "Follow for tomorrow",
+    "brand": "PROMPTPACK.TECH"
+  }
+}

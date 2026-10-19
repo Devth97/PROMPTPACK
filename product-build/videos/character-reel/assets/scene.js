@@ -295,17 +295,39 @@ function captions(t) {
   const visible = cur && t <= cur.end + 0.35;
   capEl.style.opacity = visible ? '1' : '0';
   if (!cur) return;
-  if (shownId !== cur.id) {
-    shownId = cur.id;
+  // Long lines are shown in chunks of up to 7 words (preferring sentence ends), so a caption
+  // never grows past two lines and covers the characters
+  if (!cur.chunks) {
+    cur.chunks = [[]];
+    cur.words.forEach((w, i) => {
+      const last = cur.chunks[cur.chunks.length - 1];
+      const prev = cur.words[i - 1];
+      if (last.length >= 7 || (last.length >= 3 && prev && /[.!?]$/.test(prev.text))) cur.chunks.push([]);
+      cur.chunks[cur.chunks.length - 1].push(i);
+    });
+  }
+  let chunk = 0;
+  cur.chunks.forEach((c, k) => { if (k > 0 && t >= cur.words[c[0]].start - 0.05) chunk = k; });
+  const key = cur.id + ':' + chunk;
+  if (shownId !== key) {
+    shownId = key;
     speakerEl.textContent = cur.speaker === 'juno' ? 'JUNO' : 'PIXEL';
     speakerEl.dataset.who = cur.speaker;
-    lineEl.innerHTML = cur.words.map((w, i) => `<span class="w" data-i="${i}">${w.text}</span>`).join(' ');
+    capEl.dataset.who = cur.speaker;
+    capEl.classList.toggle('punch', !!cur.punch);
+    lineEl.innerHTML = cur.chunks[chunk].map((i) => `<span class="w" data-i="${i}">${cur.words[i].text}</span>`).join(' ');
   }
-  lineEl.querySelectorAll('.w').forEach((span, i) => {
-    const w = cur.words[i];
+  // Each word pops as it is spoken: small, a little bigger, then settles (a pure function of time)
+  const pop = (age, peak) => (age < 0 ? 1 : age < 0.08 ? 0.82 + (age / 0.08) * (peak - 0.82) : age < 0.2 ? peak - ((age - 0.08) / 0.12) * (peak - 1) : 1);
+  lineEl.querySelectorAll('.w').forEach((span) => {
+    const w = cur.words[Number(span.dataset.i)];
     span.classList.toggle('on', t >= w.start - 0.02);
     span.classList.toggle('now', t >= w.start - 0.02 && t < w.end);
+    span.style.transform = `scale(${pop(t - w.start, cur.punch ? 1.28 : 1.12).toFixed(3)})`;
   });
+  // The punchline line gets a short decaying wobble when it starts
+  const age = t - cur.start;
+  lineEl.style.transform = cur.punch && age >= 0 && age < 0.6 ? `rotate(${(Math.sin(age * 28) * 3 * (1 - age / 0.6)).toFixed(2)}deg)` : 'none';
   const endIn = clamp((t - (lines[lines.length - 1].end + 0.1)) / 0.5, 0, 1);
   endEl.style.opacity = String(endIn);
   if (endIn > 0) capEl.style.opacity = String(1 - endIn);

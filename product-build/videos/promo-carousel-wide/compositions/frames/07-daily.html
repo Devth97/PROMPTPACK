@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16; background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 110px; right: 110px; top: 90px; bottom: 90px; display: flex; gap: 80px; align-items: center; }
+#root .colL { flex: none; width: 720px; display: flex; flex-direction: column; }
+#root .colR { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d; box-shadow: 7px 7px 0 #0b0b0f;
+  padding: 10px 24px; font-size: 28px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 120px; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 34px; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 16px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; margin-top: 30px; }
+#root .lede { font-size: 40px; font-weight: 700; line-height: 1.25; margin-top: 34px; max-width: 900px; }
+#root .clipvid { position: absolute; left: 160px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #0b0b0f; box-shadow: 14px 14px 0 #0b0b0f; background: #0b0b0f; }
+#root .clipside { position: absolute; left: 820px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+
+#c7-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+#c7-steps .step { padding: 18px; }
+#c7-steps img { display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border: 4px solid #0b0b0f; }
+#c7-steps .label { font-size: 32px; font-weight: 900; text-transform: uppercase; line-height: 1.05; margin-top: 16px; }
+#c7-steps .sub { font-size: 22px; font-weight: 600; color: #2b2b33; margin-top: 6px; }
+</style>
+      <div id="root" data-composition-id="c7" data-width="1920" data-height="1080">
+<div id="c7-dots" class="dots"></div>
+<div class="safe">
+  <div class="colL" style="width:560px"><div class="tag">Carousel Workflow Kit</div><div id="c7-head" class="huge">Every day.</div>
+    <div id="c7-note" class="note">Publishing needs your own Meta app and its review</div></div>
+  <div class="colR"><div id="c7-steps">
+    <div class="step card"><img src="assets/slides/flow-2.webp" alt=""><div class="label">Today's folder</div><div class="sub">brief, slides, caption</div></div>
+    <div class="step card" style="background:#f598f2"><img src="assets/slides/flow-5.webp" alt=""><div class="label">You approve</div><div class="sub">nothing posts before that</div></div>
+    <div class="step card"><img src="assets/slides/flow-6.webp" alt=""><div class="label">Official API</div><div class="sub">publishes to Instagram</div></div>
+  </div></div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c7-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 9.9, ease: 'none' }, 0);
+        tl.fromTo('#c7-head', { scale: 1.5, filter: 'blur(14px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.5, ease: 'power4.out' }, 0.3);
+        tl.fromTo('#c7-steps .step:nth-child(1)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 1.45);
+        tl.fromTo('#c7-steps .step:nth-child(2)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 3.85);
+        tl.fromTo('#c7-steps .step:nth-child(3)', { x: -140, opacity: 0 }, { x: 0, opacity: 1, duration: 0.45, ease: 'expo.out' }, 6.65);
+
+        tl.fromTo('#c7-note', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 7.4);
+
+        window.__timelines["c7"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

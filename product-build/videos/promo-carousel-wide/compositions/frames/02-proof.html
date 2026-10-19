@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #fffbf2; color: #0b0b0f; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.16; background-image: radial-gradient(#0b0b0f 2.4px, transparent 3px); background-size: 40px 40px; }
+#root .safe { position: absolute; left: 110px; right: 110px; top: 90px; bottom: 90px; display: flex; gap: 80px; align-items: center; }
+#root .colL { flex: none; width: 720px; display: flex; flex-direction: column; }
+#root .colR { flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+#root .tag { align-self: flex-start; display: inline-block; border: 5px solid #0b0b0f; background: #ffe14d; box-shadow: 7px 7px 0 #0b0b0f;
+  padding: 10px 24px; font-size: 28px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+#root .huge { font-weight: 900; font-size: 120px; line-height: 0.92; letter-spacing: -0.035em; text-transform: uppercase; margin-top: 34px; }
+#root .mark { display: inline-block; background: #ffe14d; padding: 0 16px; border: 6px solid #0b0b0f; box-shadow: 10px 10px 0 #0b0b0f; }
+#root .card { border: 6px solid #0b0b0f; background: #fff; box-shadow: 14px 14px 0 #0b0b0f; }
+#root .chip { display: inline-block; border: 4px solid #0b0b0f; background: #fff; padding: 10px 22px; font-size: 34px; font-weight: 800; box-shadow: 5px 5px 0 #0b0b0f; }
+#root .shot { display: block; border: 5px solid #0b0b0f; box-shadow: 9px 9px 0 #0b0b0f; background: #fff; }
+#root .note { font-size: 24px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #2b2b33; margin-top: 30px; }
+#root .lede { font-size: 40px; font-weight: 700; line-height: 1.25; margin-top: 34px; max-width: 900px; }
+#root .clipvid { position: absolute; left: 160px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #0b0b0f; box-shadow: 14px 14px 0 #0b0b0f; background: #0b0b0f; }
+#root .clipside { position: absolute; left: 820px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; }
+
+#c2-grid { display: grid; grid-template-columns: repeat(3, 250px); gap: 28px; justify-content: end; }
+#c2-grid img { width: 250px; height: 312px; object-fit: cover; }
+</style>
+      <div id="root" data-composition-id="c2" data-width="1920" data-height="1080">
+<div id="c2-dots" class="dots"></div>
+<div class="safe">
+  <div class="colL"><div class="tag">A real carousel</div>
+    <div id="c2-head" class="huge">Six slides. <span class="mark">One system.</span></div>
+    <div id="c2-note" class="note">Example included in Carousel Studio 2.0</div></div>
+  <div class="colR"><div id="c2-grid"><img class="shot" src="assets/slides/studio-1.webp" alt=""><img class="shot" src="assets/slides/studio-2.webp" alt=""><img class="shot" src="assets/slides/studio-3.webp" alt=""><img class="shot" src="assets/slides/studio-4.webp" alt=""><img class="shot" src="assets/slides/studio-5.webp" alt=""><img class="shot" src="assets/slides/studio-6.webp" alt=""></div></div>
+</div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#c2-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 4.0, ease: 'none' }, 0);
+        tl.fromTo('#c2-head', { y: 90, rotation: 3, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.55, ease: 'circ.out' }, 0.15);
+
+        tl.fromTo('#c2-grid img', { y: 120, rotation: (i) => (i % 2 ? 6 : -6), opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: 'expo.out', stagger: 0.08 }, 1.0);
+        tl.fromTo('#c2-note', { opacity: 0 }, { opacity: 1, duration: 0.4, ease: 'none' }, 2.2);
+
+        window.__timelines["c2"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

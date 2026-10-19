@@ -26,7 +26,7 @@ episode.
 
 ## Install (once)
 
-1. Node.js 20 or newer, and Python 3.10 or newer.
+1. Node.js 20 or newer, Python 3.10 or newer, and ffmpeg (for the loudness step).
 2. `python -m venv .venv`, activate it, then `pip install -r requirements.txt`.
 3. `npx hyperframes@0.8.171 tts "hi"` downloads the Kokoro voice model into `~/.cache/hyperframes/tts`.
 4. `npx hyperframes@0.8.171 browser ensure` downloads the Chrome used for rendering.
@@ -69,6 +69,14 @@ Edit one line and run again: unchanged lines are reused, so only that line is re
 | `eyes` | Pixel's eyes for the line: `square, tall, slit, wide, angry, sad, bored, fond`. |
 | `screen` | The id of a panel on the laptop screen to type out while the line is spoken (up to six panels). |
 | `pause` | Seconds of silence after the line. Give the last line about 1.6 s so the end card can land. |
+| `punch` | `true` marks the punchline: its words pop bigger and the line gives a short wobble. Use it once per episode. |
+
+## Captions and sound, ready for Reels
+
+- Captions sit above the bottom 440 px, which Instagram and other apps cover with their buttons and text.
+- Long lines are shown in chunks of up to 7 words, so a caption never grows past two lines and covers the characters.
+- Each word pops in as it is spoken; Juno's current word is yellow, Pixel's is mint.
+- After each render, `episode.py` normalises the sound to -14 LUFS (the usual level for Reels and Shorts) with ffmpeg; it is skipped with a note if ffmpeg is not installed.
 
 ## Measured render time
 
