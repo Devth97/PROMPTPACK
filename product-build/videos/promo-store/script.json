@@ -1,0 +1,64 @@
+{
+  "title": "Store promo VO",
+  "cast": {
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "s2",
+      "speaker": "pixel",
+      "emotion": "curious",
+      "text": "What do you want to make?"
+    },
+    {
+      "id": "s3",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Reels? Write a hundred words and we perform them."
+    },
+    {
+      "id": "s4",
+      "speaker": "pixel",
+      "emotion": "explaining",
+      "text": "Carousels? Six slides from one brief, and a system to post them every day."
+    },
+    {
+      "id": "s5",
+      "speaker": "pixel",
+      "emotion": "proud",
+      "text": "Websites? Seventy-five prompts, 3D landing pages included.",
+      "say": "Websites? Seventy-five prompts, three D landing pages included."
+    },
+    {
+      "id": "s6",
+      "speaker": "pixel",
+      "emotion": "excited",
+      "text": "Video ads, explainers, B-roll, lyric videos. There's a kit for each.",
+      "say": "Video ads, explainers, B roll, lyric videos. There's a kit for each."
+    },
+    {
+      "id": "s7",
+      "speaker": "pixel",
+      "emotion": "smug",
+      "text": "Even pixel icons, YouTube plans, and a kit that finds the subscriptions you forgot."
+    },
+    {
+      "id": "s8",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Every kit: an illustrated guide, the exact prompts and real examples."
+    },
+    {
+      "id": "s9",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "Pick one. Pay once. Download instantly. Make it with your own AI tool."
+    }
+  ]
+}

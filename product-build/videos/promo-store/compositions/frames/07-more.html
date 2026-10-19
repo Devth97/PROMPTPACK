@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #141219; color: #fffbf2; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.12; background-image: radial-gradient(#fffbf2 2px, transparent 2.6px); background-size: 40px 40px; }
+#root .glow { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(140px); opacity: 0.22; }
+#root .huge { font-weight: 900; font-size: 190px; line-height: 0.86; letter-spacing: -0.045em; text-transform: uppercase; }
+#root .big { font-weight: 900; font-size: 120px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .chip { display: inline-block; border: 4px solid #fffbf2; color: #0b0b0f; padding: 10px 22px; font-size: 34px; font-weight: 900; box-shadow: 6px 6px 0 #0b0b0f; }
+#root .tile { display: block; border: 5px solid #fffbf2; box-shadow: 12px 12px 0 rgba(0,0,0,0.6); background: #0b0b0f; object-fit: cover; }
+#root .left { position: absolute; left: 120px; top: 0; bottom: 0; width: 760px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+#root .right { position: absolute; right: 110px; top: 0; bottom: 0; width: 900px; display: flex; align-items: center; justify-content: center; }
+#root .clipvid { position: absolute; left: 150px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #fffbf2; box-shadow: 14px 14px 0 rgba(0,0,0,0.6); background: #0b0b0f; }
+#root .clipside { position: absolute; left: 810px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+</style>
+      <div id="root" data-composition-id="s7" data-width="1920" data-height="1080"><div id="s7-dots" class="dots"></div><div id="s7-glow" class="glow" style="background:#a8f0c6;left:-200px;top:300px"></div><div class="left" style="gap:10px"><div id="s7-k" class="chip" style="background:#fffbf2;align-self:flex-start;margin-bottom:14px">And more</div><div id="s7-w0" class="big" style="font-size:110px;color:#ffe14d">Pixel icons</div><div id="s7-w1" class="big" style="font-size:110px;color:#ff9f8e">YouTube plans</div><div id="s7-w2" class="big" style="font-size:110px;color:#a8f0c6">Money</div><div id="s7-s" style="font-size:36px;font-weight:700;margin-top:16px">Find the subscriptions you forgot.</div></div><div class="right" style="gap:30px;flex-wrap:wrap;align-content:center"><img id="s7-i0" class="tile" src="assets/media/pixel-brand-kit-1.webp" alt="" style="width:250px;height:312px"><img id="s7-i1" class="tile" src="assets/media/youtube-production-1.webp" alt="" style="width:420px;height:236px"><img id="s7-i2" class="tile" src="assets/media/money-audit.webp" alt="" style="width:420px;height:280px"></div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#s7-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 5.9, ease: 'none' }, 0);
+        tl.fromTo('#s7-glow', { scale: 0.9 }, { scale: 1.15, duration: 5.9, ease: 'sine.inOut' }, 0);
+        tl.fromTo('#s7-k', { scale: 0.3, rotation: -8, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 0.2);
+        tl.fromTo('#s7-w0', { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 0.5);
+        tl.fromTo('#s7-i0', { y: 140, rotation: 4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, 0.55);
+        tl.fromTo('#s7-w1', { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 1.6);
+        tl.fromTo('#s7-i1', { y: 140, rotation: -4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, 1.6500000000000001);
+        tl.fromTo('#s7-w2', { x: -120, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 3.1);
+        tl.fromTo('#s7-i2', { y: 140, rotation: 4, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: 0.5, ease: 'expo.out' }, 3.15);
+        tl.fromTo('#s7-s', { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 3.6);
+
+        window.__timelines["s7"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

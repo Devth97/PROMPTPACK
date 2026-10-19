@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #141219; color: #fffbf2; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.12; background-image: radial-gradient(#fffbf2 2px, transparent 2.6px); background-size: 40px 40px; }
+#root .glow { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(140px); opacity: 0.22; }
+#root .huge { font-weight: 900; font-size: 190px; line-height: 0.86; letter-spacing: -0.045em; text-transform: uppercase; }
+#root .big { font-weight: 900; font-size: 120px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .chip { display: inline-block; border: 4px solid #fffbf2; color: #0b0b0f; padding: 10px 22px; font-size: 34px; font-weight: 900; box-shadow: 6px 6px 0 #0b0b0f; }
+#root .tile { display: block; border: 5px solid #fffbf2; box-shadow: 12px 12px 0 rgba(0,0,0,0.6); background: #0b0b0f; object-fit: cover; }
+#root .left { position: absolute; left: 120px; top: 0; bottom: 0; width: 760px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+#root .right { position: absolute; right: 110px; top: 0; bottom: 0; width: 900px; display: flex; align-items: center; justify-content: center; }
+#root .clipvid { position: absolute; left: 150px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #fffbf2; box-shadow: 14px 14px 0 rgba(0,0,0,0.6); background: #0b0b0f; }
+#root .clipside { position: absolute; left: 810px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+</style>
+      <div id="root" data-composition-id="s10" data-width="1920" data-height="1080"><div id="s10-dots" class="dots"></div><div id="s10-glow" class="glow" style="background:#ffe14d;left:900px;top:100px"></div><video id="s10-video" class="clip clipvid" src="assets/media/ad04.mp4" playsinline data-has-audio="true" data-start="0" data-duration="8" data-media-start="9.1" data-volume="1"></video>
+<div class="clipside"><div id="s10-k" class="chip" style="background:#f598f2;align-self:flex-start">Find your kit</div>
+<div id="s10-u" class="big" style="font-size:130px">promptpack</div><div id="s10-u2" class="big" style="font-size:130px;color:#ffe14d">.tech</div>
+<div id="s10-s" style="font-size:36px;font-weight:700">13 AI kits for reels, carousels, websites and more</div></div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#s10-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 8.0, ease: 'none' }, 0);
+        tl.fromTo('#s10-glow', { scale: 0.9 }, { scale: 1.15, duration: 8.0, ease: 'sine.inOut' }, 0);
+        tl.fromTo('#s10-k', { scale: 0.3, rotation: -8, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: 0.4, ease: 'back.out(2.4)' }, 3.6);
+        tl.fromTo('#s10-u', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 3.9);
+        tl.fromTo('#s10-u2', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 4.3);
+        tl.fromTo('#s10-s', { x: -60, opacity: 0 }, { x: 0, opacity: 1, duration: 0.42, ease: 'expo.out' }, 5.0);
+
+        window.__timelines["s10"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

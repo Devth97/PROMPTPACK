@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head><meta charset="UTF-8" /></head>
+  <body>
+    <template>
+      <style>
+#root { position: absolute; inset: 0; overflow: hidden; background: #141219; color: #fffbf2; font-family: 'Montserrat', sans-serif; }
+#root .dots { position: absolute; inset: -40px; opacity: 0.12; background-image: radial-gradient(#fffbf2 2px, transparent 2.6px); background-size: 40px 40px; }
+#root .glow { position: absolute; width: 900px; height: 900px; border-radius: 50%; filter: blur(140px); opacity: 0.22; }
+#root .huge { font-weight: 900; font-size: 190px; line-height: 0.86; letter-spacing: -0.045em; text-transform: uppercase; }
+#root .big { font-weight: 900; font-size: 120px; line-height: 0.9; letter-spacing: -0.035em; text-transform: uppercase; }
+#root .chip { display: inline-block; border: 4px solid #fffbf2; color: #0b0b0f; padding: 10px 22px; font-size: 34px; font-weight: 900; box-shadow: 6px 6px 0 #0b0b0f; }
+#root .tile { display: block; border: 5px solid #fffbf2; box-shadow: 12px 12px 0 rgba(0,0,0,0.6); background: #0b0b0f; object-fit: cover; }
+#root .left { position: absolute; left: 120px; top: 0; bottom: 0; width: 760px; display: flex; flex-direction: column; justify-content: center; gap: 30px; }
+#root .right { position: absolute; right: 110px; top: 0; bottom: 0; width: 900px; display: flex; align-items: center; justify-content: center; }
+#root .clipvid { position: absolute; left: 150px; top: 60px; width: 540px; height: 960px; object-fit: cover; border: 6px solid #fffbf2; box-shadow: 14px 14px 0 rgba(0,0,0,0.6); background: #0b0b0f; }
+#root .clipside { position: absolute; left: 810px; right: 110px; top: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; gap: 26px; }
+</style>
+      <div id="root" data-composition-id="s2" data-width="1920" data-height="1080"><div id="s2-dots" class="dots"></div><div id="s2-glow" class="glow" style="background:#ffe14d;left:500px;top:100px"></div><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center"><div class="huge" style="max-width:1600px"><span id="s2-w0" style="display:inline-block">What</span> <span id="s2-w1" style="display:inline-block">do</span> <span id="s2-w2" style="display:inline-block">you</span> <span id="s2-w3" style="display:inline-block">want</span> <span id="s2-w4" style="display:inline-block">to</span> <span id="s2-w5" style="display:inline-block;color:#ffe14d">make?</span></div></div></div>
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo('#s2-dots', { x: 0, y: 0 }, { x: -40, y: -40, duration: 2.3, ease: 'none' }, 0);
+        tl.fromTo('#s2-glow', { scale: 0.9 }, { scale: 1.15, duration: 2.3, ease: 'sine.inOut' }, 0);
+        tl.fromTo('#s2-w0', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 0.3);
+        tl.fromTo('#s2-w1', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 0.6);
+        tl.fromTo('#s2-w2', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 0.76);
+        tl.fromTo('#s2-w3', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 0.92);
+        tl.fromTo('#s2-w4', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 1.08);
+        tl.fromTo('#s2-w5', { scale: 1.6, filter: 'blur(16px)', opacity: 0 }, { scale: 1, filter: 'blur(0px)', opacity: 1, duration: 0.45, ease: 'power4.out' }, 1.3);
+
+        window.__timelines["s2"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

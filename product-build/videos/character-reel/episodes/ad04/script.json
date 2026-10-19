@@ -1,0 +1,105 @@
+{
+  "title": "What is PromptPack",
+  "cast": {
+    "juno": {
+      "name": "Juno",
+      "provider": "elevenlabs",
+      "voice": "FGY2WhTYpPnrIDTdsKH5",
+      "model": "eleven_v3",
+      "speed": 1.0
+    },
+    "pixel": {
+      "name": "Pixel",
+      "provider": "elevenlabs",
+      "voice": "cjVigY5qzO86Huf0OWal",
+      "model": "eleven_v3",
+      "speed": 1.0
+    }
+  },
+  "lines": [
+    {
+      "id": "l01",
+      "speaker": "juno",
+      "emotion": "curious",
+      "text": "Pixel, what is PromptPack, actually?",
+      "say": "Pixel, what is Prompt Pack, actually?",
+      "pause": 0.3,
+      "camera": "dollyIn"
+    },
+    {
+      "id": "l02",
+      "speaker": "pixel",
+      "emotion": "calm",
+      "text": "A shelf of AI kits. You pick what you want to make.",
+      "pause": 1.2,
+      "screen": "shelf",
+      "camera": "sliderLeft"
+    },
+    {
+      "id": "l03",
+      "speaker": "juno",
+      "emotion": "excited",
+      "text": "Wait, can I make you?",
+      "pause": 0.3,
+      "camera": "crashZoomIn+handheld"
+    },
+    {
+      "id": "l04",
+      "speaker": "pixel",
+      "emotion": "deadpan",
+      "text": "There's a kit for that.",
+      "pause": 0.3,
+      "shot": "pixelECU",
+      "eyes": "slit",
+      "punch": true
+    },
+    {
+      "id": "l05",
+      "speaker": "pixel",
+      "emotion": "warm",
+      "text": "Find yours at promptpack.tech.",
+      "say": "Find yours at prompt pack dot tech.",
+      "pause": 1.8
+    }
+  ],
+  "panels": [
+    {
+      "id": "shelf",
+      "title": "PromptPack",
+      "rows": [
+        "13 AI kits",
+        "pick, pay once, make"
+      ],
+      "color": "#ffe14d"
+    },
+    {
+      "id": "reels",
+      "title": "Reels",
+      "rows": [
+        "Juno & Pixel"
+      ],
+      "color": "#f598f2"
+    },
+    {
+      "id": "carousels",
+      "title": "Carousels",
+      "rows": [
+        "six slides a day"
+      ],
+      "color": "#a8f0c6"
+    },
+    {
+      "id": "websites",
+      "title": "Websites",
+      "rows": [
+        "75+ prompts, 3D"
+      ],
+      "color": "#9dcbff"
+    }
+  ],
+  "endcard": {
+    "kicker": "13 AI KITS · ONE SHELF",
+    "title": "PromptPack",
+    "brand": "PROMPTPACK.TECH"
+  }
+}
