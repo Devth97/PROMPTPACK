@@ -1,6 +1,6 @@
 # PromptPack
 
-> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 13 products have purchase routes, including 11 complete guide editions with free sample prompts.
+> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 12 products have purchase routes, including 10 complete guide editions with free sample prompts.
 
 Updated: 2026-10-18. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
 
@@ -76,39 +76,6 @@ Public tools referenced: postoncehq/instagram-mcp (MIT) https://github.com/posto
 Sample prompt:
 
 For [TEAM], [CAROUSEL TOPIC], [AUDIENCE] and [APPROVED SOURCES], define one content unit with [POST ID], [REVISION], owner and final deliverables. Distinguish content approval from publication. Return the brief, required files and stop conditions. Do not invent source verification, account access, publishing results or engagement metrics.
-
-### 3D Website Lab
-
-URL: https://promptpack.tech/products/3d-website-lab/
-Category: Websites
-Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Design a purposeful 3D landing-page concept with readable HTML and useful fallbacks. Prepare a 3D landing-page brief, visual system and six interface-state concepts with a clear next action. Keep the useful explanation outside the canvas, and specify responsive, reduced-motion and unavailable-module behavior before implementation.
-
-For: Designers, small studios and founders briefing a 3D-enhanced landing page.
-Requirements: Your own page content, a developer or coding tool, browser, permitted assets and hosting if publishing.
-Scope: Six interface mockups and a production brief, not a deployed website or a downloadable 3D model. The new sculptural object is raster concept art. The retained starter is a separate simpler Three.js example that loads a pinned network dependency. Supply your own hosting, model assets, development tools and real-device testing. No payment code, performance certification or accessibility guarantee is included.
-
-Workshop steps:
-1. Give the 3D scene a page job
-2. Study the composition and lock the system
-3. Storyboard the visitor journey
-4. Choose an implementation route honestly
-5. Review usability and actual performance
-6. Deliver a buildable visual specification
-
-First session:
-1. Write the visitor job and exact page copy before choosing any 3D effect.
-2. Lock an original object/style system and review the six interface-state concepts.
-3. Use staged prompts to choose static, CSS or real-time production and specify the state matrix.
-4. Prototype readable content and fallback first, then review the actual build for usability, motion preference and measured performance.
-
-Public tools referenced: mrdoob/three.js (MIT) https://github.com/mrdoob/three.js; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright
-
-Sample prompt:
-
-For [VISITOR], [TRUTHFUL OFFER], [PAGE CONTENT] and [NEXT ACTION], define a 3D landing-page job. Separate the attention role of the scene from the semantic explanation. Give a useful static fallback, six state requirements and a one-session prototype scope. Do not invent product facts, conversion results, ratings or a working deployment.
 
 ### AI Video Direction Kit
 

@@ -5,7 +5,8 @@ const fs=require('node:fs');
 const path=require('node:path');
 const crypto=require('node:crypto');
 const root=path.join(__dirname,'..');
-const products=require('../catalog/products.json');
+// Retired packs are no longer listed on the site but stay deliverable for people who already bought them.
+const products=[...require('../catalog/products.json'),...require('../catalog/retired-products.json')];
 const editions=require('../catalog/editions.json');
 const local={};
 const envFile=path.join(root,'.env.local');

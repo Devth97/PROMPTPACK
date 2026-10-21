@@ -7,7 +7,6 @@ const website = {
 };
 const promos = {
   'website-prompts': website,
-  '3d-website-lab': website,
   'ugc-ad-scripts': {
     file: 'ugc-product-demo', poster: 'jpg', width: 540, height: 960, seconds: 10,
     title: 'Put the product in the frame',

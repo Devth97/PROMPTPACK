@@ -18,7 +18,7 @@ function page(title, description, url, body, schema, imagePath = '/assets/cover.
 }
 function write(file, value) { fs.mkdirSync(path.dirname(path.join(root, file)), {recursive:true}); fs.writeFileSync(path.join(root, file), value); }
 const faq = [
-  ['Which packs can I buy now?','All thirteen products have purchase routes. The eleven new guide editions use Razorpay checkout and deliver the complete ZIP after payment verification. You can inspect their actual pages and try a free sample first.'],
+  ['Which packs can I buy now?','All twelve products have purchase routes. The ten guide editions use Razorpay checkout and deliver the complete ZIP after payment verification. You can inspect their actual pages and try a free sample first.'],
   ['What is included in the new packs?','Illustrated PDF field guides, editable prompts, original worked examples, starter files and worksheets. See each product page for its exact contents and requirements. Recorded courses, tool subscriptions and live publishing services are separate.'],
   ['Do the packs include AI tool credits?','No. Use your own AI tools and accounts. Image, video and automation services may charge separately. Review the requirements on each product page.'],
   ['Can I try a prompt before buying?','Yes. Each new guide edition has a sample you can copy and adapt. Outputs depend on the tool, your inputs and the revisions you make.']

@@ -19,7 +19,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   assert.equal(carousel.edition,'2.0');
   assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[13,12]);
   // Visual Edition 2.0 packs come from Codex's editions-v2 folder; each ships a six-image gallery on its product page.
-  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','3d-website-lab','pixel-brand-kit','carousel-workflows','motion-with-code'];
+  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','pixel-brand-kit','carousel-workflows','motion-with-code'];
   for(const slug of visual){
     const edition=editions.find(e=>e.slug===slug);
     assert.equal(edition.edition,'2.0',slug);
