@@ -43,7 +43,7 @@ module.exports = function reelLanding(p, edition, esc, checkout, price) {
   const steps = STEPS.map(([t, d, tag], i) => `<li class="jp-step"><span class="jp-num">${String(i + 1).padStart(2, '0')}</span><h3>${esc(t)}</h3><p>${esc(d)}</p><small>${esc(tag)}</small></li>`).join('');
   const inside = INSIDE.map(([t, d]) => `<li><b>${esc(t)}</b><span>${esc(d)}</span></li>`).join('');
   const faq = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}${q.startsWith('What if') ? ' <a href="/refund/">Refund policy ↗</a>' : ''}</p></details>`).join('');
-  const buy = (label) => `<a class="button jp-buy" href="${checkout}">${label} — ${price} ↗</a>`;
+  const buy = (label) => `<a class="button buy-cta jp-buy" href="${checkout}"><span class="buy-label">${label} <span aria-hidden="true">↗</span></span><span class="buy-price">${price} · one time · instant download</span></a>`;
   return `<div class="breadcrumb"><a href="/#catalog">All products</a> / ${esc(p.category)}</div>
 <header class="jp-hero"><div class="jp-hero-copy"><span class="eyebrow">Character reels · made in code</span><h1>Make Juno &amp; Pixel reels from a 100-word script</h1>
 <p class="intro">Two 3D characters who talk, react and get the joke. Write a short script and the engine voices it, times every word, picks every camera and renders a finished vertical reel on your own computer. No camera, no animator, no video model, no per-video fee.</p>

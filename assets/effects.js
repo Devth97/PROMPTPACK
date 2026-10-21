@@ -149,4 +149,27 @@
       sticky.classList.toggle('is-visible', inView.size === 0);
     });
   }
+
+  // Videos with controls play muted while on screen and pause when scrolled away. A video the
+  // visitor pauses stays paused. Skipped when the visitor asks for reduced motion.
+  const players = [...document.querySelectorAll('video[controls]')];
+  if (!reduced && players.length) {
+    const autoPaused = new WeakSet();
+    const userPaused = new WeakSet();
+    players.forEach(video => {
+      video.muted = true;
+      video.loop = true;
+      video.addEventListener('pause', () => { if (autoPaused.has(video)) autoPaused.delete(video); else userPaused.add(video); });
+      video.addEventListener('play', () => userPaused.delete(video));
+    });
+    observe(players, entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        if (!userPaused.has(video)) video.play().catch(() => {});
+      } else if (!video.paused) {
+        autoPaused.add(video);
+        video.pause();
+      }
+    }, { threshold: 0.5 });
+  }
 })();
