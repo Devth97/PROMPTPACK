@@ -30,13 +30,14 @@ test('editions: eleven built bundles have source evidence and accurate public pr
       assert.ok(slide.alt.length>40 && page.includes(`src="${slide.src}"`),slide.src);
     }
   }
-  assert.deepEqual(new Set(editions.map(e=>e.slug)),new Set(products.map(p=>p.slug)));
+  assert.deepEqual(new Set(editions.map(e=>e.slug)),new Set([...products,...JSON.parse(read('catalog/retired-products.json'))].map(p=>p.slug)));
   for(const edition of editions){
     assert.equal(edition.content_status,'built');
     assert.equal(edition.sale_status,'checkout-configured');
     assert.ok(edition.pdf_pages>=10);
     assert.match(edition.sha256,/^[a-f0-9]{64}$/);
     assert.equal(edition.lessons.length,6);
+    if(!products.some(p=>p.slug===edition.slug))continue; // retired packs keep their bundle but have no page
     const html=read(`products/${edition.slug}/index.html`);
     assert.ok(html.includes(`${edition.pdf_pages}-page`));
     assert.ok(html.includes(edition.cover));

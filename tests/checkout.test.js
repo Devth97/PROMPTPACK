@@ -188,8 +188,16 @@ test('private sources and buyer archives are never served or deployed statically
   for (const entry of ['product-build/', 'catalog/', 'private/catalog/', '*.zip', '*.pdf', '.env*']) assert.ok(ignore.split(/\r?\n/).includes(entry), entry);
 });
 
+test('retired packs: no public pages, still deliverable to earlier buyers', () => {
+  for (const r of require('../catalog/retired-products.json')) {
+    assert.ok(delivery.some(d => d.slug === r.slug), r.slug + ' stays in delivery');
+    assert.ok(!products.some(p => p.slug === r.slug), r.slug + ' is not listed');
+    for (const dir of ['products', 'checkout']) assert.ok(!fs.existsSync(path.join(ROOT, dir, r.slug)), dir + '/' + r.slug);
+  }
+});
+
 test('checkout pages: real prices, Razorpay route, noindex; product pages link to them', () => {
-  for (const d of delivery) {
+  for (const d of delivery.filter(d => products.some(p => p.slug === d.slug))) {
     const html = read(`checkout/${d.slug}/index.html`);
     const price = 'US$' + d.amount / 100, priceInr = '₹' + (d.amount_inr / 100).toLocaleString('en-IN');
     assert.ok(html.includes(`data-checkout="${d.slug}"`), d.slug);
