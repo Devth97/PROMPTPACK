@@ -7,6 +7,31 @@
 .product-promo video{display:block;width:auto;height:auto;max-width:100%;max-height:460px;margin:auto;border:3px solid var(--ink);background:var(--ink)}
 .product-promo figcaption{font-size:12px;line-height:1.5;margin-top:12px;font-weight:700}
 @media(max-width:700px){.product-promo{grid-template-columns:1fr;gap:20px;padding:22px;margin-right:7px}.product-promo video{max-height:420px}}
+.product-promo--wide{grid-template-columns:1fr;gap:18px}
+.product-promo--wide h2{margin-top:16px}
+.product-promo--wide p{max-width:760px}
+.product-promo--wide video{width:100%;max-height:none;aspect-ratio:16/9}
+/* Preview wall: every design in the website pack. */
+.preview-wall{margin:0 0 56px}
+.wall-head{max-width:820px}
+.wall-head h2{font-size:clamp(28px,3.4vw,44px);margin:18px 0 12px}
+.wall-filters{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 26px}
+.wall-filters button{font:inherit;font-weight:800;font-size:15px;padding:9px 16px;border:3px solid var(--ink);border-radius:999px;background:var(--paper);color:var(--ink);cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
+.wall-filters button span{font-weight:600;opacity:.7;margin-left:4px}
+.wall-filters button[aria-pressed="true"]{background:var(--yellow)}
+.wall-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:20px}
+.wall-tile{margin:0;border:3px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink);transition:transform .2s ease,box-shadow .2s ease}
+.wall-tile[hidden]{display:none}
+.wall-tile:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink)}
+.wall-media{position:relative;aspect-ratio:640/470;background:var(--ink);border-bottom:3px solid var(--ink);overflow:hidden}
+.wall-media img,.wall-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.wall-media video{opacity:0;transition:opacity .3s ease}
+.wall-tile.is-playing .wall-media video{opacity:1}
+.wall-tile figcaption{display:flex;flex-direction:column;padding:10px 12px 12px;line-height:1.3}
+.wall-tile figcaption b{font-size:15px}
+.wall-tile figcaption span{font-size:12px;font-weight:700;opacity:.75;margin-top:3px}
+@media(max-width:580px){.wall-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.wall-tile figcaption b{font-size:13px}}
+@media(prefers-reduced-motion:reduce){.wall-tile,.wall-tile:hover{transition:none;transform:none}}
 .product-hero{max-width:none;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:42px;align-items:center;padding:46px 0 35px}
 .product-hero h1{font-size:clamp(38px,4.7vw,64px);overflow-wrap:normal}
 .product-hero .intro{font-size:18px;line-height:1.55}

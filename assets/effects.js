@@ -172,4 +172,47 @@
       }
     }, { threshold: 0.5 });
   }
+
+  // Silent ambient videos (no controls) play while on screen. With reduced motion they stay on
+  // their poster and get controls, so the visitor can still choose to play them.
+  const ambient = [...document.querySelectorAll('video[data-ambient]')];
+  if (reduced) {
+    ambient.forEach(video => { video.removeAttribute('autoplay'); video.pause(); video.controls = true; });
+  } else if (ambient.length) {
+    observe(ambient, entry => {
+      if (entry.isIntersecting) entry.target.play().catch(() => {});
+      else entry.target.pause();
+    }, { threshold: 0.25 });
+  }
+
+  // Preview wall: animated tiles load their clip the first time they near the screen, play while
+  // visible and pause when scrolled away. Reduced motion keeps the still posters.
+  const tiles = [...document.querySelectorAll('[data-video]')];
+  if (!reduced && tiles.length) {
+    observe(tiles, entry => {
+      const tile = entry.target;
+      let video = tile.querySelector('video');
+      if (!entry.isIntersecting) { if (video) video.pause(); return; }
+      if (!video) {
+        video = document.createElement('video');
+        video.muted = true;
+        video.loop = true;
+        video.playsInline = true;
+        video.setAttribute('playsinline', '');
+        video.setAttribute('aria-hidden', 'true');
+        video.addEventListener('playing', () => tile.classList.add('is-playing'), { once: true });
+        video.src = tile.dataset.video;
+        tile.querySelector('.wall-media').append(video);
+      }
+      video.play().catch(() => {});
+    }, { rootMargin: '150px 0px' });
+  }
+
+  // Preview wall filters.
+  const filters = [...document.querySelectorAll('[data-wall-filter]')];
+  filters.forEach(button => button.addEventListener('click', () => {
+    const group = button.dataset.wallFilter;
+    filters.forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+    document.querySelectorAll('.wall-tile').forEach(tile => { tile.hidden = group !== 'all' && tile.dataset.group !== group; });
+  }));
 })();

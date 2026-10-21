@@ -1,0 +1,772 @@
+[
+ {
+  "name": "AI Workflow Hero",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/ai-workflow-hero.webp",
+  "video": "/assets/product-previews/website-prompts/ai-workflow-hero.mp4"
+ },
+ {
+  "name": "Bloom AI",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 394,
+  "poster": "/assets/product-previews/website-prompts/bloom-ai.webp",
+  "video": "/assets/product-previews/website-prompts/bloom-ai.mp4"
+ },
+ {
+  "name": "Bold Studio",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/bold-studio.webp",
+  "video": "/assets/product-previews/website-prompts/bold-studio.mp4"
+ },
+ {
+  "name": "CozyPaws",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/cozypaws.webp",
+  "video": "/assets/product-previews/website-prompts/cozypaws.mp4"
+ },
+ {
+  "name": "Creative Portfolio",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/creative-portfolio.webp",
+  "video": "/assets/product-previews/website-prompts/creative-portfolio.mp4"
+ },
+ {
+  "name": "DesignPro Academy",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 398,
+  "poster": "/assets/product-previews/website-prompts/designpro-academy.webp",
+  "video": "/assets/product-previews/website-prompts/designpro-academy.mp4"
+ },
+ {
+  "name": "Duolingo Styleguide",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 434,
+  "poster": "/assets/product-previews/website-prompts/duolingo-styleguide.webp",
+  "video": "/assets/product-previews/website-prompts/duolingo-styleguide.mp4"
+ },
+ {
+  "name": "Impact Ventures",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/impact-ventures.webp",
+  "video": "/assets/product-previews/website-prompts/impact-ventures.mp4"
+ },
+ {
+  "name": "Luminex",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 420,
+  "poster": "/assets/product-previews/website-prompts/luminex.webp",
+  "video": "/assets/product-previews/website-prompts/luminex.mp4"
+ },
+ {
+  "name": "Portal",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 426,
+  "poster": "/assets/product-previews/website-prompts/portal.webp",
+  "video": "/assets/product-previews/website-prompts/portal.mp4"
+ },
+ {
+  "name": "Prosthetics Hero",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 406,
+  "poster": "/assets/product-previews/website-prompts/prosthetics-hero.webp",
+  "video": "/assets/product-previews/website-prompts/prosthetics-hero.mp4"
+ },
+ {
+  "name": "Sentinel AI",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 416,
+  "poster": "/assets/product-previews/website-prompts/sentinel-ai.webp",
+  "video": "/assets/product-previews/website-prompts/sentinel-ai.mp4"
+ },
+ {
+  "name": "Subscription Agency",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/subscription-agency.webp",
+  "video": "/assets/product-previews/website-prompts/subscription-agency.mp4"
+ },
+ {
+  "name": "Transform Data",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/transform-data.webp",
+  "video": "/assets/product-previews/website-prompts/transform-data.mp4"
+ },
+ {
+  "name": "Vision Reveal",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/vision-reveal.webp",
+  "video": "/assets/product-previews/website-prompts/vision-reveal.mp4"
+ },
+ {
+  "name": "Wellness Balance",
+  "volume": 1,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/wellness-balance.webp",
+  "video": "/assets/product-previews/website-prompts/wellness-balance.mp4"
+ },
+ {
+  "name": "CodeNest Coding Platform",
+  "volume": 1,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 404,
+  "poster": "/assets/product-previews/website-prompts/codenest-coding-platform.webp",
+  "video": "/assets/product-previews/website-prompts/codenest-coding-platform.mp4"
+ },
+ {
+  "name": "Health Portal",
+  "volume": 1,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/health-portal.webp",
+  "video": "/assets/product-previews/website-prompts/health-portal.mp4"
+ },
+ {
+  "name": "Neon Logic",
+  "volume": 1,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/neon-logic.webp",
+  "video": "/assets/product-previews/website-prompts/neon-logic.mp4"
+ },
+ {
+  "name": "PROMPT",
+  "volume": 1,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/prompt.webp",
+  "video": "/assets/product-previews/website-prompts/prompt.mp4"
+ },
+ {
+  "name": "Modern Agency",
+  "volume": 1,
+  "group": "more",
+  "category": "Agency",
+  "width": 560,
+  "height": 984,
+  "poster": "/assets/product-previews/website-prompts/modern-agency.webp",
+  "video": "/assets/product-previews/website-prompts/modern-agency.mp4"
+ },
+ {
+  "name": "Velorah",
+  "volume": 1,
+  "group": "more",
+  "category": "Agency",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/velorah.webp",
+  "video": "/assets/product-previews/website-prompts/velorah.mp4"
+ },
+ {
+  "name": "3D Collectible Hero",
+  "volume": 1,
+  "group": "more",
+  "category": "3D website",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/3d-collectible-hero.webp",
+  "video": "/assets/product-previews/website-prompts/3d-collectible-hero.mp4"
+ },
+ {
+  "name": "Email Marketing",
+  "volume": 1,
+  "group": "more",
+  "category": "Email marketing",
+  "width": 560,
+  "height": 492,
+  "poster": "/assets/product-previews/website-prompts/email-marketing.webp",
+  "video": "/assets/product-previews/website-prompts/email-marketing.mp4"
+ },
+ {
+  "name": "3D Portfolio",
+  "volume": 1,
+  "group": "more",
+  "category": "Portfolio",
+  "width": 560,
+  "height": 408,
+  "poster": "/assets/product-previews/website-prompts/3d-portfolio.webp",
+  "video": "/assets/product-previews/website-prompts/3d-portfolio.mp4"
+ },
+ {
+  "name": "Datacore Booking",
+  "volume": 1,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 388,
+  "poster": "/assets/product-previews/website-prompts/datacore-booking.webp",
+  "video": "/assets/product-previews/website-prompts/datacore-booking.mp4"
+ },
+ {
+  "name": "Aethera Studio",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 408,
+  "poster": "/assets/product-previews/website-prompts/aethera-studio.webp",
+  "video": "/assets/product-previews/website-prompts/aethera-studio.mp4"
+ },
+ {
+  "name": "Asme",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 408,
+  "poster": "/assets/product-previews/website-prompts/asme.webp",
+  "video": "/assets/product-previews/website-prompts/asme.mp4"
+ },
+ {
+  "name": "Contact Cybernetic",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 400,
+  "poster": "/assets/product-previews/website-prompts/contact-cybernetic.webp",
+  "video": "/assets/product-previews/website-prompts/contact-cybernetic.mp4"
+ },
+ {
+  "name": "Digital Epoch",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/digital-epoch.webp",
+  "video": "/assets/product-previews/website-prompts/digital-epoch.mp4"
+ },
+ {
+  "name": "Equilibrium",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/equilibrium.webp",
+  "video": "/assets/product-previews/website-prompts/equilibrium.mp4"
+ },
+ {
+  "name": "IntelligentX",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 404,
+  "poster": "/assets/product-previews/website-prompts/intelligentx.webp",
+  "video": "/assets/product-previews/website-prompts/intelligentx.mp4"
+ },
+ {
+  "name": "Network Hero",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/network-hero.webp",
+  "video": "/assets/product-previews/website-prompts/network-hero.mp4"
+ },
+ {
+  "name": "Portal",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 426,
+  "poster": "/assets/product-previews/website-prompts/portal-vol-2.webp",
+  "video": "/assets/product-previews/website-prompts/portal-vol-2.mp4"
+ },
+ {
+  "name": "Retro-Futurist",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/retro-futurist.webp",
+  "video": "/assets/product-previews/website-prompts/retro-futurist.mp4"
+ },
+ {
+  "name": "Stellar AI",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 496,
+  "poster": "/assets/product-previews/website-prompts/stellar-ai.webp",
+  "video": "/assets/product-previews/website-prompts/stellar-ai.mp4"
+ },
+ {
+  "name": "Taskly",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/taskly.webp",
+  "video": "/assets/product-previews/website-prompts/taskly.mp4"
+ },
+ {
+  "name": "VaultShield",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/vaultshield.webp",
+  "video": "/assets/product-previews/website-prompts/vaultshield.mp4"
+ },
+ {
+  "name": "Visual Hero",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 404,
+  "poster": "/assets/product-previews/website-prompts/visual-hero.webp",
+  "video": "/assets/product-previews/website-prompts/visual-hero.mp4"
+ },
+ {
+  "name": "Wellness Hero",
+  "volume": 2,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/wellness-hero.webp",
+  "video": "/assets/product-previews/website-prompts/wellness-hero.mp4"
+ },
+ {
+  "name": "Digital Experiences",
+  "volume": 2,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 400,
+  "poster": "/assets/product-previews/website-prompts/digital-experiences.webp",
+  "video": "/assets/product-previews/website-prompts/digital-experiences.mp4"
+ },
+ {
+  "name": "Innovation",
+  "volume": 2,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 1002,
+  "poster": "/assets/product-previews/website-prompts/innovation.webp",
+  "video": "/assets/product-previews/website-prompts/innovation.mp4"
+ },
+ {
+  "name": "Orbis NFT",
+  "volume": 2,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 992,
+  "poster": "/assets/product-previews/website-prompts/orbis-nft.webp",
+  "video": "/assets/product-previews/website-prompts/orbis-nft.mp4"
+ },
+ {
+  "name": "SkyElite Private Jets",
+  "volume": 2,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 424,
+  "poster": "/assets/product-previews/website-prompts/skyelite-private-jets.webp",
+  "video": null
+ },
+ {
+  "name": "Digitwist AI Builder",
+  "volume": 2,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 390,
+  "poster": "/assets/product-previews/website-prompts/digitwist-ai-builder.webp",
+  "video": "/assets/product-previews/website-prompts/digitwist-ai-builder.mp4"
+ },
+ {
+  "name": "Nexora Automation",
+  "volume": 2,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 386,
+  "poster": "/assets/product-previews/website-prompts/nexora-automation.webp",
+  "video": "/assets/product-previews/website-prompts/nexora-automation.mp4"
+ },
+ {
+  "name": "Securify Data Security",
+  "volume": 2,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 386,
+  "poster": "/assets/product-previews/website-prompts/securify-data-security.webp",
+  "video": "/assets/product-previews/website-prompts/securify-data-security.mp4"
+ },
+ {
+  "name": "Nexto 404",
+  "volume": 2,
+  "group": "more",
+  "category": "404 page",
+  "width": 560,
+  "height": 408,
+  "poster": "/assets/product-previews/website-prompts/nexto-404.webp",
+  "video": null
+ },
+ {
+  "name": "AI Image Generator UI",
+  "volume": 2,
+  "group": "more",
+  "category": "AI product",
+  "width": 560,
+  "height": 409,
+  "poster": "/assets/product-previews/website-prompts/ai-image-generator-ui.webp",
+  "video": null
+ },
+ {
+  "name": "Portfolio Cosmic",
+  "volume": 2,
+  "group": "more",
+  "category": "Portfolio",
+  "width": 560,
+  "height": 394,
+  "poster": "/assets/product-previews/website-prompts/portfolio-cosmic.webp",
+  "video": "/assets/product-previews/website-prompts/portfolio-cosmic.mp4"
+ },
+ {
+  "name": "Wanderful Hero",
+  "volume": 2,
+  "group": "more",
+  "category": "Travel",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/wanderful-hero.webp",
+  "video": "/assets/product-previews/website-prompts/wanderful-hero.mp4"
+ },
+ {
+  "name": "Neo Museum",
+  "volume": 2,
+  "group": "more",
+  "category": "Website",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/neo-museum.webp",
+  "video": "/assets/product-previews/website-prompts/neo-museum.mp4"
+ },
+ {
+  "name": "Aetheris Voyage",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 400,
+  "poster": "/assets/product-previews/website-prompts/aetheris-voyage.webp",
+  "video": "/assets/product-previews/website-prompts/aetheris-voyage.mp4"
+ },
+ {
+  "name": "Audio Showcase",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/audio-showcase.webp",
+  "video": "/assets/product-previews/website-prompts/audio-showcase.mp4"
+ },
+ {
+  "name": "Cybersecurity Hero",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/cybersecurity-hero.webp",
+  "video": "/assets/product-previews/website-prompts/cybersecurity-hero.mp4"
+ },
+ {
+  "name": "Dot",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/dot.webp",
+  "video": "/assets/product-previews/website-prompts/dot.mp4"
+ },
+ {
+  "name": "Immersive Ocean",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 418,
+  "poster": "/assets/product-previews/website-prompts/immersive-ocean.webp",
+  "video": "/assets/product-previews/website-prompts/immersive-ocean.mp4"
+ },
+ {
+  "name": "Interactive Discovery",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/interactive-discovery.webp",
+  "video": "/assets/product-previews/website-prompts/interactive-discovery.mp4"
+ },
+ {
+  "name": "Organic Odyssey",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 412,
+  "poster": "/assets/product-previews/website-prompts/organic-odyssey.webp",
+  "video": "/assets/product-previews/website-prompts/organic-odyssey.mp4"
+ },
+ {
+  "name": "Power AI",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 422,
+  "poster": "/assets/product-previews/website-prompts/power-ai.webp",
+  "video": "/assets/product-previews/website-prompts/power-ai.mp4"
+ },
+ {
+  "name": "RIVR",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 420,
+  "poster": "/assets/product-previews/website-prompts/rivr.webp",
+  "video": "/assets/product-previews/website-prompts/rivr.mp4"
+ },
+ {
+  "name": "Stillmind",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 410,
+  "poster": "/assets/product-previews/website-prompts/stillmind.webp",
+  "video": "/assets/product-previews/website-prompts/stillmind.mp4"
+ },
+ {
+  "name": "Tech-Forward",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/tech-forward.webp",
+  "video": "/assets/product-previews/website-prompts/tech-forward.mp4"
+ },
+ {
+  "name": "VEX Ventures",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 422,
+  "poster": "/assets/product-previews/website-prompts/vex-ventures.webp",
+  "video": "/assets/product-previews/website-prompts/vex-ventures.mp4"
+ },
+ {
+  "name": "Wellbeing OS",
+  "volume": 3,
+  "group": "hero",
+  "category": "Hero section",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/wellbeing-os.webp",
+  "video": "/assets/product-previews/website-prompts/wellbeing-os.mp4"
+ },
+ {
+  "name": "AI Designer Portfolio",
+  "volume": 3,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 442,
+  "poster": "/assets/product-previews/website-prompts/ai-designer-portfolio.webp",
+  "video": "/assets/product-previews/website-prompts/ai-designer-portfolio.mp4"
+ },
+ {
+  "name": "Email Landing Page",
+  "volume": 3,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 418,
+  "poster": "/assets/product-previews/website-prompts/email-landing-page.webp",
+  "video": "/assets/product-previews/website-prompts/email-landing-page.mp4"
+ },
+ {
+  "name": "Mindloop Landing",
+  "volume": 3,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 984,
+  "poster": "/assets/product-previews/website-prompts/mindloop-landing.webp",
+  "video": "/assets/product-previews/website-prompts/mindloop-landing.mp4"
+ },
+ {
+  "name": "Prisma Creative Studio",
+  "volume": 3,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 984,
+  "poster": "/assets/product-previews/website-prompts/prisma-creative-studio.webp",
+  "video": "/assets/product-previews/website-prompts/prisma-creative-studio.mp4"
+ },
+ {
+  "name": "USD Halo",
+  "volume": 3,
+  "group": "landing",
+  "category": "Landing page",
+  "width": 560,
+  "height": 978,
+  "poster": "/assets/product-previews/website-prompts/usd-halo.webp",
+  "video": "/assets/product-previews/website-prompts/usd-halo.mp4"
+ },
+ {
+  "name": "Convix Software",
+  "volume": 3,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 404,
+  "poster": "/assets/product-previews/website-prompts/convix-software.webp",
+  "video": "/assets/product-previews/website-prompts/convix-software.mp4"
+ },
+ {
+  "name": "Neuralyn",
+  "volume": 3,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/neuralyn.webp",
+  "video": "/assets/product-previews/website-prompts/neuralyn.mp4"
+ },
+ {
+  "name": "SaaS Value",
+  "volume": 3,
+  "group": "saas",
+  "category": "SaaS",
+  "width": 560,
+  "height": 415,
+  "poster": "/assets/product-previews/website-prompts/saas-value.webp",
+  "video": null
+ },
+ {
+  "name": "Creative Studio",
+  "volume": 3,
+  "group": "more",
+  "category": "Agency",
+  "width": 560,
+  "height": 404,
+  "poster": "/assets/product-previews/website-prompts/creative-studio.webp",
+  "video": "/assets/product-previews/website-prompts/creative-studio.mp4"
+ },
+ {
+  "name": "Build With Us",
+  "volume": 3,
+  "group": "more",
+  "category": "Contact page",
+  "width": 560,
+  "height": 414,
+  "poster": "/assets/product-previews/website-prompts/build-with-us.webp",
+  "video": "/assets/product-previews/website-prompts/build-with-us.mp4"
+ },
+ {
+  "name": "Aurora Onboard",
+  "volume": 3,
+  "group": "more",
+  "category": "Sign-up page",
+  "width": 560,
+  "height": 409,
+  "poster": "/assets/product-previews/website-prompts/aurora-onboard.webp",
+  "video": null
+ },
+ {
+  "name": "No-Code Waitlist",
+  "volume": 3,
+  "group": "more",
+  "category": "Waitlist page",
+  "width": 560,
+  "height": 408,
+  "poster": "/assets/product-previews/website-prompts/no-code-waitlist.webp",
+  "video": "/assets/product-previews/website-prompts/no-code-waitlist.mp4"
+ }
+]
