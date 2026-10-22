@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://promptpack.tech/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://promptpack.tech/blog/</loc>
-    <lastmod>2026-07-08</lastmod>
+    <lastmod>2026-10-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,7 +61,10 @@
     <priority>0.3</priority>
   </url>
   <url><loc>https://promptpack.tech/products/website-prompts/</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://promptpack.tech/products/carousel-studio/</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://promptpack.tech/products/ugc-ad-scripts/</loc><lastmod>2026-10-18</lastmod></url>
-  <url><loc>https://promptpack.tech/products/motion-with-code/</loc><lastmod>2026-10-18</lastmod></url>
+  <url><loc>https://promptpack.tech/products/carousel-studio/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://promptpack.tech/products/ugc-ad-scripts/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://promptpack.tech/products/motion-with-code/</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://promptpack.tech/blog/carousel-design-vs-publishing-workflow.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://promptpack.tech/blog/prompt-pack-vs-ai-video-generator.html</loc><lastmod>2026-10-22</lastmod></url>
+  <url><loc>https://promptpack.tech/blog/make-animated-character-reels-with-code.html</loc><lastmod>2026-10-22</lastmod></url>
 </urlset>

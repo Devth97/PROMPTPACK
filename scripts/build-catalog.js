@@ -47,13 +47,19 @@ for (const p of products) {
     seo.faqPage(productFaq,url)]};
   write('products/'+p.slug+'/index.html',page(title,description,url,productPage(p,edition,sources,esc,{related,live,faq:productFaq}),schema,edition.cover,keywords));
 }
+const previousHome = fs.readFileSync(path.join(root,'index.html'),'utf8');
+require('./build-storefront')({page, write, products, faq, origin});
+const homeChanged = fs.readFileSync(path.join(root,'index.html'),'utf8') !== previousHome;
 const sitemapFile = path.join(root, 'sitemap.xml');
-let sitemap = fs.readFileSync(sitemapFile,'utf8').replace(/\s*<url>\s*<loc>https:\/\/promptpack\.tech\/products\/[^<]*<\/loc>[\s\S]*?<\/url>/g,'');
-// /products/ only forwards to the home catalog, so it is not listed. The home page changes with the catalog.
-sitemap = sitemap.replace(/(<loc>https:\/\/promptpack\.tech\/<\/loc>\s*<lastmod>)[^<]*/,`$1${seo.updated}`);
-sitemap = sitemap.replace('</urlset>', ['/products/website-prompts/',...products.map(p=>'/products/'+p.slug+'/')].map(url=>`  <url><loc>${origin}${url}</loc><lastmod>${seo.updated}</lastmod></url>`).join('\n')+'\n</urlset>');
+const previousSitemap = fs.readFileSync(sitemapFile,'utf8');
+// This pass changes guide editions, not the separate website prompt pack.
+const websiteLastmod = previousSitemap.match(/<loc>https:\/\/promptpack\.tech\/products\/website-prompts\/<\/loc>\s*<lastmod>([^<]+)/)?.[1] || seo.updated;
+let sitemap = previousSitemap.replace(/\s*<url>\s*<loc>https:\/\/promptpack\.tech\/products\/[^<]*<\/loc>[\s\S]*?<\/url>/g,'');
+// /products/ only forwards to the home catalog. Preserve lastmod when home content is unchanged.
+if (homeChanged) sitemap = sitemap.replace(/(<loc>https:\/\/promptpack\.tech\/<\/loc>\s*<lastmod>)[^<]*/,`$1${seo.updated}`);
+sitemap = sitemap.replace('</urlset>', ['/products/website-prompts/',...products.map(p=>'/products/'+p.slug+'/')].map(url=>`  <url><loc>${origin}${url}</loc><lastmod>${url==='/products/website-prompts/'?websiteLastmod:seo.updated}</lastmod></url>`).join('\n')+'\n</urlset>');
 fs.writeFileSync(sitemapFile,sitemap);
 console.log(`Built catalog and ${products.length} product pages.`);
-require('./build-storefront')({page, write, products, faq, origin});
 require('./build-checkout')({page,write,products,editions,origin,esc});
 require('./build-seo')({write, products, editions, sources, live, faq});
+require('./guides').build({page,write,products,editions,esc});

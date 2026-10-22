@@ -111,6 +111,9 @@ no build command and the output directory is the repo root.
 
 ## Scope
 
-This redesign keeps existing checkout and fulfillment. The comprehensive SEO pass is
-the next phase; existing page metadata and sitemap coverage are retained and updated
-for the new website-pack detail page. Paid pack source files remain in private storage.
+This redesign keeps existing checkout and fulfillment. Product search metadata, visible
+answers and structured data use the current catalog. Three buyer guides are generated
+from `scripts/guides.js`, with links from the blog index and relevant products. Run
+`node --test tests/seo.test.js` for focused discovery/content checks. The open-source
+tool research and next release checks are in [docs/seo-aeo-geo-tools.md](docs/seo-aeo-geo-tools.md).
+Paid pack source files remain in private storage.

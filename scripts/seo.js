@@ -2,7 +2,7 @@
 // Shared structured data and machine-readable summaries (JSON-LD entity graph, FAQ schema, llms.txt).
 const origin = 'https://promptpack.tech';
 // Date of the current catalog content; drives sitemap lastmod, dateModified and visible "Updated" labels.
-const updated = '2026-10-18';
+const updated = '2026-10-22';
 const updatedLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
 const orgId = origin + '/#organization';
 const siteId = origin + '/#website';
@@ -23,29 +23,33 @@ const breadcrumbs = items => ({'@type': 'BreadcrumbList', itemListElement: items
 
 const productSearchTerms = {
   'carousel-studio': ['AI Carousel Prompts, Design Guide & Publishing Workflow', 'social media carousel design', 'slide storyboard', 'carousel approval and publishing workflow'],
-  'ugc-ad-scripts': ['UGC Ad Scripts & Storyboard Prompts', 'product demo script', 'short video ad planning', 'UGC storyboard'],
-  'motion-with-code': ['Motion Design Prompts & Code Starter', 'editable animation brief', 'HyperFrames title sequence', 'motion graphics starter']
+  'ugc-ad-scripts': ['UGC Ad Scripts & AI Video Ad Prompts', 'product demo script', 'AI video ad workflow', 'UGC storyboard'],
+  'motion-with-code': ['3D Character Reels & Local Engine', 'two-character reel engine', 'local voices and captions', 'script to character animation']
 };
 
 function productMetadata(p, edition) {
   const terms = productSearchTerms[p.slug];
+  const descriptions = {
+    'motion-with-code': `Make voiced, captioned 3D character reels with the included local engine, ${edition.prompt_count} prompts and a ${edition.pdf_pages}-page guide. Separate runtime and model setup required.`
+  };
   return {
     title: `${p.name}: ${terms[0]} | PromptPack`,
-    description: `${terms[0]}. Get a ${edition.pdf_pages}-page PDF guide, ${edition.prompt_count} editable prompts and practical files for your own tools. Try a free sample before buying.`,
+    description: descriptions[p.slug] || `${terms[0]}. Get a ${edition.pdf_pages}-page PDF guide, ${edition.prompt_count} editable prompts and practical files for your own tools. Try a free sample before buying.`,
     keywords: [p.name, ...terms, 'editable AI prompts', 'digital download'].join(', ')
   };
 }
 
 const purchasePrice = p => `₹${p.price_inr.toLocaleString('en-IN')} (UPI, Indian cards, netbanking or wallets) or US$${p.price} (international cards)`;
 
-// Visible FAQ for a preview product page, written from catalog data so schema and page text always match.
+// Visible FAQ from current catalog data, shared with the structured answers.
 function productFaq(p, edition, refs, liveProducts) {
   return [
-    [`What is ${p.name}?`, `${p.name} is a ${edition.pdf_pages}-page illustrated PDF field guide with ${edition.prompt_count} editable prompts, an original worked example, starter files and blank and filled worksheets. ${edition.outcome}`],
+    [`What is ${p.name}?`, `${p.name} is a digital toolkit with a ${edition.pdf_pages}-page illustrated PDF guide and ${edition.prompt_count} editable prompts. ${edition.outcome}`],
     [`Who is ${p.name} for?`, p.audience],
     [`What do I need to use ${p.name}?`, `${p.needs} Tool subscriptions, AI credits and service accounts are not included.`],
+    [`What does ${p.name} not include?`, edition.limits],
     [`Can I buy ${p.name} now?`, `Yes. The complete ${p.name} download costs ${purchasePrice(p)}, paid once through Razorpay. Download the ZIP after payment verification. You can try the free sample before buying.`],
-    ['Which public tools does the workflow reference?', `${refs.map(r => `${r.repository} (${r.license_name || r.license})`).join(', ')}. These tools come from their original authors and are referenced, not bundled. PromptPack is not affiliated with them.`]
+    ['Which public tools does the workflow reference?', `${refs.map(r => `${r.repository} (${r.license_name || r.license})`).join(', ')}. Check the included-file list above for this pack's engine or starter code. Third-party runtimes, models, service access and accounts are separate. PromptPack is not affiliated with these tool authors.`]
   ];
 }
 
