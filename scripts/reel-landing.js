@@ -10,6 +10,9 @@ const REELS = [
   { src: '/assets/product-previews/juno-pixel-ep08.mp4', poster: '/assets/product-previews/juno-pixel-ep08.jpg', title: 'My site is down', meta: '32 s · premium voices' },
 ];
 
+// The 16:9 product ad in the hero: Juno and Pixel explain how the reels are made (engine episode ad05 plus proof panels).
+const AD = { src: '/assets/brand/juno-pixel-ad.mp4', poster: '/assets/brand/juno-pixel-ad-poster.jpg', caption: 'The Juno & Pixel ad, made with this engine' };
+
 const STEPS = [
   ['Write', 'About 100 words: who speaks, how they feel, where they pause. Or let a prompt write it.', 'script.json'],
   ['Voice', 'Free built-in voices with 18 emotions, or plug in your own ElevenLabs key for premium voices.', 'free or premium'],
@@ -45,11 +48,11 @@ module.exports = function reelLanding(p, edition, esc, checkout, price) {
   const faq = FAQ.map(([q, a]) => `<details><summary>${esc(q)}</summary><p>${esc(a)}${q.startsWith('What if') ? ' <a href="/refund/">Refund policy ↗</a>' : ''}</p></details>`).join('');
   const buy = (label) => `<a class="button buy-cta jp-buy" href="${checkout}"><span class="buy-label">${label} <span aria-hidden="true">↗</span></span><span class="buy-price">${price} · one time · instant download</span></a>`;
   return `<div class="breadcrumb"><a href="/#catalog">All products</a> / ${esc(p.category)}</div>
-<header class="jp-hero"><div class="jp-hero-copy"><span class="eyebrow">Character reels · made in code</span><h1>Make Juno &amp; Pixel reels from a 100-word script</h1>
+<header class="jp-hero jp-hero--wide"><div class="jp-hero-copy"><span class="eyebrow">Character reels · made in code</span><h1>Make Juno &amp; Pixel reels from a 100-word script</h1>
 <p class="intro">Two 3D characters who talk, react and get the joke. Write a short script and the engine voices it, times every word, picks every camera and renders a finished vertical reel on your own computer. No camera, no animator, no video model, no per-video fee.</p>
 <div class="product-actions">${buy('Get Juno &amp; Pixel')}<a class="secondary-action" href="#jp-reels">Watch the reels ↓</a></div>
 <ul class="jp-trust"><li>Instant download</li><li>UPI, cards, netbanking</li><li>One payment, unlimited reels</li><li>Works with Claude Code, Codex or Cursor</li></ul></div>
-<figure class="jp-hero-reel"><video controls playsinline preload="metadata" poster="${REELS[0].poster}" width="720" height="1280"><source src="${REELS[0].src}" type="video/mp4"></video><figcaption>Episode 2, rendered with this pack</figcaption></figure></header>
+<figure class="jp-hero-ad"><video controls playsinline preload="metadata" poster="${AD.poster}" width="1280" height="720"><source src="${AD.src}" type="video/mp4"></video><figcaption>${esc(AD.caption)} · tap for sound</figcaption></figure></header>
 
 <section class="jp-section" id="jp-reels"><h2>Reels made with this exact engine</h2><p class="jp-lede">Press play on any of them. Each one came from a script of about 100 words. Tap for sound.</p><div class="jp-reels" tabindex="0" role="region" aria-label="Example reels">${reels}</div>
 <p class="note">All five were rendered with the engine in this pack. "Premium voices" use our own ElevenLabs account, which is optional; the free built-in voices are included and cost nothing to run.</p></section>
