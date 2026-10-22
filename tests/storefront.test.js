@@ -45,6 +45,7 @@ test('storefront: every public page has shared navigation and valid local destin
       assert.ok(fs.existsSync(resolved),`${file}: ${m[1]}`);
       if (fragment && resolved.endsWith('.html')) assert.ok(fs.readFileSync(resolved,'utf8').includes(`id="${fragment}"`),`${file}: missing ${m[1]}`);
     }
+    for (const m of html.matchAll(/https:\/\/media\.promptpack\.tech\/([^"'?#\s]+)/g)) assert.ok(fs.existsSync(path.join(root,m[1])),`${file}: R2 media has no local source ${m[1]}`);
   }
   assert.match(read('finance/index.html'),/id="paymentChoice"/);
   assert.match(read('finance/index.html'),/data-finance-cta/);

@@ -46,7 +46,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
       // A listed demo needs its exported MP4 and the poster the product page references.
       const poster=edition.video_poster||`/assets/product-previews/${edition.slug}-poster.jpg`;
       for(const file of [edition.video,poster])assert.ok(fs.statSync(path.join(root,file)).size>500,file);
-      assert.ok(html.includes(`src="${edition.video}"`)&&html.includes(`poster="${poster}"`));
+      assert.ok(html.includes(`src="https://media.promptpack.tech${edition.video}"`)&&html.includes(`poster="${poster}"`));
     }
     for(const id of edition.sources){
       const source=sources.find(s=>s.id===id);
