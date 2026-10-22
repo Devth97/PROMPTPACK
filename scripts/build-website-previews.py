@@ -1,4 +1,4 @@
-"""Builds the 75+ Website Prompts preview wall assets from the pack folder.
+"""Builds the 75+ 3D Website Prompts preview wall assets from the pack folder.
 
 For every preview: a 560px WebP poster, plus a short silent MP4 for animated previews.
 Writes catalog/website-previews.json, which scripts/build-storefront.js reads.
