@@ -45,7 +45,9 @@ for (const p of products) {
     {'@type':'Product',name:p.name,image:origin+edition.cover,description:edition.subtitle,offers:{'@type':'Offer',price:(sale.amount/100).toFixed(2),priceCurrency:sale.currency,url:origin+'/checkout/'+p.slug+'/',availability:'https://schema.org/InStock'}},
     seo.breadcrumbs([['Home','/'],[section.name,'/#'+section.id],[p.name,url]]),
     seo.faqPage(productFaq,url)]};
-  write('products/'+p.slug+'/index.html',page(title,description,url,productPage(p,edition,sources,esc,{related,live,faq:productFaq}),schema,edition.cover,keywords));
+  let html = page(title,description,url,productPage(p,edition,sources,esc,{related,live,faq:productFaq}),schema,edition.cover,keywords);
+  if (require('./course-landing').COURSES[p.slug]) html = html.replace('</head>','<link rel="stylesheet" href="/assets/course.css"></head>');
+  write('products/'+p.slug+'/index.html',html);
 }
 const previousHome = fs.readFileSync(path.join(root,'index.html'),'utf8');
 require('./build-storefront')({page, write, products, faq, origin});

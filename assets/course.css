@@ -1,0 +1,43 @@
+/* Course-style product sections: outcome hero, numbered "what you'll make" modules, result preview, lesson list.
+   Shared by the UGC Ad Script Kit page (scripts/course-landing.js) and the Money Audit page (finance/index.html).
+   Uses the theme.css tokens: --ink, --bg, --paper, --yellow, --mint, --blue, --coral, --pink, --bw. */
+.course-hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:center;padding:34px 0 56px}
+.course-hero>*{min-width:0}
+.course-hero h1{font-size:clamp(40px,6vw,76px);line-height:.98;letter-spacing:-.03em;margin:14px 0 18px;text-transform:none}
+.course-hero h1 mark{background:var(--yellow);padding:0 .12em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.course-hero .intro{font-size:19px;line-height:1.5;max-width:560px}
+.course-stats{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 26px;padding:0;list-style:none}
+.course-stats li{border:var(--bw) solid var(--ink);border-radius:999px;background:var(--paper);padding:8px 16px;font-weight:800;font-size:15px}
+.course-stats li b{font-size:18px}
+.course-cta{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.course-cta .course-note{flex-basis:100%;margin:6px 0 0;font-size:14px}
+.course-board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform:rotate(1.2deg)}
+.course-board figure{margin:0;border:var(--bw) solid var(--ink);border-radius:14px;overflow:hidden;background:var(--paper);box-shadow:6px 6px 0 var(--ink)}
+.course-board img{display:block;width:100%;height:auto}
+.course-board figcaption{font:800 12px/1.2 ui-monospace,Menlo,Consolas,monospace;padding:7px 9px;border-top:var(--bw) solid var(--ink);text-transform:uppercase;letter-spacing:.04em}
+.course-caption{grid-column:1/-1;font-size:13px;margin:6px 0 0;transform:rotate(-1.2deg)}
+
+.course-section{margin:24px 0 64px}
+.course-section>h2{font-size:clamp(30px,4vw,48px);line-height:1.02;letter-spacing:-.02em;margin:10px 0 12px}
+.course-section>p{max-width:720px;font-size:17px}
+.course-modules{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:22px;margin:30px 0 0;padding:0;list-style:none;counter-reset:mod}
+.course-module{position:relative;border:var(--bw) solid var(--ink);border-radius:20px;background:var(--paper);box-shadow:8px 8px 0 var(--ink);padding:24px 24px 22px;display:flex;flex-direction:column;gap:10px}
+.course-module .num{font:900 54px/1 ui-monospace,Menlo,Consolas,monospace;letter-spacing:-.04em}
+.course-module h3{font-size:24px;line-height:1.1;margin:0}
+.course-module p{margin:0;font-size:16px;line-height:1.5}
+.course-module .out{margin-top:auto;border:2px solid var(--ink);border-radius:12px;padding:10px 12px;background:var(--mint);font-size:15px;line-height:1.4}
+.course-module .out b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:2px}
+.course-module .uses{font:700 13px/1.3 ui-monospace,Menlo,Consolas,monospace;color:var(--muted)}
+.course-module.new{background:#fff7d6}
+.course-module.new::after{content:"NEW";position:absolute;top:-14px;right:18px;background:var(--pink);border:var(--bw) solid var(--ink);border-radius:999px;padding:3px 12px;font:900 13px/1.2 ui-monospace,Menlo,Consolas,monospace}
+.course-pages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:28px 0 0}
+.course-pages a{display:block;border:var(--bw) solid var(--ink);border-radius:14px;overflow:hidden;box-shadow:6px 6px 0 var(--ink);background:var(--paper);color:inherit;text-decoration:none}
+.course-pages img{display:block;width:100%;height:auto}
+.course-pages span{display:block;padding:8px 12px;border-top:var(--bw) solid var(--ink);font:800 13px/1.3 ui-monospace,Menlo,Consolas,monospace}
+.course-lessons{columns:2;column-gap:40px;margin:26px 0 0;padding:0;list-style:none}
+.course-lessons li{break-inside:avoid;display:flex;gap:14px;align-items:baseline;padding:10px 0;border-bottom:2px dashed #0b0b0f33;font-size:16px}
+.course-lessons li b{font:900 15px ui-monospace,Menlo,Consolas,monospace;min-width:30px}
+.course-lessons li em{font-style:normal;font:700 12px ui-monospace,Menlo,Consolas,monospace;margin-left:auto;padding-left:10px;white-space:nowrap}
+@media (max-width:900px){.course-hero{grid-template-columns:1fr;gap:34px}.course-board{transform:none}.course-caption{transform:none}.course-lessons{columns:1}}
+@media (max-width:560px){.course-pages{grid-template-columns:1fr 1fr}.course-pages a:last-child{display:none}.course-board{gap:8px}.course-board figcaption{font-size:10px;padding:5px 6px}}
+@media (prefers-reduced-motion:reduce){.course-board,.course-caption{transform:none}}
