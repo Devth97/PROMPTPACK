@@ -22,7 +22,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const visual=['carousel-studio','ugc-ad-scripts','motion-with-code'];
   for(const slug of visual){
     const edition=editions.find(e=>e.slug===slug);
-    assert.match(edition.edition,/^2\.\d$/,slug); // 2.x keeps the audited 2.0 material (UGC 2.1 adds the cinematic module)
+    assert.match(edition.edition,/^2\.\d$/,slug); // 2.x keeps the audited 2.0 material (UGC 2.1 adds the cinematic module, 2.2 the AI Ad Studio skill)
     assert.equal(edition.gallery.length,6,slug);
     const page=read(`products/${slug}/index.html`);
     for(const slide of edition.gallery){
