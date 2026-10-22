@@ -77,6 +77,11 @@
       "source": "/checkout/3d-website-lab/",
       "destination": "/products/website-prompts/",
       "permanent": true
+    },
+    {
+      "source": "/assets/:file(.*\\.mp4)",
+      "destination": "https://media.promptpack.tech/assets/:file",
+      "permanent": true
     }
   ]
 }

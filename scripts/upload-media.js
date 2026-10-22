@@ -16,6 +16,8 @@ const files = execFileSync('git', ['ls-files', 'assets/*.mp4', 'assets/**/*.mp4'
 (async () => {
   let uploaded = 0;
   for (const key of [...new Set(files)]) {
+    // The Windows upload goes through a shell, so only plain path characters are allowed.
+    if (!/^assets\/[\w./-]+\.mp4$/.test(key) || key.includes('..')) throw new Error(`Unsafe media path: ${key}`);
     const size = fs.statSync(path.join(root, key)).size;
     const head = await fetch(`${mediaOrigin}/${key}`, {method: 'HEAD'});
     if (head.ok && Number(head.headers.get('content-length')) === size) continue;

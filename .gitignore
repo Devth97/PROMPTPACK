@@ -74,3 +74,6 @@ rendered-videos/
 .thumbnails/
 .media/
 /launch_frames_carasouls/
+# Cloudflare Wrangler login and cache (contains OAuth tokens)
+.wrangler/
+.wrangler-config/
