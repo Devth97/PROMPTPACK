@@ -13,13 +13,13 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const products=JSON.parse(read('catalog/products.json'));
   const sources=JSON.parse(read('catalog/sources.json'));
   assert.equal(editions.length,11);
-  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),204);
-  // Carousel Studio Visual Edition 2.0 is built outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
+  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),220);
+  // Carousel Studio 2.1 (design 2.0 + the Workflow Kit in workflow/) is built by editions-v2/_build/carousel_merge.py, outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
   const carousel=editions.find(e=>e.slug==='carousel-studio');
-  assert.equal(carousel.edition,'2.0');
-  assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[13,12]);
-  // Visual Edition 2.0 packs come from Codex's editions-v2 folder; each ships a six-image gallery on its product page.
-  const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','pixel-brand-kit','carousel-workflows','motion-with-code'];
+  assert.equal(carousel.edition,'2.1');
+  assert.deepEqual([carousel.pdf_pages,carousel.prompt_count],[29,28]);
+  // Listed Visual Edition 2.x packs each ship a six-image gallery on their product page.
+  const visual=['carousel-studio','ugc-ad-scripts','motion-with-code'];
   for(const slug of visual){
     const edition=editions.find(e=>e.slug===slug);
     assert.match(edition.edition,/^2\.\d$/,slug); // 2.x keeps the audited 2.0 material (UGC 2.1 adds the cinematic module)

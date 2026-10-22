@@ -14,7 +14,7 @@ const organization = {
   address: {'@type': 'PostalAddress', addressCountry: 'IN'},
   contactPoint: {'@type': 'ContactPoint', contactType: 'customer support', email: 'ornalens@gmail.com', url: origin + '/contact', availableLanguage: 'en'},
   sameAs: ['https://khalandarth.gumroad.com/'],
-  knowsAbout: ['AI prompt engineering', 'Website design briefs for AI coding tools', 'Subscription and recurring expense audits', 'Social media carousel planning', 'Video pre-production and shot planning', 'Pixel art brand assets']
+  knowsAbout: ['AI prompt engineering', 'Website design briefs for AI coding tools', 'Subscription and recurring expense audits', 'Social media carousel planning', 'UGC video ads and AI video cuts', 'Animated character reels made with code']
 };
 const website = {'@type': 'WebSite', '@id': siteId, url: origin + '/', name: 'PromptPack', inLanguage: 'en', publisher: {'@id': orgId}};
 const ref = {publisher: {'@id': orgId}, isPartOf: {'@id': siteId}, inLanguage: 'en', dateModified: updated};
@@ -22,17 +22,9 @@ const faqPage = (pairs, url) => ({'@type': 'FAQPage', '@id': origin + url + '#fa
 const breadcrumbs = items => ({'@type': 'BreadcrumbList', itemListElement: items.map(([name, url], i) => ({'@type': 'ListItem', position: i + 1, name, item: origin + url}))});
 
 const productSearchTerms = {
-  'carousel-studio': ['AI Carousel Prompts & Visual Guide', 'social media carousel design', 'slide storyboard', 'caption and alt text'],
-  'carousel-workflows': ['Content Queue & Approval Templates', 'carousel content workflow', 'publishing queue', 'offline queue validator'],
-  '3d-website-lab': ['3D Landing Page Design Prompts', '3D website brief', 'responsive landing page', 'reduced motion fallback'],
-  'ai-video-direction': ['AI Video Prompts & Shot Planning', 'visual treatment', 'shot continuity', 'AI video pre-production'],
+  'carousel-studio': ['AI Carousel Prompts, Design Guide & Publishing Workflow', 'social media carousel design', 'slide storyboard', 'carousel approval and publishing workflow'],
   'ugc-ad-scripts': ['UGC Ad Scripts & Storyboard Prompts', 'product demo script', 'short video ad planning', 'UGC storyboard'],
-  'short-explainer-studio': ['Explainer Video Script & Storyboard', 'short explainer planning', 'sourced script', 'visual scene prompts'],
-  'motion-with-code': ['Motion Design Prompts & Code Starter', 'editable animation brief', 'HyperFrames title sequence', 'motion graphics starter'],
-  'lyric-visuals': ['Lyric Video Planning & Cue Templates', 'lyric cue sheet', 'music video storyboard', 'lyric visual prompts'],
-  'pixel-brand-kit': ['Pixel Art Branding Prompts & Icons', 'pixel brand assets', 'pixel icon grids', 'limited color palette'],
-  'youtube-production': ['YouTube Video Planning Templates', 'episode outline', 'title and thumbnail brief', 'recording and editor handoff'],
-  'video-prompt-vault': ['AI Video Shot Prompts & B-Roll Briefs', 'video prompt library', 'shot selection', 'B-roll planning']
+  'motion-with-code': ['Motion Design Prompts & Code Starter', 'editable animation brief', 'HyperFrames title sequence', 'motion graphics starter']
 };
 
 function productMetadata(p, edition) {
@@ -60,7 +52,7 @@ function productFaq(p, edition, refs, liveProducts) {
 // llms.txt (index) and llms-full.txt (full plain-text catalog) for AI assistants and agents.
 function llmsFiles({products, editions, sources, liveProducts, posts}) {
   const edition = slug => editions.find(e => e.slug === slug);
-  const header = `# PromptPack\n\n> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. ${liveProducts.length+products.length} products have purchase routes, including ${products.length} complete guide editions with free sample prompts.\n\nUpdated: ${updated}. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.\n`;
+  const header = `# PromptPack\n\n> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media and video. ${liveProducts.length+products.length} products have purchase routes, including ${products.length} complete guide editions with free sample prompts.\n\nUpdated: ${updated}. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.\n`;
   const live = `## Available now\n\n${liveProducts.map(l => `- [${l.name}](${origin}${l.href}): ${l.summary} ${l.includes}. ${l.price}, ${l.priceNote}.`).join('\n')}\n`;
   const previews = `## Complete digital guide editions\n\n${products.map(p => { const e = edition(p.slug); return `- [${p.name}](${origin}/products/${p.slug}/): ${e.subtitle}. ${e.pdf_pages}-page guide, ${e.prompt_count} prompts, starter files. Available for ${purchasePrice(p)}, paid once through Razorpay. Free sample prompt on the page.`; }).join('\n')}\n`;
   const guides = `## Guides\n\n${posts.map(([title, url]) => `- [${title}](${origin}${url})`).join('\n')}\n`;

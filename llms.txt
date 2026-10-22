@@ -1,6 +1,6 @@
 # PromptPack
 
-> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 12 products have purchase routes, including 10 complete guide editions with free sample prompts.
+> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media and video. 5 products have purchase routes, including 3 complete guide editions with free sample prompts.
 
 Updated: 2026-10-18. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
 
@@ -11,16 +11,9 @@ Updated: 2026-10-18. All products are digital downloads used with the buyer's ow
 
 ## Complete digital guide editions
 
-- [Carousel Studio](https://promptpack.tech/products/carousel-studio/): A reference-led system for six-slide carousels with a cover that earns the swipe. 13-page guide, 12 prompts, starter files. Available for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [Carousel Workflow Kit](https://promptpack.tech/products/carousel-workflows/): Plan each day, review the slides, publish officially and learn from your own results. 16-page guide, 16 prompts, starter files. Available for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [AI Video Direction Kit](https://promptpack.tech/products/ai-video-direction/): Build a visual treatment, continuity contract and six testable shot briefs. 14-page guide, 16 prompts, starter files. Available for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once through Razorpay. Free sample prompt on the page.
+- [Carousel Studio](https://promptpack.tech/products/carousel-studio/): Design six-slide carousels with a cover that earns the swipe, then plan, approve and publish them. 29-page guide, 28 prompts, starter files. Available for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once through Razorpay. Free sample prompt on the page.
 - [UGC Ad Script Kit](https://promptpack.tech/products/ugc-ad-scripts/): Turn an honest product demonstration into a visually directed short ad. 14-page guide, 22 prompts, starter files. Available for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [Short Explainer Studio](https://promptpack.tech/products/short-explainer-studio/): Explain one question through a sourced script and six connected visual scenes. 14-page guide, 16 prompts, starter files. Available for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once through Razorpay. Free sample prompt on the page.
 - [Juno & Pixel](https://promptpack.tech/products/motion-with-code/): Two-character 3D reels from a 100-word script, made entirely in code. 16-page guide, 20 prompts, starter files. Available for ₹1,499 (UPI, Indian cards, netbanking or wallets) or US$29 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [Lyric Visual Planner](https://promptpack.tech/products/lyric-visuals/): Build a lyric cue plan with original imagery, exact text and honest timing. 14-page guide, 16 prompts, starter files. Available for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [Pixel Brand Prompt Kit](https://promptpack.tech/products/pixel-brand-kit/): Build an original pixel asset family with exact grids, palette roles and scaling rules. 14-page guide, 16 prompts, starter files. Available for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [YouTube Production Planner](https://promptpack.tech/products/youtube-production/): Plan an episode from truthful packaging through recording, edit and review. 14-page guide, 16 prompts, starter files. Available for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once through Razorpay. Free sample prompt on the page.
-- [Video Shot Prompt Library](https://promptpack.tech/products/video-prompt-vault/): Thirty shot briefs plus a practical selection, adaptation and review workflow. 14-page guide, 38 prompts, starter files. Available for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once through Razorpay. Free sample prompt on the page.
 
 ## Guides
 

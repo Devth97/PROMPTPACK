@@ -11,21 +11,6 @@ const promos = {
     file: 'ugc-product-demo', poster: 'jpg', width: 540, height: 960, seconds: 10,
     title: 'Put the product in the frame',
     description: 'A product-in-hand demonstration with direct-to-camera framing. Use this visual reference to plan the opening, presenter action and product reveal in your own ad script.'
-  },
-  'ai-video-direction': {
-    file: 'video-parallax', poster: 'jpg', width: 720, height: 1280, seconds: 8,
-    title: 'Give a shot depth and direction',
-    description: 'A moving foreground, a clear subject and a layered setting create depth. Use this visual reference when briefing camera movement, blocking and continuity.'
-  },
-  'video-prompt-vault': {
-    file: 'video-scale', poster: 'jpg', width: 720, height: 1280, seconds: 8,
-    title: 'Make scale part of the shot brief',
-    description: 'A surreal sequence uses scale, a low camera angle and a close-up to change the mood. Use this visual reference to make your framing and shot-selection prompts more specific.'
-  },
-  'lyric-visuals': {
-    file: 'lyric-scrapbook', poster: 'webp', width: 1280, height: 922, seconds: 15,
-    title: 'Find a visual rhythm for the words',
-    description: 'A scrapbook-style edit combines cutout imagery, expressive type and changing compositions. Use this visual reference to plan your own lyric cues, motifs and transitions.'
   }
 };
 

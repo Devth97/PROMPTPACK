@@ -7,10 +7,10 @@ const products = require('../catalog/products.json');
 const root = path.join(__dirname, '..');
 const read = file => fs.readFileSync(path.join(root, file), 'utf8');
 
-test('catalog: 10 listed packs contain 188 prompts and usable samples', () => {
-  assert.equal(products.length, 10);
-  assert.equal(new Set(products.map(p => p.slug)).size, 10);
-  assert.equal(products.reduce((sum, p) => sum + p.count, 0), 188);
+test('catalog: 3 listed guide packs contain 70 prompts and usable samples', () => {
+  assert.equal(products.length, 3);
+  assert.equal(new Set(products.map(p => p.slug)).size, 3);
+  assert.equal(products.reduce((sum, p) => sum + p.count, 0), 70);
   products.forEach(p => {
     assert.match(p.slug, /^[a-z0-9-]+$/);
     assert.ok(p.sample.length > 200);

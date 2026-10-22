@@ -82,6 +82,146 @@
       "source": "/assets/:file(.*\\.mp4)",
       "destination": "https://media.promptpack.tech/assets/:file",
       "permanent": true
+    },
+    {
+      "source": "/products/carousel-workflows",
+      "destination": "/products/carousel-studio/",
+      "permanent": true
+    },
+    {
+      "source": "/products/carousel-workflows/",
+      "destination": "/products/carousel-studio/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/carousel-workflows",
+      "destination": "/products/carousel-studio/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/carousel-workflows/",
+      "destination": "/products/carousel-studio/",
+      "permanent": true
+    },
+    {
+      "source": "/products/ai-video-direction",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/ai-video-direction/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/ai-video-direction",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/ai-video-direction/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/short-explainer-studio",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/short-explainer-studio/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/short-explainer-studio",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/short-explainer-studio/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/video-prompt-vault",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/video-prompt-vault/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/video-prompt-vault",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/video-prompt-vault/",
+      "destination": "/products/ugc-ad-scripts/",
+      "permanent": true
+    },
+    {
+      "source": "/products/lyric-visuals",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/products/lyric-visuals/",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/lyric-visuals",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/lyric-visuals/",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/products/youtube-production",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/products/youtube-production/",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/youtube-production",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/youtube-production/",
+      "destination": "/products/motion-with-code/",
+      "permanent": true
+    },
+    {
+      "source": "/products/pixel-brand-kit",
+      "destination": "/#catalog",
+      "permanent": true
+    },
+    {
+      "source": "/products/pixel-brand-kit/",
+      "destination": "/#catalog",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/pixel-brand-kit",
+      "destination": "/#catalog",
+      "permanent": true
+    },
+    {
+      "source": "/checkout/pixel-brand-kit/",
+      "destination": "/#catalog",
+      "permanent": true
     }
   ]
 }

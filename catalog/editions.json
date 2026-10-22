@@ -2,33 +2,34 @@
   {
     "slug": "carousel-studio",
     "name": "Carousel Studio",
-    "edition": "2.0",
-    "subtitle": "A reference-led system for six-slide carousels with a cover that earns the swipe",
-    "outcome": "Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger. The guide teaches the visual decisions; the staged prompts carry them through research, style lock, storyboard, image prompts and review.",
-    "limits": "Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit with a simple typography template; it does not generate illustrations or publish. No social account access or scheduling is included, and the examples show an editorial process, not guaranteed reach or engagement.",
+    "edition": "2.1",
+    "subtitle": "Design six-slide carousels with a cover that earns the swipe, then plan, approve and publish them",
+    "outcome": "Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger, packaged for approval and publishing. The design guide teaches the visual decisions; the workflow guide turns the finished carousel into a dated, approved handoff.",
+    "limits": "Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit; it does not generate illustrations. The workflow tools run locally: the Instagram publishing starter is mock-tested and needs your own Meta app, review and credentials. No hosted scheduler or automatic publishing is included, and the examples show an editorial process, not guaranteed reach or engagement.",
     "first_run": [
       "Read GUIDE.pdf, then fill MASTER-BRIEF.md and collect verified source notes.",
-      "Study references with REFERENCE-WORKSHEET.csv, then plan every slide in WORKSHEET.csv.",
-      "Run the staged prompts in PROMPTS.md: choose an angle, lock the visual system and storyboard six slides.",
-      "Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md."
+      "Study references with REFERENCE-WORKSHEET.csv, then run the staged prompts in PROMPTS.md to lock the visual system and storyboard six slides.",
+      "Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md.",
+      "Open workflow/START-HERE.md: give the carousel a post ID and owner, then run the planning prompts to build the approved handoff package."
     ],
     "lessons": [
       "Choose one reader and one job",
-      "Study references as a designer",
       "Lock a system, not six layouts",
       "Make the cover earn the swipe",
-      "Write a complete image prompt",
-      "Review the output, not the prompt"
+      "Review the output, not the prompt",
+      "Separate draft, approval and publication state",
+      "Build the complete handoff package"
     ],
-    "pdf_pages": 13,
-    "prompt_count": 12,
+    "pdf_pages": 29,
+    "prompt_count": 28,
     "archive": "carousel-studio.zip",
-    "archive_bytes": 3924258,
-    "sha256": "fad3ba7febc6596805107273e605346cda3887dca9bdb471326bde4e9de82b04",
+    "archive_bytes": 3871436,
+    "sha256": "f5dade1c142602a6a8019b36b90acc4cc9fe0046ac017ac9795e35604d036941",
     "sources": [
       "pillow",
       "playwright",
-      "instagram-skills"
+      "instagram-skills",
+      "instagram-mcp"
     ],
     "cover": "/assets/product-covers/carousel-studio.webp",
     "inside": "/assets/product-previews/carousel-studio-inside.webp",
@@ -37,11 +38,11 @@
     "content_status": "built",
     "sale_status": "checkout-configured",
     "includes": [
-      "13-page illustrated PDF field guide",
-      "12 staged prompts, from source research to export",
-      "Master brief, reference and slide worksheets",
+      "13-page design guide and 16-page workflow guide (illustrated PDFs)",
+      "28 prompts: 12 for design, 16 for planning and approval",
+      "Master brief, reference, slide, approval and review worksheets",
       "Six-slide editorial carousel example with caption, alt text and sources",
-      "Six original illustrated example slides and a quality checklist"
+      "Daily folder planner, result ranking and an official Instagram publishing starter"
     ],
     "gallery": [
       {
@@ -72,8 +73,8 @@
     "video_poster": "/assets/product-previews/carousel-promo-wide-poster.jpg",
     "video_width": 1920,
     "video_height": 1080,
-    "video_title": "Watch how the two carousel packs work together",
-    "video_note": "A one-minute walkthrough of Carousel Studio and the Carousel Workflow Kit, made with our own Juno and Pixel engine. The six slides shown are the real example included in Carousel Studio; publishing needs your own Meta app and its review."
+    "video_title": "Watch the design and workflow routes together",
+    "video_note": "A one-minute walkthrough of both halves of Carousel Studio, made with our own Juno and Pixel engine. The six slides shown are the real example included in the kit; publishing needs your own Meta app and its review."
   },
   {
     "slug": "carousel-workflows",

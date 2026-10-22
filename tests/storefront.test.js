@@ -14,7 +14,7 @@ test('storefront: every product appears exactly once in its home category', () =
   assert.equal((html.match(/<h1\b/g)||[]).length,1);
   const listed = [...html.matchAll(/data-product="([^"]+)"/g)].map(m=>m[1]);
   assert.deepEqual(new Set(listed),new Set(['money-audit','website-prompts',...products.map(p=>p.slug)]));
-  assert.equal(listed.length,12);
+  assert.equal(listed.length,5);
   for (const section of sections) {
     assert.match(html,new RegExp(`id="${section.id}"`));
     assert.ok(html.includes(`href="/#${section.id}"`));
@@ -23,7 +23,7 @@ test('storefront: every product appears exactly once in its home category', () =
     const section = html.match(new RegExp(`<section id="${sectionFor(product).id}"[\\s\\S]*?</section>`))[0];
     assert.ok(section.includes(`data-product="${product.slug}"`));
   }
-  assert.equal((html.match(/>Available now</g)||[]).length,12);
+  assert.equal((html.match(/>Available now</g)||[]).length,5);
   for (const product of products) assert.ok(html.includes(`href="/checkout/${product.slug}/"`),product.slug);
   assert.match(read('products/index.html'),/http-equiv="refresh" content="0;url=\/#catalog"/);
   const website = read('products/website-prompts/index.html');
@@ -66,9 +66,9 @@ test('storefront: search supports plural names, categories, empty state and navi
   elements['catalog-search'].focus=()=>{focused=true;};
   vm.runInNewContext(read('assets/catalog.js'),{document});
   const search = value => {elements['catalog-search'].value=value;elements['catalog-search'].events.input();return cards.filter(c=>!c.hidden).map(c=>c.dataset.product);};
-  assert.deepEqual(search('carousels'),['carousel-studio','carousel-workflows']);
+  assert.deepEqual(search('carousels'),['carousel-studio']);
   assert.deepEqual(search('websites'),['website-prompts']);
-  assert.equal(search('social media').length,3);
+  assert.equal(search('social media').length,1);
   assert.equal(search('no such product').length,0);
   assert.equal(elements['catalog-empty'].hidden,false);
   assert.ok(groups.every(g=>g.hidden));
@@ -79,5 +79,5 @@ test('storefront: search supports plural names, categories, empty state and navi
   search('money');
   elements['catalog-clear'].events.click();
   assert.ok(focused);
-  assert.equal(elements['catalog-results'].textContent,'12 of 12 products');
+  assert.equal(elements['catalog-results'].textContent,'5 of 5 products');
 });

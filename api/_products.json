@@ -3,14 +3,56 @@
     "id": "promptpack-carousel-studio",
     "slug": "carousel-studio",
     "name": "Carousel Studio",
-    "amount": 1200,
+    "amount": 1500,
     "currency": "USD",
-    "amount_inr": 69900,
+    "amount_inr": 89900,
     "file": "products/carousel-studio.enc",
     "filename": "carousel-studio.zip",
     "type": "application/zip",
-    "sha256": "fad3ba7febc6596805107273e605346cda3887dca9bdb471326bde4e9de82b04",
-    "bytes": 3924258,
+    "sha256": "f5dade1c142602a6a8019b36b90acc4cc9fe0046ac017ac9795e35604d036941",
+    "bytes": 3871436,
+    "thanks": "/checkout/thanks/"
+  },
+  {
+    "id": "promptpack-ugc-ad-scripts",
+    "slug": "ugc-ad-scripts",
+    "name": "UGC Ad Script Kit",
+    "amount": 1200,
+    "currency": "USD",
+    "amount_inr": 69900,
+    "file": "products/ugc-ad-scripts.enc",
+    "filename": "ugc-ad-scripts.zip",
+    "type": "application/zip",
+    "sha256": "798fe118eee2a74108eb3388436ef67392d79fa5a3395292b84704432869ad6e",
+    "bytes": 3074803,
+    "thanks": "/checkout/thanks/"
+  },
+  {
+    "id": "promptpack-motion-with-code",
+    "slug": "motion-with-code",
+    "name": "Juno & Pixel",
+    "amount": 2900,
+    "currency": "USD",
+    "amount_inr": 149900,
+    "file": "products/motion-with-code.enc",
+    "filename": "motion-with-code.zip",
+    "type": "application/zip",
+    "sha256": "92662c7c1c235804a06df1d9f6e511adadd7d8d5c6fdfa78796dcf7a80aaebeb",
+    "bytes": 2028977,
+    "thanks": "/checkout/thanks/"
+  },
+  {
+    "id": "promptpack-3d-website-lab",
+    "slug": "3d-website-lab",
+    "name": "3D Website Lab",
+    "amount": 1500,
+    "currency": "USD",
+    "amount_inr": 89900,
+    "file": "products/3d-website-lab.enc",
+    "filename": "3d-website-lab.zip",
+    "type": "application/zip",
+    "sha256": "adb1488820634f2234df9f5d3984d615d29e96394e6fc9bffec8135ac38c36fe",
+    "bytes": 1323533,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -42,20 +84,6 @@
     "thanks": "/checkout/thanks/"
   },
   {
-    "id": "promptpack-ugc-ad-scripts",
-    "slug": "ugc-ad-scripts",
-    "name": "UGC Ad Script Kit",
-    "amount": 1200,
-    "currency": "USD",
-    "amount_inr": 69900,
-    "file": "products/ugc-ad-scripts.enc",
-    "filename": "ugc-ad-scripts.zip",
-    "type": "application/zip",
-    "sha256": "798fe118eee2a74108eb3388436ef67392d79fa5a3395292b84704432869ad6e",
-    "bytes": 3074803,
-    "thanks": "/checkout/thanks/"
-  },
-  {
     "id": "promptpack-short-explainer-studio",
     "slug": "short-explainer-studio",
     "name": "Short Explainer Studio",
@@ -67,20 +95,6 @@
     "type": "application/zip",
     "sha256": "d23acba76abb7ac81c999fdb80df550718f7c0406776977b3c747668a2087689",
     "bytes": 2707436,
-    "thanks": "/checkout/thanks/"
-  },
-  {
-    "id": "promptpack-motion-with-code",
-    "slug": "motion-with-code",
-    "name": "Juno & Pixel",
-    "amount": 2900,
-    "currency": "USD",
-    "amount_inr": 149900,
-    "file": "products/motion-with-code.enc",
-    "filename": "motion-with-code.zip",
-    "type": "application/zip",
-    "sha256": "92662c7c1c235804a06df1d9f6e511adadd7d8d5c6fdfa78796dcf7a80aaebeb",
-    "bytes": 2028977,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -137,20 +151,6 @@
     "type": "application/zip",
     "sha256": "2a2970a536aae0411dca0aee265cf7c21b61dbe36fc603616b19fad85ed6ed34",
     "bytes": 2044453,
-    "thanks": "/checkout/thanks/"
-  },
-  {
-    "id": "promptpack-3d-website-lab",
-    "slug": "3d-website-lab",
-    "name": "3D Website Lab",
-    "amount": 1500,
-    "currency": "USD",
-    "amount_inr": 89900,
-    "file": "products/3d-website-lab.enc",
-    "filename": "3d-website-lab.zip",
-    "type": "application/zip",
-    "sha256": "adb1488820634f2234df9f5d3984d615d29e96394e6fc9bffec8135ac38c36fe",
-    "bytes": 1323533,
     "thanks": "/checkout/thanks/"
   }
 ]

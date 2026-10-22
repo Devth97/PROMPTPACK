@@ -1,6 +1,6 @@
 # PromptPack
 
-> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media, video and design. 12 products have purchase routes, including 10 complete guide editions with free sample prompts.
+> PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media and video. 5 products have purchase routes, including 3 complete guide editions with free sample prompts.
 
 Updated: 2026-10-18. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
 
@@ -15,100 +15,34 @@ Updated: 2026-10-18. All products are digital downloads used with the buyer's ow
 
 URL: https://promptpack.tech/products/carousel-studio/
 Category: Social content
-Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 13-page illustrated PDF guide, 12 editable prompts, worked example, starter files, worksheets
+Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
+Format: 29-page illustrated PDF guide, 28 editable prompts, worked example, starter files, worksheets
 
-A reference-led system for six-slide carousels with a cover that earns the swipe. Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger. The guide teaches the visual decisions; the staged prompts carry them through research, style lock, storyboard, image prompts and review.
+Design six-slide carousels with a cover that earns the swipe, then plan, approve and publish them. Six connected slides with a strong cover, relevant imagery and one practical next action, plus the caption, alt text and source ledger, packaged for approval and publishing. The design guide teaches the visual decisions; the workflow guide turns the finished carousel into a dated, approved handoff.
 
-For: Creators, marketers and small business owners who publish educational or news carousels.
-Requirements: A text AI assistant and an image generator (ideally one that accepts reference images), or a design editor for art-plus-typesetting. Image tools, accounts and credits are separate.
-Scope: Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit with a simple typography template; it does not generate illustrations or publish. No social account access or scheduling is included, and the examples show an editorial process, not guaranteed reach or engagement.
+For: Creators, marketers and small teams who publish educational or news carousels and want a repeatable route from brief to post.
+Requirements: A text AI assistant and an image generator (ideally one that accepts reference images), or a design editor for art-plus-typesetting. Node.js and Python for the optional local workflow tools. Image tools, accounts, credits and publishing access are separate.
+Scope: Image generation needs your own tool, account and credits. The optional starter renderer only checks text fit; it does not generate illustrations. The workflow tools run locally: the Instagram publishing starter is mock-tested and needs your own Meta app, review and credentials. No hosted scheduler or automatic publishing is included, and the examples show an editorial process, not guaranteed reach or engagement.
 
 Workshop steps:
 1. Choose one reader and one job
-2. Study references as a designer
-3. Lock a system, not six layouts
-4. Make the cover earn the swipe
-5. Write a complete image prompt
-6. Review the output, not the prompt
+2. Lock a system, not six layouts
+3. Make the cover earn the swipe
+4. Review the output, not the prompt
+5. Separate draft, approval and publication state
+6. Build the complete handoff package
 
 First session:
 1. Read GUIDE.pdf, then fill MASTER-BRIEF.md and collect verified source notes.
-2. Study references with REFERENCE-WORKSHEET.csv, then plan every slide in WORKSHEET.csv.
-3. Run the staged prompts in PROMPTS.md: choose an angle, lock the visual system and storyboard six slides.
-4. Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md.
+2. Study references with REFERENCE-WORKSHEET.csv, then run the staged prompts in PROMPTS.md to lock the visual system and storyboard six slides.
+3. Generate one cover in your image tool, check it at phone size, then generate the interiors and review them with QUALITY-CHECKLIST.md.
+4. Open workflow/START-HERE.md: give the carousel a post ID and owner, then run the planning prompts to build the approved handoff package.
 
-Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
+Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; microsoft/playwright (Apache-2.0) https://github.com/microsoft/playwright; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill; postoncehq/instagram-mcp (MIT) https://github.com/postoncehq/instagram-mcp
 
 Sample prompt:
 
 Create a reusable style block for [APPROVED ANGLE + BRAND + REFERENCES]. Specify canvas and safe zone, palette roles with hex values, headline/body/metadata hierarchy, image medium, material, light direction, texture, connectors, source/page-marker positions and avoid list. State what remains consistent and what varies. Offer one recommended direction, then repeat its style block verbatim for use in every slide prompt. Do not treat one creator's profile as one universal visual style.
-
-### Carousel Workflow Kit
-
-URL: https://promptpack.tech/products/carousel-workflows/
-Category: Automation
-Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 16-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Plan each day, review the slides, publish officially and learn from your own results. Build a daily carousel folder, rank your own post results and prepare an approved publishing package. Use the local planner and explicit Instagram API starter, with manual creation/review and separate official account setup.
-
-For: Solo creators and small teams coordinating carousel reviews and publishing handoffs.
-Requirements: Node.js for the optional local validator, actual content files, review owners and separate publishing access if needed.
-Scope: Local starter with mock-tested Instagram publishing/private-reply paths, not a hosted or account-connected service. Slides need your own tools. LinkedIn and YouTube routes are documented, not implemented. Credentials, app review, hosting and any service charges are separate; reconcile unknown outcomes before retrying.
-
-Workshop steps:
-1. Start with one owned content unit
-2. Use references to improve the process
-3. Separate draft, approval and publication state
-4. Build the complete handoff package
-5. Review for correctness before speed
-6. Close the loop with an honest delivery record
-
-First session:
-1. Choose one post ID, revision and owner, then inspect the original six-slide process example.
-2. Lock the visual/approval system and assemble exact copy, sources, ordered images and alt text.
-3. Use staged prompts to create a manifest and state table, then run the local queue validator with a fixed clock.
-4. Inspect the actual files and approvals before handing the package to a separate human or authorized publishing integration.
-
-Public tools referenced: postoncehq/instagram-mcp (MIT) https://github.com/postoncehq/instagram-mcp; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
-
-Sample prompt:
-
-For [TEAM], [CAROUSEL TOPIC], [AUDIENCE] and [APPROVED SOURCES], define one content unit with [POST ID], [REVISION], owner and final deliverables. Distinguish content approval from publication. Return the brief, required files and stop conditions. Do not invent source verification, account access, publishing results or engagement metrics.
-
-### AI Video Direction Kit
-
-URL: https://promptpack.tech/products/ai-video-direction/
-Category: Video
-Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Build a visual treatment, continuity contract and six testable shot briefs. Create a six-shot visual treatment with a continuity contract, tool-specific motion prompts and a take-selection log. Direct an original amber-lantern concept through changes in framing without mistaking attractive stills for working video.
-
-For: Creators and small production teams planning AI-assisted visual sequences.
-Requirements: Rights-cleared references, an image/video tool with known controls, credits where required and an editor.
-Scope: Visual treatment and directing workflow, not finished video or a generation service. Provider access, credits, editing software, soundtrack and any real production are separate. Exact continuity is not guaranteed. The Python/Pillow starter creates a symbolic planning sheet; model weights and a production editing project are not included.
-
-Workshop steps:
-1. Choose an observable visual promise
-2. Make a reference and continuity contract
-3. Give camera and subject separate jobs
-4. Adapt the prompt to the production route
-5. Choose takes by continuity before beauty
-6. Deliver a cut-ready direction package
-
-First session:
-1. Choose a simple subject and read the six-shot amber-room treatment; fill your own master brief.
-2. Approve one subject reference and lock geometry, material, light and camera axis.
-3. Use the staged prompts to prototype one camera move, record actual model settings and inspect the complete clip.
-4. Select takes through the continuity gate and give an editor matching shot IDs, usable ranges, rights notes and the edit map.
-
-Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
-
-Sample prompt:
-
-Act as a director for [PROJECT] and [AUDIENCE]. Using [SUBJECT FACTS OR FICTIONAL INPUTS], [RIGHTS-CLEARED REFERENCES] and [DURATION BUDGET], define one visible promise, six shot jobs and the final attention target. Separate product facts from styling. State what cannot be claimed from concept art. Do not imitate a named filmmaker or invent a real product capability.
 
 ### UGC Ad Script Kit
 
@@ -144,39 +78,6 @@ Sample prompt:
 
 Act as a product-demonstration director. For [PRODUCT], [AUDIENCE], [ONE VISIBLE TASK], [SUPPLIED FACTS WITH SOURCES] and [NEXT ACTION], write a one-page brief. Separate verified facts, fictional staging and missing evidence. Choose one observable demonstration and state what it cannot prove. Return a promise, production route, six scene jobs and explicit stop conditions. Do not invent experience, performance results, a discount or a destination.
 
-### Short Explainer Studio
-
-URL: https://promptpack.tech/products/short-explainer-studio/
-Category: Video
-Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Explain one question through a sourced script and six connected visual scenes. Plan a 30-second explanation with a claim-to-scene map, a measured-read worksheet and six art-directed storyboard frames. Use a two-gate metaphor to explain the fictional rule that approval and due time are separate conditions.
-
-For: Educators, product teams and creators explaining one small mechanism.
-Requirements: A checkable topic, source material, an editor, a narration route and optional AI generation access.
-Scope: Planning kit and concept stills only: no finished video, narration, publishing system or automatic factual verification. Use your own editor and rights-cleared audio; AI image/video generation may require a separate account and credits. The retained Python/Pillow starter makes a simple planning sheet, not these visuals or an animation.
-
-Workshop steps:
-1. Choose a question with a visible answer
-2. Study references without copying them
-3. Storyboard the reveal
-4. Choose the production route
-5. Review comprehension and captions
-6. Deliver the explanation with its limits
-
-First session:
-1. Read the six-frame example and fill one question, one answer and one exclusion in the master brief.
-2. Lock an original analogy and visual system, then approve the blocked-state prototype.
-3. Use the staged prompts to map claims to scenes, rehearse narration and prepare actual captions from the recording.
-4. Run the state and comprehension gates, then hand off approved stills, script, measured timing and sources to an editor.
-
-Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes; openai/whisper (MIT) https://github.com/openai/whisper
-
-Sample prompt:
-
-For [TOPIC], [AUDIENCE] and [SOURCE MATERIAL], define one question, a one-sentence answer and the exclusions. Separate sourced facts from [FICTIONAL EXAMPLE RULES]. Return an analogy map, six possible information changes and a final action. Mark unsupported statements; do not invent a study, product behavior or completed research.
-
 ### Juno & Pixel
 
 URL: https://promptpack.tech/products/motion-with-code/
@@ -209,135 +110,3 @@ Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/
 Sample prompt:
 
 Create an original two-character series bible for [AUDIENCE] about [TOPIC RANGE]. Juno supplies a short problem and Pixel supplies a calm, bounded fix. Define character jobs, palette, end card, proof-panel rules and one CTA per episode. Openings must be eight words or fewer. Reject copied mascots, creator jokes, real-person impersonation and invented performance claims. Return a reusable bible plus five testable episode premises.
-
-### Lyric Visual Planner
-
-URL: https://promptpack.tech/products/lyric-visuals/
-Category: Video
-Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Build a lyric cue plan with original imagery, exact text and honest timing. Create a six-cue lyric visual plan with exact authorized words, a recurring visual motif and a human timing-review method. The worked example pairs six newly authored lines with original paper-theatre concept art; it contains no commercial song or synchronized recording.
-
-For: Musicians, editors and creators planning text-led visuals with authorized material.
-Requirements: Approved lyrics and audio permissions, an editor, actual timing review and optional image/video generation tools.
-Scope: Lyric planning and six original concept stills, not a song, recording, beat detector or synchronized music video. Supply authorized lyrics/audio and your own editor; AI generation access and credits are separate. The retained silent HyperFrames starter uses different original words and is a limited cue-layout example. Its code and third-party notices are preserved; no new video render or audio synchronization is claimed.
-
-Workshop steps:
-1. Start with the authorized words
-2. Translate references into a visual motif
-3. Plan phrase order before cue timing
-4. Choose a text-first production route
-5. Review meaning, legibility and timing
-6. Deliver a rights-aware cue package
-
-First session:
-1. Read the six original lines and fill text authority, audio status and usage permissions in the master brief.
-2. Lock an original visual motif and prototype the longest phrase over one frame.
-3. Use staged prompts to build ordered cues; measure onsets only when an authorized recording exists.
-4. Review exact words, contrast, boundaries and final hold, then hand the editor a versioned cue package with honest timing status.
-
-Public tools referenced: openai/whisper (MIT) https://github.com/openai/whisper; heygen-com/hyperframes (Apache-2.0) https://github.com/heygen-com/hyperframes
-
-Sample prompt:
-
-For [PROJECT], [AUTHORIZED WORDS], [AUDIO STATUS] and [USAGE PERMISSIONS], create a lyric-visual brief. Preserve exact wording and identify the text authority. Define one emotional arc, motif and deliverable. If no recording is supplied, label cue order provisional and leave measured timing blank. Do not reproduce unprovided third-party lyrics or invent an audio performance.
-
-### Pixel Brand Prompt Kit
-
-URL: https://promptpack.tech/products/pixel-brand-kit/
-Category: Design
-Status: available through Razorpay checkout for ₹499 (UPI, Indian cards, netbanking or wallets) or US$9 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Build an original pixel asset family with exact grids, palette roles and scaling rules. Make a small original pixel identity study with one primary symbol, five supporting icons, palette roles and application rules. Use the supplied exact 24-pixel source grids and transparent PNG exports as a worked example, then design and review your own assets.
-
-For: Designers, indie makers and small teams creating compact original pixel assets.
-Requirements: A pixel-capable editor or the supplied source arrays, an application brief and your own final identity review.
-Scope: Static pixel identity study, not a trademark-cleared logo service, pixel-font license or animated character. Six original 24px icons, editable RGBA grids and 240px/480px PNG copies are included. The older Python/Pillow starter creates a separate 32px character. Use your own editor and perform actual brand/legal and destination review. No image-model access is required for the supplied grid-native assets.
-
-Workshop steps:
-1. Choose a symbol with a small job
-2. Translate references into grid decisions
-3. Lock palette and silhouette before detail
-4. Choose a route that preserves exact pixels
-5. Review at the actual display size
-6. Package a small usable identity study
-
-First session:
-1. Choose one small application and read the original 24px lantern-family study.
-2. Lock grid, silhouette, palette roles and transparency before adding variants.
-3. Use staged prompts and the exact source arrays to draw or revise assets, then export at integer scales.
-4. Inspect native size, alpha edges and applications; deliver a source/export manifest with honest identity limits.
-
-Public tools referenced: python-pillow/Pillow (MIT-CMU (stated in upstream LICENSE; GitHub detected NOASSERTION)) https://github.com/python-pillow/Pillow; LibreSprite/LibreSprite (GPL-2.0) https://github.com/LibreSprite/LibreSprite
-
-Sample prompt:
-
-For [APPLICATION], [ORIGINAL SUBJECT] and [AUDIENCE CONTEXT], define a compact pixel identity study. Specify [NATIVE GRID], primary silhouette, supporting symbols and actual deliverables. Separate a fictional concept name from a cleared brand. Do not copy a game character, third-party mark or named artist's style, and do not promise commercial recognition.
-
-### YouTube Production Planner
-
-URL: https://promptpack.tech/products/youtube-production/
-Category: Automation
-Status: available through Razorpay checkout for ₹899 (UPI, Indian cards, netbanking or wallets) or US$15 (international cards), paid once
-Format: 14-page illustrated PDF guide, 16 editable prompts, worked example, starter files, worksheets
-
-Plan an episode from truthful packaging through recording, edit and review. Build one episode package with a viewer promise, title and thumbnail direction, a chapter outline, recording plan and editor handoff. The worked example plans a tutorial about turning one desk object into six purposeful shots; no finished episode or channel result is implied.
-
-For: Solo video creators and small channel teams planning practical tutorials.
-Requirements: A real episode topic, sources, recording/editing tools and your own channel access if publishing.
-Scope: Episode planning and visual concept kit, not a recorded tutorial, channel service or monetization system. Recording equipment, editor, channel access, rights-cleared media and any AI accounts/credits are separate. Six landscape concept boards are provided; no uploaded video, audience analytics or guaranteed results are included. The Node utility validates local fields only.
-
-Workshop steps:
-1. Define the promise before the package
-2. Study references and lock the episode system
-3. Outline the episode around decisions
-4. Prepare a recording and editing handoff
-5. Review the promise and the cut
-6. Publish separately and learn from real data
-
-First session:
-1. Fill the viewer question, exact promise and final artifact in the master brief.
-2. Prototype one truthful title/thumbnail direction and outline six decision chapters.
-3. Use staged prompts to prepare the recording list, source map, scratch read and editor handoff.
-4. Review the actual rough cut against the promise, then publish separately and record only real observations.
-
-Public tools referenced: googleapis/google-api-nodejs-client (Apache-2.0) https://github.com/googleapis/google-api-nodejs-client; openai/whisper (MIT) https://github.com/openai/whisper
-
-Sample prompt:
-
-For [AUDIENCE], [EPISODE TOPIC] and [AVAILABLE EVIDENCE], write one viewer question and the concrete artifact delivered by the video. Create a title expectation, thumbnail direction and opening payoff that agree. State exclusions and required recording. Do not invent audience demand, growth results or a finished video.
-
-### Video Shot Prompt Library
-
-URL: https://promptpack.tech/products/video-prompt-vault/
-Category: Video
-Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 38 editable prompts, worked example, starter files, worksheets
-
-Thirty shot briefs plus a practical selection, adaptation and review workflow. Build a selected shot menu for your project from thirty original B-roll briefs, then adapt one shot into a testable production request. Use six visual material studies to distinguish a reveal, a texture shot, a silhouette, subtle subject motion, an edge reveal and an architectural hold.
-
-For: Editors, product creators and AI-video operators building a purposeful B-roll menu.
-Requirements: A project brief, rights-cleared subjects, a video tool, any required credits and an editor.
-Scope: Thirty original text shot briefs plus eight staged planning prompts, not thirty generated videos. The six included images are independent concept studies, not a tested motion benchmark. Generation tool access, credits, model-specific permissions, footage, sound and editing are separate. The Python/Pillow utility is a schematic board maker only.
-
-Workshop steps:
-1. Select by editorial job
-2. Translate the reference into a system
-3. Write one movement hypothesis
-4. Adapt a library brief to the tool
-5. Review the clip through time
-6. Make a reusable selected-shot menu
-
-First session:
-1. Read the thirty retained shot briefs and choose one editorial gap in your project.
-2. Shortlist three candidates, approve the subject reference and translate the visual system.
-3. Adapt one brief to your chosen provider, generate a modest motion test and log actual settings.
-4. Inspect the entire clip, choose a fallback if needed and hand off the selected shot with usable ranges and rights notes.
-
-Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers
-
-Sample prompt:
-
-Using [EDIT OUTLINE], [AUDIENCE] and [LIBRARY PROMPT IDS], choose three candidate shots for [MISSING EDITORIAL JOB]. Explain what each adds, the neighboring shot, its likely continuity risk and a simpler fallback. Choose one first test. Do not claim an untested prompt is reliable, high-performing or compatible with every model.

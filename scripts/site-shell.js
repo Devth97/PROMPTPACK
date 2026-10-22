@@ -3,8 +3,7 @@ const sections = [
   {id:'finance', name:'Finance', color:'mint', description:'A clearer picture of your recurring spending.'},
   {id:'websites', name:'Websites', color:'blue', description:'Give your next site a better starting point.'},
   {id:'video', name:'Video', color:'coral', description:'Plan the shots. Write the story. Direct the result.'},
-  {id:'social-media', name:'Social Media', color:'pink', description:'From the first hook to a repeatable publishing workflow.'},
-  {id:'design', name:'Design', color:'yellow', description:'Small pixels. A consistent visual identity.'}
+  {id:'social-media', name:'Social Media', color:'pink', description:'From the first hook to a repeatable publishing workflow.'}
 ];
 // Map by section id, not position, so the homepage order can change freely
 const byId = id => sections.find(s => s.id === id);
