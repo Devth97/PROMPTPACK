@@ -115,7 +115,7 @@ Act as a director for [PROJECT] and [AUDIENCE]. Using [SUBJECT FACTS OR FICTIONA
 URL: https://promptpack.tech/products/ugc-ad-scripts/
 Category: Video
 Status: available through Razorpay checkout for ₹699 (UPI, Indian cards, netbanking or wallets) or US$12 (international cards), paid once
-Format: 14-page illustrated PDF guide, 14 editable prompts, worked example, starter files, worksheets
+Format: 14-page illustrated PDF guide, 22 editable prompts, worked example, starter files, worksheets
 
 Turn an honest product demonstration into a visually directed short ad. Make a 22-second product-demonstration plan with an evidence ledger, six visual boards, a recordable script and one clear next action. Approve the product facts before a presenter or image model performs them.
 
@@ -135,7 +135,8 @@ First session:
 1. Read the six-board example and fill the master brief with one product task and supplied evidence.
 2. Translate three inspected references into an original style lock; approve one hook and one prototype shot.
 3. Use prompts 01-11 to produce the script, six scene briefs and presenter/recording handoff; rehearse with the real product.
-4. Run the quality gate, inspect the placement crop and export the approved files with captions, source ledger and a blank test plan.
+4. Optional: run prompts 15-22 to turn the six briefs into AI video cuts with one style header and a blocking map, while every claim stays on real footage.
+5. Run the quality gate, inspect the placement crop and export the approved files with captions, source ledger and a blank test plan.
 
 Public tools referenced: huggingface/diffusers (Apache-2.0) https://github.com/huggingface/diffusers; Jakeschincariol/instagram-agent-skill (MIT) https://github.com/Jakeschincariol/instagram-agent-skill
 

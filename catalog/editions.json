@@ -334,7 +334,7 @@
   {
     "slug": "ugc-ad-scripts",
     "name": "UGC Ad Script Kit",
-    "edition": "2.0",
+    "edition": "2.1",
     "subtitle": "Turn an honest product demonstration into a visually directed short ad",
     "outcome": "Make a 22-second product-demonstration plan with an evidence ledger, six visual boards, a recordable script and one clear next action. Approve the product facts before a presenter or image model performs them.",
     "limits": "A planning and visual-direction kit, not a finished ad or synthetic-presenter service. Real product footage, presenter/voice/music rights, editor access and any AI accounts or generation credits are your responsibility. The optional Python storyboard utility requires Pillow and makes a simple planning sheet, not the six finished concept boards. No campaign publishing, factual product verification, legal clearance or sales guarantee is included.",
@@ -342,6 +342,7 @@
       "Read the six-board example and fill the master brief with one product task and supplied evidence.",
       "Translate three inspected references into an original style lock; approve one hook and one prototype shot.",
       "Use prompts 01-11 to produce the script, six scene briefs and presenter/recording handoff; rehearse with the real product.",
+      "Optional: run prompts 15-22 to turn the six briefs into AI video cuts with one style header and a blocking map, while every claim stays on real footage.",
       "Run the quality gate, inspect the placement crop and export the approved files with captions, source ledger and a blank test plan."
     ],
     "lessons": [
@@ -353,10 +354,10 @@
       "Hand off a controlled experiment"
     ],
     "pdf_pages": 14,
-    "prompt_count": 14,
+    "prompt_count": 22,
     "archive": "ugc-ad-scripts.zip",
-    "archive_bytes": 2934355,
-    "sha256": "73c07f45b8ec73c5876f7a5a658b2ce8b4513e824eb949c123d51dfd103c5b65",
+    "archive_bytes": 3074803,
+    "sha256": "798fe118eee2a74108eb3388436ef67392d79fa5a3395292b84704432869ad6e",
     "sources": [
       "diffusers",
       "instagram-skills"
@@ -369,8 +370,9 @@
     "sale_status": "checkout-configured",
     "includes": [
       "14-page illustrated decision guide",
-      "14 staged prompts and master briefs",
-      "Five blank/filled worksheet pairs",
+      "22 staged prompts and master briefs",
+      "9-page cinematic module for AI video cuts (Seedance 2.0, Higgsfield)",
+      "Five blank/filled worksheet pairs plus a shot-list pair",
       "Six visual boards, script and alt text",
       "Dated sources and local storyboard starter"
     ],

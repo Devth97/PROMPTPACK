@@ -13,7 +13,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const products=JSON.parse(read('catalog/products.json'));
   const sources=JSON.parse(read('catalog/sources.json'));
   assert.equal(editions.length,11);
-  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),196);
+  assert.equal(editions.reduce((n,e)=>n+e.prompt_count,0),204);
   // Carousel Studio Visual Edition 2.0 is built outside build-product-editions.py; a regenerated 1.1 bundle must not replace it silently.
   const carousel=editions.find(e=>e.slug==='carousel-studio');
   assert.equal(carousel.edition,'2.0');
@@ -22,7 +22,7 @@ test('editions: eleven built bundles have source evidence and accurate public pr
   const visual=['carousel-studio','ugc-ad-scripts','short-explainer-studio','ai-video-direction','video-prompt-vault','youtube-production','lyric-visuals','pixel-brand-kit','carousel-workflows','motion-with-code'];
   for(const slug of visual){
     const edition=editions.find(e=>e.slug===slug);
-    assert.equal(edition.edition,'2.0',slug);
+    assert.match(edition.edition,/^2\.\d$/,slug); // 2.x keeps the audited 2.0 material (UGC 2.1 adds the cinematic module)
     assert.equal(edition.gallery.length,6,slug);
     const page=read(`products/${slug}/index.html`);
     for(const slide of edition.gallery){

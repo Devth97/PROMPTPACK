@@ -28,20 +28,6 @@
     "thanks": "/checkout/thanks/"
   },
   {
-    "id": "promptpack-3d-website-lab",
-    "slug": "3d-website-lab",
-    "name": "3D Website Lab",
-    "amount": 1500,
-    "currency": "USD",
-    "amount_inr": 89900,
-    "file": "products/3d-website-lab.enc",
-    "filename": "3d-website-lab.zip",
-    "type": "application/zip",
-    "sha256": "adb1488820634f2234df9f5d3984d615d29e96394e6fc9bffec8135ac38c36fe",
-    "bytes": 1323533,
-    "thanks": "/checkout/thanks/"
-  },
-  {
     "id": "promptpack-ai-video-direction",
     "slug": "ai-video-direction",
     "name": "AI Video Direction Kit",
@@ -65,8 +51,8 @@
     "file": "products/ugc-ad-scripts.enc",
     "filename": "ugc-ad-scripts.zip",
     "type": "application/zip",
-    "sha256": "73c07f45b8ec73c5876f7a5a658b2ce8b4513e824eb949c123d51dfd103c5b65",
-    "bytes": 2934355,
+    "sha256": "798fe118eee2a74108eb3388436ef67392d79fa5a3395292b84704432869ad6e",
+    "bytes": 3074803,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -151,6 +137,20 @@
     "type": "application/zip",
     "sha256": "2a2970a536aae0411dca0aee265cf7c21b61dbe36fc603616b19fad85ed6ed34",
     "bytes": 2044453,
+    "thanks": "/checkout/thanks/"
+  },
+  {
+    "id": "promptpack-3d-website-lab",
+    "slug": "3d-website-lab",
+    "name": "3D Website Lab",
+    "amount": 1500,
+    "currency": "USD",
+    "amount_inr": 89900,
+    "file": "products/3d-website-lab.enc",
+    "filename": "3d-website-lab.zip",
+    "type": "application/zip",
+    "sha256": "adb1488820634f2234df9f5d3984d615d29e96394e6fc9bffec8135ac38c36fe",
+    "bytes": 1323533,
     "thanks": "/checkout/thanks/"
   }
 ]
