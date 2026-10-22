@@ -23,7 +23,7 @@ const files = execFileSync('git', ['ls-files', 'assets/*.mp4', 'assets/**/*.mp4'
     if (head.ok && Number(head.headers.get('content-length')) === size) continue;
     console.log(`${dryRun ? 'would upload' : 'upload'} ${key} (${size} bytes)`);
     if (dryRun) continue;
-    execFileSync('npx', ['--yes', 'wrangler', 'r2', 'object', 'put', `${bucket}/${key}`, '--file', key, '--content-type', 'video/mp4', '--cache-control', 'public, max-age=31536000, immutable', '--remote'], {cwd: root, stdio: 'inherit', shell: process.platform === 'win32'});
+    execFileSync('npx', ['--yes', 'wrangler', 'r2', 'object', 'put', `${bucket}/${key}`, '--file', key, '--content-type', 'video/mp4', '--cache-control', 'public,max-age=31536000,immutable', '--remote'], {cwd: root, stdio: 'inherit', shell: process.platform === 'win32'});
     uploaded++;
   }
   console.log(`${files.length} videos checked, ${uploaded} uploaded.`);
