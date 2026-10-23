@@ -1,0 +1,52 @@
+/* Homepage hero video stage: the two promo videos as a tilted card stack with an animated border beam,
+   auto-advancing tabs and a "watch" dialog. Patterns adapted from Magic UI (MIT, (c) Magic UI):
+   Border Beam (beam travelling along the border) and Hero Video Dialog (thumbnail -> modal video, from-center).
+   Uses theme.css tokens. Script: assets/hero-stage.js. */
+.hs{position:relative;width:100%;align-self:center;padding:34px 0 0}
+.hs-stack{position:relative;width:86%;aspect-ratio:16/9;perspective:1400px}
+.hs-card{position:absolute;inset:0;display:block;border:3px solid var(--ink);background:var(--ink);overflow:hidden;box-shadow:10px 10px 0 var(--ink);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .5s ease,filter .5s ease,box-shadow .5s ease;transform-origin:50% 50%;will-change:transform}
+.hs-card video,.hs-card img{display:block;width:100%;height:100%;object-fit:cover}
+.hs-card[data-pos="front"]{z-index:3;transform:rotateY(-7deg) rotateX(3deg) translateZ(0);opacity:1}
+.hs-card[data-pos="back"]{z-index:2;transform:translate(19%,-9%) scale(.8) rotateY(-16deg) rotate(4deg);opacity:.95;filter:saturate(.75) brightness(.85);cursor:pointer;box-shadow:6px 6px 0 var(--ink)}
+.hs-card[data-pos="back"]:hover,.hs-card[data-pos="back"]:focus-visible{transform:translate(21%,-11%) scale(.82) rotateY(-12deg) rotate(5deg);filter:none}
+.hs-card[data-pos="back"] .hs-play,.hs-card[data-pos="back"] .hs-beam{display:none}
+
+/* Border beam: a bright arc travels around the front card's border. */
+.hs-beam{position:absolute;inset:0;pointer-events:none;border-radius:inherit;padding:4px;
+  background:conic-gradient(from var(--hs-angle),transparent 0 70%,var(--yellow) 80%,var(--pink) 88%,transparent 94%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:hs-beam 5s linear infinite}
+@property --hs-angle{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes hs-beam{to{--hs-angle:360deg}}
+
+.hs-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:flex;align-items:center;gap:12px;border:3px solid var(--ink);background:var(--yellow);color:var(--ink);
+  font-family:inherit;font-weight:900;font-size:15px;line-height:1;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap;padding:12px 20px 12px 12px;border-radius:999px;box-shadow:5px 5px 0 var(--ink);cursor:pointer;opacity:0;transition:opacity .25s ease,transform .25s ease}
+.hs-play i{position:relative;width:38px;height:38px;border-radius:50%;background:var(--ink);flex:none}
+.hs-play i::after{content:"";position:absolute;left:15px;top:11px;border-left:13px solid var(--yellow);border-top:8px solid transparent;border-bottom:8px solid transparent}
+.hs-play i::before{content:"";position:absolute;inset:-6px;border-radius:50%;border:3px solid var(--ink);animation:hs-pulse 1.8s ease-out infinite}
+@keyframes hs-pulse{from{transform:scale(.8);opacity:.9}to{transform:scale(1.45);opacity:0}}
+.hs-card[data-pos="front"]:hover .hs-play,.hs-card[data-pos="front"]:focus-within .hs-play,.hs.is-touch .hs-card[data-pos="front"] .hs-play{opacity:1}
+.hs-play:hover{transform:translate(-50%,-50%) scale(1.05)}
+.hs-badge{position:absolute;left:14px;top:14px;border:3px solid var(--ink);background:var(--mint);padding:5px 12px;font-weight:900;font-size:12px;letter-spacing:.08em;text-transform:uppercase;box-shadow:3px 3px 0 var(--ink)}
+
+.hs-panel{position:relative;z-index:4;margin:26px 0 0;border:3px solid var(--ink);background:var(--paper);box-shadow:8px 8px 0 var(--ink);padding:18px 20px}
+.hs-tabs{display:flex;gap:10px;margin:0 0 14px;padding:0;list-style:none}
+.hs-tabs button{position:relative;flex:1;border:3px solid var(--ink);background:var(--bg);padding:9px 12px 13px;font-family:inherit;font-weight:800;font-size:13px;line-height:1.2;text-align:left;cursor:pointer;overflow:hidden;color:var(--ink)}
+.hs-tabs button[aria-selected="true"]{background:var(--yellow)}
+.hs-tabs .bar{position:absolute;left:0;bottom:0;height:5px;width:100%;background:var(--ink);transform-origin:0 50%;transform:scaleX(0)}
+.hs-copy{display:none}.hs-copy.is-active{display:block}
+.hs-kicker{display:inline-block;border:2px solid var(--ink);background:var(--mint);padding:3px 10px;font-weight:900;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.hs-copy b{display:block;font-size:clamp(24px,2.6vw,34px);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin:10px 0 6px}
+.hs-copy p{margin:0 0 14px;font-size:15px}
+.hs-cta{display:inline-block;border:3px solid var(--ink);background:var(--pink);color:var(--ink);padding:9px 16px;font-weight:900;font-size:13px;text-transform:uppercase;letter-spacing:.04em;box-shadow:4px 4px 0 var(--ink);text-decoration:none}
+.hs-cta:hover{background:var(--yellow)}
+
+.hs-dialog{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;background:#0b0b0fcc;opacity:0;pointer-events:none;transition:opacity .25s ease}
+.hs-dialog.is-open{opacity:1;pointer-events:auto}
+.hs-dialog-box{position:relative;width:min(1100px,100%,calc((100vh - 72px) * 16 / 9));border:4px solid var(--ink);background:var(--ink);box-shadow:12px 12px 0 var(--yellow);transform:scale(.6);transition:transform .35s cubic-bezier(.2,.9,.25,1.15)}
+.hs-dialog.is-open .hs-dialog-box{transform:scale(1)}
+.hs-dialog video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:#000}
+.hs-close{position:absolute;right:-14px;top:-14px;width:46px;height:46px;border-radius:50%;border:3px solid var(--ink);background:var(--yellow);font-family:inherit;font-weight:900;font-size:22px;line-height:1;cursor:pointer;box-shadow:3px 3px 0 var(--ink);color:var(--ink)}
+
+@media (max-width:900px){.hs{padding:26px 0 0}.hs-card[data-pos="front"]{transform:none}.hs-card[data-pos="back"]{transform:translate(14%,-6%) scale(.86) rotate(3deg)}}
+@media (prefers-reduced-motion:reduce){.hs-card{transition:none}.hs-beam,.hs-play i::before{animation:none}.hs-card[data-pos="front"]{transform:none}.hs-dialog-box{transition:none;transform:none}}
