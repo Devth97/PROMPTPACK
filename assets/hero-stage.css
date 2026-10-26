@@ -41,3 +41,5 @@
 
 @media (max-width:900px){.hs{padding:26px 0 0}.hs-card[data-pos="front"]{transform:none}.hs-card[data-pos="back"]{transform:translate(14%,-6%) scale(.86) rotate(3deg)}}
 @media (prefers-reduced-motion:reduce){.hs-card{transition:none}.hs-beam{animation:none}.hs-card[data-pos="front"]{transform:none}}
+
+@media (max-width:600px){.hs-stack{width:100%}.hs-card[data-pos="back"]{transform:translate(2%,-7%) scale(.94) rotate(2deg)}}

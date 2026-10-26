@@ -64,3 +64,7 @@ test('homepage and generator use corner sound controls without the old overlay',
     assert.doesNotMatch(source, /hs-play|hs-dialog|Watch with sound/);
   }
 });
+
+test('phone hero video uses the full available width', () => {
+  assert.match(read('assets/hero-stage.css'), /@media \(max-width:600px\)\{\.hs-stack\{width:100%\}/);
+});
