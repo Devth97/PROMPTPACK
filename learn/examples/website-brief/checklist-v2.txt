@@ -1,0 +1,22 @@
+Checklist returned with version 2
+
+Layout
+- Recheck 320, 375, 768 and 1280 px: no sideways scrolling; the schedule and price sit together.
+
+Links
+- "Enquire", "Send a booking enquiry" and "Email the studio" all lead to the enquiry step.
+- The "Email the studio" link opens a new email with the subject and three prompts filled in.
+  Test it on a phone and on a computer without a configured email app.
+- Replace hello@example.com with the real address before publishing.
+
+Keyboard access
+- Tab order: brand, Enquire, primary button, questions, Email the studio, email links.
+  Each shows the focus outline.
+
+Forms
+- There is no form now. If the studio wants bookings stored, connect a real booking or form
+  service later and test what happens after submission.
+
+Before publishing
+- Resolve the remaining "Missing information" notes: address, available Saturdays,
+  age, accessibility, aprons, cancellation policy and session photos.

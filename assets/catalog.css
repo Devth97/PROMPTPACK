@@ -25,3 +25,5 @@
 .jp-hero--wide{grid-template-columns:minmax(0,1fr) minmax(0,1.08fr)}.jp-hero--wide h1{font-size:clamp(38px,4.6vw,64px)}
 .jp-hero-ad{margin:0;width:100%}.jp-hero-ad video{display:block;width:100%;height:auto;aspect-ratio:16/9;border:3px solid var(--ink);box-shadow:7px 7px 0 var(--ink);background:var(--ink)}.jp-hero-ad figcaption{margin-top:14px;font-size:13px;font-weight:700;color:var(--muted)}
 @media(max-width:900px){.jp-hero--wide{grid-template-columns:1fr}}
+
+.buy-requirements{border-block:1px solid var(--ink);padding:14px 0;margin:18px 0}.buy-requirements h3{font-size:18px;margin:0 0 12px}.buy-requirements p,.purchase-support{font-size:13px;line-height:1.65}.checkout-requirements{margin:18px 0}.checkout-requirements summary{cursor:pointer;font-weight:700}.checkout-requirements p{font-size:13px;line-height:1.6}

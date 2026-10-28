@@ -1,0 +1,50 @@
+Six scene briefs (version 1)
+
+1 Hook
+Spoken: "My carousels never look like one set. Here's what I use now."
+Visible: presenter at a desk, phone showing three mismatched slides.
+Framing: selfie-style medium close-up.
+On-screen text: "Six slides that look like one set"
+Evidence needed: the three mismatched slides must be real or labelled as a mock-up.
+
+2 Context
+Spoken: "Carousel Studio is a guide and prompt kit for six-slide carousels."
+Visible: laptop showing the product page cover.
+Framing: over-the-shoulder.
+On-screen text: "Carousel Studio · PDF guide + prompts"
+Evidence needed: product page as it appears on the recording date.
+
+3 Setup
+Spoken: "There's a 29-page guide and 28 prompts you can edit."
+Visible: scroll through the PDF contents page.
+Framing: screen recording.
+On-screen text: "29-page guide · 28 prompts"
+Evidence needed: page and prompt counts match the current edition (2.1).
+
+4 Demonstration
+Spoken: "I open the worked example, copy the cover prompt and paste it into my assistant."
+Visible: PDF open on the worked-example page; copy; paste into a text assistant.
+Framing: screen recording, cursor visible.
+On-screen text: "Copy → paste → plan"
+Evidence needed: the real worked-example page and the real prompt.
+
+5 Observation
+Spoken: "It gives me a plan for all six slides, with one job for each."
+Visible: the assistant's response appears.
+Framing: screen recording.
+On-screen text: "One job per slide"
+Evidence needed: show the actual response, unedited; note the tool and date on screen.
+
+6 Next action
+Spoken: "See the example slides before you buy. Link below."
+Visible: product page "Look inside" section.
+Framing: screen recording.
+On-screen text: "promptpack.tech · Carousel Studio"
+Evidence needed: the link goes to /products/carousel-studio/#inside.
+
+Flags before publication
+- Disclosure: the presenter works for PromptPack. Say so on screen and in the caption ("I work on PromptPack").
+- Scene 1 "Here's what I use now" implies personal use; confirm it is true for this presenter or remove it.
+- Scene 5 shows an AI response; outputs vary by tool and prompt edits. Do not imply a guaranteed result.
+- Permissions: the text assistant's interface appears on screen; check its brand guidelines before running ads.
+- No price, discount or urgency is stated; add the price only if it is current on the recording date.

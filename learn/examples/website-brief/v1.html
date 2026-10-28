@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beginner Wheel Session — Northside Clay Studio</title>
+<meta name="description" content="A Saturday beginner pottery wheel session in small groups of six. Clay, tools and glazing included. ₹2,400 per person.">
+<style>
+  :root {
+    --bg: #faf6f0;
+    --ink: #222222;
+    --accent: #b5532f;
+    --muted: #5a524c;
+    --line: #e4d9cc;
+    --serif: Georgia, "Times New Roman", serif;
+    --sans: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 1.0625rem; line-height: 1.6; }
+  h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.2; }
+  h1 { font-size: clamp(2.2rem, 6vw, 3.6rem); margin: 0 0 1rem; }
+  h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin: 0 0 1rem; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 1.5rem; }
+  header.site { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
+  header.site .wrap { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+  .brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 600; text-decoration: none; color: var(--ink); }
+  section { padding: 4.5rem 0; border-bottom: 1px solid var(--line); }
+  .intro { padding-top: 5rem; }
+  .lede { font-size: 1.25rem; color: var(--muted); max-width: 38ch; }
+  .button { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; font-weight: 600; padding: 0.9rem 1.5rem; border-radius: 999px; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+  .button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(181, 83, 47, 0.25); }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; list-style: none; padding: 0; margin: 2rem 0 0; }
+  .facts li { border-top: 3px solid var(--accent); padding-top: 1rem; }
+  .facts strong { display: block; font-family: var(--serif); font-size: 1.3rem; }
+  .price { font-family: var(--serif); font-size: 2.5rem; margin: 0.5rem 0; }
+  .missing { background: #fff3cd; border-left: 4px solid #b58a00; padding: 0.75rem 1rem; font-size: 0.95rem; }
+  .steps { counter-reset: step; list-style: none; padding: 0; }
+  .steps li { counter-increment: step; padding-left: 3rem; position: relative; margin-bottom: 1.25rem; }
+  .steps li::before { content: counter(step); position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; font-weight: 700; }
+  details { border-bottom: 1px solid var(--line); padding: 1rem 0; }
+  summary { font-weight: 600; cursor: pointer; }
+  form { display: grid; gap: 1rem; max-width: 480px; margin-top: 1.5rem; }
+  label { font-weight: 600; display: block; margin-bottom: 0.35rem; }
+  input, select, textarea { width: 100%; font: inherit; padding: 0.7rem 0.8rem; border: 1px solid #b9ab9c; border-radius: 8px; background: #fff; color: var(--ink); }
+  button.button { border: 0; cursor: pointer; font: inherit; font-weight: 600; }
+  footer { padding: 2rem 0 3rem; color: var(--muted); font-size: 0.95rem; }
+  @media (prefers-reduced-motion: reduce) {
+    .button { transition: none; }
+    .button:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="#top">Northside Clay Studio</a>
+    <a href="#enquire">Enquire</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="intro">
+    <div class="wrap">
+      <p>Beginner wheel session · Saturdays</p>
+      <h1>Your first bowl, on the wheel, this Saturday</h1>
+      <p class="lede">Never touched a pottery wheel? Spend a Saturday session learning to centre clay and throw your first pieces, in a group of six.</p>
+      <a class="button" href="#enquire">Send a booking enquiry</a>
+    </div>
+  </section>
+
+  <section aria-labelledby="offer">
+    <div class="wrap">
+      <h2 id="offer">What the session includes</h2>
+      <ul class="facts">
+        <li><strong>Groups of six</strong>Small enough for help at every wheel.</li>
+        <li><strong>Everything supplied</strong>Clay, tools and glazing are included.</li>
+        <li><strong>Two pieces fired</strong>Ready to collect three weeks later.</li>
+      </ul>
+      <p class="price">₹2,400 <span style="font-size:1rem;font-family:var(--sans)">per person</span></p>
+      <p class="missing"><strong>Missing information:</strong> session length, start time, studio address and how many Saturdays are available. Add these before publishing.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="example">
+    <div class="wrap">
+      <h2 id="example">How a session runs</h2>
+      <p class="missing"><strong>Missing information:</strong> no real example of a past session was supplied (no photos or description). The outline below is a general structure to confirm or replace with the studio's actual plan.</p>
+      <ol class="steps">
+        <li>Introduction to the wheel, clay preparation and safety.</li>
+        <li>Practise centring the clay with guidance.</li>
+        <li>Throw your pieces and choose two to keep.</li>
+        <li>Choose glazes; the studio fires your two pieces.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section aria-labelledby="requirements">
+    <div class="wrap">
+      <h2 id="requirements">What to bring</h2>
+      <p>Clay, tools and glazing are included. Wear clothes that can get muddy.</p>
+      <p class="missing"><strong>Missing information:</strong> minimum age, accessibility of the studio, and whether aprons are provided.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="questions">
+    <div class="wrap">
+      <h2 id="questions">Questions</h2>
+      <details>
+        <summary>Do I need any experience?</summary>
+        <p>No. The session is for adults who have never used a pottery wheel.</p>
+      </details>
+      <details>
+        <summary>When can I collect my pieces?</summary>
+        <p>Your two fired pieces are ready to collect three weeks after the session.</p>
+      </details>
+      <details>
+        <summary>What is the cancellation policy?</summary>
+        <p class="missing"><strong>Missing information:</strong> no cancellation or refund policy was supplied.</p>
+      </details>
+    </div>
+  </section>
+
+  <section aria-labelledby="enquire" id="enquire-section">
+    <div class="wrap">
+      <h2 id="enquire">Send a booking enquiry</h2>
+      <p>Fill in the form to open an email to the studio, or write directly to <a href="mailto:hello@example.com">hello@example.com</a>.</p>
+      <form action="mailto:hello@example.com" method="post" enctype="text/plain">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+        <div>
+          <label for="email">Your email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div>
+          <label for="people">Number of people</label>
+          <select id="people" name="people">
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>
+          </select>
+        </div>
+        <div>
+          <label for="date">Preferred Saturday</label>
+          <input id="date" name="date" type="date">
+        </div>
+        <button class="button" type="submit">Send enquiry</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Northside Clay Studio · <a href="mailto:hello@example.com">hello@example.com</a></p>
+  </div>
+</footer>
+</body>
+</html>

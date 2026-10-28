@@ -34,7 +34,7 @@ test('storefront: every public page has shared navigation and valid local destin
   const files = ['index.html','finance/index.html','finance/thanks/index.html','contact/index.html','privacy/index.html','terms/index.html','refund/index.html','products/index.html','products/website-prompts/index.html',...products.map(p=>`products/${p.slug}/index.html`),...fs.readdirSync(path.join(root,'blog')).filter(f=>f.endsWith('.html')).map(f=>'blog/'+f)];
   for (const file of files) {
     const html = read(file);
-    assert.match(html,/href="\/assets\/theme.css"/,file);
+    assert.match(html,/href="\/assets\/theme.css(\?v=[0-9a-f]+)?"/,file);
     assert.equal((html.match(/class="pp-header"/g)||[]).length,1,file);
     assert.match(html,/class="skip" href="#main"/,file);
     assert.match(html,/id="main"/,file);

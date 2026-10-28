@@ -1,0 +1,9 @@
+Plan a six-slide carousel for small business owners who edit their own website about one question: what should the alt text say for each image?
+Use only these source notes: W3C WAI "An alt Decision Tree" (https://www.w3.org/WAI/tutorials/images/decision-tree/, updated 13 May 2024). Decorative image or text repeated nearby: empty alt. Image inside a link or button: say where it goes or what it does. Simple image that adds meaning: a brief description of that meaning. Graph or complex image: put the information elsewhere on the page. Image of text not shown elsewhere: include that text. Mark gaps explicitly.
+Reader takeaway: decide what the image does before writing its alt text. Next action: check the images on your own homepage with the decision tree.
+Slide jobs: 1 cover promise; 2 context; 3 explanation; 4 worked example; 5 practical check; 6 takeaway and next action.
+Define one visual system: 1080 x 1350 canvas, 80 px safe margins, palette roles (cream #FFFBF2 background, ink #0B0B0F text, pink #F598F2 slide marker, yellow #FFE14D highlight), Figtree headlines at weight 800 and body at 500, flat shapes instead of photographs, page markers "n / 6".
+For each slide return a headline, short body, image direction, source note and suggested alt text.
+Keep the visual system consistent and let the content determine each layout.
+Separate fictional examples from sourced facts. Do not invent studies, quotes or engagement results.
+Before generating images, flag dense text, repeated slide jobs and an unsupported cover promise.

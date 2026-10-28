@@ -81,6 +81,21 @@ test('create-order: an unreadable archive or missing key is refused before any o
   assert.equal(mock.orders.size, before, 'no Razorpay order may be created');
 });
 
+test('UGC complete guide: the updated bundle downloads with its exact registered bytes', async () => {
+  const d=delivery.find(p=>p.slug==='ugc-ad-scripts');
+  const e=editions.find(p=>p.slug===d.slug);
+  // Production ships edition 2.2; 2.3 exists only in the unreleased root catalog.
+  assert.deepEqual([e.edition,e.pdf_pages,e.prompt_count],['2.2',14,22]);
+  const token=await purchase(d.slug,'inr');
+  assert.ok(token);
+  const response=await fetch(SITE+'/api/download?t='+encodeURIComponent(token));
+  assert.equal(response.status,200);
+  const zip=Buffer.from(await response.arrayBuffer());
+  assert.equal(sha(zip),d.sha256);
+  assert.equal(zip.length,d.bytes);
+  assert.ok(zip.equals(fs.readFileSync(path.join(ROOT,'product-build','editions',d.filename))));
+});
+
 test('purchase flow: every product downloads its exact ZIP in both currencies with the right name and receipt', async () => {
   for (const [d, plan] of delivery.flatMap(d => [[d, 'usd'], [d, 'inr']])) {
     const token = await purchase(d.slug, plan);

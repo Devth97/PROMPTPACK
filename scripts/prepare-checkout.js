@@ -8,6 +8,9 @@ const root=path.join(__dirname,'..');
 // Retired packs are no longer listed on the site but stay deliverable for people who already bought them.
 const products=[...require('../catalog/products.json'),...require('../catalog/retired-products.json')];
 const editions=require('../catalog/editions.json');
+const selectedSlug=process.argv.find(arg=>arg.startsWith('--product='))?.slice('--product='.length);
+const previous=selectedSlug?JSON.parse(fs.readFileSync(path.join(root,'api','_products.json'),'utf8')):null;
+if(selectedSlug!==undefined&&(!products.some(p=>p.slug===selectedSlug)||!previous.some(p=>p.slug===selectedSlug)))throw Error('Unknown existing product: '+selectedSlug);
 const local={};
 const envFile=path.join(root,'.env.local');
 if(fs.existsSync(envFile))for(const line of fs.readFileSync(envFile,'utf8').split(/\r?\n/)){const m=line.match(/^([A-Z0-9_]+)=(.*)$/);if(m)local[m[1]]=m[2];}
@@ -16,7 +19,7 @@ if(!/^[a-f0-9]{64}$/i.test(keyHex))throw Error('Existing DOWNLOAD_FILE_KEY is re
 const key=Buffer.from(keyHex,'hex');
 const folder=path.join(root,'private','products');
 fs.mkdirSync(folder,{recursive:true});
-const catalog=products.map(p=>{
+const prepared=products.filter(p=>!selectedSlug||p.slug===selectedSlug).map(p=>{
  const edition=editions.find(e=>e.slug===p.slug);
  const plain=fs.readFileSync(path.join(root,'product-build','editions',edition.archive));
  const digest=crypto.createHash('sha256').update(plain).digest('hex');
@@ -41,7 +44,8 @@ const catalog=products.map(p=>{
  }
  return {id:'promptpack-'+p.slug,slug:p.slug,name:p.name,amount:p.price*100,currency:'USD',amount_inr:p.price_inr*100,file,filename:p.slug+'.zip',type:'application/zip',sha256:digest,bytes:plain.length,thanks:'/checkout/thanks/'};
 });
+const catalog=previous?previous.map(p=>prepared.find(item=>item.slug===p.slug)||p):prepared;
 fs.writeFileSync(path.join(root,'api','_products.json'),JSON.stringify(catalog,null,2)+'\n');
-for(const edition of editions)edition.sale_status='checkout-configured';
+for(const edition of editions)if(!selectedSlug||edition.slug===selectedSlug)edition.sale_status='checkout-configured';
 fs.writeFileSync(path.join(root,'catalog','editions.json'),JSON.stringify(editions,null,2)+'\n');
-console.log('Prepared '+catalog.length+' encrypted buyer bundles using the existing delivery key.');
+console.log('Prepared '+prepared.length+' encrypted buyer bundles using the existing delivery key.');

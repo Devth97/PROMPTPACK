@@ -1,0 +1,22 @@
+Checklist returned with version 1
+
+Layout
+- Check the page at 320, 375, 768 and 1280 px wide: no sideways scrolling, headline wraps cleanly.
+- The price, the three included items and the enquiry button are visible without hunting.
+
+Links
+- "Enquire" and "Send a booking enquiry" jump to the enquiry section.
+- Every email link points to hello@example.com. Replace this placeholder with the real address.
+
+Keyboard access
+- Tab through the page: each link, question and form field shows a visible focus outline.
+- The questions open and close with Enter or Space.
+
+Forms
+- Each field has a visible label. Name and email are required.
+- The form opens the visitor's email program (mailto). It does not store or send data by itself;
+  connect a real form service before relying on it for bookings.
+
+Before publishing
+- Resolve every yellow "Missing information" note: session length, start time, address,
+  available Saturdays, age, accessibility, aprons and the cancellation policy.

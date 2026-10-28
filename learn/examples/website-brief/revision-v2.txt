@@ -1,0 +1,5 @@
+Revise the page you built. Keep everything that is not mentioned here.
+1. Replace the enquiry form with one "Email the studio" button. Its mailto link should pre-fill the subject "Beginner wheel session enquiry" and a short body asking for name, number of people and preferred Saturday. A mailto form does nothing for visitors without an email app, and the date field accepted any day of the week.
+2. Remove the invented "How a session runs" steps. Use only this supplied schedule: 10:00 to 13:00; wheel practice first, then choosing glazes for your two pieces. Keep the studio address marked as missing.
+3. Make the inline email links comfortable tap targets, at least 24 px tall.
+4. Return the changed sections and an updated checklist.

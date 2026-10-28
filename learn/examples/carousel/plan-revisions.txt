@@ -1,0 +1,8 @@
+Revisions to the plan before design (version 2)
+
+Slide 2: the decision tree does not mention screen readers, so the line now cites two other WAI pages.
+  Body: "Screen readers read alt text aloud or show it as Braille. An empty alt (alt="") lets them skip decoration."
+  Sources: W3C WAI Images Tutorial (updated 8 April 2026); W3C WAI Decorative Images (updated 27 July 2019).
+Slide 5: "in ten minutes" removed; it was an estimate, not a measurement.
+  Headline: "Check one page today"
+All other slides unchanged.

@@ -21,6 +21,7 @@
   setStatus('Confirming your payment. Keep this page open…');
   try{
    const verified=await post('/api/verify',{...payment,product:slug});
+   window.promptpack?.purchase(verified);
    // The token remains in the fragment so it is not sent to other servers as a referrer.
    location.assign('/checkout/thanks/#t='+encodeURIComponent(verified.token));
   }catch(error){
@@ -43,16 +44,17 @@
   setBusy(true);setStatus('Preparing your secure checkout…');
   try{
    if(typeof window.Razorpay!=='function')throw Error('The secure payment window could not load. Check your connection and try again.');
-   const attribution={};
+   const attribution=window.promptpack?.attribution()||{};
    const params=new URLSearchParams(location.search);
    for(const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']){const value=params.get(key);if(value)attribution[key]=value.slice(0,100);}
    const order=await post('/api/create-order',{product:slug,plan:plan==='usd'?'usd':'inr',attribution});
    const checkout=new window.Razorpay({key:order.key_id,order_id:order.order_id,amount:order.amount,currency:order.currency,name:'PromptPack',description:order.product_name,prefill:{email:form.elements.email.value.trim()},theme:{color:'#F598F2'},
     handler:payment=>{completed=true;paidWith=payment;confirm(payment);},
-    modal:{ondismiss:()=>{if(!completed){setBusy(false);setStatus('Checkout closed. You can try again or choose another payment option.');}}}
+    modal:{ondismiss:()=>{if(!completed){setBusy(false);window.promptpack?.track('CheckoutClosed',{content_ids:[slug]},true);setStatus('Checkout closed. You can try again or choose another payment option.');}}}
    });
-   checkout.on('payment.failed',event=>{setStatus('Payment was not completed. Follow the payment window to retry, or close it to return here. Reference: '+(event.error?.metadata?.payment_id||order.order_id));});
+   checkout.on('payment.failed',event=>{window.promptpack?.track('PaymentFailed',{content_ids:[slug]},true);setStatus('Payment was not completed. Follow the payment window to retry, or close it to return here. Reference: '+(event.error?.metadata?.payment_id||order.order_id));});
    checkout.open();
+   window.promptpack?.track('InitiateCheckout',{content_ids:[slug],content_type:'product',content_name:order.product_name,value:order.amount/100,currency:order.currency});
    setStatus(order.currency==='INR'?'Complete your payment with UPI, an Indian card, netbanking or a wallet in the secure Razorpay window.':'Complete your payment with your card in the secure Razorpay window.');
   }catch(error){setBusy(false);setStatus(error.message);}
  });

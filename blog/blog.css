@@ -80,3 +80,13 @@ blockquote {
 .editorial-cover{display:block;width:100%;height:auto;border:2px solid #0B0B0F;margin-bottom:22px}.editorial-figure{margin:28px 0}.editorial-figure img{display:block;width:100%;height:auto;border:3px solid #0B0B0F;box-shadow:5px 5px 0 #0B0B0F}.editorial-figure figcaption{font-size:13px;line-height:1.6;padding-top:12px}
 
 .eyebrow{color:var(--ink);background:var(--mint);display:inline-block;border:2px solid var(--ink);padding:3px 9px;font-size:12px;font-weight:900}.post-card,.cta-box{box-shadow:6px 6px 0 var(--ink)}.post-card:hover{border-color:var(--ink);box-shadow:8px 8px 0 var(--ink)}h1{font-weight:900;text-transform:uppercase}.post-card:nth-child(3n+2){background:#fff1fe}.post-card:nth-child(3n){background:#eaf4ff}.blog-hero p{color:var(--muted)!important;font-weight:500!important}.cta-box{background:var(--yellow)}.cta-box a.btn{border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}blockquote{background:var(--pink);padding:15px 20px;border:2px solid var(--ink);font-style:normal}.b-foot{background:var(--paper)}
+
+/* tables, code and notes used by the rewritten website guides */
+article .note { border-left: 4px solid #F598F2; padding: 8px 0 8px 16px; font-size: 15px; }
+article code { font-family: ui-monospace, Consolas, monospace; font-size: .9em; background: #fff; border: 1px solid #0b0b0f33; padding: 0 4px; }
+.prompt-block { white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.7 ui-monospace, Consolas, monospace; background: #fff; border: 2px solid #0b0b0f; padding: 18px; margin: 0 0 20px; }
+.table-wrap { overflow-x: auto; margin: 0 0 22px; }
+article table { border-collapse: collapse; width: 100%; min-width: 560px; font-size: 15px; }
+article caption { text-align: left; font-weight: 700; padding: 0 0 10px; }
+article th, article td { border: 1px solid #0b0b0f; padding: 10px 12px; text-align: left; vertical-align: top; }
+article thead th { background: #fff; }

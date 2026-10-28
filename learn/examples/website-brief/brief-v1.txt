@@ -1,0 +1,10 @@
+Build one responsive landing page for Northside Clay Studio (a fictional pottery studio, used as an exercise) serving adults who have never used a pottery wheel.
+The visitor should understand the Saturday beginner wheel session and take one primary action: send a booking enquiry by email.
+Use this approved content: headline "Your first bowl, on the wheel, this Saturday"; small groups of six; clay, tools and glazing included; two pieces fired and ready to collect three weeks later; price ₹2,400 per person; enquiries to hello@example.com; no photographs supplied, so use no images.
+Sections: introduction, offer, real example, requirements, questions and next action.
+Visual direction: warm off-white background, terracotta accent #B5532F, charcoal text #222222, a serif for headings and a sans-serif for body text, generous spacing, one subtle hover effect on the primary button.
+Use semantic headings, labelled controls, visible keyboard focus and readable contrast.
+Support small screens and reduced motion. Keep meaningful content in the HTML.
+Do not invent testimonials, metrics, discounts, logos or working integrations.
+Mark missing information clearly. Use a real destination for each action.
+Return the implementation and a checklist for layout, links, keyboard access and forms.

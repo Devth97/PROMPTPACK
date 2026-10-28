@@ -11,6 +11,8 @@
     elements.forEach(element => observer.observe(element));
     return observer;
   };
+  // Video starts wait for the load event, so clips never compete with the first render.
+  const afterLoad = run => { if (document.readyState === 'complete') run(); else addEventListener('load', run, {once: true}); };
 
   // Number ticker: the final value is already in the HTML; count up to it once it is visible.
   if (!reduced) {
@@ -162,7 +164,7 @@
       video.addEventListener('pause', () => { if (autoPaused.has(video)) autoPaused.delete(video); else userPaused.add(video); });
       video.addEventListener('play', () => userPaused.delete(video));
     });
-    observe(players, entry => {
+    afterLoad(() => observe(players, entry => {
       const video = entry.target;
       if (entry.isIntersecting) {
         if (!userPaused.has(video)) video.play().catch(() => {});
@@ -170,7 +172,7 @@
         autoPaused.add(video);
         video.pause();
       }
-    }, { threshold: 0.5 });
+    }, { threshold: 0.5 }));
   }
 
   // Silent ambient videos (no controls) play while on screen. With reduced motion they stay on
@@ -179,17 +181,17 @@
   if (reduced) {
     ambient.forEach(video => { video.removeAttribute('autoplay'); video.pause(); video.controls = true; });
   } else if (ambient.length) {
-    observe(ambient, entry => {
+    afterLoad(() => observe(ambient, entry => {
       if (entry.isIntersecting) entry.target.play().catch(() => {});
       else entry.target.pause();
-    }, { threshold: 0.25 });
+    }, { threshold: 0.25 }));
   }
 
   // Preview wall: animated tiles load their clip the first time they near the screen, play while
   // visible and pause when scrolled away. Reduced motion keeps the still posters.
   const tiles = [...document.querySelectorAll('[data-video]')];
   if (!reduced && tiles.length) {
-    observe(tiles, entry => {
+    afterLoad(() => observe(tiles, entry => {
       const tile = entry.target;
       let video = tile.querySelector('video');
       if (!entry.isIntersecting) { if (video) video.pause(); return; }
@@ -205,7 +207,7 @@
         tile.querySelector('.wall-media').append(video);
       }
       video.play().catch(() => {});
-    }, { rootMargin: '150px 0px' });
+    }, { rootMargin: '150px 0px' }));
   }
 
   // Preview wall filters.

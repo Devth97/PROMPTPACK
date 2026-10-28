@@ -19,3 +19,10 @@ MONEY AUDIT TOOLKIT/
 
 # Internal notes and handoffs are for the repo only, never the public site
 *.md
+
+# Local research, caches, skills and deployment snapshots
+.agents/
+.codex/
+.deploy*/
+.npm-cache/
+artifacts/

@@ -1,0 +1,59 @@
+Six-slide plan (version 1)
+
+Flags before design
+- Slide 3 risks density: five image types in one slide. Keep each to one line.
+- Slide 4's bakery page is a fictional example; label it on the slide.
+- Cover promise is supported only if slide 3 covers all five cases from the source.
+
+1 / 6 Cover promise
+Headline: Alt text starts with one question
+Body: What is this image doing on the page?
+Image: a large image frame with a question mark.
+Source: none (promise only).
+Alt text: Cover slide: "Alt text starts with one question: what is this image doing on the page?"
+
+2 / 6 Context
+Headline: People who can't see your image still need what it adds
+Body: Screen readers read the alt text aloud. Empty alt tells them to skip the image.
+Image: a speech bubble coming out of an image frame.
+Source: W3C WAI images tutorial. Gap: the decision tree page itself does not describe screen readers; cite the WAI Images Tutorial if this line stays.
+Alt text: An image frame with a speech bubble reading its alt text aloud.
+
+3 / 6 Explanation
+Headline: Five jobs, five answers
+Body:
+Decoration → alt=""
+Link or button → where it goes
+Adds meaning → describe the meaning
+Chart or diagram → explain it on the page
+Text in the image → repeat the text
+Image: five small icons in a column, one per row.
+Source: W3C WAI, An alt Decision Tree (13 May 2024).
+Alt text: A list of five image jobs and the alt text each one needs, as listed in the slide text.
+
+4 / 6 Worked example (fictional)
+Headline: One bakery homepage, three images
+Body:
+Logo linking home → alt="Rosa's Bakery home"
+Photo of today's sourdough → alt="Round sourdough loaf with a dark, crackled crust"
+Wavy divider line → alt=""
+Label: Fictional example.
+Image: a simple page wireframe with the three images marked 1, 2, 3.
+Source: decision tree cases (functional, informative, decorative).
+Alt text: A page sketch with a linked logo, a bread photo and a divider, each labelled with its alt text.
+
+5 / 6 Practical check
+Headline: Check one page in ten minutes
+Body: List every image. Write its job next to it. Then write or fix the alt text. Ask: would someone miss anything if the image vanished?
+Image: a checklist with three ticks.
+Source: method based on the decision tree; the ten-minute figure is an estimate, not a measurement. Remove it or label it.
+Alt text: A three-item checklist: list images, name each job, fix the alt text.
+
+6 / 6 Takeaway and next action
+Headline: Job first. Words second.
+Body: Run your homepage images through the W3C alt decision tree today.
+Image: the image frame from the cover, now with a tick.
+Source: link to the decision tree in the caption.
+Alt text: Closing slide: "Job first. Words second." with a link prompt to the W3C alt decision tree.
+
+Caption draft: Alt text is easier when you start with the image's job. Five cases from the W3C WAI alt decision tree, plus a fictional bakery example. Decision tree: w3.org/WAI/tutorials/images/decision-tree/

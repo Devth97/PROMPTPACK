@@ -34,7 +34,8 @@ function build({page, write, products, editions, esc}) {
 <p>For an illustrative desk-lamp checklist, use the design route to assign one useful job to each of six slides and keep the lighting, palette and headline hierarchy consistent. Then, in the workflow route, record the revision, assemble final images and caption, obtain approval and prepare the publishing package. This is a suggested exercise, not a completed customer campaign.</p>
 <h2>Does the kit publish automatically to every platform?</h2>${scope('carousel-studio')}
 <h2>What should you inspect before buying?</h2>
-<p>Try the free sample and inspect the worked-example slides on the ${link('carousel-studio')} page. Tool accounts, image credits and any hosting costs are separate.</p>`,
+<p>Try the free sample and inspect the worked-example slides on the ${link('carousel-studio')} page. Tool accounts, image credits and any hosting costs are separate.</p>
+<p>Want to try the method before buying anything? The <a href="/learn/ai-carousel-prompt-template/">free six-slide carousel template</a> shows a complete worked example: the filled prompt, the plan it produced, the slides and the revisions.</p>`,
     'prompt-pack-vs-ai-video-generator': `
 <p class="intro">A prompt pack supplies instructions, examples and planning materials for your own tools. A hosted AI video generator supplies access to a media-generation service. A local character engine renders a reusable scene on your computer after setup.</p>
 <h2>How do the three routes compare?</h2>
@@ -45,6 +46,7 @@ function build({page, write, products, editions, esc}) {
 <p>Hosted services differ. Check the provider's current documentation and terms for its models, resolution, costs and permitted uses. A planning kit does not provide generation access; a generation account does not decide what your story should communicate.</p>
 <h2>When is a directing kit useful?</h2>
 <p>Use one when you can generate shots but struggle to keep their purpose or appearance coherent, or when an ad has to show a real product honestly. Define subject, lighting, camera, action and continuity before spending on a take, and keep every product claim on real footage. ${link('ugc-ad-scripts')} includes a ${facts('ugc-ad-scripts')}, a cinematic module for AI video cuts and the UGC AI Ad Studio skill, which checks a timed multi-shot prompt before you render. It costs ${price('ugc-ad-scripts')} once.</p>${scope('ugc-ad-scripts')}
+<p>To see the planning step for free, use the <a href="/learn/ugc-ad-script-template/">UGC ad script template</a>; its worked example shows a six-scene script and the review that changed it.</p>
 <h2>When is a local character engine useful?</h2>
 <p>Use a local engine when recurring characters and a reusable scene are central to the series. ${link('motion-with-code')} includes a ${facts('motion-with-code')}. ${esc(edition('motion-with-code').outcome)} It costs ${price('motion-with-code')} once.</p>${scope('motion-with-code')}
 <h2>What should you check before paying?</h2>
@@ -63,7 +65,8 @@ function build({page, write, products, editions, esc}) {
 <p>Watch at phone size with sound on and off. Read every caption. Check that close-ups preserve the important action and the final instruction stays visible long enough to understand. A script validator checks format; inspect the rendered movie to judge timing and framing.</p>
 <h2>Are ten finished videos included?</h2>${scope('motion-with-code')}
 <h2>Is this workflow right for you?</h2>
-<p>Choose this route if you want a recurring two-character series and are comfortable installing local tools. Inspect the sample, file list and rendered demonstrations on the ${link('motion-with-code')} page. For a broader comparison, read <a href="/blog/prompt-pack-vs-ai-video-generator.html">prompt pack vs AI video generator</a>.</p>`
+<p>Choose this route if you want a recurring two-character series and are comfortable installing local tools. Inspect the sample, file list and rendered demonstrations on the ${link('motion-with-code')} page. For a broader comparison, read <a href="/blog/prompt-pack-vs-ai-video-generator.html">prompt pack vs AI video generator</a>.</p>
+<p>Watch two finished episodes made with the engine, each with a transcript and written steps: <a href="/learn/watch/ai-agent-deleted-database/">AI agent deleted your database?</a> and <a href="/learn/watch/api-key-pushed-to-github/">API key pushed to GitHub?</a></p>`
   };
   for (const g of guides) {
     const image = edition(g.products[0]).example;

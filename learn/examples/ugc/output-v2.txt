@@ -1,0 +1,20 @@
+Revised scenes (version 2)
+
+1 Hook
+Spoken: "Six slides that look like one set. This is the worked example inside Carousel Studio."
+Visible: the kit's six worked-example slides shown one after another on a laptop.
+Framing: screen recording, then presenter in a small corner frame.
+On-screen text: "I work on PromptPack · Carousel Studio worked example"
+Evidence needed: the slides are the kit's own example (edition 2.1).
+
+5 Observation
+Spoken: "This is the plan it returned today: one line for each of the six slides."
+Visible: the assistant's actual response, unedited, scrolled slowly.
+Framing: screen recording.
+On-screen text: "[Assistant name] · [recording date] · results vary"
+Evidence needed: keep the screen recording file; do not trim the response to look shorter.
+
+Flags carried over
+- Disclosure now appears in scene 1 and must also appear in the caption.
+- Check the assistant's brand guidelines before showing its interface in a paid ad.
+- Rehearse aloud and measure; 75 spoken words is an estimate of 25–30 seconds at 2.5–3 words per second, not a measurement.

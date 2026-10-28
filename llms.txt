@@ -2,7 +2,7 @@
 
 > PromptPack (promptpack.tech) is a digital shop run by Ornalens LLP, India. It sells editable AI prompt packs and illustrated PDF field guides for websites, personal finance, social media and video. 5 products have purchase routes, including 3 complete guide editions with free sample prompts.
 
-Updated: 2026-10-22. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
+Updated: 2026-10-28. All products are digital downloads used with the buyer's own AI tools. They do not include AI credits, software subscriptions, recorded courses or publishing services.
 
 ## Available now
 
@@ -17,6 +17,12 @@ Updated: 2026-10-22. All products are digital downloads used with the buyer's ow
 
 ## Guides
 
+- [Free AI prompt templates](https://promptpack.tech/learn/)
+- [AI Website Prompt Template: Brief, Build and Review](https://promptpack.tech/learn/ai-website-prompt-template/)
+- [UGC Ad Script Template: Hook, Demo and Shot List](https://promptpack.tech/learn/ugc-ad-script-template/)
+- [AI Carousel Prompt Template for Six Connected Slides](https://promptpack.tech/learn/ai-carousel-prompt-template/)
+- [AI Agent Deleted Your Database? What to Do First (video tutorial with transcript)](https://promptpack.tech/learn/watch/ai-agent-deleted-database/)
+- [API Key Pushed to GitHub? Rotate It First (video tutorial with transcript)](https://promptpack.tech/learn/watch/api-key-pushed-to-github/)
 - [Practical guides for carousels, video and websites](https://promptpack.tech/blog/)
 - [Carousel Design vs Publishing Workflow: Where to Start](https://promptpack.tech/blog/carousel-design-vs-publishing-workflow.html)
 - [Prompt Pack vs AI Video Generator: What Do You Buy?](https://promptpack.tech/blog/prompt-pack-vs-ai-video-generator.html)

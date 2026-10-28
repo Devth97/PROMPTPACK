@@ -12,12 +12,15 @@
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (matchMedia('(hover: none)').matches) root.classList.add('is-touch');
   let index = 0, bar = null, visible = true, hovering = false;
+  // The muted promo starts after the page's load event so it does not delay the first render.
+  let loaded = !['loading', 'interactive'].includes(document.readyState);
+  if (!loaded) window.addEventListener('load', () => { loaded = true; sync(); }, {once: true});
 
   const running = () => !reduce && visible && !hovering && cards[index].querySelector('video').muted && !document.hidden;
   const sync = () => {
     const front = cards[index].querySelector('video');
     // Hover and focus only hold the auto-advance; the front video keeps playing while it is on screen.
-    if (visible && (!reduce || !front.muted) && !document.hidden) front.play().catch(() => {}); else front.pause();
+    if (visible && (loaded || !front.muted) && (!reduce || !front.muted) && !document.hidden) front.play().catch(() => {}); else front.pause();
     if (bar) running() ? bar.play() : bar.pause();
   };
 

@@ -1,0 +1,4 @@
+Revise scenes 1 and 5 only.
+1. Replace the hook with one the video can show without personal claims or borrowed assets: open on the kit's worked-example slides. Put the disclosure "I work on PromptPack" in scene 1's on-screen text, not only in the caption.
+2. In scene 5, describe only what is visible: the response the assistant returned on the recording day, with the tool name and date on screen. Do not say what it "gives" in general.
+Keep the other scenes and the flags.

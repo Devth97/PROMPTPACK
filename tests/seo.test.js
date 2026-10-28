@@ -15,7 +15,8 @@ test('SEO: current character engine and publishing starter appear in search meta
   assert.doesNotMatch(reel.match(/<head>([\s\S]*?)<\/head>/)[1], /HyperFrames title sequence|motion graphics starter/);
   // Carousel Studio 2.1 includes the former Workflow Kit, so its metadata names the publishing route.
   const carousel = read('products/carousel-studio/index.html');
-  assert.match(carousel.match(/<title>(.*?)<\/title>/)[1], /Publishing Workflow/);
+  // The production title leads with design; the publishing route is named in the keywords.
+  assert.match(carousel.match(/name="keywords" content="([^"]+)"/)[1], /publishing workflow/i);
 });
 
 test('SEO: every product answer states its actual outcome and scope in visible HTML and JSON-LD', () => {

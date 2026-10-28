@@ -2,7 +2,7 @@
 // Shared structured data and machine-readable summaries (JSON-LD entity graph, FAQ schema, llms.txt).
 const origin = 'https://promptpack.tech';
 // Date of the current catalog content; drives sitemap lastmod, dateModified and visible "Updated" labels.
-const updated = '2026-10-22';
+const updated = '2026-10-28';
 const updatedLabel = new Date(updated + 'T00:00:00Z').toLocaleDateString('en-GB', {day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC'});
 const orgId = origin + '/#organization';
 const siteId = origin + '/#website';
@@ -30,11 +30,12 @@ const productSearchTerms = {
 function productMetadata(p, edition) {
   const terms = productSearchTerms[p.slug];
   const descriptions = {
-    'motion-with-code': `Make voiced, captioned 3D character reels with the included local engine, ${edition.prompt_count} prompts and a ${edition.pdf_pages}-page guide. Separate runtime and model setup required.`
+    'motion-with-code': `Make voiced, captioned 3D character reels with the included local engine, ${edition.prompt_count} prompts and a ${edition.pdf_pages}-page guide. Separate runtime and model setup required.`,
+    'carousel-workflows': `Organize carousel approvals with ${edition.prompt_count} prompts, a ${edition.pdf_pages}-page guide and an Instagram API starter. Separate Meta account and app setup required.`
   };
   return {
-    title: `${p.name}: ${terms[0]} | PromptPack`,
-    description: descriptions[p.slug] || `${terms[0]}. Get a ${edition.pdf_pages}-page PDF guide, ${edition.prompt_count} editable prompts and practical files for your own tools. Try a free sample before buying.`,
+    title: `${({'ugc-ad-scripts':'UGC Ad Scripts & Storyboard Prompts','carousel-studio':'AI Carousel Prompts & Design Guide','motion-with-code':'3D Character Reels: Juno & Pixel'})[p.slug] || terms[0]} | PromptPack`,
+    description: ({'ugc-ad-scripts': `Plan a product-demo ad with ${edition.prompt_count} editable prompts, a ${edition.pdf_pages}-page guide and worked examples. Try a free sample; use your own AI tools.`,'carousel-studio': `Create six connected slides with ${edition.prompt_count} prompts, a ${edition.pdf_pages}-page guide and practical files. See examples and requirements before buying.`})[p.slug] || descriptions[p.slug] || `${terms[0]}. Get a ${edition.pdf_pages}-page PDF guide, ${edition.prompt_count} editable prompts and practical files for your own tools. Try a free sample before buying.`,
     keywords: [p.name, ...terms, 'editable AI prompts', 'digital download'].join(', ')
   };
 }
