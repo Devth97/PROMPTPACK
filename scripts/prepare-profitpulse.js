@@ -33,9 +33,13 @@ const decrypt=b=>{const d=crypto.createDecipheriv('aes-256-gcm',key,b.subarray(0
 if(fs.existsSync(output)){
  try{
   const old=fs.readFileSync(output);
-  if(decrypt(old).equals(zip)){
-    console.log('Encrypted ProfitPulse file already matches the verified customer archive.');
-    process.exit(0);
+  const armor=Buffer.from([80,80,69,78,67,49,10]);
+  if(old.subarray(0,armor.length).equals(armor)){
+    const bytes=Buffer.from(old.subarray(armor.length).toString('ascii').trim(),'base64');
+    if(decrypt(bytes).equals(zip)){
+      console.log('Armored encrypted ProfitPulse file already matches the verified customer archive.');
+      process.exit(0);
+    }
   }
  }catch(_){}
 }
@@ -44,7 +48,8 @@ const cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
 const bytes=Buffer.concat([iv,Buffer.alloc(16),cipher.update(zip),cipher.final()]);
 cipher.getAuthTag().copy(bytes,12);
 if(!decrypt(bytes).equals(zip))throw Error('Encryption round-trip failed.');
-fs.writeFileSync(output,bytes,{mode:0o600});
-console.log('Prepared verified encrypted archive at '+path.relative(root,output));
-console.log('Encrypted bytes: '+bytes.length+'; plaintext SHA-256: '+digest);
-console.log('Only commit the .enc file, never the .zip or any encryption key.');
+const armored=Buffer.concat([Buffer.from([80,80,69,78,67,49,10]),Buffer.from(bytes.toString('base64')+'\\n','ascii')]);
+fs.writeFileSync(output,armored,{mode:0o600});
+console.log('Prepared verified Base64-armored encrypted archive at '+path.relative(root,output));
+console.log('Encrypted bytes: '+bytes.length+'; armored bytes: '+armored.length+'; plaintext SHA-256: '+digest);
+console.log('Only commit the armored .enc file, never the .zip or any encryption key.');
