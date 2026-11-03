@@ -113,7 +113,16 @@ function decryptPack(product = catalog.finance) {
   if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
   const file = packPath(product);
   if (!file) throw new Error('pack.enc not found');
-  const buf = fs.readFileSync(file);
+  let buf = fs.readFileSync(file);
+  // The ProfitPulse encrypted package is stored as ASCII-armored ciphertext
+  // (PPENC1 + Base64) because the GitHub upload bridge accepts UTF-8 blobs.
+  // Decode the armor before AES-256-GCM; no plaintext product files are public.
+  if (product && product.slug === 'profitpulse' && buf.subarray(0,7).toString('ascii') === 'PPENC1\\n'.replace('\\n','\n')) {
+    const encoded = buf.subarray(7).toString('ascii').trim();
+    if (!/^[A-Za-z0-9+/]+={0,2}$/.test(encoded)) throw new Error('Invalid ProfitPulse envelope');
+    buf = Buffer.from(encoded, 'base64');
+  }
+  if (product && product.slug === 'profitpulse' && buf.length !== product.bytes + 28) throw new Error('ProfitPulse encrypted archive length mismatch');
   const d = crypto.createDecipheriv('aes-256-gcm', key, buf.subarray(0, 12));
   d.setAuthTag(buf.subarray(12, 28));
   const plain=Buffer.concat([d.update(buf.subarray(28)), d.final()]);
