@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free D2C Break-even Ad Cost Calculator — ProfitPulse | PromptPack</title>
+<meta name="description" content="Free India D2C break-even CAC and ROAS calculator. Estimate the effect of shipping, COD, returns, fees and product costs. Runs in your browser.">
+<link rel="canonical" href="https://promptpack.tech/tools/profit-calculator/"><meta name="theme-color" content="#f7fbf9"><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="/assets/profitpulse.css">
+<style>*{box-sizing:border-box}body{margin:0;background:#f7fbf9;font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif;color:#153043}a{color:#08776b}.calc-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:26px}.calc-head a{font-weight:900;text-decoration:none}.calc-head span{color:#5d797e;font-size:.85rem}.calc-title{font-size:clamp(2.35rem,5.5vw,4.5rem);letter-spacing:-.055em;line-height:1.08;margin:45px 0 14px;color:#132e40}.calc-lede{max-width:800px;font-size:1.1rem;line-height:1.65;color:#4c6870}.calc-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:20px;padding:30px 0 55px}.calc-card{background:white;border:1px solid #d5e9e1;box-shadow:0 10px 36px #0b3d3010;border-radius:20px;padding:26px}.calc-card h2{font-size:1.45rem;margin:0 0 17px}.calc-fields,.calc-metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.calc-fields label{display:block;color:#46656d;font-size:.86rem;font-weight:750}.calc-fields input{width:100%;margin-top:7px;background:#fcfefd;border:1px solid #bcd9d0;border-radius:10px;padding:12px;font:inherit;color:#173348}.calc-fields input:focus{outline:3px solid #87cabe}.calc-metric{background:#eaf7f1;border-radius:13px;padding:18px 15px}.calc-metric span{display:block;font-size:.8rem;color:#4f6a70}.calc-metric strong{display:block;font-size:clamp(1.35rem,2.3vw,2rem);margin-top:4px;color:#087669}.calc-metric strong.fail{color:#b83f53}.calc-breakdown{margin:20px 0;border-top:1px solid #e3eee9}.calc-line{display:flex;gap:12px;justify-content:space-between;padding:12px 0;border-bottom:1px solid #e3eee9}.calc-line strong{white-space:nowrap}.calc-cta{padding:22px;border-radius:16px;background:#143448;color:white}.calc-cta p{color:#d5e7e3;margin:8px 0 20px}.calc-cta a{display:inline-block;background:#b6f1dd;color:#06483f;text-decoration:none;border-radius:10px;font-weight:900;padding:12px 15px}.calc-note{font-size:.84rem;color:#60787e;line-height:1.7;padding-bottom:48px}.calc-note strong{color:#284955}@media(max-width:850px){.calc-layout{grid-template-columns:1fr}}@media(max-width:490px){.calc-card{padding:18px}.calc-fields,.calc-metrics{grid-template-columns:1fr}.calc-title{margin-top:34px}.calc-head{align-items:flex-start;flex-direction:column}}</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"ProfitPulse Free D2C Break-even Calculator","description":"Calculate illustrative expected contribution and break-even customer acquisition cost using manual e-commerce cost assumptions.","applicationCategory":"FinanceApplication","operatingSystem":"Any modern web browser","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"},"url":"https://promptpack.tech/tools/profit-calculator/"}</script>
+</head><body><main class="profit-wrap"><header class="calc-head"><a href="/">↗ PROMPTPACK</a><span>PROFITPULSE · FREE BROWSER TOOL</span></header>
+<h1 class="calc-title">Find your break-even<br><span style="color:#07786b">ad cost.</span></h1>
+<p class="calc-lede">Test how product costs, shipping, COD failures, returns and payment fees affect what you can afford to spend acquiring an order. Enter your own numbers—nothing is sent to a server.</p>
+<div class="calc-layout"><section class="calc-card"><h2>Your order assumptions</h2><div class="calc-fields">
+<label>Selling price (₹)<input id="price" type="number" min="0" step="1" value="1499"></label>
+<label>Landed product cost (₹)<input id="cogs" type="number" min="0" step="1" value="650"></label>
+<label>Forward shipping (₹)<input id="forward" type="number" min="0" step="1" value="75"></label>
+<label>Reverse shipping (₹)<input id="reverse" type="number" min="0" step="1" value="80"></label>
+<label>Packaging (₹)<input id="pack" type="number" min="0" step="1" value="15"></label>
+<label>Delivered COD fee (₹)<input id="codfee" type="number" min="0" step="1" value="30"></label>
+<label>COD order share (%)<input id="codshare" type="number" min="0" max="100" step="1" value="40"></label>
+<label>COD RTO rate (%)<input id="codrto" type="number" min="0" max="100" step="1" value="26"></label>
+<label>Prepaid RTO rate (%)<input id="prepaidrto" type="number" min="0" max="100" step="1" value="2"></label>
+<label>Delivered order returns (%)<input id="returns" type="number" min="0" max="100" step="1" value="3"></label>
+<label>Unsellable item loss on failed (%)<input id="loss" type="number" min="0" max="100" step="1" value="10"></label>
+<label>Gateway fee (%)<input id="pg" type="number" min="0" max="100" step=".1" value="2"></label>
+<label>GST on gateway fee (%)<input id="feegst" type="number" min="0" max="100" step="1" value="18"></label>
+<label>Output GST (%)<input id="gst" type="number" min="0" max="100" step="1" value="0"></label>
+<label>Your estimated CAC (₹)<input id="cac" type="number" min="0" step="1" value="220"></label>
+</div></section>
+<section class="calc-card"><h2>Illustrative result per order placed</h2><div class="calc-metrics">
+<div class="calc-metric"><span>Maximum break-even CAC</span><strong id="maxcac">—</strong></div>
+<div class="calc-metric"><span>Modelled break-even ROAS</span><strong id="roas">—</strong></div>
+<div class="calc-metric"><span>Delivery + keep rate</span><strong id="keep">—</strong></div>
+<div class="calc-metric"><span>Contribution after entered CAC</span><strong id="net">—</strong></div>
+</div><div class="calc-breakdown">
+<div class="calc-line"><span>Expected revenue retained</span><strong id="revenue">—</strong></div>
+<div class="calc-line"><span>Product cost / loss</span><strong id="item">—</strong></div>
+<div class="calc-line"><span>Shipping and packaging</span><strong id="shipping">—</strong></div>
+<div class="calc-line"><span>Gateway and COD fees</span><strong id="fees">—</strong></div>
+</div><div class="calc-cta"><strong>Want to track your actual orders?</strong><p>ProfitPulse adds SKU-level pricing, ad campaigns, COD scenarios, order logs, inventory and monthly summaries in an Excel workbook.</p><a href="/products/profitpulse/">See the ProfitPulse toolkit →</a></div></section></div>
+<p class="calc-note"><strong>Illustrative calculator, not financial or tax advice.</strong> This model uses expected average values, not actual settlements. COD fees, RTO losses, refund amounts, tax liabilities, recoverable stock, GST input credits, gateway rules and delivery costs vary by seller. Output GST is simplified. Check the method against your own records. All values are editable and calculated on this page only. The full paid product is currently a preview and is not yet available for purchase.</p>
+</main>
+<script>
+'use strict';
+const ids=['price','cogs','forward','reverse','pack','codfee','codshare','codrto','prepaidrto','returns','loss','pg','feegst','gst','cac'];
+const x=id=>Math.max(0,Number(document.getElementById(id).value)||0);
+const percent=id=>Math.min(1,x(id)/100);
+const money=n=>'₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0,minimumFractionDigits:0});
+function calculate(){
+ const price=x('price'),cod=percent('codshare'),failed=cod*percent('codrto')+(1-cod)*percent('prepaidrto'),kept=(1-failed)*(1-percent('returns'));
+ const revenue=price*kept/(1+x('gst')/100);
+ const item=x('cogs')*(kept+(1-kept)*percent('loss'));
+ const shipping=x('forward')+x('pack')+(1-kept)*x('reverse');
+ const fees=price*(1-cod)*percent('pg')*(1+x('feegst')/100)+x('codfee')*cod*kept;
+ const contribution=revenue-item-shipping-fees,maxCAC=Math.max(0,contribution),net=contribution-x('cac');
+ // Here ROAS is based on nominal selling price per placed order, not attributable settled revenue.
+ const roas=maxCAC>0?(price/maxCAC).toFixed(2)+'×':'Not viable';
+ const values={maxcac:money(maxCAC),roas,keep:(kept*100).toFixed(1)+'%',net:money(net),revenue:money(revenue),item:money(item),shipping:money(shipping),fees:money(fees)};
+ for(const [id,value] of Object.entries(values))document.getElementById(id).textContent=value;
+ document.getElementById('net').classList.toggle('fail',net<0);
+}
+ids.forEach(id=>document.getElementById(id).addEventListener('input',calculate));calculate();
+</script></body></html>
