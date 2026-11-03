@@ -114,14 +114,15 @@ function decryptPack(product = catalog.finance) {
   const file = packPath(product);
   if (!file) throw new Error('pack.enc not found');
   let buf = fs.readFileSync(file);
-  // The uploaded ProfitPulse AES-GCM ciphertext is armored as UTF-8 Base64.
-  // The public repository contains only encrypted data, never customer files.
+  // Support raw AES-256-GCM ciphertext and the earlier PPENC1 Base64 envelope.
+  // Both contain encrypted bytes only; no plaintext customer ZIP is deployed.
   if (product && product.slug === 'profitpulse') {
-    const prefix = Buffer.from([80,80,69,78,67,49,10]); // PPENC1 + line feed
-    if (!buf.subarray(0,prefix.length).equals(prefix)) throw new Error('ProfitPulse encrypted envelope missing');
-    const encoded = buf.subarray(prefix.length).toString('ascii').trim();
-    if (!/^[A-Za-z0-9+/]+={0,2}$/.test(encoded)) throw new Error('ProfitPulse encrypted envelope invalid');
-    buf = Buffer.from(encoded, 'base64');
+    const prefix = Buffer.from([80,80,69,78,67,49,10]); // PPENC1 + newline
+    if (buf.subarray(0,prefix.length).equals(prefix)) {
+      const encoded = buf.subarray(prefix.length).toString('ascii').trim();
+      if (!/^[A-Za-z0-9+/]+={0,2}$/.test(encoded)) throw new Error('ProfitPulse encrypted envelope invalid');
+      buf = Buffer.from(encoded, 'base64');
+    }
     if (buf.length !== product.bytes + 28) throw new Error('ProfitPulse encrypted archive length mismatch');
   }
   const d = crypto.createDecipheriv('aes-256-gcm', key, buf.subarray(0, 12));
