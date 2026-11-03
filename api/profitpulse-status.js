@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
   if (req.method !== 'GET') return L.send(res, 405, {error:'method_not_allowed'});
   const product = L.catalog.bySlug('profitpulse');
   let ready = false;
-  if (product && !L.missing(['RAZORPAY_KEY_ID','RAZORPAY_KEY_SECRET','DOWNLOAD_FILE_KEY','DOWNLOAD_SIGNING_SECRET']).length) {
+  if (product && !L.missing(['RAZORPAY_KEY_ID','RAZORPAY_KEY_SECRET','DOWNLOAD_FILE_KEY','PROFITPULSE_FILE_KEY','DOWNLOAD_SIGNING_SECRET']).length) {
     try {
       const plain=L.decryptPack(product);
       ready=plain.length===product.bytes;
