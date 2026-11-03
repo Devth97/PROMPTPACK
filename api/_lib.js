@@ -107,7 +107,9 @@ function packPath(product = catalog.finance) {
   return [path.join(process.cwd(),'private',product.file),path.join(__dirname,'..','private',product.file)].find(f=>fs.existsSync(f));
 }
 function decryptPack(product = catalog.finance) {
-  const key = Buffer.from(env('DOWNLOAD_FILE_KEY'), 'hex');
+  // ProfitPulse uses a dedicated encryption key to avoid changing the keys used for existing customers.
+  const secretName=product && product.slug==='profitpulse'?'PROFITPULSE_FILE_KEY':'DOWNLOAD_FILE_KEY';
+  const key = Buffer.from(env(secretName), 'hex');
   if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
   const file = packPath(product);
   if (!file) throw new Error('pack.enc not found');
