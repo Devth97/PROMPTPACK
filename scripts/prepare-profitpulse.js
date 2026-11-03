@@ -48,7 +48,7 @@ const cipher=crypto.createCipheriv('aes-256-gcm',key,iv);
 const bytes=Buffer.concat([iv,Buffer.alloc(16),cipher.update(zip),cipher.final()]);
 cipher.getAuthTag().copy(bytes,12);
 if(!decrypt(bytes).equals(zip))throw Error('Encryption round-trip failed.');
-const armored=Buffer.concat([Buffer.from([80,80,69,78,67,49,10]),Buffer.from(bytes.toString('base64')+'\\n','ascii')]);
+const armored=Buffer.concat([Buffer.from([80,80,69,78,67,49,10]),Buffer.from(bytes.toString('base64'),'ascii'),Buffer.from([10])]);
 fs.writeFileSync(output,armored,{mode:0o600});
 console.log('Prepared verified Base64-armored encrypted archive at '+path.relative(root,output));
 console.log('Encrypted bytes: '+bytes.length+'; armored bytes: '+armored.length+'; plaintext SHA-256: '+digest);
