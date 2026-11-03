@@ -1,6 +1,6 @@
 'use strict';
 // Prepare the paid ProfitPulse archive for PromptPack's existing AES-256-GCM
-// fulfillment. Run locally using the EXISTING DOWNLOAD_FILE_KEY; never commit
+// fulfillment. Run locally using the EXISTING PROFITPULSE_FILE_KEY; never commit
 // the plaintext customer ZIP, .env.local, or the key.
 // Usage:
 //   node scripts/prepare-profitpulse.js /path/to/ProfitPulse_Paid_Customer_Download.zip
@@ -17,15 +17,15 @@ const digest=crypto.createHash('sha256').update(zip).digest('hex');
 if(digest!==product.sha256||zip.length!==product.bytes)
  throw Error('Archive does not match registered ProfitPulse content. Expected SHA-256 '+product.sha256+' and '+product.bytes+' bytes. Received '+digest+' and '+zip.length+'. Stop; review content before changing metadata.');
 if(zip.length>4_000_000)throw Error('ZIP exceeds serverless response limit.');
-let keyHex=(process.env.DOWNLOAD_FILE_KEY||'').trim();
+let keyHex=(process.env.PROFITPULSE_FILE_KEY||'').trim();
 if(!keyHex){
   const envFile=path.join(root,'.env.local');
   if(fs.existsSync(envFile)){
-    const line=fs.readFileSync(envFile,'utf8').split(/\r?\n/).find(x=>/^DOWNLOAD_FILE_KEY=/.test(x));
-    if(line)keyHex=line.slice('DOWNLOAD_FILE_KEY='.length).replace(/^["']|["']$/g,'').trim();
+    const line=fs.readFileSync(envFile,'utf8').split(/\r?\n/).find(x=>/^PROFITPULSE_FILE_KEY=/.test(x));
+    if(line)keyHex=line.slice('PROFITPULSE_FILE_KEY='.length).replace(/^["']|["']$/g,'').trim();
   }
 }
-if(!/^[0-9a-f]{64}$/i.test(keyHex))throw Error('Use the existing DOWNLOAD_FILE_KEY (64 hex chars) in local env. Never rotate it; older purchases depend on it.');
+if(!/^[0-9a-f]{64}$/i.test(keyHex))throw Error('Use the configured PROFITPULSE_FILE_KEY (64 hex chars) in local env. Never expose it. Existing paid downloads must retain their working key.');
 const key=Buffer.from(keyHex,'hex');
 const output=path.join(root,'private',product.file);
 fs.mkdirSync(path.dirname(output),{recursive:true});
