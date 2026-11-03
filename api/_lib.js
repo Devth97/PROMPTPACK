@@ -107,11 +107,24 @@ function packPath(product = catalog.finance) {
   return [path.join(process.cwd(),'private',product.file),path.join(__dirname,'..','private',product.file)].find(f=>fs.existsSync(f));
 }
 function decryptPack(product = catalog.finance) {
-  const key = Buffer.from(env('DOWNLOAD_FILE_KEY'), 'hex');
+  // ProfitPulse uses a dedicated encryption key to avoid changing the keys used for existing customers.
+  const secretName=product && product.slug==='profitpulse'?'PROFITPULSE_FILE_KEY':'DOWNLOAD_FILE_KEY';
+  const key = Buffer.from(env(secretName), 'hex');
   if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
   const file = packPath(product);
   if (!file) throw new Error('pack.enc not found');
-  const buf = fs.readFileSync(file);
+  let buf = fs.readFileSync(file);
+  // Support raw AES-256-GCM ciphertext and the earlier PPENC1 Base64 envelope.
+  // Both contain encrypted bytes only; no plaintext customer ZIP is deployed.
+  if (product && product.slug === 'profitpulse') {
+    const prefix = Buffer.from([80,80,69,78,67,49,10]); // PPENC1 + newline
+    if (buf.subarray(0,prefix.length).equals(prefix)) {
+      const encoded = buf.subarray(prefix.length).toString('ascii').trim();
+      if (!/^[A-Za-z0-9+/]+={0,2}$/.test(encoded)) throw new Error('ProfitPulse encrypted envelope invalid');
+      buf = Buffer.from(encoded, 'base64');
+    }
+    if (buf.length !== product.bytes + 28) throw new Error('ProfitPulse encrypted archive length mismatch');
+  }
   const d = crypto.createDecipheriv('aes-256-gcm', key, buf.subarray(0, 12));
   d.setAuthTag(buf.subarray(12, 28));
   const plain=Buffer.concat([d.update(buf.subarray(28)), d.final()]);

@@ -5,6 +5,9 @@
     },
     "api/create-order.js": {
       "includeFiles": "private/products/*.enc"
+    },
+    "api/profitpulse-status.js": {
+      "includeFiles": "private/products/*.enc"
     }
   },
   "headers": [
