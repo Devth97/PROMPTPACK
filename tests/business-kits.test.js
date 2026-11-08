@@ -20,6 +20,7 @@ test('Bakery rejects impossible percentages, invalid units and incomplete costs'
 });
 
 test('Business checkout records match public prices and encrypted archive dimensions',()=>{
+ assert.equal(JSON.parse(read('vercel.json')).functions['api/business-status.js'].includeFiles,'private/products/*.enc');
  const products=require('../catalog/launch-products.json'),sales=require('../api/_business-products.json'),catalog=require('../api/_products');
  assert.equal(sales.length,2);
  for(const p of products){
