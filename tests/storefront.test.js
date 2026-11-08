@@ -9,21 +9,22 @@ const {sections, sectionFor} = require('../scripts/site-shell');
 const root = path.join(__dirname,'..');
 const read = file => fs.readFileSync(path.join(root,file),'utf8');
 
-test('storefront: every product appears exactly once in its home category', () => {
+test('storefront: all eight products appear once in the unified catalog before promotions', () => {
   const html = read('index.html');
   assert.equal((html.match(/<h1\b/g)||[]).length,1);
   const listed = [...html.matchAll(/data-product="([^"]+)"/g)].map(m=>m[1]);
-  assert.deepEqual(new Set(listed),new Set(['money-audit','website-prompts',...products.map(p=>p.slug)]));
-  assert.equal(listed.length,5);
+  assert.deepEqual(new Set(listed),new Set(['money-audit','website-prompts','profitpulse','wedding-decision-kit','two-homes-organizer',...products.map(p=>p.slug)]));
+  assert.equal(listed.length,8);
+  assert.ok(html.indexOf('id="catalog"') < html.indexOf('class="profit-feature"'));
+  assert.match(html,/class="catalog-grid"/);
   for (const section of sections) {
     assert.match(html,new RegExp(`id="${section.id}"`));
     assert.ok(html.includes(`href="/#${section.id}"`));
   }
   for (const product of products) {
-    const section = html.match(new RegExp(`<section id="${sectionFor(product).id}"[\\s\\S]*?</section>`))[0];
-    assert.ok(section.includes(`data-product="${product.slug}"`));
+    assert.match(html,new RegExp(`data-product="${product.slug}" data-category="${sectionFor(product).name}"`));
   }
-  assert.equal((html.match(/>Available now</g)||[]).length,5);
+  for(const slug of listed) assert.match(html,new RegExp(`href="/(?:products/${slug}/|finance)"`));
   for (const product of products) assert.ok(html.includes(`href="/checkout/${product.slug}/"`),product.slug);
   assert.match(read('products/index.html'),/http-equiv="refresh" content="0;url=\/#catalog"/);
   const website = read('products/website-prompts/index.html');
@@ -56,7 +57,7 @@ test('storefront: search supports plural names, categories, empty state and navi
   const html = read('index.html');
   const cards = [...html.matchAll(/<article class="card product-card" data-product="([^"]+)" data-category="([^"]+)">([\s\S]*?)<\/article>/g)].map(m=>eventElement({dataset:{product:m[1],category:m[2]},textContent:m[3].replace(/<[^>]+>/g,' ')}));
   const groups = sections.map(s=>eventElement({querySelectorAll:()=>cards.filter(c=>c.dataset.category===s.name)}));
-  const elements = Object.fromEntries(['catalog-search','catalog-clear','catalog-results','catalog-empty'].map(id=>[id,eventElement()]));
+  const elements = Object.fromEntries(['catalog-search','catalog-category','catalog-clear','catalog-results','catalog-empty'].map(id=>[id,eventElement()]));
   const navLink = eventElement();
   const document = {
     getElementById:id=>elements[id]||null,
@@ -69,6 +70,14 @@ test('storefront: search supports plural names, categories, empty state and navi
   assert.deepEqual(search('carousels'),['carousel-studio']);
   assert.deepEqual(search('websites'),['website-prompts']);
   assert.equal(search('social media').length,1);
+  assert.deepEqual(search('wedding'),['wedding-decision-kit']);
+  elements['catalog-search'].value='';
+  elements['catalog-category'].value='Planning';
+  elements['catalog-category'].events.change();
+  assert.deepEqual(cards.filter(c=>!c.hidden).map(c=>c.dataset.product),['wedding-decision-kit','two-homes-organizer']);
+  assert.equal(elements['catalog-clear'].hidden,false);
+  elements['catalog-clear'].events.click();
+  assert.equal(elements['catalog-category'].value,'');
   assert.equal(search('no such product').length,0);
   assert.equal(elements['catalog-empty'].hidden,false);
   assert.ok(groups.every(g=>g.hidden));
@@ -79,5 +88,5 @@ test('storefront: search supports plural names, categories, empty state and navi
   search('money');
   elements['catalog-clear'].events.click();
   assert.ok(focused);
-  assert.equal(elements['catalog-results'].textContent,'5 of 5 products');
+  assert.equal(elements['catalog-results'].textContent,'8 of 8 products');
 });
