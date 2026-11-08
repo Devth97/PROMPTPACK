@@ -9,7 +9,7 @@ if args.deps: sys.path.insert(0,args.deps)
 from reportlab.lib import colors
 from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.enums import TA_LEFT
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, KeepTogether, Table, TableStyle
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak, KeepTogether, Table, TableStyle, Image as PDFImage
 from pypdf import PdfReader
 import fitz
 from PIL import Image, ImageDraw, ImageFont
@@ -28,7 +28,9 @@ def footer(canvas,doc):
     canvas.setFont('Helvetica',8);canvas.setFillColor(colors.HexColor('#53696e'))
     canvas.drawString(44,27,'PROMPTPACK / FIELD GUIDE 1.0');canvas.drawRightString(551,27,str(doc.page))
 def guide(spec,sections,path):
-    flow=[para('PROMPTPACK / PRACTICAL BUSINESS TOOLS','KitSmall'),Spacer(1,36),para(spec['name'],'KitTitle'),para(spec['headline'],'KitH'),para(spec['summary']),Spacer(1,20),para('Start with the fictional example. Replace assumptions with your own facts before using the output.'),para(spec['needs'],'KitSmall'),para('Version 1.0 - 8 November 2026. Original instruction and examples. No customer or earnings results are claimed.','KitSmall'),PageBreak()]
+    artwork=OUT/(spec['slug']+'-guide-cover.jpg')
+    Image.open(ROOT/'assets/product-art'/(spec['slug']+'-v1.webp')).convert('RGB').save(artwork,quality=88)
+    flow=[para('PROMPTPACK / PRACTICAL BUSINESS TOOLS','KitSmall'),PDFImage(str(artwork),width=507,height=338),Spacer(1,18),para(spec['name'],'KitTitle'),para(spec['headline']),para('OFFLINE TOOL + EDITABLE FILES + FIELD GUIDE','KitSmall'),para('Start with the fictional example. Replace assumptions with your own facts before using the output.'),para('Version 1.0 - 8 November 2026. Conceptual cover artwork. No customer or earnings results are claimed.','KitSmall'),PageBreak()]
     for title,paragraphs in sections:
         flow.append(para(title,'KitH'))
         for text in paragraphs: flow.append(para(text))

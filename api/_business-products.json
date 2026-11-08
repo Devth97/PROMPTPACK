@@ -9,8 +9,8 @@
     "file": "products/bakeprice-studio.enc",
     "filename": "bakeprice-studio.zip",
     "type": "application/zip",
-    "sha256": "8cefb40e7f34a696b581bb8caf952e5666a20aee30fd44f7474648aacbb63d57",
-    "bytes": 24477,
+    "sha256": "55ca7a66bd2c0e5b339c758bf59922eb27cf2810a5408be9e67b54de3b34447e",
+    "bytes": 184457,
     "thanks": "/checkout/thanks/"
   },
   {
@@ -23,8 +23,8 @@
     "file": "products/salon-content-sprint.enc",
     "filename": "salon-content-sprint.zip",
     "type": "application/zip",
-    "sha256": "3aa42dce24fb66738f46e1c3a00a952659221828d8aff13e1fb6617593589c35",
-    "bytes": 48011,
+    "sha256": "52290b4b7cca6d8c66bdb34988b01f7041c8212b7b9cded270a1f0a189ee362c",
+    "bytes": 181058,
     "thanks": "/checkout/thanks/"
   }
 ]
