@@ -106,10 +106,10 @@ test('checkout tracks an opened popup and a verified payment, never a failed con
 
 test('buyers can compare examples and requirements without entering checkout', () => {
   const home = read('index.html');
-  assert.match(home, /href="#kit-chooser-heading"/);
-  assert.equal((home.match(/class="kit-choice"/g) || []).length, 3);
+  assert.match(home, /href="#catalog"/);
+  assert.equal((home.match(/data-product="/g) || []).length, 8);
   for (const p of require('../catalog/products.json')) {
-    assert.ok(home.includes(`href="/products/${p.slug}/#inside"`), p.slug);
+    assert.ok(home.includes(`href="/products/${p.slug}/"`), p.slug);
     const product = read(`products/${p.slug}/index.html`);
     assert.match(product, /class="buy-requirements"/);
     assert.match(product, /id="requirements"/);

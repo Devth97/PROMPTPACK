@@ -14,7 +14,10 @@ function filterCatalog() {
   });
   document.getElementById('catalog-results').textContent = `${count} of ${cards.length} products`;
   document.getElementById('catalog-empty').hidden = count > 0;
-  if (clear) clear.hidden = !query;
+  if (clear) clear.hidden = !query && (!category || !category.value);
+  document.querySelectorAll('[data-catalog-category]').forEach(link => {
+    if (link.dataset?.catalogCategory !== undefined) link.setAttribute('aria-current', String(link.dataset.catalogCategory === (category?.value || '')));
+  });
   document.querySelectorAll('[data-product-section]').forEach(section => {
     section.hidden = !Array.from(section.querySelectorAll('[data-product]')).some(card => !card.hidden);
   });
@@ -22,11 +25,27 @@ function filterCatalog() {
 if (search) {
   search.addEventListener('input', filterCatalog);
   if (category) category.addEventListener('change', filterCatalog);
-  if (clear) clear.addEventListener('click', () => { search.value = ''; filterCatalog(); search.focus(); });
+  if (clear) clear.addEventListener('click', () => { search.value = ''; if (category) category.value = ''; filterCatalog(); search.focus(); });
+  const selectInterest = hash => {
+    search.value = '';
+    if (category) category.value = document.getElementById(hash)?.dataset?.catalogCategory || '';
+    filterCatalog();
+  };
   // Category navigation always reveals its destination, including after a search.
-  document.querySelectorAll('.pp-categories a,.pp-browse,.category-rail a,a[href="#catalog"]').forEach(link => {
-    link.addEventListener('click', () => { search.value = ''; if (category) category.value = ''; filterCatalog(); });
+  document.querySelectorAll('.pp-categories a[href^="/#"],.pp-browse,.category-rail a,a[href="#catalog"],[data-catalog-category]').forEach(link => {
+    link.addEventListener('click', event => {
+      if (event?.metaKey || event?.ctrlKey || event?.shiftKey || event?.altKey) return;
+      selectInterest(link.getAttribute('href').split('#')[1]);
+    });
   });
+  if (category) {
+    const syncHash = () => {
+      const hash = location.hash.slice(1);
+      if (!hash || hash === 'catalog' || document.getElementById(hash)?.dataset?.catalogCategory) selectInterest(hash);
+    };
+    window.addEventListener('hashchange', syncHash);
+    syncHash();
+  }
   filterCatalog();
 }
 document.querySelectorAll('[data-copy]').forEach(button => {

@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 from PIL import Image, ImageDraw, ImageFont, ImageOps
 OUT=Path('output/planning-products'); ADS=OUT/'ad-assets';ADS.mkdir(exist_ok=True)
+prices={p['slug']: p['amount']/100 for p in json.loads(Path('api/_planning-products.json').read_text(encoding='utf-8'))}
 FONT=Path('C:/Windows/Fonts')
 def font(size,bold=False):return ImageFont.truetype(str(FONT/('arialbd.ttf' if bold else 'arial.ttf')),size)
 def text_wrap(draw,text,f,maxwidth):
@@ -33,6 +34,6 @@ for slug,concept,title,sub,sheet in specs:
     d.text((64,1100),'Blank + example files. Practical PDF guide.',font=font(29),fill='#243D37')
     if slug=='two-homes-organizer':d.text((64,1150),'Personal organization. Not legal advice.',font=font(24),fill='#243D37')
     d.rectangle((64,1220,1016,1290),fill='#FFE14D',outline='#101416',width=3)
-    d.text((90,1235),'$49 USD  /  ONE PAYMENT',font=font(32,True),fill='#101416')
+    d.text((90,1235),f'${prices[slug]:g} USD  /  ONE PAYMENT',font=font(32,True),fill='#101416')
     im.save(ADS/f'{slug}-{concept}.png',optimize=True)
 print('Created four original static ad drafts from actual fictional workbook previews.')
