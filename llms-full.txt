@@ -111,3 +111,8 @@ Public tools referenced: heygen-com/hyperframes (Apache-2.0) https://github.com/
 Sample prompt:
 
 Create an original two-character series bible for [AUDIENCE] about [TOPIC RANGE]. Juno supplies a short problem and Pixel supplies a calm, bounded fix. Define character jobs, palette, end card, proof-panel rules and one CTA per episode. Openings must be eight words or fewer. Reject copied mascots, creator jokes, real-person impersonation and invented performance claims. Return a reusable bible plus five testable episode premises.
+
+
+## Practical article library
+
+- [100 practical guides](https://promptpack.tech/blog/practical-guides/): worked examples for small businesses, creative work and everyday planning.
