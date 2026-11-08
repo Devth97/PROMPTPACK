@@ -3,7 +3,8 @@
     "id": "promptpack-wedding-decision-kit",
     "slug": "wedding-decision-kit",
     "name": "The Wedding Decision Kit",
-    "amount": 4900,
+    "amount": 3100,
+    "legacy_amount_usd": 4900,
     "currency": "USD",
     "plans": [
       "inr",
@@ -23,7 +24,8 @@
     "id": "promptpack-two-homes-organizer",
     "slug": "two-homes-organizer",
     "name": "Two Homes, One Organizer",
-    "amount": 4900,
+    "amount": 3100,
+    "legacy_amount_usd": 4900,
     "currency": "USD",
     "plans": [
       "inr",

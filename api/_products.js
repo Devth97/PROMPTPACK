@@ -19,5 +19,11 @@ const bySlug = slug => products.find(p=>p.slug===slug);
 // New packs: 'usd' (international cards) or 'inr' (UPI, Indian cards, netbanking, wallets). Finance keeps its own plans.
 const PLANS = ['usd','inr'];
 const priceFor = (product, plan) => plan==='inr' ? {amount:product.amount_inr,currency:'INR'} : {amount:product.amount,currency:product.currency};
-const priceMatches = (product, amount, currency) => (product.plans || PLANS).some(plan=>{const p=priceFor(product,plan);return Number.isInteger(p.amount) && amount===p.amount && currency===p.currency;});
+// Verification also accepts the former price for already-created planning orders.
+const priceMatches = (product, amount, currency) =>
+  (currency === 'USD' && Number.isInteger(product.legacy_amount_usd) && amount === product.legacy_amount_usd) ||
+  (product.plans || PLANS).some(plan => {
+    const price = priceFor(product, plan);
+    return Number.isInteger(price.amount) && amount === price.amount && currency === price.currency;
+  });
 module.exports={finance,editions,byId,bySlug,PLANS,priceFor,priceMatches};

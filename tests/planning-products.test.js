@@ -9,8 +9,18 @@ const L=require('../api/_lib');
 const slugs=['wedding-decision-kit','two-homes-organizer'];
 const response=()=>({headers:{},setHeader(k,v){this.headers[k]=v;},end(s){this.json=JSON.parse(s);}});
 
-test('planning products offer fixed $49 USD and INR 2999 plans',()=>{
- for(const slug of slugs){const p=L.catalog.bySlug(slug);assert.ok(p);assert.deepEqual(p.plans,['inr','usd']);assert.deepEqual(L.catalog.priceFor(p,'inr'),{amount:299900,currency:'INR'});assert.equal(L.catalog.priceMatches(p,299900,'INR'),true);assert.deepEqual(L.catalog.priceFor(p,'usd'),{amount:4900,currency:'USD'});assert.equal(L.catalog.priceMatches(p,4900,'INR'),false);assert.equal(p.key_env,'PLANNING_FILE_KEY');}
+test('planning products offer fixed $31 USD and INR 2999 plans',()=>{
+ for(const slug of slugs){const p=L.catalog.bySlug(slug);assert.ok(p);assert.deepEqual(p.plans,['inr','usd']);assert.deepEqual(L.catalog.priceFor(p,'inr'),{amount:299900,currency:'INR'});assert.equal(L.catalog.priceMatches(p,299900,'INR'),true);assert.deepEqual(L.catalog.priceFor(p,'usd'),{amount:3100,currency:'USD'});assert.equal(L.catalog.priceMatches(p,3100,'INR'),false);assert.equal(p.key_env,'PLANNING_FILE_KEY');}
+});
+
+test('the previous USD price is valid for order verification only',()=>{
+ for(const slug of slugs){
+  const product=L.catalog.bySlug(slug);
+  assert.equal(L.catalog.priceMatches(product,4900,'USD'),true);
+  assert.equal(L.catalog.priceMatches(product,4900,'INR'),false);
+  assert.equal(L.catalog.priceFor(product,'usd').amount,3100);
+ }
+ assert.equal(L.catalog.priceMatches(L.catalog.bySlug('profitpulse'),4900,'USD'),false);
 });
 test('dedicated planning key decrypts only a matching authenticated archive',()=>{
  const p=L.catalog.bySlug(slugs[0]);assert.ok(p);
@@ -38,7 +48,7 @@ test('new product pages use exact contents and fail-closed purchase controls',()
   const root=path.join(__dirname,'..');const html=fs.readFileSync(path.join(root,'products',slug,'index.html'),'utf8');
   assert.match(html,/class="planning-buy button"[^>]*hidden/);assert.match(html,/fictional/i);
   const hero=html.match(/<section class="planning-hero">([\s\S]*?)<\/section>/)[1];
-  assert.match(hero,/₹2,999.*US\$49/);
+  assert.match(hero,/₹2,999.*US\$31/);
   assert.match(hero,/Open the sample/);
   assert.match(hero,/class="planning-sample"[\s\S]*-start\.png/);
   assert.match(hero,/Requires desktop Excel/);
@@ -52,8 +62,8 @@ test('new product pages use exact contents and fail-closed purchase controls',()
 });
 
 test('planning readiness enables both prices only for an exact valid response',async()=>{
- const valid={product:slugs[0],ready:true,price:49,currency:'USD',prices:{inr:{amount:299900,currency:'INR'},usd:{amount:4900,currency:'USD'}}};
- for(const reply of [valid,{...valid,ready:false},{...valid,prices:undefined},{...valid,prices:{...valid.prices,inr:{amount:1,currency:'INR'}}},{...valid,prices:{...valid.prices,usd:{amount:299900,currency:'INR'}}}]){
+ const valid={product:slugs[0],ready:true,price:31,currency:'USD',prices:{inr:{amount:299900,currency:'INR'},usd:{amount:3100,currency:'USD'}}};
+ for(const reply of [valid,{...valid,ready:false},{...valid,prices:undefined},{...valid,price:49,prices:{...valid.prices,usd:{amount:4900,currency:'USD'}}},{...valid,prices:{...valid.prices,inr:{amount:1,currency:'INR'}}},{...valid,prices:{...valid.prices,usd:{amount:299900,currency:'INR'}}}]){
   const buttons=[{disabled:true},{disabled:true}],links=[{hidden:true}],statuses=[{}];
   const document={body:{dataset:{planning:slugs[0]}},querySelectorAll:s=>s==='.pay-option'?buttons:s==='.planning-buy'?links:statuses};
   await vm.runInNewContext(fs.readFileSync(path.join(__dirname,'../assets/planning-ready.js'),'utf8'),{document,fetch:async()=>({ok:true,json:async()=>reply}),encodeURIComponent});
