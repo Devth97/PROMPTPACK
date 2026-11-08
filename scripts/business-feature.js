@@ -1,0 +1,4 @@
+'use strict';
+const products=require('../catalog/launch-products.json');
+const esc=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+module.exports=()=>`<!-- business-kits:start --><section class="wave2-feature" aria-labelledby="business-kits-heading"><span class="eyebrow">New · practical small-business kits</span><h2 id="business-kits-heading">Tools for the work behind the business.</h2><p>Cost a custom bake or plan a salon's content. Try a free sample, review the actual files and choose the kit that fits.</p><div class="biz-grid">${products.map(p=>`<article class="biz-panel"><h3><a href="/products/${p.slug}/">${esc(p.name)}</a></h3><p>${esc(p.summary)}</p><p><strong>₹${p.price_inr} or US$${p.price} · one time</strong></p><a href="/products/${p.slug}/">See the kit and free sample →</a></article>`).join('')}</div></section><!-- business-kits:end -->`;

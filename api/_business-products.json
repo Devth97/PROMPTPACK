@@ -1,0 +1,30 @@
+[
+  {
+    "id": "promptpack-bakeprice-studio",
+    "slug": "bakeprice-studio",
+    "name": "BakePrice Studio",
+    "amount": 1200,
+    "currency": "USD",
+    "amount_inr": 69900,
+    "file": "products/bakeprice-studio.enc",
+    "filename": "bakeprice-studio.zip",
+    "type": "application/zip",
+    "sha256": "8cefb40e7f34a696b581bb8caf952e5666a20aee30fd44f7474648aacbb63d57",
+    "bytes": 24477,
+    "thanks": "/checkout/thanks/"
+  },
+  {
+    "id": "promptpack-salon-content-sprint",
+    "slug": "salon-content-sprint",
+    "name": "Salon Content Sprint",
+    "amount": 900,
+    "currency": "USD",
+    "amount_inr": 49900,
+    "file": "products/salon-content-sprint.enc",
+    "filename": "salon-content-sprint.zip",
+    "type": "application/zip",
+    "sha256": "3aa42dce24fb66738f46e1c3a00a952659221828d8aff13e1fb6617593589c35",
+    "bytes": 48011,
+    "thanks": "/checkout/thanks/"
+  }
+]
