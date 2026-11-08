@@ -21,8 +21,8 @@ test('ProfitPulse is registered at fixed server-owned INR and USD prices',()=>{
 test('ProfitPulse purchase page has the native checkout form, disabled until availability check',()=>{
  const html=read('checkout/profitpulse/index.html');
  assert.match(html,/data-checkout="profitpulse"/);
- assert.match(html,/src="\/assets\/checkout\.js"/);
- assert.match(html,/src="\/assets\/profitpulse-ready\.js"/);
+ assert.match(html,/src="\/assets\/checkout\.js(?:\?v=[a-f0-9]+)?"/);
+ assert.match(html,/src="\/assets\/profitpulse-ready\.js(?:\?v=[a-f0-9]+)?"/);
  assert.match(html,/value="inr" disabled/);
  assert.match(html,/value="usd" disabled/);
  assert.match(html,/id="buyer-email"/);
@@ -34,7 +34,7 @@ test('Product CTA is gated; no plaintext customer bundle is publicly checked in'
  const js=read('assets/profitpulse-ready.js');
  assert.match(page,/id="profitpulse-buy"[^>]+hidden/);
  assert.match(page,/href="\/checkout\/profitpulse\/"/);
- assert.match(page,/src="\/assets\/profitpulse-ready\.js"/);
+ assert.match(page,/src="\/assets\/profitpulse-ready\.js(?:\?v=[a-f0-9]+)?"/);
  assert.match(js,/result\.ready!==true/);
  assert.match(js,/buttons\.forEach\(b=>b\.disabled=true\)/);
  assert.equal(fs.existsSync(path.join(root,'assets','ProfitPulse_Paid_Customer_Download.zip')),false);

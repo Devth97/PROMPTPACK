@@ -1,0 +1,30 @@
+product,ad_group,keyword,proposed_match_type,intent,stage,landing_path,average_monthly_searches,forecast_cpc_inr,qualification
+bakeprice-studio,Costing tool,bakery costing tool,Exact,Tool shopping,Forecast first,/products/bakeprice-studio/,,,Manual offline computer tool
+bakeprice-studio,Costing tool,home bakery pricing calculator,Phrase,Tool shopping,Forecast first,/products/bakeprice-studio/,,,Uses own costs; not market-price automation
+bakeprice-studio,Costing tool,cake pricing calculator,Exact,Tool shopping,Forecast first,/products/bakeprice-studio/,,,Inspect customer cake-price queries
+bakeprice-studio,Costing tool,recipe cost calculator download,Phrase,Download intent,Forecast first,/products/bakeprice-studio/,,,Exclude nutrition-calculator intent
+bakeprice-studio,Costing tool,bakery recipe costing software,Phrase,Tool shopping,Secondary fit test,/products/bakeprice-studio/,,,No stock or shop integration
+bakeprice-studio,Custom quote,cake quote calculator,Phrase,Quote task,Forecast first,/products/bakeprice-studio/,,,Seller costing rather than customer cake purchase
+bakeprice-studio,Custom quote,cupcake pricing calculator,Phrase,Costing task,Forecast first,/products/bakeprice-studio/,,,Show whole-batch example
+bakeprice-studio,Custom quote,cookie pricing calculator,Phrase,Costing task,Forecast first,/products/bakeprice-studio/,,,One recipe per project
+bakeprice-studio,Price review,how to price cakes,Phrase,Educational problem,Defer until tool group reviewed,/products/bakeprice-studio/,,,Likely mixed paid and free intent
+bakeprice-studio,Price review,home bakery labour cost calculator,Phrase,Specific problem,Forecast first,/products/bakeprice-studio/,,,Check low search volume
+bakeprice-studio,Price review,cake costing calculator india,Phrase,Local costing task,Forecast first,/products/bakeprice-studio/,,,India keyword does not replace Presence setting
+bakeprice-studio,Spreadsheet alternatives,bakery pricing spreadsheet,Phrase,Format shopping,Defer format mismatch,/products/bakeprice-studio/,,,Actual product is HTML tool not spreadsheet
+salon-content-sprint,Calendar download,salon content calendar download,Phrase,Download intent,Forecast first,/products/salon-content-sprint/,,,Planning files not posting service
+salon-content-sprint,Calendar download,salon social media content kit,Exact,Kit shopping,Forecast first,/products/salon-content-sprint/,,,No finished graphic templates
+salon-content-sprint,Calendar download,hair salon content planner,Phrase,Planning task,Forecast first,/products/salon-content-sprint/,,,Computer required for supplied planner
+salon-content-sprint,Calendar download,salon content calendar template,Phrase,Format shopping,Forecast first,/products/salon-content-sprint/,,,Clarify actual supplied file formats
+salon-content-sprint,Captions,salon instagram caption templates,Phrase,Copy shopping,Forecast first,/products/salon-content-sprint/,,,English and Roman Hinglish
+salon-content-sprint,Captions,hair salon instagram captions,Phrase,Copy research,Secondary intent test,/products/salon-content-sprint/,,,Separate free caption lookup traffic
+salon-content-sprint,Captions,salon social media captions download,Phrase,Download intent,Forecast first,/products/salon-content-sprint/,,,Adapt facts before publishing
+salon-content-sprint,Filming plans,salon reel script templates,Phrase,Production planning,Forecast first,/products/salon-content-sprint/,,,Scripts and shot plans not finished reels
+salon-content-sprint,Filming plans,hair salon reel ideas,Phrase,Idea research,Defer free alternative pressure,/products/salon-content-sprint/,,,Free ideas available elsewhere
+salon-content-sprint,Client handoff,salon social media plan template,Phrase,Client planning,Forecast first,/products/salon-content-sprint/,,,No live client approval portal
+salon-content-sprint,Client handoff,salon content calendar hinglish,Phrase,Localized planning,Forecast first,/products/salon-content-sprint/,,,Candidate term; volume unknown
+salon-content-sprint,Generic marketing,salon marketing agency,Phrase,Managed service,Exclude from kit campaign,/products/salon-content-sprint/,,,Offer does not provide agency service
+profitpulse,Profit planning,ecommerce profit calculator excel,Phrase,Manual tool shopping,Separate later experiment,/products/profitpulse/,,,No automated integrations
+profitpulse,Profit planning,d2c profit tracker excel,Phrase,Manual tool shopping,Separate later experiment,/products/profitpulse/,,,Manual INR-focused workbook
+profitpulse,Profit planning,break even roas calculator,Phrase,Problem and free calculator,Separate later experiment,/products/profitpulse/,,,Inspect free informational traffic
+profitpulse,Profit planning,cod rto profit calculator,Phrase,Indian operational problem,Separate later experiment,/products/profitpulse/,,,Scenario assumptions not courier reconciliation
+profitpulse,Profit planning,shopify profit tracking app,Phrase,Integration shopping,Exclude from manual kit campaign,/products/profitpulse/,,,Workbook does not sync with Shopify

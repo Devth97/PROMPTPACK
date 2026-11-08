@@ -5,3 +5,18 @@
 @media(max-width:580px){.pp-nav{padding:12px 18px;gap:14px}.pp-brand{font-size:14px}.pp-browse{font-size:11px;padding:9px 10px}.pp-categories{gap:22px;justify-content:flex-start}.pp-footer-inner{padding:0 20px;grid-template-columns:1fr}.pp-footer nav{justify-content:flex-start}.pp-footer-bottom{gap:16px;flex-direction:column}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 .pp-categories .pp-free{padding:3px 8px;border:2px solid var(--ink);background:var(--mint);white-space:nowrap}.pp-categories .pp-free:hover{background:var(--yellow)}@media(max-width:980px){.pp-categories .pp-free{order:-1}}
+
+/* Shared buying clarity: visible help and consistent interaction targets. */
+.pp-buyer-help{margin-top:24px;padding:20px;background:#fffbf2;border:1px solid #0b0b0f24;border-radius:10px;max-width:460px}.pp-buyer-help strong{font-size:18px}.pp-buyer-help p{margin:8px 0 14px}.pp-buyer-help a{display:inline-block;font-size:13px;font-weight:750;margin:0 18px 6px 0}.pp-categories{gap:17px}.pp-categories a{font-size:14px}a.button,button.button{min-height:46px;display:inline-flex;align-items:center;justify-content:center}img{max-width:100%}details summary{min-height:44px}::selection{background:#ffe14d;color:#0b0b0f}
+@media(min-width:981px){.pp-nav{gap:18px}.pp-categories{gap:16px}.pp-categories a{font-size:13px}}
+/* Regional prices are independent fixed offers, with USD shown first. */
+.price-usd{display:block;font-size:1.6em;font-weight:900;line-height:1.2;letter-spacing:-.02em}
+.price-inr{display:block;font-size:.8rem;font-weight:500;line-height:1.5;letter-spacing:0}
+.business .biz-actions .button{display:block;text-align:center}
+.planning-product .planning-price{display:block}
+.planning-product .planning-price .price-usd,.planning-product .final-price .price-usd{font-size:36px;font-weight:900;margin:0}
+.planning-product .planning-price .price-inr,.planning-product .final-price .price-inr{font-size:14px;font-weight:500;margin:5px 0 0}
+.checkout-price .price-usd{font-size:36px;font-weight:900;color:var(--ink)}
+.checkout-price .price-inr{font-size:14px;font-weight:500}
+.catalog-grid .card-bottom .price{font-size:26px;font-weight:900}
+.catalog-grid .card-bottom small{display:block;font-size:12px;font-weight:500}

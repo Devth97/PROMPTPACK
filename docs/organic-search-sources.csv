@@ -1,0 +1,19 @@
+source_id,accessed_date,source_type,observation,limitation,url
+O01,2026-11-08,Google Trends current public snapshot,India Trending Now includes sports and Diwali event queries,Past-day attention does not measure durable paid-tool demand,https://trends.google.com/trending?geo=IN
+O02,2026-11-08,Official Google published research,December 2025 India report describes creative AI and image prompt trends,2025 trending growth is not a 2026 niche volume measurement,https://blog.google/intl/en-in/products/explore-communicate/indias-year-in-search-2025-the-a-to-z-of-trending-searches/
+O03,2026-11-08,Official Google methodology,Trends uses sampled normalized relative interest and thresholds,No niche Explore time series was retrieved,https://support.google.com/trends/answer/4365533?hl=en
+O04,2026-11-08,Indian competitor resource,Offers India-focused recipe costing download,Provider claims and downloaded file not independently tested,https://bakeops.in/blog/recipe-costing-spreadsheet-india-free-download
+O05,2026-11-08,Provider resource,Offers free general social-media calendar,Supply and positioning rather than measured demand,https://offers.hubspot.com/social-media-content-calendar
+O06,2026-11-08,Marketplace item,Visual salon templates have item-level reviews,Adjacent product format; no Indian search-volume inference,https://www.etsy.com/listing/1584276371/220-hair-salon-instagram-post-and
+O07,2026-11-08,Official provider library,Microsoft offers free invoice templates,No Google rank or search-volume estimate inferred,https://create.microsoft.com/en-us/templates/invoices
+O08,2026-11-08,Official provider library,Microsoft offers free resume templates,No ATS performance or hiring claims adopted,https://create.microsoft.com/en-us/templates/resumes
+O09,2026-11-08,Official provider library,n8n offers a large workflow template library,Template supply is not paid buyer demand,https://n8n.io/workflows/
+O10,2026-11-08,Provider resource,Indian wedding budget article includes copyable sheet structure,Free alternative only; legal and financial claims not adopted,https://hellobiodata.com/blog/wedding-planning/wedding-budget-planner-india
+O11,2026-11-08,Official Google Search guidance,Original useful audience-focused content is recommended,No ranking or organic-sales guarantee,https://developers.google.com/search/docs/fundamentals/creating-helpful-content
+O12,2026-11-08,Official Google Search guidance,Search Console reports visibility and indexing,No account export obtained here,https://developers.google.com/search/docs/monitor-debug/search-console-start
+O13,2026-11-08,Official Google Search guidance,Crawl requests do not guarantee indexing,No indexing request submitted,https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl
+O14,2026-11-08,Direct public HTTP check,Robots returned 200 permits crawling and names sitemap,Does not establish Google indexation,https://promptpack.tech/robots.txt
+O15,2026-11-08,Direct public HTTP check,Sitemap returned 200 and lacks bakery and salon product paths,Live response may change after release; no Search Console submission checked,https://promptpack.tech/sitemap.xml
+O16,2026-11-08,Direct public HTTP check,BakePrice product page returned 404,Draft release exists separately; no deployment performed,https://promptpack.tech/products/bakeprice-studio/
+O17,2026-11-08,Provider resource,Agency client-onboarding page offers free template sections,Competing format not a verified paid-buyer sample,https://studiopartner.co/resources/client-onboarding-template
+O18,2026-11-08,Official provider tool,Shopify offers a public profit margin calculator,Free competitor and task context only,https://www.shopify.com/ca/tools/profit-margin-calculator

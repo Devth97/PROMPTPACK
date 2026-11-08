@@ -1,6 +1,7 @@
 'use strict';
 // Server-owned identifiers, prices and encrypted fulfillment files.
 const editions = require('./_products.json');
+const business = require('./_business-products.json');
 const finance = {id:'ai-money-audit-prompt-pack',slug:'money-audit',name:'AI Money Audit Prompt Pack',file:'pack.enc',filename:'AI-Money-Audit-Prompt-Pack.pdf',type:'application/pdf',thanks:'/finance/thanks'};
 // ProfitPulse is registered independently of the generated edition catalog until its
 // verified encrypted bundle is deployed. This preserves existing product builds.
@@ -13,7 +14,7 @@ const profitpulse = {
   bytes:345767,thanks:'/checkout/thanks/'
 };
 const planning = require('./_planning-products.json');
-const products = [finance,...editions,profitpulse,...planning];
+const products = [finance,...editions,profitpulse,...planning,...business];
 const byId = id => products.find(p=>p.id===id);
 const bySlug = slug => products.find(p=>p.slug===slug);
 // New packs: 'usd' (international cards) or 'inr' (UPI, Indian cards, netbanking, wallets). Finance keeps its own plans.
