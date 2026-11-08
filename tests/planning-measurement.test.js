@@ -23,7 +23,7 @@ function boot({slug = 'wedding-decision-kit', choice, hostname = 'promptpack.tec
   const calls = () => (window.fbq?.queue || []).map(args => [...args]);
   return {window, scripts, nodes, click, calls, storage, session, reloads:() => reloads};
 }
-const receipt = {ok:true,order_id:'order_paid123',product:'wedding-decision-kit',product_name:'The Wedding Decision Kit',amount:4900,currency:'USD',token:'private-download-token',email:'secret@example.com'};
+const receipt = {ok:true,order_id:'order_paid123',product:'wedding-decision-kit',product_name:'The Wedding Decision Kit',amount:3100,currency:'USD',token:'private-download-token',email:'secret@example.com'};
 test('no tracking or marketing attribution before consent; rejection keeps checkout API usable', () => {
   const page = boot();
   assert.equal(page.scripts.length, 0);
@@ -48,14 +48,14 @@ test('consented attribution survives navigation and resets for a newly tagged vi
   const changed=boot({choice:'granted',session:first.session,search:'?utm_source=google'});
   assert.deepEqual({...changed.window.promptpack.attribution()},{utm_source:'google'});
 });
-test('only a matching verified $49 USD purchase is measured once, without sensitive fields', () => {
+test('only a matching verified $31 USD purchase is measured once, without sensitive fields', () => {
   const page = boot({choice:'granted'}), api = page.window.promptpack;
   for (const invalid of [{...receipt,ok:false},{...receipt,product:'two-homes-organizer'},{...receipt,amount:1},{...receipt,currency:'INR'}]) api.purchase(invalid);
   assert.equal(page.calls().filter(c => c[1] === 'Purchase').length, 0);
   api.purchase(receipt); api.purchase(receipt);
   const purchases = page.calls().filter(c => c[1] === 'Purchase');
   assert.equal(purchases.length, 1);
-  assert.equal(purchases[0][2].value, 49);
+  assert.equal(purchases[0][2].value, 31);
   assert.equal(purchases[0][3].eventID, receipt.order_id);
   assert.doesNotMatch(JSON.stringify(purchases), /private-download-token|secret@example/);
 });
@@ -93,7 +93,7 @@ test('checkout does not re-add URL marketing tags after consent or product polic
     const form={dataset:{checkout:opts.slug||'wedding-decision-kit'},elements:{email:{value:'buyer@example.com'}},querySelectorAll:()=>options,addEventListener(_,fn) {submit=fn;}};
     const document={querySelector:()=>form,getElementById:()=>({})};
     const window={promptpack:page.window.promptpack,Razorpay:function() {this.on=()=>{};this.open=()=>{};}};
-    const fetch=async (url,options)=>{requests.push(JSON.parse(options.body));return {ok:true,json:async()=>({order_id:'order_123',amount:4900,currency:'USD',product_name:'Kit'})};};
+    const fetch=async (url,options)=>{requests.push(JSON.parse(options.body));return {ok:true,json:async()=>({order_id:'order_123',amount:3100,currency:'USD',product_name:'Kit'})};};
     vm.runInNewContext(fs.readFileSync(path.join(root,'assets/checkout.js'),'utf8'),{window,document,fetch,URLSearchParams,location:{search:'?utm_source=meta&utm_campaign=private-email@example.com'}});
     await submit({preventDefault(){},submitter:{value:'usd'}});
     assert.deepEqual({...requests[0].attribution},{});
