@@ -44,9 +44,11 @@
   setBusy(true);setStatus('Preparing your secure checkout…');
   try{
    if(typeof window.Razorpay!=='function')throw Error('The secure payment window could not load. Check your connection and try again.');
-   const attribution=window.promptpack?.attribution()||{};
+   const attribution=window.promptpack?.attribution?.()||{};
    const params=new URLSearchParams(location.search);
+   if(!window.promptpack?.attribution){
    for(const key of ['utm_source','utm_medium','utm_campaign','utm_content','utm_term']){const value=params.get(key);if(value)attribution[key]=value.slice(0,100);}
+   }
    const order=await post('/api/create-order',{product:slug,plan:plan==='usd'?'usd':'inr',attribution});
    const checkout=new window.Razorpay({key:order.key_id,order_id:order.order_id,amount:order.amount,currency:order.currency,name:'PromptPack',description:order.product_name,prefill:{email:form.elements.email.value.trim()},theme:{color:'#F598F2'},
     handler:payment=>{completed=true;paidWith=payment;confirm(payment);},
