@@ -14,7 +14,10 @@ function filterCatalog() {
   });
   document.getElementById('catalog-results').textContent = `${count} of ${cards.length} products`;
   document.getElementById('catalog-empty').hidden = count > 0;
-  if (clear) clear.hidden = !query;
+  if (clear) clear.hidden = !query && (!category || !category.value);
+  document.querySelectorAll('[data-catalog-category]').forEach(link => {
+    if (link.dataset?.catalogCategory !== undefined) link.setAttribute('aria-current', String(link.dataset.catalogCategory === (category?.value || '')));
+  });
   document.querySelectorAll('[data-product-section]').forEach(section => {
     section.hidden = !Array.from(section.querySelectorAll('[data-product]')).some(card => !card.hidden);
   });
@@ -22,11 +25,22 @@ function filterCatalog() {
 if (search) {
   search.addEventListener('input', filterCatalog);
   if (category) category.addEventListener('change', filterCatalog);
-  if (clear) clear.addEventListener('click', () => { search.value = ''; filterCatalog(); search.focus(); });
+  if (clear) clear.addEventListener('click', () => { search.value = ''; if (category) category.value = ''; filterCatalog(); search.focus(); });
   // Category navigation always reveals its destination, including after a search.
   document.querySelectorAll('.pp-categories a,.pp-browse,.category-rail a,a[href="#catalog"]').forEach(link => {
-    link.addEventListener('click', () => { search.value = ''; if (category) category.value = ''; filterCatalog(); });
+    link.addEventListener('click', () => {
+      search.value = '';
+      const destination = link.getAttribute?.('href')?.split('#')[1];
+      const interest = document.getElementById(destination)?.dataset?.catalogCategory;
+      if (category) category.value = interest || '';
+      filterCatalog();
+    });
   });
+  document.querySelectorAll('[data-catalog-category]').forEach(link => {
+    if (link.dataset?.catalogCategory === undefined) return;
+    link.addEventListener('click', () => { search.value = ''; if (category) category.value = link.dataset.catalogCategory; filterCatalog(); });
+  });
+  if (category && typeof location !== 'undefined') category.value = document.getElementById(location.hash.slice(1))?.dataset?.catalogCategory || '';
   filterCatalog();
 }
 document.querySelectorAll('[data-copy]').forEach(button => {
