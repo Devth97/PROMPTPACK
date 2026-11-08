@@ -69,7 +69,7 @@ https://promptpack.tech/products/salon-content-sprint/?utm_source=google&utm_med
 
 ### Before using conversion-led bidding
 
-No Google Ads conversion ID, conversion label or Google purchase integration was supplied for this release. Do not substitute an invented ID or count a button click as a purchase. Configure the actual account's purchase conversion and validate it against a confirmed receipt before relying on conversion-led bidding. Existing site purchase events are sent to configured Meta tracking only where that tracker is available; they are not proof of Google Ads conversion setup.
+No Google Ads conversion ID, conversion label or Google purchase integration was supplied for this release. The current shared launch notes record a read-only Google Ads connection and no non-removed conversion actions at their verification checkpoint. Do not substitute an invented ID or count a button click as a purchase. Configure the actual account's purchase conversion and validate it against a confirmed receipt before relying on conversion-led bidding. These new business-product pages use explicit consent before loading the existing Meta pixel, respect Global Privacy Control, and omit Clarity. Preview pages do not load advertising vendors. Meta events are not proof of Google Ads conversion setup.
 
 ## Meta creative drafts
 
@@ -131,6 +131,8 @@ Show the real planner and a draft. Do not simulate a testimonial, pretend the dr
 4. Select one product/channel combination for the first paid experiment after actual Keyword Planner/account review. Prepare both channels, but avoid fragmenting an undefined budget across four campaigns.
 5. Set an explicit total spending limit and end condition in the ad account before launch. No budget or ads were authorized or launched in this build.
 6. Record spend, visits, checkout starts, captured purchases, refunds, net receipts and support cost using consistent dates and attribution windows. Unknown metrics remain unknown, not zero.
+
+Preserve the existing planning-product pilot and its spending allocation; that prior budget is not automatically an allocation for these bakery/salon products. The latest shared release notes record an unresolved Razorpay international-card test. Keep this release reviewable in a preview branch until deployed merchant payment and delivery are verified. Do not merge it to production or activate ads solely because local mock payments passed.
 
 The economic ceiling for acquisition is not the selling price. Use actual receipts after applicable taxes, payment costs, refunds and variable support/fulfillment costs, less the contribution the owner wants to retain. Do not assume another creator's ad ROAS, GST treatment or net margin applies.
 

@@ -40,7 +40,6 @@ Updated: 2026-10-28. All products are digital downloads used with the buyer's ow
 - [Full catalog text](https://promptpack.tech/llms-full.txt): every product's contents, requirements, workshop steps and sample prompt in one file
 - [Sitemap](https://promptpack.tech/sitemap.xml)
 
-
 <!-- business-kits:start -->
 ## Small-business toolkits
 - [BakePrice Studio](https://promptpack.tech/products/bakeprice-studio/): An offline recipe-costing and quote tool for home bakers. Include whole batches, ingredient costs, labour and packaging before choosing your selling price. INR 699 or USD 12, one-time purchase. A laptop or desktop with a current Chrome, Edge, Firefox or Safari browser. Unzip the files and open START.html. No account, spreadsheet app or internet connection is required for the tool. Save JSON backups; browser storage may be cleared or unavailable.

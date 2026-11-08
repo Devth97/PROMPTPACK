@@ -112,7 +112,6 @@ Sample prompt:
 
 Create an original two-character series bible for [AUDIENCE] about [TOPIC RANGE]. Juno supplies a short problem and Pixel supplies a calm, bounded fix. Define character jobs, palette, end card, proof-panel rules and one CTA per episode. Openings must be eight words or fewer. Reject copied mascots, creator jokes, real-person impersonation and invented performance claims. Return a reusable bible plus five testable episode premises.
 
-
 <!-- business-kits:start -->
 ## Small-business toolkits
 - [BakePrice Studio](https://promptpack.tech/products/bakeprice-studio/): An offline recipe-costing and quote tool for home bakers. Include whole batches, ingredient costs, labour and packaging before choosing your selling price. INR 699 or USD 12, one-time purchase. A laptop or desktop with a current Chrome, Edge, Firefox or Safari browser. Unzip the files and open START.html. No account, spreadsheet app or internet connection is required for the tool. Save JSON backups; browser storage may be cleared or unavailable.
