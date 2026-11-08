@@ -37,9 +37,15 @@ test('new product pages use exact contents and fail-closed purchase controls',()
  for(const slug of slugs){
   const root=path.join(__dirname,'..');const html=fs.readFileSync(path.join(root,'products',slug,'index.html'),'utf8');
   assert.match(html,/class="planning-buy button"[^>]*hidden/);assert.match(html,/fictional/i);
+  const hero=html.match(/<section class="planning-hero">([\s\S]*?)<\/section>/)[1];
+  assert.match(hero,/₹2,999.*US\$49/);
+  assert.match(hero,/Open the sample/);
+  assert.match(hero,/class="planning-sample"[\s\S]*-start\.png/);
+  assert.match(hero,/Requires desktop Excel/);
   assert.match(html,/Native Excel and Google Sheets import have not yet been verified/);
   const checkout=fs.readFileSync(path.join(root,'checkout',slug,'index.html'),'utf8');
   assert.match(checkout,/value="usd" disabled/);assert.match(checkout,/value="inr" disabled/);assert.equal((checkout.match(/class="pay-option/g)||[]).length,2);assert.match(checkout,/₹2,999/);
+  assert.ok(checkout.indexOf('<form')<checkout.indexOf('class="checkout-art"'));
   const p=L.catalog.bySlug(slug);assert.match(p.sha256,/^[a-f0-9]{64}$/);assert.ok(p.bytes<3500000);
   assert.ok(fs.readFileSync(path.join(root,'private',p.file),'ascii').startsWith('PPENC1\n'));
  }
