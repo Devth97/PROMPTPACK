@@ -30,7 +30,7 @@ Build in that order. Preserve existing products, prices, download entitlements a
 
 Competitor ads, buyer reviews and keyword estimates are market evidence. Functional checks are product QA. Neither is proof of demand for PromptPack's version. No outreach to others without explicit authorization. Prepare a pilot feedback sheet; report no external testers/orders until actually observed.
 
-Before spend: working deployed purchase, protected delivery, server-verified purchase events and no sensitive workbook contents in analytics. A proposed $300 cap remains unapproved. Start wedding first, evaluate usage/refunds/CPA, then test Two Homes; do not fragment a small budget over four simultaneous campaigns.
+Before spend: working deployed purchase, protected delivery, server-verified purchase events and no sensitive workbook contents in analytics. Owner approved a $150 total cap across both products/platforms. Start wedding first, evaluate usage/refunds/CPA, then test Two Homes; do not fragment a small budget over four simultaneous campaigns.
 
 ## Implementation
 
@@ -38,4 +38,4 @@ Static HTML/JS with the existing Node serverless checkout. Test with node --test
 
 ## Remaining inputs
 
-Ad spend cap and intended accounts are pending. Existing fulfillment keys and deployment access may need to be restored to this fresh checkout. Do not generate a replacement for an existing customer's key. Publish only after checking those prerequisites.
+Owner supplied a Meta screenshot: GROW+ account 1011645257952747 selected, separate PROMPTPACK portfolio present, seven existing unpublished changes. Inspect before launch and preserve those drafts. Google setup requested through MCP or CLI. Existing fulfillment keys and deployment access may need to be restored to this fresh checkout. Do not generate a replacement for an existing customer's key. Publish only after checking those prerequisites.

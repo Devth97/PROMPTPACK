@@ -1,0 +1,38 @@
+[
+  {
+    "id": "promptpack-wedding-decision-kit",
+    "slug": "wedding-decision-kit",
+    "name": "The Wedding Decision Kit",
+    "amount": 4900,
+    "currency": "USD",
+    "plans": [
+      "usd"
+    ],
+    "key_env": "PLANNING_FILE_KEY",
+    "envelope": true,
+    "file": "products/wedding-decision-kit.enc",
+    "filename": "PromptPack-Wedding-Decision-Kit.zip",
+    "type": "application/zip",
+    "thanks": "/checkout/thanks/",
+    "bytes": 58425,
+    "sha256": "a31555cb7c84cb89d6bb42190022090e46e7be1af0fb3cd9029194d0136b00b6"
+  },
+  {
+    "id": "promptpack-two-homes-organizer",
+    "slug": "two-homes-organizer",
+    "name": "Two Homes, One Organizer",
+    "amount": 4900,
+    "currency": "USD",
+    "plans": [
+      "usd"
+    ],
+    "key_env": "PLANNING_FILE_KEY",
+    "envelope": true,
+    "file": "products/two-homes-organizer.enc",
+    "filename": "PromptPack-Two-Homes-Organizer.zip",
+    "type": "application/zip",
+    "thanks": "/checkout/thanks/",
+    "bytes": 72713,
+    "sha256": "2ba54b340170d686c1765098eecf22458f621c0c073c05ce7f8e193a3c901ca4"
+  }
+]

@@ -77,6 +77,7 @@ function startSite(port, rzpPort) {
   const server = http.createServer(async (req, res) => {
     const url = new URL(req.url, 'http://x'); let p = decodeURIComponent(url.pathname);
     if (p.startsWith('/api/')) {
+      req.query=Object.fromEntries(url.searchParams);
       const name = p.slice(5).replace(/[^a-z0-9-]/g, '');
       const file = path.join(ROOT, 'api', name + '.js');
       if (name.startsWith('_') || !fs.existsSync(file)) { res.statusCode = 404; return res.end('not found'); }
