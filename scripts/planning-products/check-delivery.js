@@ -12,7 +12,7 @@ const post=async(path,body)=>fetch('http://localhost:4380'+path,{method:'POST',h
  try{for(const p of products)for(const plan of ['inr','usd']){
   const status=await(await fetch('http://localhost:4380/api/planning-status?product='+p.slug)).json();assert.equal(status.ready,true);
   const orderResponse=await post('/api/create-order',{product:p.slug,plan,amount:1,currency:'EUR'});assert.equal(orderResponse.status,200);
-  const order=await orderResponse.json();assert.equal(order.amount,plan==='inr'?299900:3100);assert.equal(order.currency,plan==='inr'?'INR':'USD');
+  const order=await orderResponse.json();assert.equal(order.amount,plan==='inr'?p.amount_inr:p.amount);assert.equal(order.currency,plan==='inr'?'INR':'USD');
   const pay=await(await fetch('http://localhost:4381/__pay/'+order.order_id,{method:'POST',body:'{}'})).json();
   const verified=await post('/api/verify',{...pay,product:p.slug});assert.equal(verified.status,200);const v=await verified.json();assert.ok(v.token);
   const download=await fetch('http://localhost:4380/api/download?t='+encodeURIComponent(v.token));assert.equal(download.status,200);assert.match(download.headers.get('content-type'),/application\/zip/);

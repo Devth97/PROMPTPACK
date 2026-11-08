@@ -2,13 +2,14 @@
 const guides = require('../catalog/products.json');
 const editions = require('../catalog/editions.json');
 const planning = require('../catalog/planning-products.json');
+const planningPrices = require('./planning-prices');
 const live = require('./live-products');
 const {sectionFor} = require('./site-shell');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const categories = [['planning','Planning'],['finance','Finance'],['websites','Websites'],['video','Video'],['social-media','Social Media']];
 function products() {
   const items = [
-    ...planning.map(p => ({slug:p.slug,name:p.name,category:'Planning',summary:p.slug==='wedding-decision-kit'?'Compare the real cost of each vendor. Keep deposits, guests and next steps together.':'Keep handovers, factual notes and shared expenses organized in your own files.',includes:'Blank + example Excel workbooks · fillable PDF',price:'₹2,999',priceNote:'or US$31 · one payment',cover:`/assets/planning/${p.slug}-cover.webp`,badge:'New · Excel + PDF',href:`/products/${p.slug}/`})),
+    ...planning.map(p => {const {inr,usd}=planningPrices(p.slug);return {slug:p.slug,name:p.name,category:'Planning',summary:p.slug==='wedding-decision-kit'?'Compare the real cost of each vendor. Keep deposits, guests and next steps together.':'Keep handovers, factual notes and shared expenses organized in your own files.',includes:'Blank + example Excel workbooks · fillable PDF',price:inr,priceNote:'or '+usd+' · one payment',cover:`/assets/planning/${p.slug}-cover.webp`,badge:'New · Excel + PDF',href:`/products/${p.slug}/`};}),
     {slug:'profitpulse',name:'ProfitPulse',category:'Finance',summary:'See what each order really earns. Model shipping, COD returns and ad break-even before you spend.',includes:'Excel toolkit · worked demo · guide + 12 prompts',price:'₹999',priceNote:'or US$19 · one payment',cover:'/assets/product-covers/profitpulse.svg',badge:'India D2C · Excel',href:'/products/profitpulse/'},
     ...guides.map(p => {const e=editions.find(x=>x.slug===p.slug);return {slug:p.slug,name:p.name,category:sectionFor(p).name,summary:p.summary,includes:`${e.pdf_pages}-page guide · ${e.prompt_count} prompts + files`,price:`US$${p.price}`,priceNote:`or ₹${p.price_inr.toLocaleString('en-IN')} · one payment`,cover:`/assets/product-covers/${p.slug}.webp`,badge:'AI creator kit',href:`/products/${p.slug}/`,checkout:`/checkout/${p.slug}/`};}),
     ...live.map(p=>({...p,category:categories.find(([id])=>id===p.sectionId)[1],cover:`/assets/product-covers/${p.slug}.webp`,badge:p.slug==='website-prompts'?'75+ editable prompts':'Personal finance'}))
