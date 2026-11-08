@@ -1,7 +1,11 @@
 'use strict';
 (() => {
-  const slug = document.body.dataset.planning;
+  const {planning:slug, usdMinor, inrMinor} = document.body.dataset;
   if (!['wedding-decision-kit', 'two-homes-organizer'].includes(slug)) return;
+  const currentPrices = {USD:Number(usdMinor), INR:Number(inrMinor)};
+  const previousPrices = {USD:[3100,4900], INR:[299900]};
+  const matchesPrice = (amount, currency, purchase) => Number.isInteger(amount) &&
+    (amount === currentPrices[currency] || (purchase && Object.hasOwn(previousPrices,currency) && previousPrices[currency].includes(amount)));
   const production = ['promptpack.tech', 'www.promptpack.tech'].includes(location.hostname);
   const eligible = slug === 'wedding-decision-kit' && !window.navigator?.globalPrivacyControl;
   const preferenceKey = 'pp_planning_ads_v1';
@@ -24,7 +28,7 @@
     if (!['ViewContent','InitiateCheckout','CheckoutClosed','PaymentFailed','Purchase'].includes(name)) return false;
     // Build the payload here: callers cannot add buyer details or download entitlements.
     const safe = {content_ids:[slug],content_type:'product',content_name:'The Wedding Decision Kit'};
-    if (((data.value === 31 || (name === 'Purchase' && data.value === 49)) && data.currency === 'USD') || (data.value === 2999 && data.currency === 'INR')) Object.assign(safe,{value:data.value,currency:data.currency});
+    if (matchesPrice(data.value*100,data.currency,name==='Purchase')) Object.assign(safe,{value:data.value,currency:data.currency});
     try { window.fbq(custom ? 'trackCustom' : 'track',name,safe,options); return true; }
     catch (_) { return false; } // Measurement must never prevent payment or delivery.
   };
@@ -32,7 +36,7 @@
     attribution: () => allowed() ? {...attribution} : {},
     track,
     purchase(receipt) {
-      if (!allowed() || !receipt?.ok || receipt.product !== slug || !(((receipt.amount === 3100 || receipt.amount === 4900) && receipt.currency === 'USD') || (receipt.amount === 299900 && receipt.currency === 'INR')) || !/^order_[a-zA-Z0-9]+$/.test(receipt.order_id || '')) return;
+      if (!allowed() || !receipt?.ok || receipt.product !== slug || !matchesPrice(receipt.amount,receipt.currency,true) || !/^order_[a-zA-Z0-9]+$/.test(receipt.order_id || '')) return;
       const key = 'pp_purchase_' + receipt.order_id;
       if (seen.has(key)) return;
       try { if (localStorage.getItem(key)) return; } catch (_) {}
@@ -58,7 +62,7 @@
     // Disable automatic button/form events; only the explicit allowlisted events are used.
     window.fbq('set','autoConfig',false,'2116311975585050');
     window.fbq('track','PageView');
-    if (location.pathname.startsWith('/products/')) track('ViewContent',{value:31,currency:'USD'});
+    if (location.pathname.startsWith('/products/')) track('ViewContent',{value:currentPrices.USD/100,currency:'USD'});
   };
   if (eligible) {
     const panel=document.createElement('section'); panel.className='planning-consent';

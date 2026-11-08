@@ -13,7 +13,7 @@ function boot({slug = 'wedding-decision-kit', choice, hostname = 'promptpack.tec
     const node = {tag, hidden:false, children:[], handlers:{}, append(...children) {this.children.push(...children);}, setAttribute(k,v) {this[k]=v;}, addEventListener(k,fn) {this.handlers[k]=fn;}, focus() {}, textContent:''};
     nodes.push(node); return node;
   };
-  const body = element('body'); body.dataset = {planning:slug};
+  const body = element('body'); body.dataset = {planning:slug,usdMinor:'2900',inrMinor:'149900'};
   const document = {body, createElement:element, head:{append(node) {scripts.push(node);}}};
   const window = {navigator:{globalPrivacyControl:gpc}};
   let reloads = 0;
@@ -23,7 +23,7 @@ function boot({slug = 'wedding-decision-kit', choice, hostname = 'promptpack.tec
   const calls = () => (window.fbq?.queue || []).map(args => [...args]);
   return {window, scripts, nodes, click, calls, storage, session, reloads:() => reloads};
 }
-const receipt = {ok:true,order_id:'order_paid123',product:'wedding-decision-kit',product_name:'The Wedding Decision Kit',amount:3100,currency:'USD',token:'private-download-token',email:'secret@example.com'};
+const receipt = {ok:true,order_id:'order_paid123',product:'wedding-decision-kit',product_name:'The Wedding Decision Kit',amount:2900,currency:'USD',token:'private-download-token',email:'secret@example.com'};
 test('no tracking or marketing attribution before consent; rejection keeps checkout API usable', () => {
   const page = boot();
   assert.equal(page.scripts.length, 0);
@@ -48,14 +48,14 @@ test('consented attribution survives navigation and resets for a newly tagged vi
   const changed=boot({choice:'granted',session:first.session,search:'?utm_source=google'});
   assert.deepEqual({...changed.window.promptpack.attribution()},{utm_source:'google'});
 });
-test('only a matching verified $31 USD purchase is measured once, without sensitive fields', () => {
+test('only a matching verified $29 USD purchase is measured once, without sensitive fields', () => {
   const page = boot({choice:'granted'}), api = page.window.promptpack;
   for (const invalid of [{...receipt,ok:false},{...receipt,product:'two-homes-organizer'},{...receipt,amount:1},{...receipt,currency:'INR'}]) api.purchase(invalid);
   assert.equal(page.calls().filter(c => c[1] === 'Purchase').length, 0);
   api.purchase(receipt); api.purchase(receipt);
   const purchases = page.calls().filter(c => c[1] === 'Purchase');
   assert.equal(purchases.length, 1);
-  assert.equal(purchases[0][2].value, 31);
+  assert.equal(purchases[0][2].value, 29);
   assert.equal(purchases[0][3].eventID, receipt.order_id);
   assert.doesNotMatch(JSON.stringify(purchases), /private-download-token|secret@example/);
 });
@@ -79,7 +79,7 @@ test('blocked storage does not interrupt checkout; consent withdrawal stops even
 test('generated planning pages use only consent-aware measurement; delivery page stays tracker-free', () => {
   for (const slug of ['wedding-decision-kit','two-homes-organizer']) for (const folder of ['products','checkout']) {
     const html=fs.readFileSync(path.join(root,folder,slug,'index.html'),'utf8');
-    assert.match(html,/src="\/assets\/planning-measurement.js"/);
+    assert.match(html,/src="\/assets\/planning-measurement\.js\?v=[a-f0-9]+"/);
     assert.doesNotMatch(html,/src="\/assets\/(analytics|conversion).js"/);
   }
   const thanks=fs.readFileSync(path.join(root,'checkout/thanks/index.html'),'utf8');
@@ -93,20 +93,20 @@ test('checkout does not re-add URL marketing tags after consent or product polic
     const form={dataset:{checkout:opts.slug||'wedding-decision-kit'},elements:{email:{value:'buyer@example.com'}},querySelectorAll:()=>options,addEventListener(_,fn) {submit=fn;}};
     const document={querySelector:()=>form,getElementById:()=>({})};
     const window={promptpack:page.window.promptpack,Razorpay:function() {this.on=()=>{};this.open=()=>{};}};
-    const fetch=async (url,options)=>{requests.push(JSON.parse(options.body));return {ok:true,json:async()=>({order_id:'order_123',amount:3100,currency:'USD',product_name:'Kit'})};};
+    const fetch=async (url,options)=>{requests.push(JSON.parse(options.body));return {ok:true,json:async()=>({order_id:'order_123',amount:2900,currency:'USD',product_name:'Kit'})};};
     vm.runInNewContext(fs.readFileSync(path.join(root,'assets/checkout.js'),'utf8'),{window,document,fetch,URLSearchParams,location:{search:'?utm_source=meta&utm_campaign=private-email@example.com'}});
     await submit({preventDefault(){},submitter:{value:'usd'}});
     assert.deepEqual({...requests[0].attribution},{});
   }
 });
 
-test('verified INR purchase uses INR 2999 and rejects crossed currency amounts', () => {
+test('verified INR purchase uses INR 1499 and rejects crossed currency amounts', () => {
  const page=boot({choice:'granted'}),api=page.window.promptpack;
- api.purchase({...receipt,amount:299900});
+ api.purchase({...receipt,amount:149900});
  api.purchase({...receipt,currency:'INR'});
  assert.equal(page.calls().filter(c=>c[1]==='Purchase').length,0);
- const paid={...receipt,amount:299900,currency:'INR'};
+ const paid={...receipt,amount:149900,currency:'INR'};
  api.purchase(paid);api.purchase(paid);
  const events=page.calls().filter(c=>c[1]==='Purchase');
- assert.equal(events.length,1);assert.equal(events[0][2].value,2999);assert.equal(events[0][2].currency,'INR');
+ assert.equal(events.length,1);assert.equal(events[0][2].value,1499);assert.equal(events[0][2].currency,'INR');
 });
