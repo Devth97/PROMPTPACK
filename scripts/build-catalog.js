@@ -83,6 +83,7 @@ if(!discoveryMap.includes('xmlns:video='))discoveryMap=discoveryMap.replace('<ur
 discoveryMap=discoveryMap.replace('</urlset>',[...learningUrls,...watchUrls].map(url=>`  <url><loc>${origin}${url}</loc><lastmod>${require('./search-guides').reviewed}</lastmod>${videoTags(url)}</url>`).join('\n')+'\n</urlset>');
 write('sitemap.xml',discoveryMap);
 require('./build-discovery')({write});
+require('./build-blog-library').build();
 console.log(`Optimized ${require('./optimize-html')()} public pages.`);
 
 
