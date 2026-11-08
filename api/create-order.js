@@ -15,9 +15,10 @@ module.exports = async (req, res) => {
   const body = await L.readJson(req);
   const product = body.product===undefined ? L.catalog.finance : L.catalog.bySlug(body.product);
   if(!product)return L.send(res,400,{error:'unknown_product'});
-  if(product!==L.catalog.finance && (L.missing(['DOWNLOAD_FILE_KEY']).length || !L.packPath(product)))return L.send(res,503,{error:'file_unavailable'});
+  if(product!==L.catalog.finance && body.plan!==undefined && !(product.plans || L.catalog.PLANS).includes(body.plan))return L.send(res,400,{error:'unsupported_price_plan'});
+  const fileKey=product.key_env==='PLANNING_FILE_KEY'?'PLANNING_FILE_KEY':'DOWNLOAD_FILE_KEY';
+  if(product!==L.catalog.finance && (L.missing([fileKey]).length || !L.packPath(product)))return L.send(res,503,{error:'file_unavailable'});
   if(product!==L.catalog.finance){try{L.decryptPack(product);}catch(_){return L.send(res,503,{error:'file_unavailable'});}}
-  if(product!==L.catalog.finance && body.plan!==undefined && !L.catalog.PLANS.includes(body.plan))return L.send(res,400,{error:'unsupported_price_plan'});
   const plan = body && body.plan === 'inr' ? 'inr' : 'usd';
   const notes = { product: product.id, price_plan: plan };
   const attr = (body && body.attribution) || {};

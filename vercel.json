@@ -1,5 +1,8 @@
 {
   "functions": {
+    "api/planning-status.js": {
+      "includeFiles": "private/products/*.enc"
+    },
     "api/download.js": {
       "includeFiles": "private/**/*.enc"
     },

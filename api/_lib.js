@@ -108,7 +108,7 @@ function packPath(product = catalog.finance) {
 }
 function decryptPack(product = catalog.finance) {
   // ProfitPulse uses a dedicated encryption key to avoid changing the keys used for existing customers.
-  const secretName=product && product.slug==='profitpulse'?'PROFITPULSE_FILE_KEY':'DOWNLOAD_FILE_KEY';
+  const secretName=product && product.key_env==='PLANNING_FILE_KEY'?'PLANNING_FILE_KEY':product && product.slug==='profitpulse'?'PROFITPULSE_FILE_KEY':'DOWNLOAD_FILE_KEY';
   const key = Buffer.from(env(secretName), 'hex');
   if (key.length !== 32) throw new Error('DOWNLOAD_FILE_KEY must be 64 hex chars');
   const file = packPath(product);
@@ -116,7 +116,7 @@ function decryptPack(product = catalog.finance) {
   let buf = fs.readFileSync(file);
   // Support raw AES-256-GCM ciphertext and the earlier PPENC1 Base64 envelope.
   // Both contain encrypted bytes only; no plaintext customer ZIP is deployed.
-  if (product && product.slug === 'profitpulse') {
+  if (product && (product.slug === 'profitpulse' || product.envelope === true)) {
     const prefix = Buffer.from([80,80,69,78,67,49,10]); // PPENC1 + newline
     if (buf.subarray(0,prefix.length).equals(prefix)) {
       const encoded = buf.subarray(prefix.length).toString('ascii').trim();
