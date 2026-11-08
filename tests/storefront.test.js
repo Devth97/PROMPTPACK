@@ -4,6 +4,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
+const crypto = require('node:crypto');
 const products = require('../catalog/products.json');
 const {sections, sectionFor} = require('../scripts/site-shell');
 const root = path.join(__dirname,'..');
@@ -17,6 +18,10 @@ test('storefront: all eight products appear once in the unified catalog before p
   assert.equal(listed.length,8);
   assert.ok(html.indexOf('id="catalog"') < html.indexOf('class="profit-feature"'));
   assert.match(html,/class="catalog-grid"/);
+  const script=read('assets/catalog.js').replace(/\r\n/g,'\n');
+  const version=html.match(/src="\/assets\/catalog\.js\?v=([a-f0-9]+)"/)?.[1];
+  const hash=text=>crypto.createHash('sha256').update(text).digest('hex').slice(0,10);
+  assert.ok([hash(script),hash(script.replace(/\n/g,'\r\n'))].includes(version), 'homepage references the current filter script');
   for (const section of sections) {
     assert.match(html,new RegExp(`id="${section.id}"`));
     assert.ok(html.includes(`href="/#${section.id}"`));
@@ -53,19 +58,33 @@ test('storefront: every public page has shared navigation and valid local destin
 });
 
 test('storefront: search supports plural names, categories, empty state and navigation reset', () => {
-  const eventElement = extra => ({hidden:false,value:'',textContent:'',events:{},addEventListener(name,fn){this.events[name]=fn;},...extra});
+  const eventElement = extra => ({hidden:false,value:'',textContent:'',events:{},attrs:{},setAttribute(k,v){this.attrs[k]=v;},addEventListener(name,fn){this.events[name]=fn;},...extra});
   const html = read('index.html');
   const cards = [...html.matchAll(/<article class="card product-card" data-product="([^"]+)" data-category="([^"]+)">([\s\S]*?)<\/article>/g)].map(m=>eventElement({dataset:{product:m[1],category:m[2]},textContent:m[3].replace(/<[^>]+>/g,' ')}));
   const groups = sections.map(s=>eventElement({querySelectorAll:()=>cards.filter(c=>c.dataset.category===s.name)}));
   const elements = Object.fromEntries(['catalog-search','catalog-category','catalog-clear','catalog-results','catalog-empty'].map(id=>[id,eventElement()]));
-  const navLink = eventElement();
+  const navLink = eventElement({getAttribute:()=>'/#catalog'});
+  const interests=[['planning','Planning'],['finance','Finance'],['social-media','Social Media']].map(([id,name])=>eventElement({id,dataset:{catalogCategory:name},getAttribute:()=>`#${id}`}));
+  const location={hash:'#social-media'};
+  const window=eventElement();
   const document = {
-    getElementById:id=>elements[id]||null,
-    querySelectorAll:selector=>selector==='[data-product]'?cards:selector==='[data-product-section]'?groups:selector==='[data-copy]'?[]:[navLink]
+    getElementById:id=>elements[id]||interests.find(link=>link.id===id)||null,
+    querySelectorAll:selector=>selector==='[data-product]'?cards:selector==='[data-product-section]'?groups:selector==='[data-copy]'?[]:selector==='[data-catalog-category]'?interests:[navLink,...interests]
   };
   let focused = false;
   elements['catalog-search'].focus=()=>{focused=true;};
-  vm.runInNewContext(read('assets/catalog.js'),{document});
+  vm.runInNewContext(read('assets/catalog.js'),{document,location,window});
+  const visible=()=>cards.filter(c=>!c.hidden).map(c=>c.dataset.product);
+  assert.deepEqual(visible(),['carousel-studio']);
+  assert.equal(interests[2].attrs['aria-current'],'true');
+  interests[0].events.click();
+  assert.deepEqual(visible(),['wedding-decision-kit','two-homes-organizer']);
+  assert.equal(interests[0].attrs['aria-current'],'true');
+  location.hash='#finance';
+  window.events.hashchange();
+  assert.deepEqual(visible(),['profitpulse','money-audit']);
+  location.hash='#catalog';
+  window.events.hashchange();
   const search = value => {elements['catalog-search'].value=value;elements['catalog-search'].events.input();return cards.filter(c=>!c.hidden).map(c=>c.dataset.product);};
   assert.deepEqual(search('carousels'),['carousel-studio']);
   assert.deepEqual(search('websites'),['website-prompts']);

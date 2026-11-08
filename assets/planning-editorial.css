@@ -16,11 +16,40 @@
 .planning-example{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:32px;padding:28px;border:1px solid #cbd2c6;background:white;border-radius:12px}
 .planning-example h2{font-size:clamp(27px,3vw,40px);margin-bottom:14px}
 .planning-example p{font-size:15px}
-.planning-cover-secondary{float:right;width:32%;margin:0 0 16px 24px;transform:none}
-.planning-cover-secondary figcaption{padding:12px}
-.planning-cover-secondary figcaption>span{font-size:14px}
-.planning-steps{display:flow-root}
-.planning-steps>div{clear:both}
+.planning-product .planning-steps {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(20px, 4vw, 48px);
+  padding: clamp(20px, 4vw, 40px);
+}
+.planning-steps .workflow-copy { display: block; margin-top: 0; }
+.workflow-copy .eyebrow { margin: 0; }
+.workflow-copy h2 { margin: 10px 0 20px; }
+.workflow-list { list-style: none; margin: 0; padding: 0; }
+.workflow-list li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  border-top: 1px solid #161f2926;
+  padding: 12px 0;
+}
+.workflow-list li:last-child { padding-bottom: 0; }
+.workflow-list li > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 800;
+}
+.workflow-list h3 { margin: 2px 0 4px; font-size: 17px; }
+.workflow-list p { margin: 0; font-size: 14px; }
+.workflow-art { display: block; width: 100%; height: auto; border-radius: 10px; }
 body[data-planning] .checkout-layout{grid-template-areas:"summary payment" "art payment";grid-template-rows:auto 1fr;gap:24px 48px}
 .checkout-summary{grid-area:summary}
 .checkout-summary h1{margin:10px 0 14px}
@@ -40,5 +69,5 @@ body[data-planning] .checkout-layout{grid-template-areas:"summary payment" "art 
   .planning-price{margin-top:16px}
   .planning-sample{padding:14px}
   .planning-example{grid-template-columns:1fr;gap:14px;padding:18px}
-  .planning-cover-secondary{float:none;width:100%;margin:0 0 20px}
+  .planning-product .planning-steps { grid-template-columns: minmax(0, 1fr); }
 }
