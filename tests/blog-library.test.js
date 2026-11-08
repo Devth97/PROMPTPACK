@@ -48,7 +48,7 @@ test('IndexNow refuses missing or mismatched production content and only reports
  await assert.rejects(submit({send:true,request:async url=>({ok:true,status:200,text:async()=>url.endsWith(keyFile)?key:'old page'})}),/production differs/);
  const result=await submit({send:true,request:async(url,options)=>{
   if(options.method==='POST'){const data=JSON.parse(options.body);assert.equal(data.urlList.length,102);assert.ok(data.urlList.every(u=>u.startsWith('https://promptpack.tech/blog/')));posted=true;return {status:200};}
-  return {ok:true,status:200,text:async()=>url.endsWith(keyFile)?key:read(new URL(url).pathname.slice(1)+'index.html')};
+  return {ok:true,status:200,text:async()=>url.endsWith(keyFile)?key:read(new URL(url).pathname.slice(1)+'index.html').replace(/\r?\n/g,'\r\n')};
  }});
  assert.equal(urls.length,102);assert.equal(posted,true);assert.equal(result.submitted,true);assert.match(result.message,/does not establish/);
 });
