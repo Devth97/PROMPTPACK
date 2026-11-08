@@ -14,16 +14,16 @@
     if(result.product!=='profitpulse'||result.ready!==true)throw Error('Secure delivery pending');
     if(buy)buy.hidden=false;
     if(side)side.hidden=false;
-    if(note)note.textContent='Secure product delivery is verified. The Buy button opens the official Razorpay checkout.';
+    if(note)note.textContent='Your download includes the Excel workbook, separate demo, quick-start guide and 12 AI prompts. Pay once and keep the files.';
     if(fallback)fallback.hidden=true;
     buttons.forEach(b=>b.disabled=false);
-    if(status)status.textContent='Secure download verified. Complete your payment with Razorpay.';
+    if(status)status.textContent='Ready to purchase. Choose your payment option below.';
   } catch (e) {
     if(buy)buy.hidden=true;
     if(side)side.hidden=true;
-    if(note)note.textContent='Purchases are not yet available. No charge will be collected until the verified download is deployed.';
-    if(fallback)fallback.hidden=false;
+    if(note)note.textContent='Checkout is temporarily unavailable. Please try again shortly or contact support.';
+    if(fallback){fallback.textContent='Checkout temporarily unavailable';fallback.hidden=false;}
     buttons.forEach(b=>b.disabled=true);
-    if(status)status.textContent='Purchases will open after secure digital delivery is verified. No payment is being collected.';
+    if(status)status.textContent='Checkout is temporarily unavailable. Please try again shortly or contact support.';
   }
 })();

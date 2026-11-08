@@ -24,7 +24,7 @@
 <label>Output GST (%)<input id="gst" type="number" min="0" max="100" step="1" value="0"></label>
 <label>Your estimated CAC (₹)<input id="cac" type="number" min="0" step="1" value="220"></label>
 </div></section>
-<section class="calc-card"><h2>Illustrative result per order placed</h2><div class="calc-metrics">
+<section class="calc-card"><h2>Illustrative result per order placed</h2><p id="calc-error" role="status" aria-live="polite" hidden></p><div class="calc-metrics">
 <div class="calc-metric"><span>Maximum break-even CAC</span><strong id="maxcac">—</strong></div>
 <div class="calc-metric"><span>Modelled break-even ROAS</span><strong id="roas">—</strong></div>
 <div class="calc-metric"><span>Delivery + keep rate</span><strong id="keep">—</strong></div>
@@ -35,15 +35,26 @@
 <div class="calc-line"><span>Shipping and packaging</span><strong id="shipping">—</strong></div>
 <div class="calc-line"><span>Gateway and COD fees</span><strong id="fees">—</strong></div>
 </div><div class="calc-cta"><strong>Want to track your actual orders?</strong><p>ProfitPulse adds SKU-level pricing, ad campaigns, COD scenarios, order logs, inventory and monthly summaries in an Excel workbook.</p><a href="/products/profitpulse/">See the ProfitPulse toolkit →</a></div></section></div>
-<p class="calc-note"><strong>Illustrative calculator, not financial or tax advice.</strong> This model uses expected average values, not actual settlements. COD fees, RTO losses, refund amounts, tax liabilities, recoverable stock, GST input credits, gateway rules and delivery costs vary by seller. Output GST is simplified. Check the method against your own records. All values are editable and calculated on this page only. The full paid product is currently a preview and is not yet available for purchase.</p>
+<p class="calc-note"><strong>Illustrative calculator, not financial or tax advice.</strong> This model uses expected average values, not actual settlements. COD fees, RTO losses, refund amounts, tax liabilities, recoverable stock, GST input credits, gateway rules and delivery costs vary by seller. Output GST is simplified. Check the method against your own records. All values are editable and calculated on this page only. For order logs, SKU comparisons and monthly summaries, <a href="/products/profitpulse/">explore the complete ProfitPulse Excel toolkit</a>.</p>
 </main>
 <script>
 'use strict';
 const ids=['price','cogs','forward','reverse','pack','codfee','codshare','codrto','prepaidrto','returns','loss','pg','feegst','gst','cac'];
-const x=id=>Math.max(0,Number(document.getElementById(id).value)||0);
-const percent=id=>Math.min(1,x(id)/100);
+const x=id=>Number(document.getElementById(id).value);
+const percent=id=>x(id)/100;
 const money=n=>'₹'+n.toLocaleString('en-IN',{maximumFractionDigits:0,minimumFractionDigits:0});
 function calculate(){
+ const error=document.getElementById('calc-error');
+ const invalid=ids.some(id=>{const input=document.getElementById(id);return input.value.trim()===''||!input.validity.valid||!Number.isFinite(Number(input.value));});
+ if(invalid){
+  for(const id of ['maxcac','roas','keep','net','revenue','item','shipping','fees'])document.getElementById(id).textContent='—';
+  document.getElementById('net').classList.remove('fail');
+  error.textContent='Complete every field with a valid non-negative number. Percentages must be between 0 and 100. Enter 0 when a cost does not apply.';
+  error.hidden=false;
+  return;
+ }
+ error.hidden=true;
+ error.textContent='';
  const price=x('price'),cod=percent('codshare'),failed=cod*percent('codrto')+(1-cod)*percent('prepaidrto'),kept=(1-failed)*(1-percent('returns'));
  const revenue=price*kept/(1+x('gst')/100);
  const item=x('cogs')*(kept+(1-kept)*percent('loss'));
