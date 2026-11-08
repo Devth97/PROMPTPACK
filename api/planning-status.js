@@ -8,5 +8,5 @@ module.exports=async(req,res)=>{
  if(!L.missing(['RAZORPAY_KEY_ID','RAZORPAY_KEY_SECRET','DOWNLOAD_SIGNING_SECRET','PLANNING_FILE_KEY']).length){
   try{ready=Number.isInteger(product.bytes) && typeof product.sha256==='string' && L.decryptPack(product).length===product.bytes;}catch(_){/* Fail closed. */}
  }
- return L.send(res,200,{product:product.slug,ready,price:product.amount/100,currency:product.currency});
+ return L.send(res,200,{product:product.slug,ready,price:product.amount/100,currency:product.currency,prices:{inr:L.catalog.priceFor(product,'inr'),usd:L.catalog.priceFor(product,'usd')}});
 };

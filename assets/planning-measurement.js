@@ -24,7 +24,7 @@
     if (!['ViewContent','InitiateCheckout','CheckoutClosed','PaymentFailed','Purchase'].includes(name)) return false;
     // Build the payload here: callers cannot add buyer details or download entitlements.
     const safe = {content_ids:[slug],content_type:'product',content_name:'The Wedding Decision Kit'};
-    if (data.value === 49 && data.currency === 'USD') Object.assign(safe,{value:49,currency:'USD'});
+    if ((data.value === 49 && data.currency === 'USD') || (data.value === 2999 && data.currency === 'INR')) Object.assign(safe,{value:data.value,currency:data.currency});
     try { window.fbq(custom ? 'trackCustom' : 'track',name,safe,options); return true; }
     catch (_) { return false; } // Measurement must never prevent payment or delivery.
   };
@@ -32,11 +32,11 @@
     attribution: () => allowed() ? {...attribution} : {},
     track,
     purchase(receipt) {
-      if (!allowed() || !receipt?.ok || receipt.product !== slug || receipt.amount !== 4900 || receipt.currency !== 'USD' || !/^order_[a-zA-Z0-9]+$/.test(receipt.order_id || '')) return;
+      if (!allowed() || !receipt?.ok || receipt.product !== slug || !((receipt.amount === 4900 && receipt.currency === 'USD') || (receipt.amount === 299900 && receipt.currency === 'INR')) || !/^order_[a-zA-Z0-9]+$/.test(receipt.order_id || '')) return;
       const key = 'pp_purchase_' + receipt.order_id;
       if (seen.has(key)) return;
       try { if (localStorage.getItem(key)) return; } catch (_) {}
-      if (track('Purchase',{value:49,currency:'USD'},false,{eventID:receipt.order_id})) {
+      if (track('Purchase',{value:receipt.amount/100,currency:receipt.currency},false,{eventID:receipt.order_id})) {
         seen.add(key);
         try { localStorage.setItem(key,'1'); } catch (_) {}
       }

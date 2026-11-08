@@ -6,6 +6,7 @@
     "amount": 4900,
     "currency": "USD",
     "plans": [
+      "inr",
       "usd"
     ],
     "key_env": "PLANNING_FILE_KEY",
@@ -15,7 +16,8 @@
     "type": "application/zip",
     "thanks": "/checkout/thanks/",
     "bytes": 58425,
-    "sha256": "a31555cb7c84cb89d6bb42190022090e46e7be1af0fb3cd9029194d0136b00b6"
+    "sha256": "a31555cb7c84cb89d6bb42190022090e46e7be1af0fb3cd9029194d0136b00b6",
+    "amount_inr": 299900
   },
   {
     "id": "promptpack-two-homes-organizer",
@@ -24,6 +26,7 @@
     "amount": 4900,
     "currency": "USD",
     "plans": [
+      "inr",
       "usd"
     ],
     "key_env": "PLANNING_FILE_KEY",
@@ -33,6 +36,7 @@
     "type": "application/zip",
     "thanks": "/checkout/thanks/",
     "bytes": 72713,
-    "sha256": "2ba54b340170d686c1765098eecf22458f621c0c073c05ce7f8e193a3c901ca4"
+    "sha256": "2ba54b340170d686c1765098eecf22458f621c0c073c05ce7f8e193a3c901ca4",
+    "amount_inr": 299900
   }
 ]

@@ -1,5 +1,15 @@
 # Planning-product launch readiness — 8 November 2026
 
+## Latest currency decision - 8 November 2026
+
+The owner chose separate INR and USD payment options. Existing native product prices/buttons remain intact. Both planning kits now offer INR 2,999 or US$49: fixed regional prices, not automatic exchange-rate equivalents. The abandoned single-INR patch was backed up outside the repository and reversed after reconstructing its exact 31-file changes (zero mismatches).
+
+Both plans use server-owned prices and unchanged encrypted downloads/keys. Readiness verifies both prices before enabling either button. Wedding consent-aware Purchase measurement uses the verified currency/value; Two Homes still loads no advertising vendor. Existing USD entitlements remain valid.
+
+Validation: generator completed, 27 focused checks and four local mock purchase-to-download flows (two kits x two currencies) passed, including exact download hashes and cross-product rejection. Review found no Required/Critical findings. Browser verification of this update is blocked because local browser use is disabled in Work settings. The prior deployed USD test was rejected by Razorpay for unsupported international cards; dual buttons do not resolve merchant eligibility. No successful deployed payment or production purchase is claimed.
+
+Use the existing feature/planning-products / draft PR 6 workflow. Do not merge production or activate campaigns until deployed INR/USD processor flows, fulfillment, tracking and enforced spend controls are verified. Campaign holds remain in effect.
+
 Status: **HOLD advertising.** No planning campaigns were created, enabled, published, or funded. Proposed media allocation remains $60 Meta, $45 Google Search, and $45 held reserve within the owner's $150 total cash cap. These are proposed allocations, not platform-enforced spending limits.
 
 ## Production and deployment

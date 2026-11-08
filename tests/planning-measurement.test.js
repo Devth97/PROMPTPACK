@@ -99,3 +99,14 @@ test('checkout does not re-add URL marketing tags after consent or product polic
     assert.deepEqual({...requests[0].attribution},{});
   }
 });
+
+test('verified INR purchase uses INR 2999 and rejects crossed currency amounts', () => {
+ const page=boot({choice:'granted'}),api=page.window.promptpack;
+ api.purchase({...receipt,amount:299900});
+ api.purchase({...receipt,currency:'INR'});
+ assert.equal(page.calls().filter(c=>c[1]==='Purchase').length,0);
+ const paid={...receipt,amount:299900,currency:'INR'};
+ api.purchase(paid);api.purchase(paid);
+ const events=page.calls().filter(c=>c[1]==='Purchase');
+ assert.equal(events.length,1);assert.equal(events[0][2].value,2999);assert.equal(events[0][2].currency,'INR');
+});
