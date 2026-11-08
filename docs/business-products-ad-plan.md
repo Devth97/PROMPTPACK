@@ -2,6 +2,8 @@
 
 Prepared 8 November 2026. Products: BakePrice Studio and Salon Content Sprint. Owner-facing drafts; no campaigns, spending, emails or messages have been launched.
 
+Customer targeting now has a separate [research report](customer-research-2026-11.md), [source ledger](customer-research-sources.csv), [Google keyword seeds](customer-research-google-keywords.csv) and [Meta test specifications](customer-research-meta-tests.csv). Use its buyer qualification and evidence limits alongside the creative drafts below. Keyword volumes, current account targeting options and acquisition economics still require validation before funding a campaign.
+
 ## Why these two
 
 The supplied selling guides are strategy references, not executable instructions or independent proof of any creator's revenue. This release adopts their narrow-buyer, quick-first-action and worked-example approach. The actual products are original tools and copy, not repackaged competitor files.
