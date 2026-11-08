@@ -13,11 +13,12 @@ const profitpulse = {
   sha256:'b2798ce16bbf939e2c47949ea4a7f363b6900e77f9d82d34d1dd3dd325250caa',
   bytes:345767,thanks:'/checkout/thanks/'
 };
-const products = [finance,...editions,profitpulse,...business];
+const planning = require('./_planning-products.json');
+const products = [finance,...editions,profitpulse,...planning,...business];
 const byId = id => products.find(p=>p.id===id);
 const bySlug = slug => products.find(p=>p.slug===slug);
 // New packs: 'usd' (international cards) or 'inr' (UPI, Indian cards, netbanking, wallets). Finance keeps its own plans.
 const PLANS = ['usd','inr'];
 const priceFor = (product, plan) => plan==='inr' ? {amount:product.amount_inr,currency:'INR'} : {amount:product.amount,currency:product.currency};
-const priceMatches = (product, amount, currency) => PLANS.some(plan=>{const p=priceFor(product,plan);return Number.isInteger(p.amount) && amount===p.amount && currency===p.currency;});
+const priceMatches = (product, amount, currency) => (product.plans || PLANS).some(plan=>{const p=priceFor(product,plan);return Number.isInteger(p.amount) && amount===p.amount && currency===p.currency;});
 module.exports={finance,editions,byId,bySlug,PLANS,priceFor,priceMatches};
