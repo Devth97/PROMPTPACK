@@ -2,6 +2,8 @@
 
 Prepared 8 November 2026 for PromptPack. Start with **home bakers already taking paid orders** for BakePrice Studio. For Salon Content Sprint, compare **freelancers managing a real salon client** with **salon owners who already make their own content**. These are the strongest initial buyer hypotheses for the new kits. They have a concrete task, inputs they can supply and a reason to use a file immediately.
 
+For organic acquisition and the limits of the available Google Trends evidence, see [Search opportunities and organic product plan](organic-search-opportunities-2026-11.md). It includes product-development priorities, free-resource paths and the live publication prerequisite.
+
 Public buyer reviews support the existence of both paid categories. They do not establish the probability that an Indian visitor will buy PromptPack. This study contains no PromptPack customer transaction analysis, Keyword Planner export or account-level Meta audience estimates. India is the proposed first market because of the INR offers and salon Hinglish content; it is not a geography selected from measured sales.
 
 ## What the public evidence establishes
