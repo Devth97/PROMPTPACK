@@ -39,4 +39,5 @@ for(const file of ['llms.txt','llms-full.txt']){
  let text=fs.readFileSync(path.join(root,file),'utf8').replace(/\n<!-- business-kits:start -->[\s\S]*?<!-- business-kits:end -->\n?/,'\n');
  text=text.trimEnd()+'\n\n<!-- business-kits:start -->\n## Small-business toolkits\n'+products.map(p=>`- [${p.name}](https://promptpack.tech/products/${p.slug}/): ${p.summary} INR ${p.price_inr} or USD ${p.price}, one-time purchase. ${p.needs}`).join('\n')+'\n<!-- business-kits:end -->\n';write(file,text);
 }
-console.log('Built 2 product pages, 2 checkout pages, free samples, homepage feature and discovery links.');
+require('./build-bakery-search')();
+console.log('Built 2 product pages, 2 checkout pages, free samples, bakery search resources, homepage feature and discovery links.');

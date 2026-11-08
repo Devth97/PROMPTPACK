@@ -45,3 +45,9 @@ Updated: 2026-10-28. All products are digital downloads used with the buyer's ow
 - [BakePrice Studio](https://promptpack.tech/products/bakeprice-studio/): An offline recipe-costing and quote tool for home bakers. Include whole batches, ingredient costs, labour and packaging before choosing your selling price. INR 699 or USD 12, one-time purchase. A laptop or desktop with a current Chrome, Edge, Firefox or Safari browser. Unzip the files and open START.html. No account, spreadsheet app or internet connection is required for the tool. Save JSON backups; browser storage may be cleared or unavailable.
 - [Salon Content Sprint](https://promptpack.tech/products/salon-content-sprint/): Thirty salon content slots with English and Roman-script Hinglish captions, twelve reel plans, eight carousel scripts and an offline editing planner. INR 499 or USD 9, one-time purchase. A laptop or desktop browser for the offline planner, your own salon facts and rights-cleared photos or footage. No AI subscription is required to use the supplied copy. Filming, design, posting and client approval are your responsibility. Back up your edits as JSON.
 <!-- business-kits:end -->
+
+<!-- bakery-search:start -->
+## Free bakery costing resources
+- [Bakery cost calculator](https://promptpack.tech/tools/bakery-cost-calculator/): public INR exercise for whole batches, labour, packaging and overhead; no signup.
+- [Cake pricing guide](https://promptpack.tech/learn/cake-pricing-india/): original worked INR example, margin versus markup and quote review.
+<!-- bakery-search:end -->
