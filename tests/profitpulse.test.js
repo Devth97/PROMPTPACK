@@ -56,7 +56,7 @@ test('Availability handler fails closed without a valid decryptable paid ZIP',as
 test('Encryption setup requires exact archive bytes and existing secret',()=>{
  const script=read('scripts/prepare-profitpulse.js');
  assert.match(script,/digest!==product\.sha256/);
- assert.match(script,/DOWNLOAD_FILE_KEY/);
+ assert.match(script,/PROFITPULSE_FILE_KEY/);
  assert.match(script,/createCipheriv\('aes-256-gcm'/);
  assert.match(script,/Encryption round-trip failed/);
 });
