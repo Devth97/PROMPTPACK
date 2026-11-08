@@ -40,7 +40,7 @@ function productMetadata(p, edition) {
   };
 }
 
-const purchasePrice = p => `₹${p.price_inr.toLocaleString('en-IN')} (UPI, Indian cards, netbanking or wallets) or US$${p.price} (international cards)`;
+const purchasePrice = p => `US$${p.price} (international cards) or ₹${p.price_inr.toLocaleString('en-IN')} (UPI, Indian cards, netbanking or wallets)`;
 
 // Visible FAQ from current catalog data, shared with the structured answers.
 function productFaq(p, edition, refs, liveProducts) {

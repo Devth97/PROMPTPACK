@@ -8,7 +8,7 @@ module.exports = function productPage(p,edition,sources,esc,{related=[],live=[],
   const sale=require('../api/_products').bySlug(p.slug);
   const checkout='/checkout/'+p.slug+'/';
   // Rupee price unlocks UPI and other Indian methods; the dollar price is for international cards.
-  const price=`₹${(sale.amount_inr/100).toLocaleString('en-IN')} / US$${sale.amount/100}`;
+  const price=require('./price-display')('US$'+sale.amount/100,'₹'+(sale.amount_inr/100).toLocaleString('en-IN'));
   const refs=edition.sources.map(id=>sources.find(source=>source.id===id));
   // A landscape walkthrough video belongs at the top of the page, in place of the cover mockup
   const heroVideo=!!(edition.video&&edition.video_poster&&(edition.video_width||0)>(edition.video_height||0));

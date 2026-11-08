@@ -60,6 +60,7 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url><loc>https://promptpack.tech/tools/bakery-cost-calculator/</loc></url>
   <url><loc>https://promptpack.tech/products/website-prompts/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://promptpack.tech/products/carousel-studio/</loc><lastmod>2026-10-28</lastmod></url>
   <url><loc>https://promptpack.tech/products/ugc-ad-scripts/</loc><lastmod>2026-10-28</lastmod></url>
@@ -75,6 +76,5 @@
   <url><loc>https://promptpack.tech/learn/watch/api-key-pushed-to-github/</loc><lastmod>2026-10-28</lastmod><video:video><video:thumbnail_loc>https://promptpack.tech/assets/product-previews/juno-pixel-ep03.jpg</video:thumbnail_loc><video:title>API Key Pushed to GitHub? Rotate It First</video:title><video:description>A 39-second tutorial with transcript: rotate the leaked key, revoke the old one, check its usage, then keep keys in an ignored .env file with secret scanning on.</video:description><video:content_loc>https://media.promptpack.tech/assets/product-previews/juno-pixel-ep03.mp4</video:content_loc><video:duration>39</video:duration><video:publication_date>2026-10-19T13:02:09+05:30</video:publication_date></video:video></url>
   <url><loc>https://promptpack.tech/products/bakeprice-studio/</loc><lastmod>2026-11-08</lastmod></url>
   <url><loc>https://promptpack.tech/products/salon-content-sprint/</loc><lastmod>2026-11-08</lastmod></url>
-  <url><loc>https://promptpack.tech/tools/bakery-cost-calculator/</loc></url>
   <url><loc>https://promptpack.tech/learn/cake-pricing-india/</loc></url>
 </urlset>
