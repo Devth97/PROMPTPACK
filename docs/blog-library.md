@@ -16,4 +16,4 @@ Google Search Console submission requires the authorised property account. Brows
 
 References: [Google crawl requests](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl), [IndexNow verification and notifications](https://www.indexnow.org/documentation).
 
-The release is independent of the unreleased business-toolkit branch. Checkout, payment amounts, paid bundles and existing non-blog pages are outside this change.
+The release is independent of the unreleased business-toolkit branch. Checkout, payment amounts and paid bundles are outside this change. The homepage product grid and the blog hub now retain two compact columns on mobile. Checks at 260, 320, 360, 390, 430, 600, 768 and 1440 px found no horizontal overflow; mobile product buttons retain a minimum 44 px height. At 390 px, the eight-product grid measured 1548 px instead of 4661 px, approximately 67% shorter. Descriptions are visually limited to two lines on mobile; full details remain on each destination page.
