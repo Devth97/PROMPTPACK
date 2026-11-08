@@ -35,6 +35,8 @@ Google's official MCP was installed locally from googleads/google-ads-mcp commit
 
 ## Spending and launch gates
 
+Latest verified state (supersedes the historical setup paragraphs below): see docs/planning-launch-readiness.md and docs/CONTINUE-HERE.md. Google Ads read-only MCP is connected and a production-account query passed. Code is in draft PR #6 and a successful Vercel preview; a real processor test is blocked by Razorpay rejecting international cards. No production merge or campaign activation occurred.
+
 Setup update: after explicit owner approval of Google's API terms, Google Ads API was enabled in arctic-plasma-468112-v5. The Overview page showed Test access only. Apply for access (Explorer) was clicked, but the resulting access state was not observed before browser control became disabled in Work settings. Do not assume production access was granted. Local OAuth credentials and the MCP client connection are not configured. Resume from the project's Google Ads API Overview and verify access before creating credentials. No quota-increase request was submitted, no projects deleted and no unrelated project resources changed.
 
 Total owner-authorized cash cap: $150 across both products/platforms. Proposed stages: up to $60 wedding Meta, up to $45 wedding Search, $45 unallocated reserve. Do not spend extra to chase the expired credit. Account-currency amounts require exchange-rate headroom and explicit budget verification. Google daily budgets alone do not enforce a $45 test cap; do not activate without an appropriate verified total-spend control. Campaigns must initially be paused. These are local drafts, not platform-created campaigns.

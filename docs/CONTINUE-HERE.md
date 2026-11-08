@@ -2,6 +2,14 @@
 
 Owner is moving to a new chat in the SAME project to restore browser access. Do not restart research or rebuild everything. Working repository: D:\promptpack\promptpack-repo, remote Devth97/PROMPTPACK, branch feature/planning-products. Main before work was bc3491bd829bbf7e9d2b40a19ba2843f84ffb4c2. Spec checkpoint cc9130e.
 
+## Launch verification checkpoint — 8 November 2026
+
+Read docs/planning-launch-readiness.md before resuming. Local reviewed code is committed through 7a8d5a5; latest main changes through f824308 are preserved. Production planning URLs still returned 404. PLANNING_FILE_KEY is now securely saved in the existing Vercel project's Production and Preview environments; existing keys are intact, but a new deployment is needed. No plaintext paid assets or secrets were committed.
+
+25 focused automated checks, both simulated purchase/download flows, independent review and responsive/failure-state browser QA passed. New planning pages now use scoped consent-aware measurement; Two Homes has no advertising tracking. See the detailed report for actual account IDs, pixel ownership and missing purchase conversion/hard-cap gates. All inspected Meta campaigns were off/drafts; Google had no non-removed campaigns. No new planning ads were created or activated.
+
+Owner explicitly approved the branch upload and PR. Code commit 7a8d5a5 is pushed; draft PR https://github.com/Devth97/PROMPTPACK/pull/6 is open. Vercel preview FZmiLGr1UtoQtbKaMPPC1Pjtvyxj passed and is Ready at https://promptpack-site-dnzrm15ie-khalandar-s-projects.vercel.app. Both authenticated preview readiness APIs returned ready:true, $49 USD. A real Razorpay test-mode order/popup worked, but the published international test card was rejected with International cards are not supported. No successful payment, receipt, token or deployed download was produced. Resolve merchant international-card eligibility/test-live configuration before any production merge or deployment. Do not replace shared merchant credentials or infer live capability from this test. Preview requires normal Vercel authentication; protection was not bypassed. Keep all campaigns paused. See docs/planning-launch-readiness.md for the detailed test and remaining gates.
+
 ## Google Ads MCP setup completed 8 November 2026
 
 Explorer access was verified in Google Cloud for My First Project, project arctic-plasma-468112-v5, under khalandarthameem97@gmail.com. Google Ads API is enabled. Do not submit another access application. No projects were deleted and no quota request was submitted.
@@ -34,7 +42,7 @@ Legacy payment suite attempted: failures because this fresh sparse checkout lack
 
 ## Secrets and deployment
 
-New customer ZIPs encrypted in private/products/<slug>.enc, metadata in api/_planning-products.json. Dedicated key PLANNING_FILE_KEY exists ONLY in ignored .env.planning. Do not print/paste/commit it. It must be securely configured on existing Vercel deployment before production checkout can open. Existing DOWNLOAD_FILE_KEY and other keys must remain intact. No Vercel credentials or local Vercel auth found. Existing deployment workflow is GitHub-connected; no deployment ZIP. Branch work is not yet a verified production release.
+New customer ZIPs encrypted in private/products/<slug>.enc, metadata in api/_planning-products.json. Dedicated key PLANNING_FILE_KEY exists in ignored .env.planning and is now securely saved as Secret in the existing Vercel Production and Preview environments. Do not print/paste/commit it. A new verified deployment is required before production checkout can open. Existing DOWNLOAD_FILE_KEY and other keys must remain intact. No Vercel credentials or local Vercel auth found. Existing deployment workflow is GitHub-connected; no deployment ZIP. Branch work is not yet a verified production release.
 
 ## Advertising
 
