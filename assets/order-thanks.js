@@ -15,6 +15,7 @@
   document.getElementById('delivery-meta').textContent=new Intl.NumberFormat('en-US',{style:'currency',currency:receipt.currency}).format(receipt.amount/100)+' · Order '+receipt.order+' · Link expires '+new Date(receipt.expires*1000).toLocaleDateString();
   const link=document.getElementById('delivery-download');link.href='/api/download?t='+encodeURIComponent(token);link.setAttribute('download',receipt.filename);
   link.textContent=receipt.type==='application/pdf'?'Download your PDF ↓':'Download your complete ZIP ↓';
+  if(receipt.product==='zerocut-checkout'){const instructions=ready.querySelector('p:last-child');if(instructions)instructions.textContent='Save and unzip the download. Open kit/README.md, then kit/docs/SETUP.md. Keep a copy of your files.';}
   ready.hidden=false;status.textContent='Your payment has been verified. Your files are ready.';
  }catch(error){status.textContent=error.message;}
 })();
