@@ -13,7 +13,8 @@ const profitpulse = {
   bytes:345767,thanks:'/checkout/thanks/'
 };
 const planning = require('./_planning-products.json');
-const products = [finance,...editions,profitpulse,...planning];
+const zerocut = require('./_zerocut-product.json');
+const products = [finance,...editions,profitpulse,...planning,zerocut];
 const byId = id => products.find(p=>p.id===id);
 const bySlug = slug => products.find(p=>p.slug===slug);
 // New packs: 'usd' (international cards) or 'inr' (UPI, Indian cards, netbanking, wallets). Finance keeps its own plans.

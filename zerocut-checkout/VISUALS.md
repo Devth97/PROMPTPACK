@@ -1,6 +1,6 @@
 # ZeroCut visual update — 9 November 2026
 
-The hero uses the requested headline verbatim. The ownership strip explains the one-time kit purchase, customisation and maintenance responsibility. Gateway, Shopify, SMS and hosting costs remain separate. Purchase actions remain disabled until an actual payment URL is configured; indexing remains `noindex, follow` while sales setup is incomplete.
+The hero uses the requested headline verbatim. The ownership strip explains the one-time kit purchase, customisation and maintenance responsibility. Gateway, Shopify, SMS and hosting costs remain separate. Buy Now actions use `/checkout/zerocut-checkout/` and the existing Razorpay order, verification and download APIs. Indexing remains `noindex, follow`.
 
 ## Photography
 
@@ -29,3 +29,9 @@ Sources: https://www.gokwik.co/pricing?tab=kwik-engage and https://juspay.io/in/
 ## Release and rollback
 
 Deploy through the existing GitHub main → Vercel integration. Verify the deployment status and public `/zerocut-checkout/` page after merge. If a regression is found, revert the scoped ZeroCut merge on main and let the same workflow redeploy. No paid archive, payment secret or generated build output is included.
+
+## Buy Now release
+
+The user-supplied `ZeroCut-Checkout-v1.0.zip` is 52,306 bytes, SHA-256 `5e251f1ea16929e9e4bb9d38b000b09ef436893f82671a91f9d8912f7e2f156d`. Only its AES-256-GCM ciphertext is deployed. The product uses the existing deployed `PLANNING_FILE_KEY` through the existing `key_env` mechanism; no key or account setting changes are needed. This independently registered product avoids rebuilding unrelated catalog pages or buyer bundles. The checkout accepts the INR plan only, at 99,900 paise. The shared receipt page shows ZeroCut-specific starter instructions.
+
+Validation: exact ZIP checksum; existing encrypted bundle/key compatibility; encryption roundtrip; server-owned price despite client tampering; unsupported plan refusal; unavailable-file refusal before contacting Razorpay; mocked captured-payment signature verification and byte-identical entitled download. Isolated Chrome verifies all four demos, visible Buy Now links, loaded Razorpay SDK and checkout layouts at 320, 390, 768 and 1440 pixels. No real payment was submitted during testing.

@@ -1,0 +1,19 @@
+{
+  "id": "promptpack-zerocut-checkout",
+  "slug": "zerocut-checkout",
+  "name": "ZeroCut Checkout",
+  "amount": 99900,
+  "currency": "INR",
+  "amount_inr": 99900,
+  "plans": [
+    "inr"
+  ],
+  "key_env": "PLANNING_FILE_KEY",
+  "envelope": true,
+  "file": "products/zerocut-checkout.enc",
+  "filename": "ZeroCut-Checkout-v1.0.zip",
+  "type": "application/zip",
+  "sha256": "5e251f1ea16929e9e4bb9d38b000b09ef436893f82671a91f9d8912f7e2f156d",
+  "bytes": 52306,
+  "thanks": "/checkout/thanks/"
+}

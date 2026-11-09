@@ -26,7 +26,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="pp-header"><div class="pp-nav"><a class="pp-brand" href="/" aria-label="PromptPack home">PROMPTPACK<span aria-hidden="true">↗</span></a><nav class="pp-categories" aria-label="Main"><a href="#demo">Try the demo</a><a href="#savings">Savings</a><a href="#inside">What you get</a><a href="#faq">Questions</a></nav><a class="pp-browse zp-nav-cta" href="#demo-launch" data-preview>Try live demo</a><a class="pp-browse zp-nav-cta" href="#buy" data-buy hidden>Get it · ₹999</a></div></header>
+<header class="pp-header"><div class="pp-nav"><a class="pp-brand" href="/" aria-label="PromptPack home">PROMPTPACK<span aria-hidden="true">↗</span></a><nav class="pp-categories" aria-label="Main"><a href="#demo">Try the demo</a><a href="#savings">Savings</a><a href="#inside">What you get</a><a href="#faq">Questions</a></nav><a class="pp-browse zp-nav-cta" href="#demo-launch" data-demo-action>Try live demo</a><a class="pp-browse zp-nav-cta" href="/checkout/zerocut-checkout/" data-buy>Buy now · ₹999</a></div></header>
 
 <main id="main">
   <section class="zp-hero zp-wrap">
@@ -37,12 +37,12 @@
       <p class="zp-lede">Own four ready-to-customise checkout layouts for Indian stores, with no ZeroCut subscription or per-order fee. Take UPI and cards through your Razorpay account, offer cash on delivery, and keep your branding through payment.</p>
       <div class="zp-offer"><strong>₹999</strong><span>one-time kit purchase<br>No ZeroCut fee per order</span></div>
       <div class="zp-ctas">
-        <a class="zp-btn zp-primary" href="#demo-launch" data-preview>Try the live demo <span aria-hidden="true">↓</span></a>
-        <a class="zp-btn zp-primary" href="#buy" data-buy hidden>Buy ZeroCut Checkout</a>
+        <a class="zp-btn zp-primary" href="#demo-launch" data-demo-action>Try the live demo <span aria-hidden="true">↓</span></a>
+        <a class="zp-btn zp-primary" href="/checkout/zerocut-checkout/" data-buy>Buy now · ₹999</a>
         <a class="zp-btn" href="#inside">See what’s included</a>
       </div>
       <p class="zp-hero-note">Gateway processing, Shopify, SMS and hosting costs still apply. Setup and maintenance are yours.</p>
-      <p class="zp-hero-note" data-preview>Explore the demos now. Kit purchase opens soon.</p>
+      <p class="zp-hero-note">Secure payment via Razorpay. Download the kit after payment verification.</p>
     </div>
     <figure class="zp-cover">
       <div class="zp-cover-meta"><span>ZEROCUT / CHECKOUT KIT</span><span>01 — 04</span></div>
@@ -150,8 +150,8 @@
       </div>
       <div class="zp-price">
         <b>₹999</b><span>one time · no ZeroCut subscription or per-order fee</span>
-        <a class="zp-btn zp-primary" href="#buy" data-buy hidden>Buy ZeroCut Checkout</a>
-        <p class="zp-launch-note" data-preview>Purchase opens soon.</p>
+        <a class="zp-btn zp-primary" href="/checkout/zerocut-checkout/" data-buy>Buy ZeroCut Checkout</a>
+        <small>Verified payment. Secure ZIP download.</small>
         <small>Digital product · <a href="/refund">Refund policy</a></small>
       </div>
     </div>
@@ -193,22 +193,22 @@
       <details><summary>Will I lose saved addresses from my checkout app?</summary><p>Addresses saved inside another app's network stay with that app. Shoppers type their address once with you; the pincode fills city and state to make that quick.</p></details>
       <details><summary>What about conversion tracking?</summary><p>The checkout calls your code when an order completes, with the order number and value, so you fire your Meta Pixel, Conversions API or GA4 purchase event yourself. The guide shows where.</p></details>
       <details><summary>Is anything charged in the demo?</summary><p>No. The demo stores are made up and the payment step is simulated.</p></details>
-      <details><summary>How do I get the kit?</summary><p>For purchase and delivery questions, message us on <a href="https://wa.me/919901542387" rel="noopener">WhatsApp</a> or email <a href="mailto:ornalens@gmail.com">ornalens@gmail.com</a>.</p></details>
+      <details><summary>How do I get the kit?</summary><p>After verified payment, download your ZIP on the confirmation page. Unzip it and start with <code>kit/README.md</code>. For purchase and delivery questions, message us on <a href="https://wa.me/919901542387" rel="noopener">WhatsApp</a> or email <a href="mailto:ornalens@gmail.com">ornalens@gmail.com</a>.</p></details>
     </div>
   </section>
 
   <section class="zp-final zp-wrap">
     <p class="zp-eyebrow">OWN THE EXPERIENCE</p><h2>Pay for the kit.<br>Keep control of checkout.</h2><p>Four layouts. Your branding. No recurring ZeroCut fee.</p>
-    <a class="zp-btn zp-primary" href="#demo-launch" data-preview>Try the live demo <span aria-hidden="true">↑</span></a>
-    <a class="zp-btn zp-primary" href="#buy" data-buy hidden>Get all 4 layouts · ₹999</a>
+    <a class="zp-btn zp-primary" href="#demo-launch" data-demo-action>Try the live demo <span aria-hidden="true">↑</span></a>
+    <a class="zp-btn zp-primary" href="/checkout/zerocut-checkout/" data-buy>Buy now · ₹999</a>
   </section>
 </main>
 
 <footer class="pp-footer"><div class="pp-footer-inner"><div><a class="pp-brand" href="/">PROMPTPACK<span aria-hidden="true">↗</span></a><p>Good ideas deserve a better starting point.<br>Digital guides, prompt packs &amp; creative toolkits.</p></div><nav aria-label="Footer"><a href="/#catalog">All products</a><a href="/blog/">Guides</a><a href="/contact">Contact</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a><a href="/refund">Refunds</a></nav><div class="pp-footer-bottom"><span>© 2026 PromptPack · Ornalens LLP</span><span>Made for the tools you already use.</span></div></div></footer>
 
 <script>
-  // Paste the Razorpay payment link here. While it is empty, the live demo is the primary action.
-  window.ZEROCUT_BUY_URL = '';
+  // Use the existing site checkout for server-priced Razorpay payment and verified kit delivery.
+  window.ZEROCUT_BUY_URL = '/checkout/zerocut-checkout/';
 </script>
 <script src="/zerocut-checkout/assets/zerocut-core.js"></script>
 <script src="/zerocut-checkout/assets/zerocut.js"></script>
