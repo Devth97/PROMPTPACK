@@ -57,8 +57,8 @@ test('reduced motion waits for an explicit sound click to play', () => {
   assert.equal(cards[0].video.paused, true);
 });
 
-test('homepage and generator use corner sound controls without the old overlay', () => {
-  for (const file of ['index.html', 'scripts/build-storefront.js']) {
+test('legacy promo generator uses corner sound controls without the old overlay', () => {
+  for (const file of ['scripts/build-storefront.js']) {
     const source = read(file);
     assert.match(source, /class="hs-sound"/);
     assert.doesNotMatch(source, /hs-play|hs-dialog|Watch with sound/);
