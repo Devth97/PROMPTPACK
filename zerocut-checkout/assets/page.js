@@ -1,11 +1,13 @@
 (function(){
   'use strict';
-  // Buy buttons: point at the payment link, or say "coming soon" until there is one.
+  // Promote purchase actions only when there is a payment link.
   var url=(window.ZEROCUT_BUY_URL||'').trim();
-  document.querySelectorAll('[data-buy]').forEach(function(a){
-    if(url){a.href=url;a.rel='noopener';}
-    else if(!a.closest('.pp-header')){a.removeAttribute('href');a.setAttribute('aria-disabled','true');a.classList.add('is-soon');a.textContent='Buy link coming soon';}
-  });
+  if(url){
+    document.querySelectorAll('[data-buy]').forEach(function(a){
+      a.href=url;a.rel='noopener';a.hidden=false;
+    });
+    document.querySelectorAll('[data-preview]').forEach(function(el){el.hidden=true;});
+  }
 
   // Demo tabs.
   var screen=document.getElementById('zp-screen'),store=null,current='one-page';
@@ -14,6 +16,7 @@
     current=key;if(store)store.destroy();screen.innerHTML='';
     var b=ZeroCutDemo.brands[key];
     tabs.forEach(function(t){t.setAttribute('aria-selected',String(t.getAttribute('data-layout')===key));t.tabIndex=t.getAttribute('data-layout')===key?0:-1;});
+    screen.setAttribute('aria-labelledby','zp-tab-'+key);
     document.getElementById('zp-brand').textContent=b.brand.name+' · made-up demo brand';
     document.getElementById('zp-layout-title').textContent=b.title;
     document.getElementById('zp-layout-tag').textContent=b.tagline;
@@ -22,6 +25,14 @@
   tabs.forEach(function(t,i){
     t.addEventListener('click',function(){show(t.getAttribute('data-layout'));});
     t.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=tabs[(i+d+tabs.length)%tabs.length];n.focus();show(n.getAttribute('data-layout'));});
+  });
+  document.querySelectorAll('[data-demo]').forEach(function(link){
+    link.addEventListener('click',function(e){
+      if(e.metaKey||e.ctrlKey||e.shiftKey||e.altKey)return;
+      var key=link.getAttribute('data-demo');
+      show(key);
+      document.getElementById('zp-tab-'+key).focus({preventScroll:true});
+    });
   });
   document.getElementById('zp-reset').addEventListener('click',function(){show(current);});
   show('one-page');
@@ -36,7 +47,7 @@
     document.getElementById('zp-sales-out').textContent=short(monthly);
     document.getElementById('zp-fee-out').textContent=pct.toFixed(1)+'%';
     document.getElementById('zp-keep').textContent=inr(Math.max(0,y-999));
-    document.getElementById('zp-month').textContent='That\'s '+inr(m)+' a month in app fees you stop paying, minus ₹999 once.';
+    document.getElementById('zp-month').textContent=inr(m)+' per month in app fees, before the ₹999 kit price.';
     document.getElementById('zp-t-fee').textContent=pct.toFixed(1)+'% · '+inr(m)+'/mo';
     document.getElementById('zp-t-year').textContent=inr(y);
   }
