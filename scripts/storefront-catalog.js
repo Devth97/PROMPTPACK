@@ -46,6 +46,6 @@ function upgrade(html) {
     collection.mainEntity={ '@type':'ItemList',numberOfItems:products().length,itemListElement:products().map((p,i)=>({'@type':'ListItem',position:i+1,name:p.name,url:'https://promptpack.tech'+p.href}))};
     return `<script type="application/ld+json">${JSON.stringify(schema).replace(/</g,'\\u003c')}</script>`;
   });
-  return require('./home-zerocut').upgrade(html).replace(/[ \t]+(?=\r?\n)/g,'');
+  return require('./home-universal').upgrade(html).replace(/[ \t]+(?=\r?\n)/g,'');
 }
 module.exports={products,render,upgrade};
